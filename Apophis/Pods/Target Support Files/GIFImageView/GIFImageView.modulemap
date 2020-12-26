@@ -1,0 +1,6 @@
+framework module GIFImageView {
+  umbrella header "GIFImageView-umbrella.h"
+
+  export *
+  module * { export * }
+}

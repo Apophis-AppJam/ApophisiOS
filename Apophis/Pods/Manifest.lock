@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.4.0)
+  - GIFImageView (0.1.0)
+  - Kingfisher (5.15.7):
+    - Kingfisher/Core (= 5.15.7)
+  - Kingfisher/Core (5.15.7)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.1)
+  - GIFImageView
+  - Kingfisher (~> 5.0)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - GIFImageView
+    - Kingfisher
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  GIFImageView: cd6a500b9bac1942cb66b73452b97baa6e75280d
+  Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: ced9118d3af14d7753b3c22dd5ee50b736f56e74
+
+COCOAPODS: 1.10.0

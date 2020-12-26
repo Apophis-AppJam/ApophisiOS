@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/GIFImageView/GIFImageView.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

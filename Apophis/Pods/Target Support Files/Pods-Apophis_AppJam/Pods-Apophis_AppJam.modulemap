@@ -1,0 +1,6 @@
+framework module Pods_Apophis_AppJam {
+  umbrella header "Pods-Apophis_AppJam-umbrella.h"
+
+  export *
+  module * { export * }
+}
