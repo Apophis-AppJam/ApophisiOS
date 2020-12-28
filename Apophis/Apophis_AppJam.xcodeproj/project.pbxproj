@@ -14,6 +14,24 @@
 		FD0715742596E99700940094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0715722596E99700940094 /* Main.storyboard */; };
 		FD0715762596E99700940094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0715752596E99700940094 /* Assets.xcassets */; };
 		FD0715792596E99700940094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0715772596E99700940094 /* LaunchScreen.storyboard */; };
+		FD52077225998F7F00AAD1BA /* Day1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD52077125998F7F00AAD1BA /* Day1.storyboard */; };
+		FD5207772599960800AAD1BA /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207762599960800AAD1BA /* SampleView.swift */; };
+		FD52078725999C8F00AAD1BA /* Day1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52078625999C8F00AAD1BA /* Day1ViewController.swift */; };
+		FD52078D2599A60200AAD1BA /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD52078A2599A60200AAD1BA /* GmarketSansTTFBold.ttf */; };
+		FD52078E2599A60200AAD1BA /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD52078B2599A60200AAD1BA /* GmarketSansTTFLight.ttf */; };
+		FD52078F2599A60200AAD1BA /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD52078C2599A60200AAD1BA /* GmarketSansTTFMedium.ttf */; };
+		FD5207952599ACBF00AAD1BA /* ChatYourMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207942599ACBF00AAD1BA /* ChatYourMessageCell.swift */; };
+		FD5207992599ACCF00AAD1BA /* ChatMyMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207982599ACCF00AAD1BA /* ChatMyMessageCell.swift */; };
+		FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52079C2599AEA100AAD1BA /* SampleTableViewCell.swift */; };
+		FD5207A12599AEBC00AAD1BA /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207A02599AEBC00AAD1BA /* SampleViewController.swift */; };
+		FD5207AA2599AF5900AAD1BA /* Day2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207A92599AF5900AAD1BA /* Day2.storyboard */; };
+		FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207AC2599AF5F00AAD1BA /* Day3.storyboard */; };
+		FD5207B02599AF6800AAD1BA /* Day4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207AF2599AF6800AAD1BA /* Day4.storyboard */; };
+		FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B22599AF7100AAD1BA /* Day5.storyboard */; };
+		FD5207B62599AF7A00AAD1BA /* Day6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B52599AF7A00AAD1BA /* Day6.storyboard */; };
+		FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B92599AF8500AAD1BA /* Day7.storyboard */; };
+		FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */; };
+		FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */; };
 		FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B692596EE1C00F4DFDF /* view.xib */; };
 		FDA98B6F2596FA4200F4DFDF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */; };
 		FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */; };
@@ -21,6 +39,10 @@
 		FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B7C25970D8A00F4DFDF /* SplashViewController.swift */; };
 		FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B822597104700F4DFDF /* ColorList.xcassets */; };
 		FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B852597133500F4DFDF /* NetworkResult.swift */; };
+		FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */; };
+		FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */; };
+		FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */; };
+		FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +57,24 @@
 		FD0715752596E99700940094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD0715782596E99700940094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD07157A2596E99700940094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD52077125998F7F00AAD1BA /* Day1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day1.storyboard; sourceTree = "<group>"; };
+		FD5207762599960800AAD1BA /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		FD52078625999C8F00AAD1BA /* Day1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ViewController.swift; sourceTree = "<group>"; };
+		FD52078A2599A60200AAD1BA /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
+		FD52078B2599A60200AAD1BA /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
+		FD52078C2599A60200AAD1BA /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
+		FD5207942599ACBF00AAD1BA /* ChatYourMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatYourMessageCell.swift; sourceTree = "<group>"; };
+		FD5207982599ACCF00AAD1BA /* ChatMyMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMyMessageCell.swift; sourceTree = "<group>"; };
+		FD52079C2599AEA100AAD1BA /* SampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		FD5207A02599AEBC00AAD1BA /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		FD5207A92599AF5900AAD1BA /* Day2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day2.storyboard; sourceTree = "<group>"; };
+		FD5207AC2599AF5F00AAD1BA /* Day3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day3.storyboard; sourceTree = "<group>"; };
+		FD5207AF2599AF6800AAD1BA /* Day4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day4.storyboard; sourceTree = "<group>"; };
+		FD5207B22599AF7100AAD1BA /* Day5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day5.storyboard; sourceTree = "<group>"; };
+		FD5207B52599AF7A00AAD1BA /* Day6.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day6.storyboard; sourceTree = "<group>"; };
+		FD5207B92599AF8500AAD1BA /* Day7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day7.storyboard; sourceTree = "<group>"; };
+		FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDataModel.swift; sourceTree = "<group>"; };
+		FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageWaitingCell.swift; sourceTree = "<group>"; };
 		FDA98B692596EE1C00F4DFDF /* view.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = view.xib; sourceTree = "<group>"; };
 		FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeAlert + UIView.swift"; sourceTree = "<group>"; };
@@ -42,6 +82,10 @@
 		FDA98B7C25970D8A00F4DFDF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		FDA98B822597104700F4DFDF /* ColorList.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorList.xcassets; sourceTree = "<group>"; };
 		FDA98B852597133500F4DFDF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GmarketFont + UIFont.swift"; sourceTree = "<group>"; };
+		FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "numberOfLines + UITextView.swift"; sourceTree = "<group>"; };
+		FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2ViewController.swift; sourceTree = "<group>"; };
+		FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +150,7 @@
 			children = (
 				FD07156C2596E99700940094 /* AppDelegate.swift */,
 				FD07156E2596E99700940094 /* SceneDelegate.swift */,
+				FD5207742599950300AAD1BA /* Views */,
 				FDA98B672596EDC600F4DFDF /* Extensions */,
 				FDA98B662596EDB400F4DFDF /* Models */,
 				FDA98B652596EDAE00F4DFDF /* ViewControllers */,
@@ -125,9 +170,139 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		FD52077025998F6B00AAD1BA /* Day1 */ = {
+			isa = PBXGroup;
+			children = (
+				FD52077125998F7F00AAD1BA /* Day1.storyboard */,
+			);
+			path = Day1;
+			sourceTree = "<group>";
+		};
+		FD5207742599950300AAD1BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207762599960800AAD1BA /* SampleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD52077A259997A100AAD1BA /* Day1 */ = {
+			isa = PBXGroup;
+			children = (
+				FD52078625999C8F00AAD1BA /* Day1ViewController.swift */,
+			);
+			path = Day1;
+			sourceTree = "<group>";
+		};
+		FD52078325999C6400AAD1BA /* Day2 */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */,
+			);
+			path = Day2;
+			sourceTree = "<group>";
+		};
+		FD52078425999C6700AAD1BA /* Day3 */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */,
+			);
+			path = Day3;
+			sourceTree = "<group>";
+		};
+		FD5207922599AC9000AAD1BA /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207932599AC9F00AAD1BA /* Cells */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
+		FD5207932599AC9F00AAD1BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207942599ACBF00AAD1BA /* ChatYourMessageCell.swift */,
+				FD5207982599ACCF00AAD1BA /* ChatMyMessageCell.swift */,
+				FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FD52079B2599AE7C00AAD1BA /* MarkTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				FD52079C2599AEA100AAD1BA /* SampleTableViewCell.swift */,
+				FD5207A02599AEBC00AAD1BA /* SampleViewController.swift */,
+			);
+			path = MarkTemplate;
+			sourceTree = "<group>";
+		};
+		FD5207A32599AF3900AAD1BA /* Day2 */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207A92599AF5900AAD1BA /* Day2.storyboard */,
+			);
+			path = Day2;
+			sourceTree = "<group>";
+		};
+		FD5207A42599AF3D00AAD1BA /* Day3 */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207AC2599AF5F00AAD1BA /* Day3.storyboard */,
+			);
+			path = Day3;
+			sourceTree = "<group>";
+		};
+		FD5207A52599AF4000AAD1BA /* Day4 */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207AF2599AF6800AAD1BA /* Day4.storyboard */,
+			);
+			path = Day4;
+			sourceTree = "<group>";
+		};
+		FD5207A62599AF4400AAD1BA /* Day5 */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207B22599AF7100AAD1BA /* Day5.storyboard */,
+			);
+			path = Day5;
+			sourceTree = "<group>";
+		};
+		FD5207A72599AF4700AAD1BA /* Day6 */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207B52599AF7A00AAD1BA /* Day6.storyboard */,
+			);
+			path = Day6;
+			sourceTree = "<group>";
+		};
+		FD5207A82599AF4B00AAD1BA /* Day7 */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207B92599AF8500AAD1BA /* Day7.storyboard */,
+			);
+			path = Day7;
+			sourceTree = "<group>";
+		};
+		FD5207BC2599B77E00AAD1BA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		FDA98B612596ED8600F4DFDF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				FD5207A82599AF4B00AAD1BA /* Day7 */,
+				FD5207A72599AF4700AAD1BA /* Day6 */,
+				FD5207A62599AF4400AAD1BA /* Day5 */,
+				FD5207A52599AF4000AAD1BA /* Day4 */,
+				FD5207A42599AF3D00AAD1BA /* Day3 */,
+				FD5207A32599AF3900AAD1BA /* Day2 */,
+				FD52077025998F6B00AAD1BA /* Day1 */,
 				FD0715772596E99700940094 /* LaunchScreen.storyboard */,
 				FD0715722596E99700940094 /* Main.storyboard */,
 			);
@@ -154,6 +329,9 @@
 		FDA98B642596EDAA00F4DFDF /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				FD52078A2599A60200AAD1BA /* GmarketSansTTFBold.ttf */,
+				FD52078B2599A60200AAD1BA /* GmarketSansTTFLight.ttf */,
+				FD52078C2599A60200AAD1BA /* GmarketSansTTFMedium.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -161,6 +339,11 @@
 		FDA98B652596EDAE00F4DFDF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD52079B2599AE7C00AAD1BA /* MarkTemplate */,
+				FD5207922599AC9000AAD1BA /* Chatting */,
+				FD52077A259997A100AAD1BA /* Day1 */,
+				FD52078325999C6400AAD1BA /* Day2 */,
+				FD52078425999C6700AAD1BA /* Day3 */,
 				FDA98B722597024600F4DFDF /* Splash */,
 				FD0715702596E99700940094 /* ViewController.swift */,
 			);
@@ -170,6 +353,7 @@
 		FDA98B662596EDB400F4DFDF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FD5207BC2599B77E00AAD1BA /* Chat */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +363,8 @@
 			children = (
 				FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */,
 				FDA98B7925970BA700F4DFDF /* TimeCalculate.swift */,
+				FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */,
+				FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,8 +453,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */,
+				FD52078D2599A60200AAD1BA /* GmarketSansTTFBold.ttf in Resources */,
+				FD52078E2599A60200AAD1BA /* GmarketSansTTFLight.ttf in Resources */,
+				FD5207AA2599AF5900AAD1BA /* Day2.storyboard in Resources */,
+				FD5207B02599AF6800AAD1BA /* Day4.storyboard in Resources */,
 				FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */,
+				FD52077225998F7F00AAD1BA /* Day1.storyboard in Resources */,
 				FD0715792596E99700940094 /* LaunchScreen.storyboard in Resources */,
+				FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */,
+				FD5207B62599AF7A00AAD1BA /* Day6.storyboard in Resources */,
+				FD52078F2599A60200AAD1BA /* GmarketSansTTFMedium.ttf in Resources */,
+				FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */,
 				FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */,
 				FD0715762596E99700940094 /* Assets.xcassets in Resources */,
 				FD0715742596E99700940094 /* Main.storyboard in Resources */,
@@ -325,13 +521,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDA98B6F2596FA4200F4DFDF /* APIConstants.swift in Sources */,
+				FD5207772599960800AAD1BA /* SampleView.swift in Sources */,
+				FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */,
+				FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */,
+				FD5207952599ACBF00AAD1BA /* ChatYourMessageCell.swift in Sources */,
+				FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */,
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,
+				FD5207A12599AEBC00AAD1BA /* SampleViewController.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
+				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
+				FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */,
 				FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */,
+				FD5207992599ACCF00AAD1BA /* ChatMyMessageCell.swift in Sources */,
 				FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */,
+				FD52078725999C8F00AAD1BA /* Day1ViewController.swift in Sources */,
+				FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */,
+				FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
