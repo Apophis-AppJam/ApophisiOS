@@ -50,18 +50,36 @@
                                     <action selector="goToDay3Sample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ij-sf-ZbY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDC-K0-Uvf">
+                                <rect key="frame" x="187.5" y="832" width="39" height="30"/>
+                                <state key="normal" title="인트로"/>
+                                <connections>
+                                    <action selector="introButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQF-WN-9tr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXh-Fw-bOP">
+                                <rect key="frame" x="166" y="782" width="82" height="30"/>
+                                <state key="normal" title="전화오는 화면"/>
+                                <connections>
+                                    <action selector="phoneRingButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bax-zo-chf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BrA-gH-FeY" firstAttribute="top" secondItem="HrV-7M-rll" secondAttribute="bottom" constant="30" id="3lU-Up-lnj"/>
                             <constraint firstItem="Td9-Sn-64D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="450-qe-EMb"/>
+                            <constraint firstItem="fDC-K0-Uvf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Kb-gJ-mYg"/>
                             <constraint firstItem="BrA-gH-FeY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Guv-zi-4Pm"/>
                             <constraint firstItem="bQU-6W-m5G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="U1B-V2-UDW"/>
                             <constraint firstItem="L8m-0O-0Eb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dud-z3-BBV"/>
+                            <constraint firstItem="fDC-K0-Uvf" firstAttribute="top" secondItem="DXh-Fw-bOP" secondAttribute="bottom" constant="20" id="eKi-nD-A6a"/>
+                            <constraint firstItem="DXh-Fw-bOP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lXt-DY-ffW"/>
                             <constraint firstItem="bQU-6W-m5G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lwb-B6-uJk"/>
                             <constraint firstItem="L8m-0O-0Eb" firstAttribute="top" secondItem="Td9-Sn-64D" secondAttribute="bottom" constant="20" id="o4k-FP-cvw"/>
                             <constraint firstItem="HrV-7M-rll" firstAttribute="top" secondItem="bQU-6W-m5G" secondAttribute="bottom" constant="24" id="suH-eo-vk3"/>
+                            <constraint firstItem="fDC-K0-Uvf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="utg-c2-Qu6"/>
                             <constraint firstItem="HrV-7M-rll" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wfs-ha-naJ"/>
                             <constraint firstItem="Td9-Sn-64D" firstAttribute="top" secondItem="BrA-gH-FeY" secondAttribute="bottom" constant="20" id="wyI-UB-Jyn"/>
                         </constraints>

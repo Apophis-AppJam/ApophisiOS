@@ -44,6 +44,32 @@ class ViewController: UIViewController {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    @IBAction func introButtonClicked(_ sender: Any) {
+        
+        
+        
+        let storyboard = UIStoryboard(name: "Intro", bundle: nil)
+
+        guard let vc = storyboard.instantiateViewController(identifier: "IntroNewsViewController") as? IntroNewsViewController else  {return}
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
     
+    @IBAction func phoneRingButtonClicked(_ sender: Any) {
+        
+        
+        let storyboard = UIStoryboard(name: "Intro", bundle: nil)
+
+        guard let vc = storyboard.instantiateViewController(identifier: "IntroPhoneRingViewController") as? IntroPhoneRingViewController else  {return}
+        
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
 }
 
