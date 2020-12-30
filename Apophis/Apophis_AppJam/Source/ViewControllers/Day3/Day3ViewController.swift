@@ -18,6 +18,9 @@ class Day3ViewController: UIViewController {
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var messageTextInputView: UITextView!
     @IBOutlet weak var messageSendButton: UIButton!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var massageInputAreaView: UIView!
+    @IBOutlet weak var backgroundImageFirst: UIImageView!
     
     //MARK:- Variable Part
     
@@ -104,9 +107,10 @@ class Day3ViewController: UIViewController {
     func setDummyMessage() // 서버 붙이기 이전이라 억지로 메세지 주입하는 것 , 서버 나오면 제거하고 서버에서 받아오면 됨
     {
         messageList.append(contentsOf: [
-            ChatMessageDataModel(message: "안녕! 미안 방금 정신없었지?", isLastMessage: false, isMine: false),
-            ChatMessageDataModel(message: "그냥, 방금 뉴스 봤어? 지구가 멸망한다길래 아무 번호로나 전화해봤어. 꼭 한 번쯤 해보고 싶었거든", isLastMessage: false, isMine: false),
-            ChatMessageDataModel(message: "넌 누구야?", isLastMessage: false, isMine: true)
+            ChatMessageDataModel(message: "오늘은 어때? 이번에는 좋아하는 향이 있으면 뿌리고 얘기해볼까?", isLastMessage: false, isMine: false),
+            ChatMessageDataModel(message: "오늘 여행길에 본 풍경이야! 되게 예쁘지?", isLastMessage: false, isMine: false),
+            ChatMessageDataModel(message: "그런데, 길을 걷다가 어떤 사람들이 나를 멈춰세우더라?", isLastMessage: false, isMine: false),
+            ChatMessageDataModel(message: "그러더니, 자기들 손목을 묶어달라는거야.", isLastMessage: false, isMine: false)
         ])
         
     }
@@ -184,7 +188,7 @@ extension Day3ViewController : UITableViewDataSource
                     else {return UITableViewCell() }
             
             myMessageCell.setMessage(message: messageList[indexPath.row].message)
-            
+            myMessageCell.backgroundColor = .clear
             return myMessageCell
         }
         
@@ -197,6 +201,8 @@ extension Day3ViewController : UITableViewDataSource
             
             yourMessageCell.setMessage(message: messageList[indexPath.row].message)
             
+            yourMessageCell.backgroundColor = .none
+            
             return yourMessageCell
         }
     }
@@ -207,17 +213,53 @@ extension Day3ViewController : UITableViewDataSource
         cell.alpha = 0
         UIView.animate(
             withDuration: 1,
-            delay: 1 * Double(indexPath.row),
+            delay: 2 * Double(indexPath.row),
             options: [.curveEaseInOut],
             animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0)
                 cell.alpha = 1
-            
+
             }
         )
         
+        UIView.animateKeyframes(withDuration: 10, delay: 0,options: [], animations: {
+            
+
+            UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.2, animations: {
+
+                tableView.backgroundColor = .none
+                cell.backgroundColor = UIColor.clear
+                cell.contentView.backgroundColor = UIColor.clear
+                self.headerView.backgroundColor = .none
+                self.massageInputAreaView.backgroundColor = .none
+                
+                    })
+
+            UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.15, animations: {
+
+                        self.backgroundImageFirst.alpha = 0
+
+            })
+            
+                
+        }, completion: {_ in
+            
+            let uvc = self.storyboard!.instantiateViewController(withIdentifier: "DrawingViewController")
+            
+            uvc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+
+            uvc.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            
+
+            self.present(uvc, animated: true)
+            
+        })
+
+        
+
+        
     }
-    
+        
     
 }
 
