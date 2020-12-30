@@ -178,6 +178,7 @@ extension Day1ViewController : UITableViewDataSource
                     else {return UITableViewCell() }
             
             myMessageCell.setMessage(message: messageList[indexPath.row].message)
+            myMessageCell.backgroundColor = .clear
             
             return myMessageCell
         }

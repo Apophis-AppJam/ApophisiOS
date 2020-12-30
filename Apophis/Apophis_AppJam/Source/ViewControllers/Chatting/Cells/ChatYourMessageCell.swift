@@ -48,6 +48,10 @@ class ChatYourMessageCell: UITableViewCell {
     func setMessage(message : String)
     {
   
+        
+        let padding = messageTextView.textContainer.lineFragmentPadding
+        messageTextView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
+        
         messageTextView.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         messageTextView.textColor = .white
         messageTextView.text = message
@@ -57,6 +61,8 @@ class ChatYourMessageCell: UITableViewCell {
         messageTextView.translatesAutoresizingMaskIntoConstraints = true
         messageTextView.isScrollEnabled = false
         messageTextView.contentInset = .zero
+        
+
     
 
         
