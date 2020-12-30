@@ -316,10 +316,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="jihun" width="260" height="260"/>
-        <image name="labBackground" width="520" height="1125"/>
-        <image name="youngjae" width="290" height="256"/>
-        <image name="yukyung" width="295" height="252"/>
+        <image name="jihun" width="130" height="130"/>
+        <image name="labBackground" width="260" height="562.5"/>
+        <image name="youngjae" width="145" height="128"/>
+        <image name="yukyung" width="147.5" height="126"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

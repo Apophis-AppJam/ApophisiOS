@@ -155,7 +155,7 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" text="여기에 메세지" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PYr-qB-rbO">
-                                        <rect key="frame" x="24" y="12" width="335" height="18"/>
+                                        <rect key="frame" x="24" y="13" width="335" height="17"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -163,7 +163,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.17255705599999999" green="0.17250087859999999" blue="0.17646950480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="PYr-qB-rbO" firstAttribute="top" secondItem="MrD-tK-ceE" secondAttribute="top" constant="8" id="828-xt-jKB"/>
+                                    <constraint firstItem="PYr-qB-rbO" firstAttribute="top" secondItem="MrD-tK-ceE" secondAttribute="top" constant="9" id="828-xt-jKB"/>
                                     <constraint firstAttribute="bottom" secondItem="MrD-tK-ceE" secondAttribute="bottom" constant="37" id="9nt-en-J9r"/>
                                     <constraint firstAttribute="trailing" secondItem="MrD-tK-ceE" secondAttribute="trailing" constant="12" id="Ixx-zi-qtk"/>
                                     <constraint firstItem="6Pp-XQ-5uT" firstAttribute="leading" secondItem="PYr-qB-rbO" secondAttribute="trailing" constant="12" id="QS5-rO-hLB"/>
