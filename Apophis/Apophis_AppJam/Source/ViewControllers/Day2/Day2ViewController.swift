@@ -100,6 +100,8 @@ class Day2ViewController: UIViewController {
         messageTextInputView.textColor = .init(red: 116/255, green: 116/255, blue: 116/255, alpha: 1)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         messageTextInputView.delegate = self
+        let padding = messageTextInputView.textContainer.lineFragmentPadding
+        messageTextInputView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
     }
     
     
