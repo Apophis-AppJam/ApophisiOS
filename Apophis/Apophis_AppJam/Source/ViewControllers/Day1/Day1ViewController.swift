@@ -229,7 +229,7 @@ extension Day1ViewController : UITextViewDelegate
         
         if textView.text == "텍스트를 입력하세요"
         {
-            
+
             messageTextInputView.text = ""
             textView.textColor = .white
         }
