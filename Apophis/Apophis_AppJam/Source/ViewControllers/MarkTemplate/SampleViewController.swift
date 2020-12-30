@@ -32,9 +32,6 @@ class SampleViewController: UIViewController {
 
     }
     
-    
-    
-    
     //MARK:- IBAction Part
     /// 버튼과 같은 동작을 선언하는 @IBAction 을 선언합니다 , IBAction 함수 명은 동사 형태로!!  // 함수명 lowerCamelCase 사용
     /// ex) @IBAction func answerSelectedButtonClicked(_ sender: Any) {  code .... }
@@ -52,12 +49,8 @@ class SampleViewController: UIViewController {
     ///         myTableView.delegate = self
     ///         myTableView.datasource = self
     ///    }
-    
-
 
 }
-
-
 //MARK:- extension 부분
 /// UICollectionViewDelegate 부분 처럼 외부 프로토콜을 채택하는 경우나, 외부 클래스 확장 할 때,  extension을 작성하는 부분입니다
 /// ex) extension ViewController : UICollectionViewDelegate {  code .... }

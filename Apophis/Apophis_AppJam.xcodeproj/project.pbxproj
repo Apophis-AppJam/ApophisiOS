@@ -32,6 +32,9 @@
 		FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B92599AF8500AAD1BA /* Day7.storyboard */; };
 		FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */; };
 		FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */; };
+		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
+		FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */; };
+		FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */; };
 		FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B692596EE1C00F4DFDF /* view.xib */; };
 		FDA98B6F2596FA4200F4DFDF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */; };
 		FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */; };
@@ -39,10 +42,17 @@
 		FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B7C25970D8A00F4DFDF /* SplashViewController.swift */; };
 		FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B822597104700F4DFDF /* ColorList.xcassets */; };
 		FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B852597133500F4DFDF /* NetworkResult.swift */; };
+		FDD0922A259AF58100B92529 /* sampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FDD09229259AF58100B92529 /* sampleVideo.mp4 */; };
+		FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0922D259B01AF00B92529 /* IntroNewsCommentCell.swift */; };
+		FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09232259B0B1900B92529 /* NewsCommentDataModel.swift */; };
+		FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */; };
+		FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */; };
 		FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */; };
 		FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */; };
 		FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */; };
 		FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */; };
+		FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE2C805259A2D32006659DA /* Intro.storyboard */; };
+		FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +85,9 @@
 		FD5207B92599AF8500AAD1BA /* Day7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day7.storyboard; sourceTree = "<group>"; };
 		FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDataModel.swift; sourceTree = "<group>"; };
 		FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageWaitingCell.swift; sourceTree = "<group>"; };
+		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
+		FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yukyungLabViewController.swift; sourceTree = "<group>"; };
+		FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jihunLabViewController.swift; sourceTree = "<group>"; };
 		FDA98B692596EE1C00F4DFDF /* view.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = view.xib; sourceTree = "<group>"; };
 		FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeAlert + UIView.swift"; sourceTree = "<group>"; };
@@ -82,10 +95,17 @@
 		FDA98B7C25970D8A00F4DFDF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		FDA98B822597104700F4DFDF /* ColorList.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorList.xcassets; sourceTree = "<group>"; };
 		FDA98B852597133500F4DFDF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		FDD09229259AF58100B92529 /* sampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampleVideo.mp4; sourceTree = "<group>"; };
+		FDD0922D259B01AF00B92529 /* IntroNewsCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsCommentCell.swift; sourceTree = "<group>"; };
+		FDD09232259B0B1900B92529 /* NewsCommentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCommentDataModel.swift; sourceTree = "<group>"; };
+		FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "scrollToBottom + UITableView.swift"; sourceTree = "<group>"; };
+		FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPhoneRingViewController.swift; sourceTree = "<group>"; };
 		FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GmarketFont + UIFont.swift"; sourceTree = "<group>"; };
 		FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "numberOfLines + UITextView.swift"; sourceTree = "<group>"; };
 		FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2ViewController.swift; sourceTree = "<group>"; };
 		FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
+		FDE2C805259A2D32006659DA /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,9 +313,20 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		FD6D0EBC259C4B8B00993BBC /* Lab */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */,
+				FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */,
+				FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */,
+			);
+			path = Lab;
+			sourceTree = "<group>";
+		};
 		FDA98B612596ED8600F4DFDF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				FDE2C804259A2691006659DA /* Intro */,
 				FD5207A82599AF4B00AAD1BA /* Day7 */,
 				FD5207A72599AF4700AAD1BA /* Day6 */,
 				FD5207A62599AF4400AAD1BA /* Day5 */,
@@ -320,6 +351,7 @@
 		FDA98B632596EDA200F4DFDF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FDD09229259AF58100B92529 /* sampleVideo.mp4 */,
 				FD0715752596E99700940094 /* Assets.xcassets */,
 				FDA98B822597104700F4DFDF /* ColorList.xcassets */,
 			);
@@ -339,11 +371,15 @@
 		FDA98B652596EDAE00F4DFDF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD6D0EBC259C4B8B00993BBC /* Lab */,
 				FD52079B2599AE7C00AAD1BA /* MarkTemplate */,
 				FD5207922599AC9000AAD1BA /* Chatting */,
+				FDE2C808259A2D6E006659DA /* Intro */,
 				FD52077A259997A100AAD1BA /* Day1 */,
 				FD52078325999C6400AAD1BA /* Day2 */,
 				FD52078425999C6700AAD1BA /* Day3 */,
+				FDAE10B1259A535200485A08 /* Day4 */,
+				FDAE10B2259A535700485A08 /* Day5 */,
 				FDA98B722597024600F4DFDF /* Splash */,
 				FD0715702596E99700940094 /* ViewController.swift */,
 			);
@@ -353,6 +389,7 @@
 		FDA98B662596EDB400F4DFDF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FDD09231259B0B0E00B92529 /* Intro */,
 				FD5207BC2599B77E00AAD1BA /* Chat */,
 			);
 			path = Models;
@@ -365,6 +402,7 @@
 				FDA98B7925970BA700F4DFDF /* TimeCalculate.swift */,
 				FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */,
 				FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */,
+				FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +430,54 @@
 				FDA98B7C25970D8A00F4DFDF /* SplashViewController.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		FDAE10B1259A535200485A08 /* Day4 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Day4;
+			sourceTree = "<group>";
+		};
+		FDAE10B2259A535700485A08 /* Day5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Day5;
+			sourceTree = "<group>";
+		};
+		FDD0922C259B019A00B92529 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FDD0922D259B01AF00B92529 /* IntroNewsCommentCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FDD09231259B0B0E00B92529 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				FDD09232259B0B1900B92529 /* NewsCommentDataModel.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		FDE2C804259A2691006659DA /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2C805259A2D32006659DA /* Intro.storyboard */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		FDE2C808259A2D6E006659DA /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				FDD0922C259B019A00B92529 /* Cells */,
+				FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */,
+				FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +542,7 @@
 				FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */,
 				FD52078D2599A60200AAD1BA /* GmarketSansTTFBold.ttf in Resources */,
 				FD52078E2599A60200AAD1BA /* GmarketSansTTFLight.ttf in Resources */,
+				FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */,
 				FD5207AA2599AF5900AAD1BA /* Day2.storyboard in Resources */,
 				FD5207B02599AF6800AAD1BA /* Day4.storyboard in Resources */,
 				FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */,
@@ -463,6 +550,7 @@
 				FD0715792596E99700940094 /* LaunchScreen.storyboard in Resources */,
 				FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */,
 				FD5207B62599AF7A00AAD1BA /* Day6.storyboard in Resources */,
+				FDD0922A259AF58100B92529 /* sampleVideo.mp4 in Resources */,
 				FD52078F2599A60200AAD1BA /* GmarketSansTTFMedium.ttf in Resources */,
 				FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */,
 				FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */,
@@ -527,18 +615,26 @@
 				FD5207952599ACBF00AAD1BA /* ChatYourMessageCell.swift in Sources */,
 				FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */,
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
+				FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */,
+				FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */,
+				FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,
+				FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */,
 				FD5207A12599AEBC00AAD1BA /* SampleViewController.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
+				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
 				FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */,
 				FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */,
 				FD5207992599ACCF00AAD1BA /* ChatMyMessageCell.swift in Sources */,
 				FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */,
 				FD52078725999C8F00AAD1BA /* Day1ViewController.swift in Sources */,
+				FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */,
+				FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */,
 				FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */,
+				FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */,
 				FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
