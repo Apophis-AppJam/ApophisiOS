@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */; };
+		069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */; };
 		AE2E82F5D36D7460962246C6 /* Pods_Apophis_AppJam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */; };
 		FD07156D2596E99700940094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD07156C2596E99700940094 /* AppDelegate.swift */; };
 		FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD07156E2596E99700940094 /* SceneDelegate.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CameraViewController.swift; sourceTree = "<group>"; };
+		069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CompassViewController.swift; sourceTree = "<group>"; };
 		2727856C1D01EC217465EB2F /* Pods-Apophis_AppJam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.release.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.release.xcconfig"; sourceTree = "<group>"; };
 		4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apophis_AppJam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23F09E174B44478E4702746 /* Pods-Apophis_AppJam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.debug.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				FD52078625999C8F00AAD1BA /* Day1ViewController.swift */,
+				069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */,
+				069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */,
 			);
 			path = Day1;
 			sourceTree = "<group>";
@@ -616,6 +622,8 @@
 				FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */,
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
 				FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */,
+				069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */,
+				069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */,
 				FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */,
 				FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
