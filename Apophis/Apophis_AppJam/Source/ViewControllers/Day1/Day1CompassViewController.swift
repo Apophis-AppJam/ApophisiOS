@@ -10,10 +10,16 @@ import CoreLocation
 
 class Day1CompassViewController: UIViewController, CLLocationManagerDelegate {
     
+    
+    //MARK:- IBOutlet Part
+
     @IBOutlet weak var compassBackground: UIImageView!
     @IBOutlet weak var compassBackBtn: UIButton!
     @IBOutlet weak var imgCompassArrow: UIImageView!
     @IBOutlet weak var imgCompass: UIImageView!
+    
+    
+    //MARK:- Variable Part
     
     // 나침반을 위한 변수
     let east = 90
@@ -23,6 +29,10 @@ class Day1CompassViewController: UIViewController, CLLocationManagerDelegate {
     var timer = Timer()
     var startTimer = false
     
+    
+    
+    //MARK:- Life Cycle Part
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +41,16 @@ class Day1CompassViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    //MARK:- IBAction Part
+    
+    
+    @IBAction func compassBackBtnAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    //MARK:- default Setting Function Part
+
     func viewSet(){
         compassBackBtn.setTitle("", for: .normal)
         compassBackground.image = UIImage(named: "bgCompass")
@@ -39,6 +59,7 @@ class Day1CompassViewController: UIViewController, CLLocationManagerDelegate {
         imgCompassArrow.alpha = 0.4
         imgCompass.image = UIImage(named: "imgCompass")
     }
+    
     
     func compassSet(){
         locManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -56,7 +77,10 @@ class Day1CompassViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    // MARK: CLLocationManagerDelegate
+    
+    
+    // MARK:- Function Part
+    // 나침반 관련 CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Location Manager failed: \(error)")
     }
@@ -66,6 +90,7 @@ class Day1CompassViewController: UIViewController, CLLocationManagerDelegate {
     func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
         return true
     }
+    
     
     
     // heading 값이 업데이트 될 때마다 호출되는 함수!
@@ -117,11 +142,6 @@ class Day1CompassViewController: UIViewController, CLLocationManagerDelegate {
         UIView.animate(withDuration: 0, animations: {
             self.imgCompass.transform = CGAffineTransform(rotationAngle: -.pi/2)
         })
-    }
-    
-    
-    @IBAction func compassBackBtnAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
     
     
