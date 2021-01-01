@@ -17,3 +17,24 @@ import UIKit
         self.layer.masksToBounds = true
     }
 }
+
+
+@IBDesignable public class RoundedUIImageView: UIImageView {
+
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+
+        self.layer.cornerRadius = self.frame.width / 2;
+        self.layer.masksToBounds = true
+    }
+}
+
+@IBDesignable public class RoundedUIButton: UIButton {
+
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+
+        self.layer.cornerRadius = self.frame.width / 2;
+        self.layer.masksToBounds = true
+    }
+}
