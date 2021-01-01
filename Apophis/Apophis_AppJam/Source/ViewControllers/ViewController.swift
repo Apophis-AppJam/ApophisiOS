@@ -6,13 +6,54 @@
 //
 
 import UIKit
-
+// 실험실 전용 뷰컨이라서 마구잡이로 쓸 예정임 !
 class ViewController: UIViewController {
-
+    
+    
+    
+    @IBOutlet weak var day1Button: UIButton!
+    @IBOutlet weak var day2Button: UIButton!
+    @IBOutlet weak var day3Button: UIButton!
+    @IBOutlet weak var day4Button: UIButton!
+    @IBOutlet weak var day5Button: UIButton!
+    @IBOutlet weak var day6Button: UIButton!
+    @IBOutlet weak var day7Button: UIButton!
+    @IBOutlet weak var HomeButton: UIButton!
+    @IBOutlet weak var yukyungButton: UIButton!
+    @IBOutlet weak var youngjaeButton: UIButton!
+    @IBOutlet weak var jihunButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
+        
+        day1Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
+        day2Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
+        day3Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
+        day4Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
+        day5Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
+        day6Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
+        day7Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
+        HomeButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
+        yukyungButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 14)
+        youngjaeButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 14)
+        jihunButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 14)
+        
+        
+        
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        
     }
 
     @IBAction func goToSample(_ sender: Any) {
@@ -44,6 +85,6 @@ class ViewController: UIViewController {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
 }
 
