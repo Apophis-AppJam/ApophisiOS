@@ -100,6 +100,8 @@ class Day2ViewController: UIViewController {
         messageTextInputView.textColor = .init(red: 116/255, green: 116/255, blue: 116/255, alpha: 1)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         messageTextInputView.delegate = self
+        let padding = messageTextInputView.textContainer.lineFragmentPadding
+        messageTextInputView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
     }
     
     
@@ -130,7 +132,7 @@ class Day2ViewController: UIViewController {
     @objc func keyboardWillShow(notification : Notification){
         if let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
          
-            self.messageInputAreaBottomConstraint.constant = keyboardSize.height
+            self.messageInputAreaBottomConstraint.constant = keyboardSize.height - 20
             UIView.animate(withDuration: 0 , animations: {
           
                 self.view.layoutIfNeeded()
@@ -258,7 +260,9 @@ extension Day2ViewController : UITextViewDelegate
         if textView.text.isEmpty {
             textView.text = "댓글을 입력해주세요"
             self.messageSendButton.isEnabled = false
-            self.messageSendButton.setBackgroundImage(UIImage(named: "chatIcSendUnactivate"), for: .normal)
+            self.messageSendButton.setBackgroundImage(UIImage(named: "ChatSendButtonDisabled"), for: .normal)
+            
+            messageInputAreaHeightConstraint.constant = 75
             
             textView.textColor = UIColor.init(red: 116/255, green: 116/255, blue: 116/255, alpha: 1)
         }
@@ -272,12 +276,12 @@ extension Day2ViewController : UITextViewDelegate
         
         if textView == self.messageTextInputView && textView.text != ""
         {
-            self.messageTextInputView.sizeToFit()
+//            self.messageTextInputView.sizeToFit()
             
             self.messageSendButton.isEnabled = true
-            self.messageSendButton.setBackgroundImage(UIImage(named: "chatIcSendActivate"), for: .normal)
+            self.messageSendButton.setBackgroundImage(UIImage(named: "ChatSendButtonEnabled"), for: .normal)
             
-            
+
             if self.messageTextInputView.numberOfLines() <= 8
             {
  
@@ -293,7 +297,7 @@ extension Day2ViewController : UITextViewDelegate
         if textView == self.messageTextInputView && textView.text == ""
         {
             self.messageSendButton.isEnabled = false
-            self.messageSendButton.setBackgroundImage(UIImage(named: "chatIcSendUnactivate"), for: .normal)
+            self.messageSendButton.setBackgroundImage(UIImage(named: "ChatSendButtonDisabled"), for: .normal)
 
         }
         

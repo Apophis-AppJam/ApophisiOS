@@ -39,16 +39,19 @@ class jihunLabViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
+    
+    
+    @IBAction func goToClockDay2(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Day2", bundle: nil)
+
+        guard let vc = storyboard.instantiateViewController(identifier: "Day2SelectTimeViewController") as? Day2SelectTimeViewController else  {return}
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+
     
 
 

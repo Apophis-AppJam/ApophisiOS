@@ -27,8 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = true
-        
+
         
         
         day1Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
@@ -51,6 +50,10 @@ class ViewController: UIViewController {
         
         
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        
     }
 
     @IBAction func goToSample(_ sender: Any) {
