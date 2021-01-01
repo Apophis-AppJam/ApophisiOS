@@ -23,7 +23,7 @@ class youngjaeLabViewController: UIViewController {
         guard let vc = storyboard.instantiateViewController(identifier: "Day1CompassViewController") as? Day1CompassViewController else  {return}
         
         vc.modalTransitionStyle = .crossDissolve
-//        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
     
