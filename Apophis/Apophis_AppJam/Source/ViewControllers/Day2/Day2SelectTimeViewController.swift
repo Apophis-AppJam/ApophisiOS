@@ -17,9 +17,13 @@ class Day2SelectTimeViewController: UIViewController {
     @IBOutlet weak var clockView: UIView!
     @IBOutlet weak var AMPMSelectSegment: UISegmentedControl!
     
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var setTimeTextField: UITextField!
+    
+    
     //MARK:- Variable Part
     
-    var hourList : [String] = []
+    var hourList : [String] = [
     var minuteList : [String] = []
 
     //MARK:- Constraint Part
