@@ -28,23 +28,10 @@ class IntroPhoneRingViewController: UIViewController {
         super.viewDidLoad()
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
 
+        // 1초마다 진동을 주게 됨
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
 
-        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { timer in
-            
-
-            
-            
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
-            
-            
-            
-            
-//            if self.commentCount == self.newsCommentTempList.count // temp 배열 떨어질때까지 하나씩 추가해봅시다
-//            {
-//                timer.invalidate()
-//            }
-            
-
         }
         
     }

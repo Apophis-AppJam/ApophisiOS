@@ -10,6 +10,7 @@
 		069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */; };
 		069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */; };
 		AE2E82F5D36D7460962246C6 /* Pods_Apophis_AppJam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */; };
+		FCC78909259B79CD00422CD4 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC78908259B79CD00422CD4 /* DrawingViewController.swift */; };
 		FD07156D2596E99700940094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD07156C2596E99700940094 /* AppDelegate.swift */; };
 		FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD07156E2596E99700940094 /* SceneDelegate.swift */; };
 		FD0715712596E99700940094 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715702596E99700940094 /* ViewController.swift */; };
@@ -55,6 +56,8 @@
 		FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */; };
 		FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE2C805259A2D32006659DA /* Intro.storyboard */; };
 		FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */; };
+		FDFC0A5E259F240A00DFD5CF /* Day2SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */; };
+		FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC0A61259F532B00DFD5CF /* makeCircleView + Designable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,7 @@
 		2727856C1D01EC217465EB2F /* Pods-Apophis_AppJam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.release.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.release.xcconfig"; sourceTree = "<group>"; };
 		4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apophis_AppJam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23F09E174B44478E4702746 /* Pods-Apophis_AppJam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.debug.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.debug.xcconfig"; sourceTree = "<group>"; };
+		FCC78908259B79CD00422CD4 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		FD0715692596E99700940094 /* Apophis_AppJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apophis_AppJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD07156C2596E99700940094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD07156E2596E99700940094 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
 		FDE2C805259A2D32006659DA /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsViewController.swift; sourceTree = "<group>"; };
+		FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SelectTimeViewController.swift; sourceTree = "<group>"; };
+		FDFC0A61259F532B00DFD5CF /* makeCircleView + Designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeCircleView + Designable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */,
+				FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */,
 			);
 			path = Day2;
 			sourceTree = "<group>";
@@ -232,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */,
+				FCC78908259B79CD00422CD4 /* DrawingViewController.swift */,
 			);
 			path = Day3;
 			sourceTree = "<group>";
@@ -404,6 +412,7 @@
 		FDA98B672596EDC600F4DFDF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FDFC0A60259F531500DFD5CF /* Designable */,
 				FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */,
 				FDA98B7925970BA700F4DFDF /* TimeCalculate.swift */,
 				FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */,
@@ -484,6 +493,14 @@
 				FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		FDFC0A60259F531500DFD5CF /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				FDFC0A61259F532B00DFD5CF /* makeCircleView + Designable.swift */,
+			);
+			path = Designable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -630,6 +647,7 @@
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,
 				FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */,
 				FD5207A12599AEBC00AAD1BA /* SampleViewController.swift in Sources */,
+				FCC78909259B79CD00422CD4 /* DrawingViewController.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
@@ -640,8 +658,10 @@
 				FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */,
 				FD52078725999C8F00AAD1BA /* Day1ViewController.swift in Sources */,
 				FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */,
+				FDFC0A5E259F240A00DFD5CF /* Day2SelectTimeViewController.swift in Sources */,
 				FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */,
 				FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */,
+				FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */,
 				FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */,
 				FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */,
 			);
