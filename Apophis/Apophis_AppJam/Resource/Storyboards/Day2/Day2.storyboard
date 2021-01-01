@@ -254,6 +254,13 @@
                                     <constraint firstAttribute="height" constant="60" id="fZe-ug-zxy"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatSendButtonEnabled" translatesAutoresizingMaskIntoConstraints="NO" id="J6O-yn-c3P">
+                                <rect key="frame" x="214" y="542" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Hqy-ip-BEv"/>
+                                    <constraint firstAttribute="width" constant="60" id="qMk-6q-AkC"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간 설정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ht6-9o-p21">
                                 <rect key="frame" x="101" y="618" width="60" height="17"/>
                                 <constraints>
@@ -300,13 +307,12 @@
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.67115563150000002" green="0.42824745180000001" blue="0.96083110569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatSendButtonEnabled" translatesAutoresizingMaskIntoConstraints="NO" id="J6O-yn-c3P">
-                                <rect key="frame" x="214" y="542" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Hqy-ip-BEv"/>
-                                    <constraint firstAttribute="width" constant="60" id="qMk-6q-AkC"/>
-                                </constraints>
-                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hwe-Fn-EHz">
+                                <rect key="frame" x="101" y="546" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d4s-4A-MmD"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
