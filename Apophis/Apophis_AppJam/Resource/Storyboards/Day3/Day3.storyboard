@@ -215,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="-4733.3333333333339" y="-307.36607142857139"/>
         </scene>
-        <!--Drawing View Controller-->
+        <!--Day3 Drawing View Controller-->
         <scene sceneID="cEz-P0-nEt">
             <objects>
-                <viewController restorationIdentifier="DrawingViewController" storyboardIdentifier="DrawingViewController" id="oWk-o6-0CI" customClass="DrawingViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Day3DrawingViewController" storyboardIdentifier="Day3DrawingViewController" id="oWk-o6-0CI" customClass="Day3DrawingViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LdN-sp-cf2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

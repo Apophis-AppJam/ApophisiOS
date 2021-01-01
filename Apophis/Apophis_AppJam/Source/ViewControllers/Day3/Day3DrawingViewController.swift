@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DrawingViewController: UIViewController {
+class Day3DrawingViewController: UIViewController {
 
     //MARK:- IBOutlet Part
     /// Label, ColelctionView, TextField, ImageView 등 @IBOutlet 변수들을 선언합니다.  // 변수명 lowerCamelCase 사용
@@ -138,15 +138,20 @@ class DrawingViewController: UIViewController {
             
             if isLinked[0] && isLinked[1] {
                 print("둘다 True",isLinked)
-                //이어진 사진으로 변경되는 코드
                 
-                    
+                //이어진 사진으로 변경되는 코드
                 UIView.animate(withDuration: 2 , animations: {
                   
                     self.view.layoutIfNeeded()
                     self.canvasImageView.image = UIImage(named: "3DayBackgroundImage")
 
-                }, completion: nil)
+                }, completion: {_ in
+                    
+                    self.dismiss(animated: true)
+                    
+                })
+                
+                
                     
                 
                 
