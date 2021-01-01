@@ -222,14 +222,23 @@
                                     <action selector="newsButtonClicked:" destination="gYh-Cu-WCh" eventType="touchUpInside" id="y8L-GT-u2T"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjB-nk-hfN">
+                                <rect key="frame" x="185.5" y="380" width="43" height="30"/>
+                                <state key="normal" title="시계 뷰"/>
+                                <connections>
+                                    <action selector="goToClockDay2:" destination="gYh-Cu-WCh" eventType="touchUpInside" id="A5c-It-9m4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l1E-Af-1F9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="r7W-wQ-o9f" firstAttribute="centerX" secondItem="jwV-cm-eFP" secondAttribute="centerX" id="2hc-eL-e5Q"/>
                             <constraint firstItem="UMx-kX-WRd" firstAttribute="top" secondItem="rbH-To-e3P" secondAttribute="bottom" constant="40" id="E50-yg-Xkw"/>
+                            <constraint firstItem="JjB-nk-hfN" firstAttribute="centerX" secondItem="jwV-cm-eFP" secondAttribute="centerX" id="XBz-la-Q1h"/>
                             <constraint firstItem="rbH-To-e3P" firstAttribute="top" secondItem="r7W-wQ-o9f" secondAttribute="bottom" constant="100" id="Yju-FY-ldT"/>
                             <constraint firstItem="UMx-kX-WRd" firstAttribute="centerX" secondItem="jwV-cm-eFP" secondAttribute="centerX" id="Zss-XW-UQe"/>
+                            <constraint firstItem="JjB-nk-hfN" firstAttribute="top" secondItem="UMx-kX-WRd" secondAttribute="bottom" constant="50" id="aLy-h4-JxX"/>
                             <constraint firstItem="rbH-To-e3P" firstAttribute="centerX" secondItem="jwV-cm-eFP" secondAttribute="centerX" id="l7e-xT-EGF"/>
                             <constraint firstItem="r7W-wQ-o9f" firstAttribute="top" secondItem="l1E-Af-1F9" secondAttribute="top" constant="60" id="tDp-HK-mYN"/>
                         </constraints>
@@ -490,6 +499,7 @@
         </scene>
     </scenes>
     <resources>
+<<<<<<< HEAD
         <image name="WhiteMessageBackgroundImage" width="197" height="43"/>
         <image name="jihun" width="260" height="260"/>
         <image name="labBackground" width="520" height="1125"/>
@@ -498,6 +508,12 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+=======
+        <image name="jihun" width="130" height="130"/>
+        <image name="labBackground" width="260" height="562.5"/>
+        <image name="youngjae" width="145" height="128"/>
+        <image name="yukyung" width="147.5" height="126"/>
+>>>>>>> 72243cda492d60e5aedf6d854b906dfa19e9f276
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
