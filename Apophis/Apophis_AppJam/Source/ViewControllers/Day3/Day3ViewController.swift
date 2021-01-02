@@ -244,7 +244,7 @@ extension Day3ViewController : UITableViewDataSource
                 
         }, completion: {_ in
             
-            let uvc = self.storyboard!.instantiateViewController(withIdentifier: "DrawingViewController")
+            let uvc = self.storyboard!.instantiateViewController(withIdentifier: "Day3DrawingViewController")
             
             uvc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
 
