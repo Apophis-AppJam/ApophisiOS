@@ -279,11 +279,11 @@
                                 <color key="textColor" name="Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXU-hj-JbD" userLabel="clockView" customClass="RoundedUIView" customModule="Apophis_AppJam" customModuleProvider="target">
-                                <rect key="frame" x="75.5" y="87" width="224" height="224"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXU-hj-JbD" userLabel="clockView">
+                                <rect key="frame" x="87.5" y="87" width="200" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0시 00분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tx0-rk-GgY">
-                                        <rect key="frame" x="66.5" y="97.5" width="91.5" height="29"/>
+                                        <rect key="frame" x="54.5" y="85.5" width="91.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" name="Color"/>
                                         <nil key="highlightedColor"/>
@@ -296,7 +296,7 @@
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oDu-oi-iUU">
-                                <rect key="frame" x="127.5" y="335" width="120" height="32"/>
+                                <rect key="frame" x="127.5" y="311" width="120" height="32"/>
                                 <color key="backgroundColor" red="0.6705882352941176" green="0.4392156862745098" blue="0.96078431372549022" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5IU-AK-ge5"/>
@@ -312,21 +312,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6x-fE-BXb" userLabel="circleAnimationView">
+                                <rect key="frame" x="77.5" y="77" width="220" height="220"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d4s-4A-MmD"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="37t-qq-lJF" firstAttribute="leading" secondItem="d4s-4A-MmD" secondAttribute="leading" id="10t-D9-F5w"/>
-                            <constraint firstItem="rXU-hj-JbD" firstAttribute="width" secondItem="uSG-o5-f8D" secondAttribute="width" multiplier="224/375" id="EhT-F9-UBv"/>
+                            <constraint firstItem="d4s-4A-MmD" firstAttribute="trailing" secondItem="rXU-hj-JbD" secondAttribute="trailing" constant="87.5" id="6Vp-ZG-9vA"/>
+                            <constraint firstItem="R6x-fE-BXb" firstAttribute="trailing" secondItem="rXU-hj-JbD" secondAttribute="trailing" constant="10" id="GGJ-bl-0q8"/>
                             <constraint firstItem="GGr-FP-CHP" firstAttribute="top" secondItem="J6O-yn-c3P" secondAttribute="bottom" constant="12" id="HG9-eC-swm"/>
                             <constraint firstItem="x6R-td-epR" firstAttribute="leading" secondItem="d4s-4A-MmD" secondAttribute="leading" constant="101" id="JF5-PL-vgQ"/>
+                            <constraint firstItem="rXU-hj-JbD" firstAttribute="leading" secondItem="d4s-4A-MmD" secondAttribute="leading" constant="87.5" id="Lwr-hC-PJN"/>
                             <constraint firstAttribute="bottom" secondItem="37t-qq-lJF" secondAttribute="bottom" id="NDn-ih-mkP"/>
+                            <constraint firstItem="R6x-fE-BXb" firstAttribute="top" secondItem="rXU-hj-JbD" secondAttribute="top" constant="-10" id="NQP-Bw-Sxy"/>
                             <constraint firstItem="d4s-4A-MmD" firstAttribute="bottom" secondItem="ht6-9o-p21" secondAttribute="bottom" constant="32" id="OQK-Qg-RyY"/>
                             <constraint firstItem="DaM-tP-36I" firstAttribute="top" secondItem="d4s-4A-MmD" secondAttribute="top" constant="-44" id="ORB-9x-eMd"/>
                             <constraint firstItem="rXU-hj-JbD" firstAttribute="top" secondItem="DaM-tP-36I" secondAttribute="bottom" constant="31" id="Q2k-oi-via"/>
                             <constraint firstItem="d4s-4A-MmD" firstAttribute="bottom" secondItem="GGr-FP-CHP" secondAttribute="bottom" constant="32" id="VkU-15-aB5"/>
                             <constraint firstItem="37t-qq-lJF" firstAttribute="trailing" secondItem="d4s-4A-MmD" secondAttribute="trailing" id="XF0-7b-6eV"/>
+                            <constraint firstItem="R6x-fE-BXb" firstAttribute="leading" secondItem="rXU-hj-JbD" secondAttribute="leading" constant="-10" id="Yth-k3-3w2"/>
                             <constraint firstItem="oDu-oi-iUU" firstAttribute="centerX" secondItem="uSG-o5-f8D" secondAttribute="centerX" id="aHa-Ra-f84"/>
+                            <constraint firstItem="R6x-fE-BXb" firstAttribute="bottom" secondItem="rXU-hj-JbD" secondAttribute="bottom" constant="10" id="bOs-Se-kw2"/>
                             <constraint firstItem="rXU-hj-JbD" firstAttribute="centerX" secondItem="uSG-o5-f8D" secondAttribute="centerX" id="c7e-dO-DhB"/>
                             <constraint firstItem="hwe-Fn-EHz" firstAttribute="width" secondItem="x6R-td-epR" secondAttribute="width" id="gE1-AA-mV2"/>
                             <constraint firstItem="d4s-4A-MmD" firstAttribute="trailing" secondItem="GGr-FP-CHP" secondAttribute="trailing" constant="101" id="ibo-W4-Kl5"/>
@@ -345,6 +353,7 @@
                     <connections>
                         <outlet property="AMPMSelectSegment" destination="oDu-oi-iUU" id="yC5-dk-BRO"/>
                         <outlet property="backgroundImageView" destination="37t-qq-lJF" id="nVS-IT-Eab"/>
+                        <outlet property="circleAnimationView" destination="R6x-fE-BXb" id="51V-Z8-Qpk"/>
                         <outlet property="clockView" destination="rXU-hj-JbD" id="PYZ-7Z-3o6"/>
                         <outlet property="setTimeTextField" destination="hwe-Fn-EHz" id="zrg-vM-4sP"/>
                         <outlet property="timeLabel" destination="Tx0-rk-GgY" id="E8F-tg-hdL"/>
