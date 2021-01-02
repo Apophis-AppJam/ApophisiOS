@@ -56,6 +56,7 @@
 		FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */; };
 		FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE2C805259A2D32006659DA /* Intro.storyboard */; };
 		FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */; };
+		FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */; };
 		FDFC0A5E259F240A00DFD5CF /* Day2SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */; };
 		FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC0A61259F532B00DFD5CF /* makeCircleView + Designable.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,8 @@
 		FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
 		FDE2C805259A2D32006659DA /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsViewController.swift; sourceTree = "<group>"; };
+		FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "circleProgressView + UIView.swift"; sourceTree = "<group>"; };
+		FDFB701C25A0ACAB006EEC04 /* Apophis_AppJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apophis_AppJam.entitlements; sourceTree = "<group>"; };
 		FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SelectTimeViewController.swift; sourceTree = "<group>"; };
 		FDFC0A61259F532B00DFD5CF /* makeCircleView + Designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeCircleView + Designable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +171,7 @@
 		FD07156B2596E99700940094 /* Apophis_AppJam */ = {
 			isa = PBXGroup;
 			children = (
+				FDFB701C25A0ACAB006EEC04 /* Apophis_AppJam.entitlements */,
 				FD0715842596EA9C00940094 /* Resource */,
 				FD0715832596EA5900940094 /* Source */,
 				FD07157A2596E99700940094 /* Info.plist */,
@@ -418,6 +422,7 @@
 				FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */,
 				FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */,
 				FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */,
+				FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -661,6 +666,7 @@
 				FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */,
 				FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */,
 				FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */,
+				FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */,
 				FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */,
 				FC92374C259E6BEE0039AB32 /* audioRecordViewController.swift in Sources */,
 				FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */,
@@ -811,6 +817,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Apophis_AppJam/Apophis_AppJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020122601;
 				DEVELOPMENT_TEAM = L9D5M5DM3Y;
@@ -820,7 +827,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sopt.Apophis;
+				PRODUCT_BUNDLE_IDENTIFIER = sopt.apophis.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -833,6 +840,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Apophis_AppJam/Apophis_AppJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020122601;
 				DEVELOPMENT_TEAM = L9D5M5DM3Y;
@@ -842,7 +850,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sopt.Apophis;
+				PRODUCT_BUNDLE_IDENTIFIER = sopt.apophis.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
