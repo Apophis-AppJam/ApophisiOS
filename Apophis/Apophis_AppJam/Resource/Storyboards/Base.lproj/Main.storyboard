@@ -501,12 +501,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcq-aB-kDj">
+                                <rect key="frame" x="187.5" y="230" width="39" height="30"/>
+                                <state key="normal" title="나침반"/>
+                                <connections>
+                                    <action selector="compassButtonClicked:" destination="OH6-KD-4rn" eventType="touchUpInside" id="ZIa-i6-Iys"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9I-7A-OWW">
+                                <rect key="frame" x="181" y="300" width="52" height="30"/>
+                                <state key="normal" title="사진찍기"/>
+                                <connections>
+                                    <action selector="cameraButtonClicked:" destination="OH6-KD-4rn" eventType="touchUpInside" id="6Dr-ZE-5iH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hOz-Mz-0Rv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZnL-GS-tmb" firstAttribute="centerX" secondItem="H75-Hb-JGW" secondAttribute="centerX" id="8dx-Ji-jV4"/>
                             <constraint firstItem="ZnL-GS-tmb" firstAttribute="top" secondItem="hOz-Mz-0Rv" secondAttribute="top" constant="60" id="9hh-we-sGH"/>
+                            <constraint firstItem="u9I-7A-OWW" firstAttribute="top" secondItem="dcq-aB-kDj" secondAttribute="bottom" constant="40" id="AOa-1m-323"/>
+                            <constraint firstItem="dcq-aB-kDj" firstAttribute="top" secondItem="ZnL-GS-tmb" secondAttribute="bottom" constant="100" id="BMJ-XK-xEm"/>
+                            <constraint firstItem="dcq-aB-kDj" firstAttribute="centerX" secondItem="H75-Hb-JGW" secondAttribute="centerX" id="SpS-tE-NKP"/>
+                            <constraint firstItem="u9I-7A-OWW" firstAttribute="centerX" secondItem="H75-Hb-JGW" secondAttribute="centerX" id="nPO-PU-KEQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FXh-5F-2bm"/>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644944825A0C99600ABA62E /* ChatButtonCell.swift */; };
+		069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */; };
+		069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */; };
+		069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */; };
 		AE2E82F5D36D7460962246C6 /* Pods_Apophis_AppJam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */; };
 		FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC394F3E259D110500E70307 /* ColorViewController.swift */; };
 		FC92374C259E6BEE0039AB32 /* audioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */; };
@@ -62,6 +66,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0644944825A0C99600ABA62E /* ChatButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatButtonCell.swift; sourceTree = "<group>"; };
+		069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CameraViewController.swift; sourceTree = "<group>"; };
+		069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CompassViewController.swift; sourceTree = "<group>"; };
+		069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ChatMessageDataModel.swift; sourceTree = "<group>"; };
 		2727856C1D01EC217465EB2F /* Pods-Apophis_AppJam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.release.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.release.xcconfig"; sourceTree = "<group>"; };
 		4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apophis_AppJam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23F09E174B44478E4702746 /* Pods-Apophis_AppJam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.debug.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +141,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		069E95DD25A07489006C36D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0644944825A0C99600ABA62E /* ChatButtonCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B086E4AF5CA333E8748461F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +239,10 @@
 		FD52077A259997A100AAD1BA /* Day1 */ = {
 			isa = PBXGroup;
 			children = (
+				069E95DD25A07489006C36D6 /* Cells */,
 				FD52078625999C8F00AAD1BA /* Day1ViewController.swift */,
+				069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */,
+				069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */,
 			);
 			path = Day1;
 			sourceTree = "<group>";
@@ -325,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */,
+				069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -640,16 +660,21 @@
 				FD5207772599960800AAD1BA /* SampleView.swift in Sources */,
 				FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */,
 				FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */,
+				069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */,
 				FD5207952599ACBF00AAD1BA /* ChatYourMessageCell.swift in Sources */,
 				FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */,
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
 				FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */,
+				069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */,
+				069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */,
 				FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */,
 				FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,
 				FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */,
 				FD5207A12599AEBC00AAD1BA /* SampleViewController.swift in Sources */,
+				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
+				0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */,
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
@@ -820,7 +845,7 @@
 				CODE_SIGN_ENTITLEMENTS = Apophis_AppJam/Apophis_AppJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020122601;
-				DEVELOPMENT_TEAM = L9D5M5DM3Y;
+				DEVELOPMENT_TEAM = BW4C5ST64K;
 				INFOPLIST_FILE = Apophis_AppJam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -843,7 +868,7 @@
 				CODE_SIGN_ENTITLEMENTS = Apophis_AppJam/Apophis_AppJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020122601;
-				DEVELOPMENT_TEAM = L9D5M5DM3Y;
+				DEVELOPMENT_TEAM = BW4C5ST64K;
 				INFOPLIST_FILE = Apophis_AppJam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
