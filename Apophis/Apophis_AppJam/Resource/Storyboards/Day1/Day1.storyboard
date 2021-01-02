@@ -136,6 +136,44 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChatButtonCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatButtonCell" id="mdS-VO-3Ca" customClass="ChatButtonCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="299" width="375" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mdS-VO-3Ca" id="Bq4-CO-pRy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebn-9I-eGd">
+                                                    <rect key="frame" x="16" y="13" width="42" height="42.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ebn-9I-eGd" secondAttribute="height" multiplier="1:1" id="ILr-GX-QEa"/>
+                                                        <constraint firstAttribute="width" constant="42" id="kpF-CB-Hz4"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="ChatButtonAction:" destination="mdS-VO-3Ca" eventType="touchUpInside" id="0Yx-Mu-8Za"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.16859221460000001" green="0.1685668528" blue="0.1726828218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="ebn-9I-eGd" firstAttribute="top" secondItem="Bq4-CO-pRy" secondAttribute="top" constant="13" id="stN-g7-IBe"/>
+                                                <constraint firstItem="ebn-9I-eGd" firstAttribute="leading" secondItem="Bq4-CO-pRy" secondAttribute="leading" constant="16" id="vZA-Lc-ga1"/>
+                                                <constraint firstAttribute="bottom" secondItem="ebn-9I-eGd" secondAttribute="bottom" id="zhg-03-RAj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ChatFuncButton" destination="ebn-9I-eGd" id="4e8-Yk-Imx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kwh-GX-OZg">
+                                        <rect key="frame" x="0.0" y="354.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kwh-GX-OZg" id="SLP-Cv-hrf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wnw-2P-fuC" userLabel="messageInputAreaView">
@@ -203,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucj-0X-dKp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242.40000000000001" y="-83.208395802098963"/>
+            <point key="canvasLocation" x="-215" y="-363"/>
         </scene>
         <!--Day1 Camera View Controller-->
         <scene sceneID="X0m-Cw-LEE">
@@ -255,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfR-fv-Yy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-420" y="945.87706146926541"/>
+            <point key="canvasLocation" x="783" y="703"/>
         </scene>
         <!--Day1 Compass View Controller-->
         <scene sceneID="vbb-aG-NNu">
@@ -269,14 +307,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvm-Kb-z2L">
-                                <rect key="frame" x="174" y="98" width="27" height="520"/>
+                                <rect key="frame" x="174" y="101" width="27" height="520"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rvm-Kb-z2L" secondAttribute="height" multiplier="27:520" id="61g-Vc-dcn"/>
                                     <constraint firstAttribute="width" constant="27" id="A1v-8M-f6f"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqs-8d-QJO">
-                                <rect key="frame" x="170" y="50" width="35" height="18"/>
+                                <rect key="frame" x="172" y="50" width="31.5" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="동쪽">
                                         <attributes>
@@ -289,7 +327,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygg-TX-p3G">
-                                <rect key="frame" x="73.5" y="244" width="228" height="228"/>
+                                <rect key="frame" x="73.5" y="247" width="228" height="228"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ygg-TX-p3G" secondAttribute="height" multiplier="1:1" id="HOd-zk-RPP"/>
                                     <constraint firstAttribute="width" constant="228" id="P6p-zs-kAR"/>
@@ -332,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOd-7f-UNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="607" y="690"/>
+            <point key="canvasLocation" x="-215" y="703"/>
         </scene>
     </scenes>
     <resources>
