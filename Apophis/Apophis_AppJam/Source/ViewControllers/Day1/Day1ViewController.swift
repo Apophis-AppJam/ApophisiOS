@@ -25,7 +25,10 @@ class Day1ViewController: UIViewController {
     
     //  메세지 리스트
     var messageList : [Day1ChatMessageDataModel] = []
+    // 찍은 사진을 담아둘 변수
+    var pictureImage: UIImage!
     
+    var checkImage: Bool = false
     
     //MARK:- Constraint Part
     
@@ -49,6 +52,19 @@ class Day1ViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        addImageObserver()
+        
+        if checkImage {
+            let indexPath = IndexPath.init(row: 7, section: 0)
+            chatTableView.insertRows(at: [indexPath] , with: .none)
+            chatTableView.reloadRows(at: [indexPath] , with: .none)
+            print("여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기")
+            print(messageList)
+            print(pictureImage)
+            
+        }
+    }
     
     
     //MARK:- IBAction Part
@@ -102,7 +118,9 @@ class Day1ViewController: UIViewController {
             Day1ChatMessageDataModel(message: "그냥, 방금 뉴스 봤어? 지구가 멸망한다길래 아무 번호로나 전화해봤어. 꼭 한 번쯤 해보고 싶었거든", isLastMessage: false, isMine: false, Day1Func: 0),
             Day1ChatMessageDataModel(message: "넌 누구야?", isLastMessage: false, isMine: true, Day1Func: 0),
             Day1ChatMessageDataModel(message: "시끄럽고, 나침반이나 켜보싈?", isLastMessage: false, isMine: false, Day1Func: 0),
-            Day1ChatMessageDataModel(message: "", isLastMessage: false, isMine: false, Day1Func: 1)
+            Day1ChatMessageDataModel(message: "", isLastMessage: false, isMine: false, Day1Func: 1),
+            Day1ChatMessageDataModel(message: "사진이나 찍으싈?", isLastMessage: false, isMine: false, Day1Func: 0),
+            Day1ChatMessageDataModel(message: "", isLastMessage: false, isMine: false, Day1Func: 2)
         ])
         
     }
@@ -147,6 +165,19 @@ class Day1ViewController: UIViewController {
     }
     
     
+    private func addImageObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getImage(_ :)), name: .sendImage, object: nil)
+    }
+    
+    @objc func getImage(_ notification: Notification){
+        guard let image = notification.userInfo?["image"] as? UIImage? else { return }
+        pictureImage = image
+        self.messageList.append(contentsOf: [
+                                    Day1ChatMessageDataModel(message: "", isLastMessage: false, isMine: false, Day1Func: 5)])
+        
+        checkImage = true
+    }
+    
     
 }
 
@@ -189,31 +220,45 @@ extension Day1ViewController : UITableViewDataSource
                     tableView.dequeueReusableCell(withIdentifier: "ChatButtonCell", for: indexPath)
                     as? ChatButtonCell
             else {return UITableViewCell() }
-          
+            
             ChatButtonCell.viewController = self
             
             ChatButtonCell.index = indexPath.row
             ChatButtonCell.funcNum = messageList[indexPath.row].Day1Func
-                
+            
             ChatButtonCell.setChatButton(ImgName: "btnCompass")
             
             return ChatButtonCell
         }
-        // 나침반을 부르는 경우
+        // 사진 기능을 부르는 경우
         else if(messageList[indexPath.row].Day1Func == 2){
             guard let ChatButtonCell =
                     tableView.dequeueReusableCell(withIdentifier: "ChatButtonCell", for: indexPath)
                     as? ChatButtonCell
             else {return UITableViewCell() }
-          
+            
             ChatButtonCell.viewController = self
             
             ChatButtonCell.index = indexPath.row
             ChatButtonCell.funcNum = messageList[indexPath.row].Day1Func
-                
-            ChatButtonCell.setChatButton(ImgName: "btnCompass")
             
+            ChatButtonCell.setChatButton(ImgName: "btnPhoto")
+            
+            
+            print("끼야아아아아아악",messageList)
             return ChatButtonCell
+        }
+        
+        // 사진을 찍고난 뒤 사진뷰를 불러오는 경우
+        else if(messageList[indexPath.row].Day1Func == 5){
+            guard let Day1ImageViewCell =
+                    tableView.dequeueReusableCell(withIdentifier: "Day1ImageViewCell", for: indexPath)
+                    as? Day1ImageViewCell
+            else {return UITableViewCell() }
+            
+            Day1ImageViewCell.pictureImage = pictureImage
+            
+            return Day1ImageViewCell
         }
         
         else // 아포니머스 메세지인 경우
@@ -245,6 +290,8 @@ extension Day1ViewController : UITableViewDataSource
         )
         
     }
+    
+    
     
     
 }
