@@ -24,6 +24,10 @@ class Day2ViewController: UIViewController {
     //  메세지 리스트
     var messageList : [ChatMessageDataModel] = []
     
+    var isUserEnterAnswer : Bool = false
+    
+    var isTextFieldEnabled : Bool = false
+    
 
     //MARK:- Constraint Part
 
@@ -51,6 +55,7 @@ class Day2ViewController: UIViewController {
         tableViewDefaultSetting()
         addTapAction()
         etcDefaultSetting()
+        disableTextField(isEnable: isTextFieldEnabled)
         
         self.navigationController?.navigationBar.isHidden = true
 
@@ -71,6 +76,31 @@ class Day2ViewController: UIViewController {
 
     
     @IBAction func messageButtonClicked(_ sender: Any) {
+        
+        
+        // 서버 통신이 이 부분에서 붙어야 함
+        // 우선은 클라측에서만 뷰 작업 진행중
+        
+
+//        let lastIndex =  IndexPath(indexes: [messageList.count - 2,messageList.count - 1])
+        let lastIndex =  IndexPath(row: messageList.count - 1, section: 0)
+        
+        
+        messageList.remove(at: messageList.count - 1)
+        messageList.append(ChatMessageDataModel(message: messageTextInputView.text,
+                                                isLastMessage: false,
+                                                isMine: true))
+        
+        isUserEnterAnswer = true
+
+        chatTableView.reloadRows(at: [lastIndex], with: .none)
+        
+        messageTextInputView.text = ""
+        textViewDidChange(messageTextInputView)
+        
+        
+        
+        
     }
     
     //MARK:- default Setting Function Part
@@ -81,6 +111,8 @@ class Day2ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name:UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name:UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedUserSelect), name: NSNotification.Name("receivedUserSelect"), object: nil)
 
     }
     
@@ -90,6 +122,7 @@ class Day2ViewController: UIViewController {
         chatTableView.delegate = self
         chatTableView.dataSource = self
         chatTableView.separatorStyle = .none
+        chatTableView.allowsSelection = true
     }
 
     
@@ -102,17 +135,66 @@ class Day2ViewController: UIViewController {
         messageTextInputView.delegate = self
         let padding = messageTextInputView.textContainer.lineFragmentPadding
         messageTextInputView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
+        
+        
+        
+        
+        // 채팅창 닫기버튼 만들기
+        let toolBar = UIToolbar()
+        
+        toolBar.sizeToFit()
+        
+        
+        let normalAttributes : [NSAttributedString.Key: Any] = [
+            .font : UIFont.gmarketFont(weight: .Medium, size: 14),
+            .foregroundColor : UIColor.white
+            ]
+
+
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+
+        let button = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(dismissKeyBoard))
+        button.setTitleTextAttributes(normalAttributes, for: .normal)
+        
+        
+        
+        toolBar.setItems([flexSpace,button], animated: true)
+        toolBar.isUserInteractionEnabled = true
+
+        toolBar.tintColor = .white
+
+        toolBar.barTintColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
+        
+        messageTextInputView.inputAccessoryView = toolBar
+        
+
+        
+        
+        
+        
+        
+        
+        
     }
     
     
     func setDummyMessage() // 서버 붙이기 이전이라 억지로 메세지 주입하는 것 , 서버 나오면 제거하고 서버에서 받아오면 됨
     {
         messageList.append(contentsOf: [
-            ChatMessageDataModel(message: "안녕! 미안 방금 정신없었지?", isLastMessage: false, isMine: false),
-            ChatMessageDataModel(message: "그냥, 방금 뉴스 봤어? 지구가 멸망한다길래 아무 번호로나 전화해봤어. 꼭 한 번쯤 해보고 싶었거든", isLastMessage: false, isMine: false),
-            ChatMessageDataModel(message: "넌 누구야?", isLastMessage: false, isMine: true)
+            ChatMessageDataModel(message: "정신없지? 시작하기 전에 물 한 잔 마시고 오는거 어때?", isLastMessage: true, isMine: false),
+            ChatMessageDataModel(message: "", isLastMessage: true, isMine: true)
         ])
         
+        
+    }
+    
+    func setDummyMessage2()
+    {
+        messageList.append(contentsOf: [
+            ChatMessageDataModel(message: "정신없지? 시작하기 전에 물 한 잔 마시고 오는거 어때?", isLastMessage: true, isMine: false),
+            ChatMessageDataModel(message: "", isLastMessage: true, isMine: true)
+        ])
     }
     
     
@@ -123,9 +205,9 @@ class Day2ViewController: UIViewController {
     
     func addTapAction()
     {
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
-        
-        view.addGestureRecognizer(tap)
+//        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+//
+//        view.addGestureRecognizer(tap)
 
     }
     
@@ -155,6 +237,33 @@ class Day2ViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @objc func receivedUserSelect(notification : NSNotification)
+    {
+        let userSelect = notification.object as? String ?? ""
+        
+        self.messageTextInputView.text = userSelect
+        self.messageTextInputView.textColor = .white
+        textViewDidChange(messageTextInputView)
+        
+    }
+    
+    
+    func disableTextField(isEnable: Bool)
+    {
+        if isEnable == true
+        {
+            messageTextInputView.isEditable = true
+            messageTextInputView.isSelectable = true
+
+        }
+        else
+        {
+            messageTextInputView.isEditable = false
+            messageTextInputView.isSelectable = false
+        
+ 
+        }
+    }
 
 
 }
@@ -166,6 +275,10 @@ class Day2ViewController: UIViewController {
 
 extension Day2ViewController: UITableViewDelegate
 {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("테이블셀눌림",indexPath.row)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -182,14 +295,34 @@ extension Day2ViewController : UITableViewDataSource
         
         if messageList[indexPath.row].isMine == true // 나의 메세지인 경우
         {
-            guard let myMessageCell =
-                    tableView.dequeueReusableCell(withIdentifier: "ChatMyMessageCell", for: indexPath)
-                    as? ChatMyMessageCell
-                    else {return UITableViewCell() }
             
-            myMessageCell.setMessage(message: messageList[indexPath.row].message)
-            
-            return myMessageCell
+            if isUserEnterAnswer == true
+            {
+                guard let myMessageCell =
+                        tableView.dequeueReusableCell(withIdentifier: "ChatMyMessageCell", for: indexPath)
+                        as? ChatMyMessageCell
+                        else {return UITableViewCell() }
+                
+                myMessageCell.setMessage(message: messageList[indexPath.row].message)
+                
+                return myMessageCell
+            }
+            else
+            {
+                
+                
+                guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
+                        as? Day2selectAnswerCell
+                        else {return UITableViewCell() }
+                
+                selectCell.setSelectList(selectList: ["응 마셨어.","딱히, 괜찮아."])
+                selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+                selectCell.selectionStyle = .none
+                
+                return selectCell
+                
+            }
+
         }
         
         else // 아포니머스 메세지인 경우
@@ -211,7 +344,7 @@ extension Day2ViewController : UITableViewDataSource
         cell.alpha = 0
         UIView.animate(
             withDuration: 1,
-            delay: 1 * Double(indexPath.row),
+            delay: 0.7 * Double(indexPath.row),
             options: [.curveEaseInOut],
             animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0)

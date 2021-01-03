@@ -57,6 +57,9 @@
 		FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE2C805259A2D32006659DA /* Intro.storyboard */; };
 		FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */; };
 		FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */; };
+		FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701F25A0D33C006EEC04 /* ColorList.swift */; };
+		FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */; };
+		FDFB702825A206B1006EEC04 /* Day2SelectListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB702725A206B1006EEC04 /* Day2SelectListCollectionCell.swift */; };
 		FDFC0A5E259F240A00DFD5CF /* Day2SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */; };
 		FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC0A61259F532B00DFD5CF /* makeCircleView + Designable.swift */; };
 /* End PBXBuildFile section */
@@ -117,6 +120,9 @@
 		FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsViewController.swift; sourceTree = "<group>"; };
 		FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "circleProgressView + UIView.swift"; sourceTree = "<group>"; };
 		FDFB701C25A0ACAB006EEC04 /* Apophis_AppJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apophis_AppJam.entitlements; sourceTree = "<group>"; };
+		FDFB701F25A0D33C006EEC04 /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
+		FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2selectAnswerCell.swift; sourceTree = "<group>"; };
+		FDFB702725A206B1006EEC04 /* Day2SelectListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SelectListCollectionCell.swift; sourceTree = "<group>"; };
 		FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SelectTimeViewController.swift; sourceTree = "<group>"; };
 		FDFC0A61259F532B00DFD5CF /* makeCircleView + Designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeCircleView + Designable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +237,7 @@
 		FD52078325999C6400AAD1BA /* Day2 */ = {
 			isa = PBXGroup;
 			children = (
+				FDFB702225A2018E006EEC04 /* ChatCells */,
 				FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */,
 				FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */,
 			);
@@ -423,6 +430,7 @@
 				FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */,
 				FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */,
 				FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */,
+				FDFB701F25A0D33C006EEC04 /* ColorList.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -498,6 +506,15 @@
 				FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		FDFB702225A2018E006EEC04 /* ChatCells */ = {
+			isa = PBXGroup;
+			children = (
+				FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */,
+				FDFB702725A206B1006EEC04 /* Day2SelectListCollectionCell.swift */,
+			);
+			path = ChatCells;
 			sourceTree = "<group>";
 		};
 		FDFC0A60259F531500DFD5CF /* Designable */ = {
@@ -639,11 +656,13 @@
 				FDA98B6F2596FA4200F4DFDF /* APIConstants.swift in Sources */,
 				FD5207772599960800AAD1BA /* SampleView.swift in Sources */,
 				FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */,
+				FDFB702825A206B1006EEC04 /* Day2SelectListCollectionCell.swift in Sources */,
 				FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */,
 				FD5207952599ACBF00AAD1BA /* ChatYourMessageCell.swift in Sources */,
 				FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */,
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
 				FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */,
+				FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */,
 				FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */,
 				FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
@@ -656,6 +675,7 @@
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
 				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
 				FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */,
+				FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */,
 				FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */,
 				FD5207992599ACCF00AAD1BA /* ChatMyMessageCell.swift in Sources */,
 				FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */,

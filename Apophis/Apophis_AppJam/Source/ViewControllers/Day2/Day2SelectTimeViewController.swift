@@ -12,16 +12,24 @@ class Day2SelectTimeViewController: UIViewController {
 
     //MARK:- IBOutlet Part
 
-
+    @IBOutlet weak var headerTitleLabel: UILabel!
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var clockView: UIView!
-    @IBOutlet weak var AMPMSelectSegment: UISegmentedControl!
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var setTimeTextField: UITextField!
     @IBOutlet weak var circleAnimationView: UIView!
     
-
+    @IBOutlet weak var setTimeLabel: UILabel!
+    @IBOutlet weak var completeLabel: UILabel!
+    @IBOutlet weak var completeButtonImageView: UIImageView!
+    
+    
+    
+    
+    @IBOutlet weak var clockIconImageView: UIImageView!
+    
     //MARK:- Variable Part
     
     
@@ -69,14 +77,14 @@ class Day2SelectTimeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        createCircularPath(time: 0)
+        createCircularPath(time: 0, isComplete: false)
     }
 
 
     override func viewWillAppear(_ animated: Bool) {
         setClockView()
-        setSegment()
+
+        
         createPickerView()
         dismissPickerView()
        
@@ -84,35 +92,41 @@ class Day2SelectTimeViewController: UIViewController {
 
     //MARK:- IBAction Part
 
-
+    @IBAction func backButtonClicked(_ sender: Any) {
+        
+        if (self.navigationController != nil)
+        {
+            self.navigationController?.popViewController(animated: true)
+        }
+        else
+        {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    @IBAction func selectTimeButtonClicked(_ sender: Any) {
+        
+        if (self.navigationController != nil)
+        {
+            self.navigationController?.popViewController(animated: true)
+        }
+        else
+        {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
     //MARK:- default Setting Function Part
 
 
     func setClockView()
     {
-//        clockView.layer.borderWidth = 1
-//        clockView.layer.borderColor = .init(red: 90/255, green: 79/255, blue: 99/255, alpha: 1)
-        timeLabel.font = UIFont.gmarketFont(weight: .Medium, size: 24)
-    }
-
-    func setSegment()
-    {
-        AMPMSelectSegment.layer.cornerRadius = 12
-
-        let normalAttributes : [NSAttributedString.Key: Any] = [
-            .font : UIFont.gmarketFont(weight: .Medium, size: 12),
-            .foregroundColor : UIColor.init(red: 171/255, green: 112/255, blue: 245/255, alpha: 1)
-            ]
-
-        let selectedAttributes : [NSAttributedString.Key: Any] = [
-            .font : UIFont.gmarketFont(weight: .Medium, size: 12),
-            .foregroundColor : UIColor.white
-            ]
-
         
-        AMPMSelectSegment.setTitleTextAttributes(normalAttributes, for: .normal)
-        AMPMSelectSegment.setTitleTextAttributes(selectedAttributes, for: .selected)
-
+        headerTitleLabel.font = UIFont.gmarketFont(weight: .Medium, size: 16)
+        timeLabel.font = UIFont.gmarketFont(weight: .Medium, size: 24)
+        setTimeLabel.font = UIFont.gmarketFont(weight: .Medium, size: 14)
+        completeLabel.font = UIFont.gmarketFont(weight: .Medium, size: 14)
+        completeLabel.textColor = .init(red: 112/255, green: 112/255, blue: 112/255, alpha: 1)
+        
     }
 
     //MARK:- Function Part
@@ -121,25 +135,40 @@ class Day2SelectTimeViewController: UIViewController {
     func createPickerView()
     {
         let pickerView = UIPickerView()
-        pickerView.backgroundColor = .black
+        pickerView.backgroundColor = .init(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
         pickerView.tintColor = .white
         
         pickerView.delegate = self
         pickerView.becomeFirstResponder()
         setTimeTextField.inputView = pickerView
         setTimeTextField.textColor = .clear
-
+        
     }
     
-    func createCircularPath(time : Float) {
-
+    func turnOnCompleteButton()
+    {
         
+        completeLabel.textColor = .white
+        completeButtonImageView.image = UIImage(named: "btn_complete_act")
+        
+    }
+    
+
+    
+ 
+    
+    func createCircularPath(time : Float,isComplete : Bool) {
+
+        let size = (UIScreen.main.bounds.width - 175) / 2
+      
+        circleAnimationView.addCircle(isComplete: isComplete, size: Float(size), currentTimeValue: time,previousTimeValue: previousTimeValue)
+        
+        
+        circleAnimationView.reloadInputViews()
         circleAnimationView.layer.masksToBounds = true
         circleAnimationView.layoutSubviews()
+        circleAnimationView.setNeedsLayout()
         
-        
-        let size = (UIScreen.main.bounds.width - 175) / 2
-        circleAnimationView.addCircle(size: Float(size), currentTimeValue: time,previousTimeValue: previousTimeValue)
 
 
         
@@ -164,7 +193,7 @@ class Day2SelectTimeViewController: UIViewController {
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 
-        let button = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(setTime))
+        let button = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(setTime))
         button.setTitleTextAttributes(normalAttributes, for: .normal)
         
         
@@ -182,11 +211,15 @@ class Day2SelectTimeViewController: UIViewController {
     
     @objc func done()
     {
+        
+        
         self.view.endEditing(true)
     }
     @objc func setTime()
     {
-        
+        createCircularPath(time: tempTimeValue, isComplete: true)
+        turnOnCompleteButton()
+        self.view.endEditing(true)
     }
     
 
@@ -263,15 +296,10 @@ extension Day2SelectTimeViewController : UIPickerViewDelegate,UIPickerViewDataSo
         
         tempTimeValue = hourValue + minuteValue
         
-        createCircularPath(time: tempTimeValue)
+   
         
         
-        
-
-        
-        
-        
-        
+ 
         previousTimeValue = tempTimeValue
         
 
@@ -319,96 +347,115 @@ extension Day2SelectTimeViewController : UIPickerViewDelegate,UIPickerViewDataSo
 
 
 extension UIView {
-    func addCircle(size : Float, currentTimeValue : Float,previousTimeValue : Float){
+    func addCircle(isComplete: Bool, size : Float, currentTimeValue : Float,previousTimeValue : Float){
         
+            
+
         var speed : Int
   
-      
-        let temp : Float
+
+
+        let circleLayer = CAShapeLayer()
+        var progressLayer = CAShapeLayer()
         
-        var temp1 : Float = currentTimeValue
-        var temp2 : Float = previousTimeValue
         
-         let circleLayer = CAShapeLayer()
-         let progressLayer = CAShapeLayer()
+        
+
         
         // -.pi / 2
         // 3 * .pi / 2
-        let circularPath = UIBezierPath(arcCenter: CGPoint(x: Int(size) + 11, y: Int(size) + 11),
+        var circularPath = UIBezierPath()
+        
+        circularPath.removeAllPoints()
+        
+            
+         let path =   UIBezierPath(arcCenter: CGPoint(x: Int(size) + 11, y: Int(size) + 11),
                                         
                                         radius: CGFloat(size),
                                         startAngle: -.pi / 2,
                                         endAngle: 3 * .pi / 2 ,
                                         clockwise: true)
         
+        circularPath = path
 
         
+        
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "btn_time_setting")
+        imageView.layer.accessibilityPath = path
+
         
         
         circleLayer.path = circularPath.cgPath
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineCap = .round
         circleLayer.lineWidth = 1
-        circleLayer.strokeColor = UIColor.purple.cgColor
+     
+        
+
+
         progressLayer.path = circularPath.cgPath
         progressLayer.fillColor = UIColor.clear.cgColor
         progressLayer.lineCap = .round
         progressLayer.lineWidth = 10.0
         progressLayer.strokeEnd = 0
-        progressLayer.strokeColor = UIColor.purple.cgColor
         
         
-        
-        layer.addSublayer(circleLayer)
-        layer.addSublayer(progressLayer)
-        
-        print("---------------------")
-        
-        let circularProgressAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        print("프리비어스",previousTimeValue)
-        print("지금",currentTimeValue)
-        
-        
-        
-        circularProgressAnimation.duration = 1
-
-        
-        
-        if previousTimeValue <= currentTimeValue
+        if isComplete == false
         {
-            speed = 1
-            circularProgressAnimation.fromValue = previousTimeValue
-            circularProgressAnimation.toValue = currentTimeValue
-
+            circleLayer.strokeColor = UIColor.init(red: 126/255, green: 126/255, blue: 126/255, alpha: 1).cgColor
+            progressLayer.strokeColor = UIColor.init(red: 126/255, green: 126/255, blue: 126/255, alpha: 1).cgColor
         }
         else
         {
-            speed = -1
-            circularProgressAnimation.fromValue = currentTimeValue
-            circularProgressAnimation.toValue = previousTimeValue
-
+            circleLayer.strokeColor = UIColor.init(red: 90/255, green: 79/255, blue: 99/255, alpha: 1).cgColor
+            progressLayer.strokeColor = UIColor.mainColor.cgColor
+            progressLayer.backgroundColor = UIColor.mainColor.cgColor
+            progressLayer.borderColor = UIColor.mainColor.cgColor
+            progressLayer.shadowColor = .none
         }
-        print("지금 스피드",speed)
+
         
 
-        circularProgressAnimation.speed = Float(speed)
+
+        layer.addSublayer(circleLayer)
+        layer.addSublayer(progressLayer)
+        layer.addSublayer(imageView.layer)
+        
+    
+        
+
+        
+        print("---------------------")
+
+        progressLayer.removeAllAnimations()
+        
+        
+        let circularProgressAnimation = CABasicAnimation(keyPath: "strokeEnd")
+
+ 
+        circularProgressAnimation.duration = 1.5
+        
+        speed = 1
+        
+
+        
         circularProgressAnimation.fillMode = .forwards
-        circularProgressAnimation.byValue = currentTimeValue
+        circularProgressAnimation.isRemovedOnCompletion = false
+        circularProgressAnimation.fromValue = 0
+        circularProgressAnimation.toValue = currentTimeValue
+        
+        circularProgressAnimation.speed = Float(speed)
 
-        circularProgressAnimation.isRemovedOnCompletion = true
+        
+        
+        imageView.layer.add(circularProgressAnimation, forKey: "progressAnim")
         progressLayer.add(circularProgressAnimation, forKey: "progressAnim")
+        layer.removeAllAnimations()
+        
 
         
-        
-        
-//
-//        let revAnimation = CABasicAnimation(keyPath: "strokeEnd")
-//        revAnimation.duration = 5.0
-//        revAnimation.toValue = 0.0
-//        layer.removeAllAnimations()
-//        layer.add(revAnimation, forKey: "strokeEnd")
-        
-        
+
   
 
     }
