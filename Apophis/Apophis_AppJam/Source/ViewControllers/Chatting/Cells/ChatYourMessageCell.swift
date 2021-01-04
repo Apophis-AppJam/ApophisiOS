@@ -10,8 +10,10 @@ import UIKit
 class ChatYourMessageCell: UITableViewCell {
     //MARK:- IBOutlet Part
 
+    @IBOutlet weak var waitMessageImageView: UIImageView!
     
     @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var messageBackgroundImageView: UIImageView!
     
     
     //MARK:- Variable Part
@@ -49,6 +51,8 @@ class ChatYourMessageCell: UITableViewCell {
     {
   
         
+        
+     
         let padding = messageTextView.textContainer.lineFragmentPadding
         messageTextView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
         
@@ -62,10 +66,77 @@ class ChatYourMessageCell: UITableViewCell {
         messageTextView.isScrollEnabled = false
         messageTextView.contentInset = .zero
         
-
-    
+        
+        
+        messageTextView.alpha = 0
+        waitMessageImageView.alpha = 0
+        messageBackgroundImageView.alpha = 0
 
         
+    }
+    
+    func loadingAnimate()
+    {
+        
+        UIView.animateKeyframes(withDuration: 8, delay: 0, animations: {
+            
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/16,animations: {
+                
+                self.waitMessageImageView.alpha = 1
+                
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 1/2, relativeDuration: 1/16, animations: {
+                
+                self.waitMessageImageView.alpha = 0
+                
+            })
+            UIView.addKeyframe(withRelativeStartTime: 17/32, relativeDuration: 1/8, animations: {
+                
+                self.messageTextView.alpha = 1
+                self.messageBackgroundImageView.alpha = 1
+                
+            })
+
+            
+            
+            
+        })
+        
+    }
+    
+    func showMessageWithNoAnimation()
+    {
+        messageTextView.alpha = 1
+        messageBackgroundImageView.alpha = 1
+    }
+    
+    
+    
+    
+    
+    
+    func setMessageRepeat(message : String)
+    {
+        let padding = messageTextView.textContainer.lineFragmentPadding
+        messageTextView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
+        
+        messageTextView.font = UIFont.gmarketFont(weight: .Medium, size: 14)
+        messageTextView.textColor = .white
+        messageTextView.text = message
+
+        messageTextView.sizeToFit()
+        
+        messageTextView.translatesAutoresizingMaskIntoConstraints = true
+        messageTextView.isScrollEnabled = false
+        messageTextView.contentInset = .zero
+        
+        
+        
+        messageTextView.alpha = 0
+        waitMessageImageView.alpha = 0
+        messageBackgroundImageView.alpha = 0
+
     }
     
     

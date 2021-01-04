@@ -63,6 +63,9 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatYourMessageBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="zmg-NR-i9l">
                                                     <rect key="frame" x="8" y="8" width="256" height="101"/>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatMessageWaiting" translatesAutoresizingMaskIntoConstraints="NO" id="ind-al-dQh">
+                                                    <rect key="frame" x="8" y="8" width="56.5" height="38"/>
+                                                </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="안녕ㅁㄴㅇ러ㅣㅏㅁㄴㅇ러ㅣㅏㄴ머이란머ㅏㅣㅇ러ㅏㅣㄴㅁㅇ라ㅣㄴㅁㅇ린ㅁ일ㄴㅁ어ㅣㅏ린망러ㅏㅣㄴㅁ어라ㅣㄴㅇ멀ㄴㅁ" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye3-S7-N9k">
                                                     <rect key="frame" x="24" y="20" width="228" height="76"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,17 +76,21 @@
                                             <color key="backgroundColor" red="0.14902743700000001" green="0.14897164700000001" blue="0.15294024349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="zmg-NR-i9l" firstAttribute="leading" secondItem="Ye3-S7-N9k" secondAttribute="leading" constant="-16" id="D64-av-l5j"/>
+                                                <constraint firstItem="ind-al-dQh" firstAttribute="leading" secondItem="xuF-3p-kdE" secondAttribute="leading" constant="8" id="EcT-0u-VAt"/>
                                                 <constraint firstItem="zmg-NR-i9l" firstAttribute="top" secondItem="Ye3-S7-N9k" secondAttribute="top" constant="-12" id="Pmv-MC-ngX"/>
                                                 <constraint firstItem="Ye3-S7-N9k" firstAttribute="width" relation="lessThanOrEqual" secondItem="xuF-3p-kdE" secondAttribute="width" multiplier="230/375" id="aJV-6L-jTm"/>
                                                 <constraint firstItem="Ye3-S7-N9k" firstAttribute="top" secondItem="xuF-3p-kdE" secondAttribute="top" constant="20" id="aaG-HI-RYT"/>
                                                 <constraint firstItem="zmg-NR-i9l" firstAttribute="bottom" secondItem="Ye3-S7-N9k" secondAttribute="bottom" constant="13" id="hSy-wi-KiM"/>
                                                 <constraint firstItem="Ye3-S7-N9k" firstAttribute="leading" secondItem="xuF-3p-kdE" secondAttribute="leading" constant="24" id="hqO-KA-cGx"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ye3-S7-N9k" secondAttribute="bottom" constant="13" id="iTV-F2-aav"/>
+                                                <constraint firstItem="ind-al-dQh" firstAttribute="top" secondItem="xuF-3p-kdE" secondAttribute="top" constant="8" id="tc4-Io-xf9"/>
                                                 <constraint firstItem="zmg-NR-i9l" firstAttribute="trailing" secondItem="Ye3-S7-N9k" secondAttribute="trailing" constant="12" id="uK7-NX-hmz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="messageBackgroundImageView" destination="zmg-NR-i9l" id="1Xw-f8-WI7"/>
                                             <outlet property="messageTextView" destination="Ye3-S7-N9k" id="JfD-qo-PP9"/>
+                                            <outlet property="waitMessageImageView" destination="ind-al-dQh" id="ioa-Oe-2T7"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyMessageCell" rowHeight="116" id="fdO-Xg-yWJ" customClass="ChatMyMessageCell" customModule="Apophis_AppJam" customModuleProvider="target">

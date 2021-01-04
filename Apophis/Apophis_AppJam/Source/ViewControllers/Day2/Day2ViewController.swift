@@ -13,6 +13,8 @@ class Day2ViewController: UIViewController {
 
     //MARK:- IBOutlet Part
 
+    
+    
     @IBOutlet weak var messageSendButton: UIButton!
     @IBOutlet weak var messageTextInputView: UITextView!
     @IBOutlet weak var chatTableView: UITableView!
@@ -23,6 +25,7 @@ class Day2ViewController: UIViewController {
     
     //  메세지 리스트
     var messageList : [ChatMessageDataModel] = []
+    var isMessageLoadList : [Bool] = []
     
     var isUserEnterAnswer : Bool = false
     
@@ -103,7 +106,54 @@ class Day2ViewController: UIViewController {
         
     }
     
-    //MARK:- default Setting Function Part
+    //MARK:- default Setting Function Par
+    
+    
+   
+    
+    
+    
+    
+    func set()
+    {
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     
     func addObserver()
@@ -185,6 +235,8 @@ class Day2ViewController: UIViewController {
             ChatMessageDataModel(message: "정신없지? 시작하기 전에 물 한 잔 마시고 오는거 어때?", isLastMessage: true, isMine: false),
             ChatMessageDataModel(message: "", isLastMessage: true, isMine: true)
         ])
+        
+        isMessageLoadList.append(contentsOf: [false,false])
         
         
     }
@@ -332,7 +384,22 @@ extension Day2ViewController : UITableViewDataSource
                     as? ChatYourMessageCell
                     else {return UITableViewCell() }
             
+            
             yourMessageCell.setMessage(message: messageList[indexPath.row].message)
+            
+            if isMessageLoadList[indexPath.row] == false
+            {
+                print("false",isMessageLoadList)
+                yourMessageCell.loadingAnimate()
+            }
+            else
+            {
+                print("true",isMessageLoadList)
+                yourMessageCell.showMessageWithNoAnimation()
+            }
+            
+            isMessageLoadList[indexPath.row] = true
+            
             
             return yourMessageCell
         }
@@ -340,19 +407,20 @@ extension Day2ViewController : UITableViewDataSource
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.transform = CGAffineTransform(translationX: 0, y: 74 * 1.4)
-        cell.alpha = 0
+//        cell.transform = CGAffineTransform(translationX: 0, y: 74 * 1.4)
+//        cell.alpha = 0
         UIView.animate(
             withDuration: 1,
-            delay: 0.7 * Double(indexPath.row),
-            options: [.curveEaseInOut],
+            delay: 8 * Double(indexPath.row),
+//            options: [.curveEaseInOut],
             animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0)
-                cell.alpha = 1
-            
+//                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+//                cell.alpha = 1
+
             }
         )
-        
+//        )
+//
     }
     
     
