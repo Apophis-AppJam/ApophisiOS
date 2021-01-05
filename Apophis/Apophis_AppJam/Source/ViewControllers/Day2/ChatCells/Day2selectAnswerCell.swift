@@ -62,11 +62,36 @@ class Day2selectAnswerCell: UITableViewCell {
             selectButtonCollectionView.backgroundColor = .clear
             
         }
+        selectButtonCollectionView.alpha = 0
         
         
 
         selectButtonCollectionView.reloadData()
     }
+    
+
+    
+    func loadingAnimate(index : Int)
+    {
+        
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: .allowUserInteraction) {
+            
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1,animations: {
+                
+                self.selectButtonCollectionView.alpha = 1
+                
+            })
+
+        } completion: { (_) in
+        }
+        
+    }
+    
+    func showMessageWithNoAnimation()
+    {
+        self.selectButtonCollectionView.alpha = 1
+    }
+    
     
 
     
@@ -126,7 +151,6 @@ extension Day2selectAnswerCell : UICollectionViewDataSource
         selectCell.setSelectData(isSelected: selectedBoolList[indexPath.row],
                                  title: selectList[indexPath.row])
 
-        
         return selectCell
     }
     

@@ -32,6 +32,7 @@ struct ChatMessageNewDataModel
     var nextMessageType : messageTypeList
     var type : messageTypeList
     var dataList : [String]
+    var chatDetailsIdx : Int
     
 }
 
@@ -62,6 +63,7 @@ enum messageTypeList
     
     //MARK:- 영재 PART
     case compassButton
+    case camera
     case select1In3
     case selectAdjective
     
@@ -69,6 +71,13 @@ enum messageTypeList
  
     case select1In2
     case setTimeButton
+    case enter3words
+    // 단어 3개 입력하는거
+    
+    case brightAndDark
+    // 나의 장단점 입력하는거
+    
+    
     
 
 }

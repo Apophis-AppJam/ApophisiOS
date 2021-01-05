@@ -75,34 +75,38 @@ class ChatYourMessageCell: UITableViewCell {
         
     }
     
-    func loadingAnimate()
+    func loadingAnimate(index : Int)
     {
-        
-        UIView.animateKeyframes(withDuration: 8, delay: 0, animations: {
+        print("재생되고있는 메세지 인덱스",index)
+        UIView.animateKeyframes(withDuration: 6, delay: 0, options: .allowUserInteraction) {
             
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/16,animations: {
+
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
+                    
+                    self.waitMessageImageView.alpha = 1
+                    
+                })
                 
-                self.waitMessageImageView.alpha = 1
-                
-            })
+                UIView.addKeyframe(withRelativeStartTime: 10/12, relativeDuration: 1/12, animations: {
+                    
+                    self.waitMessageImageView.alpha = 0
+                    
+                })
             
-            UIView.addKeyframe(withRelativeStartTime: 1/2, relativeDuration: 1/16, animations: {
-                
-                self.waitMessageImageView.alpha = 0
-                
-            })
-            UIView.addKeyframe(withRelativeStartTime: 17/32, relativeDuration: 1/8, animations: {
-                
-                self.messageTextView.alpha = 1
-                self.messageBackgroundImageView.alpha = 1
-                
-            })
+                UIView.addKeyframe(withRelativeStartTime: 11/12, relativeDuration: 1/12, animations: {
+                    
+                    self.messageTextView.alpha = 1
+                    self.messageBackgroundImageView.alpha = 1
+                    
+                })
+            
 
             
             
-            
-        })
-        
+        } completion: { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name("AponimousMessageEnd"), object: index)
+        }
+
     }
     
     func showMessageWithNoAnimation()

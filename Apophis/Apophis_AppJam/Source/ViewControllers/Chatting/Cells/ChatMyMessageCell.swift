@@ -10,6 +10,7 @@ import UIKit
 class ChatMyMessageCell: UITableViewCell {
     //MARK:- IBOutlet Part
     
+    @IBOutlet weak var messageBackgroundImageView: UIImageView!
     @IBOutlet weak var messageTextView: UITextView!
     
     //MARK:- Variable Part
@@ -56,10 +57,49 @@ class ChatMyMessageCell: UITableViewCell {
 
         messageTextView.sizeToFit()
         
-//        messageTextView.translatesAutoresizingMaskIntoConstraints = true
-//        messageTextView.contentInset = .zero
-//        messageTextView.textContainerInset = .zero
+        messageBackgroundImageView.alpha = 0
+        messageTextView.alpha = 0
+        
+        
+        
+
     }
+    
+    
+    func loadingAnimate(idx : Int)
+    {
+  
+        
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
+            
+
+                
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1,animations: {
+                    
+                    self.messageBackgroundImageView.alpha = 1
+                    self.messageTextView.alpha = 1
+                    
+                })
+                
+
+            
+
+            
+            
+        } completion: { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
+        }
+
+
+ 
+    }
+    
+    func showMessageWithNoAnimation()
+    {
+        messageTextView.alpha = 1
+        messageBackgroundImageView.alpha = 1
+    }
+    
 
 
 }

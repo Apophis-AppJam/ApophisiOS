@@ -35,6 +35,7 @@
 		FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B92599AF8500AAD1BA /* Day7.storyboard */; };
 		FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */; };
 		FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */; };
+		FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */; };
 		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
 		FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */; };
 		FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */; };
@@ -46,6 +47,7 @@
 		FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B822597104700F4DFDF /* ColorList.xcassets */; };
 		FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B852597133500F4DFDF /* NetworkResult.swift */; };
 		FDBFFE1E25A2E46600C46615 /* ChatMessageNewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBFFE1D25A2E46600C46615 /* ChatMessageNewDataModel.swift */; };
+		FDBFFE2125A35B3900C46615 /* getAponimousChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBFFE2025A35B3900C46615 /* getAponimousChatService.swift */; };
 		FDD0922A259AF58100B92529 /* sampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FDD09229259AF58100B92529 /* sampleVideo.mp4 */; };
 		FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0922D259B01AF00B92529 /* IntroNewsCommentCell.swift */; };
 		FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09232259B0B1900B92529 /* NewsCommentDataModel.swift */; };
@@ -98,6 +100,7 @@
 		FD5207B92599AF8500AAD1BA /* Day7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day7.storyboard; sourceTree = "<group>"; };
 		FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDataModel.swift; sourceTree = "<group>"; };
 		FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageWaitingCell.swift; sourceTree = "<group>"; };
+		FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CircleButtonCell.swift; sourceTree = "<group>"; };
 		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yukyungLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jihunLabViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		FDA98B822597104700F4DFDF /* ColorList.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorList.xcassets; sourceTree = "<group>"; };
 		FDA98B852597133500F4DFDF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		FDBFFE1D25A2E46600C46615 /* ChatMessageNewDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageNewDataModel.swift; sourceTree = "<group>"; };
+		FDBFFE2025A35B3900C46615 /* getAponimousChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getAponimousChatService.swift; sourceTree = "<group>"; };
 		FDD09229259AF58100B92529 /* sampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampleVideo.mp4; sourceTree = "<group>"; };
 		FDD0922D259B01AF00B92529 /* IntroNewsCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsCommentCell.swift; sourceTree = "<group>"; };
 		FDD09232259B0B1900B92529 /* NewsCommentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCommentDataModel.swift; sourceTree = "<group>"; };
@@ -451,6 +455,7 @@
 		FDA98B6D2596FA3600F4DFDF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FDBFFE2025A35B3900C46615 /* getAponimousChatService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -516,6 +521,7 @@
 			children = (
 				FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */,
 				FDFB702725A206B1006EEC04 /* Day2SelectListCollectionCell.swift */,
+				FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */,
 			);
 			path = ChatCells;
 			sourceTree = "<group>";
@@ -667,9 +673,11 @@
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
 				FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */,
 				FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */,
+				FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */,
 				FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */,
 				FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
+				FDBFFE2125A35B3900C46615 /* getAponimousChatService.swift in Sources */,
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,
 				FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */,
 				FD5207A12599AEBC00AAD1BA /* SampleViewController.swift in Sources */,
