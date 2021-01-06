@@ -54,14 +54,11 @@ class Day1ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         addImageObserver()
-        
+        print("이미지 들어옴?", pictureImage)
+
         if checkImage {
-            let indexPath = IndexPath.init(row: 7, section: 0)
-            chatTableView.insertRows(at: [indexPath] , with: .none)
+            let indexPath = IndexPath(row: messageList.count - 1 , section: 0)
             chatTableView.reloadRows(at: [indexPath] , with: .none)
-            print("여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기")
-            print(messageList)
-            print(pictureImage)
             
         }
     }
@@ -165,6 +162,8 @@ class Day1ViewController: UIViewController {
     }
     
     
+    
+   // 사진 관련
     private func addImageObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(getImage(_ :)), name: .sendImage, object: nil)
     }
@@ -172,10 +171,11 @@ class Day1ViewController: UIViewController {
     @objc func getImage(_ notification: Notification){
         guard let image = notification.userInfo?["image"] as? UIImage? else { return }
         pictureImage = image
-        self.messageList.append(contentsOf: [
-                                    Day1ChatMessageDataModel(message: "", isLastMessage: false, isMine: false, Day1Func: 5)])
+        print("사진 들어왓냐??")
+        if(pictureImage != nil){
+            checkImage = true
+        }
         
-        checkImage = true
     }
     
     
@@ -246,6 +246,12 @@ extension Day1ViewController : UITableViewDataSource
             
             
             print("끼야아아아아아악",messageList)
+            self.messageList.remove(at: messageList.count - 1)
+            self.messageList.append(contentsOf: [Day1ChatMessageDataModel(message: "", isLastMessage: false, isMine: false, Day1Func: 5)])
+            print("끼야아아아아아악2",messageList)
+
+
+
             return ChatButtonCell
         }
         
@@ -256,7 +262,8 @@ extension Day1ViewController : UITableViewDataSource
                     as? Day1ImageViewCell
             else {return UITableViewCell() }
             
-            Day1ImageViewCell.pictureImage = pictureImage
+            Day1ImageViewCell.setPictureImage(ImgName: pictureImage)
+            Day1ImageViewCell.setImageView()
             
             return Day1ImageViewCell
         }
@@ -368,3 +375,5 @@ extension Day1ViewController : UITextViewDelegate
         
     }
 }
+
+

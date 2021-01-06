@@ -26,6 +26,9 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
     var flagImageSave = false
     
     
+    // 리스트를 받아올 변수
+    var messageList : [Day1ChatMessageDataModel] = []
+    
     @IBAction func ChatButtonAction(_ sender: Any) {
         
         guard let funcNum = funcNum else {return}
@@ -41,6 +44,8 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
             viewController?.present(vc, animated: true, completion: nil)
         }
         else{
+           
+            
             // 카메라를 사용할 수 있다면(카메라의 사용 가능 여부 확인)
             if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
                 // 사진 저장 플래그를 true로 설정
@@ -56,6 +61,9 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
                 // 편집을 허용하지 않음
                 imagePicker.allowsEditing = false
                 
+                
+                // noti로 list 받아와 수정 후 return하는 함수
+//                addListObserver()
                 
                 // 현재 뷰 컨트롤러를 imagePicker로 대체. 즉 뷰에 imagePicker가 보이게 함
                 viewController?.present(imagePicker, animated: true, completion: nil)
@@ -86,22 +94,12 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
         ChatFuncButton.setBackgroundImage(UIImage(named: "\(ImgName)"), for: .normal)
     }
     
-    func appendImageViewList(){
-        let storyboard = UIStoryboard(name: "Day1", bundle: nil)
-        guard let VC = storyboard.instantiateViewController(identifier: "Day1ViewController") as? Day1ViewController else  {return}
-        
-        VC.messageList.append(contentsOf: [
-                                Day1ChatMessageDataModel(message: "", isLastMessage: false, isMine: false, Day1Func: 5)])
-    }
+    
     
     
     
     // 사진, 비디오 촬영이나 선택이 끝났을 때 호출되는 델리게이트 메서드
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        let storyboard = UIStoryboard(name: "Day1", bundle: nil)
-        guard let VC = storyboard.instantiateViewController(identifier: "Day1ViewController") as? Day1ViewController else  {return}
-        
         // 미디어 종류 확인
         let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
         
@@ -115,16 +113,14 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
                 // 사진을 포토 라이브러리에 저장
                 UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
             }
-            VC.pictureImage = captureImage // 가져온 사진을 Day1 뷰컨에 전달
             NotificationCenter.default.post(name: .sendImage, object: nil, userInfo: ["image": captureImage!])
 
         }
+        
+
         // 현재의 뷰 컨트롤러를 제거. 즉, 뷰에서 이미지 피커 화면을 제거하여 초기 뷰를 보여줌
         viewController?.dismiss(animated: true, completion: nil)
-        appendImageViewList()
         
-        let messageList : [Day1ChatMessageDataModel] = VC.messageList
-        print(messageList)
     }
     
     // 사진, 비디오 촬영이나 선택을 취소했을 때 호출되는 델리게이트 메서드

@@ -9,7 +9,7 @@ import UIKit
 
 class Day1ImageViewCell: UITableViewCell {
 
-    @IBOutlet weak var pictureImage: UIImage!
+    @IBOutlet weak var pictureImage: UIImageView!
     
     // UIImagePickerController의 인스턴스 변수 생성
     let imagePicker: UIImagePickerController! = UIImagePickerController()
@@ -26,7 +26,14 @@ class Day1ImageViewCell: UITableViewCell {
     }
     
     func setPictureImage(ImgName: UIImage!){
-        pictureImage = ImgName
+        pictureImage.image = ImgName
+        print("이거 잘 되고 있는거 맞지??", pictureImage)
+    }
+    
+    func setImageView(){
+        
+        pictureImage.layer.cornerRadius = 8.5
+        pictureImage.layer.masksToBounds = true
     }
 
 }
