@@ -11,7 +11,6 @@ class ChatYourMessageCell: UITableViewCell {
     //MARK:- IBOutlet Part
 
     @IBOutlet weak var waitMessageImageView: UIImageView!
-    
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var messageBackgroundImageView: UIImageView!
     
@@ -66,19 +65,16 @@ class ChatYourMessageCell: UITableViewCell {
         messageTextView.isScrollEnabled = false
         messageTextView.contentInset = .zero
         
-        
-        
         messageTextView.alpha = 0
         waitMessageImageView.alpha = 0
         messageBackgroundImageView.alpha = 0
 
-        
+
     }
     
     func loadingAnimate(index : Int)
     {
-        print("재생되고있는 메세지 인덱스",index)
-        UIView.animateKeyframes(withDuration: 6, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 4, delay: 0, options: .allowUserInteraction) {
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {

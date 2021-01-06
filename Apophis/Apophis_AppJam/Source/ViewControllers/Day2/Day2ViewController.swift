@@ -65,6 +65,7 @@ class Day2ViewController: UIViewController {
         
         
         loadDummyMessage(idx: (appData?.chatIndex)!, isMine: false)
+ 
         messageListForTableView.append(newMessageList[(appData?.chatIndex)!])
         
         let index = IndexPath(row: 0, section: 0)
@@ -97,7 +98,6 @@ class Day2ViewController: UIViewController {
           
             let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
             
-            
             isMessageLoadList[newMessageList.count - 1] = false
             
             newMessageList.remove(at: newMessageList.count - 1)
@@ -119,7 +119,6 @@ class Day2ViewController: UIViewController {
                                                                    type: .normal,
                                                                    dataList: [],
                                                                    chatDetailsIdx: 0))
-            
             
             
             
@@ -161,6 +160,10 @@ class Day2ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name:UIResponder.keyboardWillHideNotification, object: nil)
         
+ 
+        
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(receivedUserSelect), name: NSNotification.Name("receivedUserSelect"), object: nil)
         
         
@@ -171,9 +174,14 @@ class Day2ViewController: UIViewController {
         
         
         
+        
+        
+        // 시간 설정 버튼 눌렸을 때,
         NotificationCenter.default.addObserver(self, selector: #selector(setTimeButtonClicked), name: NSNotification.Name("setTimeButtonClicked"), object: nil)
         
         
+        // 시간 설정이 완료되었을 때
+        NotificationCenter.default.addObserver(self, selector: #selector(setTimeComplete), name: NSNotification.Name("setTimeComplete"), object: nil)
         
 
     }
@@ -190,13 +198,17 @@ class Day2ViewController: UIViewController {
 
         if index != -1 // -1 이 올수가 없음
         {
+
+            
             loadDummyMessage(idx: newMessageList[index].chatDetailsIdx + 1, isMine: false)
-            messageListForTableView.append(newMessageList[index+1])
+            
             
 
-            isMessageLoadList.append(false)
-            print("Kkkkk",newMessageList)
-            print("내 메세지에서 받는 인덱스",index)
+            messageListForTableView.append(newMessageList[index+1])
+//            isMessageLoadList.append(false)
+
+            
+
             let index = IndexPath(row: index + 1, section: 0)
             
             
@@ -219,15 +231,14 @@ class Day2ViewController: UIViewController {
         // 여기서의 index는 방금 재생이 끝난 테이블 셀의 index를 의미함.
         
         
-        print("지금 아포니머스 끝난 메세지 인덱스",index)
-        
-        
         if newMessageList.count - 1 == index // 지금 마지막 메세지를 재생하고 온 것. 새로 데이터를 받아와야 한다.
         {
             loadDummyMessage(idx: newMessageList[index].chatDetailsIdx,
                              isMine: !newMessageList[index].isMine)
             
-            
+ 
+      
+
             messageListForTableView.append(newMessageList[index+1])
             
         
@@ -237,12 +248,19 @@ class Day2ViewController: UIViewController {
             chatTableView.beginUpdates()
             chatTableView.insertRows(at: [indexPath], with: .none)
             chatTableView.endUpdates()
+            
+         
          
             
         }
+        
+        
+
+    
+        
+ 
         else if newMessageList.count - 1 > index // 마지막 메세지가 아니라면
         {
-            print("여기서의 메세지는 뭘까",index)
             messageListForTableView.append(newMessageList[index+1])
             let indexPath = IndexPath(row: index + 1, section: 0)
             chatTableView.beginUpdates()
@@ -261,7 +279,47 @@ class Day2ViewController: UIViewController {
     
     @objc func setTimeButtonClicked()
     {
+        let storyboard = UIStoryboard(name: "Day2", bundle: nil)
+
+        guard let vc = storyboard.instantiateViewController(identifier: "Day2SelectTimeViewController") as? Day2SelectTimeViewController else  {return}
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
         
+        
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @objc func setTimeComplete(notification : NSNotification)
+    {
+        let time = notification.object as? Int ?? 0
+        let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
+        
+        
+        isMessageLoadList[newMessageList.count - 1] = false
+        
+        newMessageList.remove(at: newMessageList.count - 1)
+        messageListForTableView.remove(at: newMessageList.count - 1)
+        
+        
+        newMessageList.append(ChatMessageNewDataModel(messageContent: "음, 나는 늦은 저녁에 떠날래",
+                                                      isMine: true,
+                                                      isLastMessage: true,
+                                                      nextMessageType: .none,
+                                                      type: .normal,
+                                                      dataList: [],
+                                                      chatDetailsIdx: 1))
+        
+        messageListForTableView.append(ChatMessageNewDataModel(messageContent: "음, 나는 늦은 저녁에 떠날래",
+                                                               isMine: true,
+                                                               isLastMessage: true,
+                                                               nextMessageType: .none,
+                                                               type: .normal,
+                                                               dataList: [],
+                                                               chatDetailsIdx: 1))
+
+
+        chatTableView.reloadRows(at: [lastIndex], with: .none)
     }
     
     
@@ -610,8 +668,9 @@ extension Day2ViewController : UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        
+
+
+
         
         // MARK:- 메세지 종류별 테이블 셀 만드는 부분
         

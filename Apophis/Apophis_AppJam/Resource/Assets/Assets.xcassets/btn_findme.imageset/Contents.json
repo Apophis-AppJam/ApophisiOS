@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "그림1-4.png",
+      "filename" : "btn_findme.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "그림1-3.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "그림1-5.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

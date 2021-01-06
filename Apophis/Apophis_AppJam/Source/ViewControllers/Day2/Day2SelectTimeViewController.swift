@@ -105,14 +105,16 @@ class Day2SelectTimeViewController: UIViewController {
     }
     @IBAction func selectTimeButtonClicked(_ sender: Any) {
         
-        if (self.navigationController != nil)
-        {
-            self.navigationController?.popViewController(animated: true)
+        
+        
+        dismiss(animated: true) {
+            NotificationCenter.default.post(name: NSNotification.Name("setTimeComplete"), object: self.timeLabel.text)
+            
         }
-        else
-        {
-            dismiss(animated: true, completion: nil)
-        }
+        
+        
+        
+        
     }
     
     //MARK:- default Setting Function Part
