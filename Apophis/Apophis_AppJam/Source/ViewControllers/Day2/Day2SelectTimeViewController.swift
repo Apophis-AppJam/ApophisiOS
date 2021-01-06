@@ -74,32 +74,7 @@ class Day2SelectTimeViewController: UIViewController {
     
     //MARK:- Function Part
     
-    
-    func createPickerView()
-    {
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        pickerView.becomeFirstResponder()
-        selectSemesterTextField.inputView = pickerView
-        selectSemesterTextField.textColor = .clear
-        
-    }
-    
-    func dismissPickerView()
-    {
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        
-        let cancel = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(done))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 
-        let button = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(setSemester))
-        toolBar.setItems([cancel,flexSpace,button], animated: true)
-        toolBar.isUserInteractionEnabled = true
-        selectSemesterTextField.inputAccessoryView = toolBar
-        toolBar.tintColor = .mainColor
-        
-    }
 
 
 }
@@ -122,9 +97,7 @@ extension Day2SelectTimeViewController : UIPickerViewDelegate,UIPickerViewDataSo
             return 12
         }
     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-           return semesterList[row]
-    }
+
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 

@@ -499,7 +499,6 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
         <image name="WhiteMessageBackgroundImage" width="197" height="43"/>
         <image name="jihun" width="260" height="260"/>
         <image name="labBackground" width="520" height="1125"/>
@@ -508,12 +507,6 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-=======
-        <image name="jihun" width="130" height="130"/>
-        <image name="labBackground" width="260" height="562.5"/>
-        <image name="youngjae" width="145" height="128"/>
-        <image name="yukyung" width="147.5" height="126"/>
->>>>>>> 72243cda492d60e5aedf6d854b906dfa19e9f276
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
