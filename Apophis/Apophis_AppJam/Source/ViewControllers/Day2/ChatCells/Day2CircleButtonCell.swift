@@ -44,7 +44,6 @@ class Day2CircleButtonCell: UITableViewCell {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1,animations: {
                 
                 self.circleButton.alpha = 1
-                
             })
 
         } completion: { (_) in

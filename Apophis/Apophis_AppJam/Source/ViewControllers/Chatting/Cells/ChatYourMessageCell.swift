@@ -74,7 +74,7 @@ class ChatYourMessageCell: UITableViewCell {
     
     func loadingAnimate(index : Int)
     {
-        UIView.animateKeyframes(withDuration: 4, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: .allowUserInteraction) {
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
@@ -95,9 +95,6 @@ class ChatYourMessageCell: UITableViewCell {
                     self.messageBackgroundImageView.alpha = 1
                     
                 })
-            
-
-            
             
         } completion: { (_) in
             NotificationCenter.default.post(name: NSNotification.Name("AponimousMessageEnd"), object: index)

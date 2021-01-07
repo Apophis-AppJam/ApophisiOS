@@ -33,7 +33,6 @@ struct ChatMessageNewDataModel
     var type : messageTypeList
     var dataList : [String]
     var chatDetailsIdx : Int
-    
 }
 
 

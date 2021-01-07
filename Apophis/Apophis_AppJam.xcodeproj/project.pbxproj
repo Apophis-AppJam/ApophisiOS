@@ -40,9 +40,11 @@
 		FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */; };
 		FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */; };
 		FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */; };
+		FD5F356625A5896F00330E9B /* Day2word3InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */; };
 		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
 		FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */; };
 		FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */; };
+		FD8A8CA325A76E5500DE3D27 /* placeHolderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */; };
 		FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B692596EE1C00F4DFDF /* view.xib */; };
 		FDA98B6F2596FA4200F4DFDF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */; };
 		FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */; };
@@ -109,9 +111,11 @@
 		FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDataModel.swift; sourceTree = "<group>"; };
 		FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageWaitingCell.swift; sourceTree = "<group>"; };
 		FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CircleButtonCell.swift; sourceTree = "<group>"; };
+		FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2word3InputCell.swift; sourceTree = "<group>"; };
 		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yukyungLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jihunLabViewController.swift; sourceTree = "<group>"; };
+		FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeHolderColor.swift; sourceTree = "<group>"; };
 		FDA98B692596EE1C00F4DFDF /* view.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = view.xib; sourceTree = "<group>"; };
 		FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeAlert + UIView.swift"; sourceTree = "<group>"; };
@@ -375,6 +379,14 @@
 			path = Lab;
 			sourceTree = "<group>";
 		};
+		FD8A8CA125A76E1B00DE3D27 /* Inspectable */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */,
+			);
+			path = Inspectable;
+			sourceTree = "<group>";
+		};
 		FDA98B612596ED8600F4DFDF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +462,7 @@
 		FDA98B672596EDC600F4DFDF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FD8A8CA125A76E1B00DE3D27 /* Inspectable */,
 				FDFC0A60259F531500DFD5CF /* Designable */,
 				FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */,
 				FDA98B7925970BA700F4DFDF /* TimeCalculate.swift */,
@@ -542,6 +555,7 @@
 				FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */,
 				FDFB702725A206B1006EEC04 /* Day2SelectListCollectionCell.swift */,
 				FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */,
+				FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */,
 			);
 			path = ChatCells;
 			sourceTree = "<group>";
@@ -694,11 +708,13 @@
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
 				FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */,
 				FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */,
+				FD5F356625A5896F00330E9B /* Day2word3InputCell.swift in Sources */,
 				FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */,
 				069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */,
 				069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */,
 				FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */,
 				FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */,
+				FD8A8CA325A76E5500DE3D27 /* placeHolderColor.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
 				FDBFFE2125A35B3900C46615 /* getAponimousChatService.swift in Sources */,
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,

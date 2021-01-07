@@ -18,10 +18,10 @@ class Day2selectAnswerCell: UITableViewCell {
 
     var selectList : [String] = []
     var selectedBoolList : [Bool] = []
-    
-    
+        
     
     //MARK:- Constraint Part
+
 
     //MARK:- Life Cycle Part
 

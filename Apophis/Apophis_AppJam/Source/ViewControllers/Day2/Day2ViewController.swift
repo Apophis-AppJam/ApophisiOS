@@ -21,6 +21,8 @@ class Day2ViewController: UIViewController {
     @IBOutlet weak var headerTitle: UILabel!
     
     
+    
+    
     //MARK:- Variable Part
     
     //  메세지 리스트
@@ -82,6 +84,7 @@ class Day2ViewController: UIViewController {
 
     @IBAction func homeButtonClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+        
     }
     
     
@@ -183,40 +186,67 @@ class Day2ViewController: UIViewController {
         // 시간 설정이 완료되었을 때
         NotificationCenter.default.addObserver(self, selector: #selector(setTimeComplete), name: NSNotification.Name("setTimeComplete"), object: nil)
         
+        // 3개의 단어 입력이 완료되었을 때
+        NotificationCenter.default.addObserver(self, selector: #selector(user3WordsEntered), name: NSNotification.Name("user3WordsEntered"), object: nil)
+        
+        // 사용자 텍스트 입력받는 부분 숨길 때
+        NotificationCenter.default.addObserver(self, selector: #selector(hideInputView), name: NSNotification.Name("hideInputView"), object: nil)
+     
+        
 
     }
     
     //MARK:- @objc func 부분
     
+    @objc func hideInputView()
+    {
+        messageInputAreaHeightConstraint.constant = 0
+        messageSendButton.isHidden = true
+    }
+    
+    
     @objc func myMessageEnd(notification : NSNotification)
     {
         let index = notification.object as? Int ?? -1
-        
-        
+
         appData?.chatIndex = index
         
 
         if index != -1 // -1 이 올수가 없음
         {
+            if newMessageList.count - 1 == index // 마지막 메세지라면 아포니머스 메세지 로드해야함
+            {
+                loadDummyMessage(idx: newMessageList[index].chatDetailsIdx + 1, isMine: false)
+
+                messageListForTableView.append(newMessageList[index+1])
+
+                let index = IndexPath(row: index + 1, section: 0)
+                
+
+                chatTableView.beginUpdates()
+                chatTableView.insertRows(at: [index], with: .none)
+                chatTableView.endUpdates()
+            }
+            else if newMessageList.count - 1 > index  // 마지막 메세지가 아니라면
+            {
+                messageListForTableView.append(newMessageList[index+1])
+                let indexPath = IndexPath(row: index + 1, section: 0)
+                chatTableView.beginUpdates()
+                chatTableView.insertRows(at: [indexPath], with: .none)
+                chatTableView.endUpdates()
+            }
+            
+            else
+            {
+                
+            }
+            
 
             
-            loadDummyMessage(idx: newMessageList[index].chatDetailsIdx + 1, isMine: false)
-            
-            
-
-            messageListForTableView.append(newMessageList[index+1])
-//            isMessageLoadList.append(false)
-
-            
-
-            let index = IndexPath(row: index + 1, section: 0)
-            
-            
-            chatTableView.beginUpdates()
-            chatTableView.insertRows(at: [index], with: .none)
-            chatTableView.endUpdates()
-
+ 
         }
+        
+        chatTableView.scrollToBottomRow()
         
     }
     
@@ -240,9 +270,7 @@ class Day2ViewController: UIViewController {
       
 
             messageListForTableView.append(newMessageList[index+1])
-            
-        
-            
+
             let indexPath = IndexPath(row: index + 1, section: 0)
             
             chatTableView.beginUpdates()
@@ -274,6 +302,64 @@ class Day2ViewController: UIViewController {
 //            chatTableView.reloadData()
         }
         
+        chatTableView.scrollToBottomRow()
+    }
+    
+    @objc func user3WordsEntered(notification : NSNotification)
+    {
+        
+        messageSendButton.isHidden = false
+        messageInputAreaHeightConstraint.constant = 75
+        
+        let words = notification.object as? [String] ?? []
+        let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
+        
+        
+        isMessageLoadList[newMessageList.count - 1] = false
+        newMessageList.remove(at: newMessageList.count - 1)
+        messageListForTableView.remove(at: newMessageList.count - 1)
+        
+
+        
+        newMessageList.append(ChatMessageNewDataModel(messageContent: "첫 번째는 " + words[0],
+                                                      isMine: true,
+                                                      isLastMessage: false,
+                                                      nextMessageType: .none,
+                                                      type: .normal,
+                                                      dataList: [],
+                                                      chatDetailsIdx: 2))
+        
+        
+        newMessageList.append(ChatMessageNewDataModel(messageContent: "두 번째는 " + words[1],
+                                                      isMine: true,
+                                                      isLastMessage: false,
+                                                      nextMessageType: .none,
+                                                      type: .normal,
+                                                      dataList: [],
+                                                      chatDetailsIdx: 2))
+        
+        
+        newMessageList.append(ChatMessageNewDataModel(messageContent: "세 번째는 " + words[2],
+                                                      isMine: true,
+                                                      isLastMessage: true,
+                                                      nextMessageType: .none,
+                                                      type: .normal,
+                                                      dataList: [],
+                                                      chatDetailsIdx: 2))
+        
+        isMessageLoadList.append(contentsOf: [false,false])
+
+        messageListForTableView.append(ChatMessageNewDataModel(messageContent: "첫 번째는 " + words[0],
+                                                               isMine: true,
+                                                               isLastMessage: false,
+                                                               nextMessageType: .none,
+                                                               type: .normal,
+                                                               dataList: [],
+                                                               chatDetailsIdx: 2))
+        
+        chatTableView.reloadRows(at: [lastIndex], with: .none)
+
+
 
     }
     
@@ -759,9 +845,36 @@ extension Day2ViewController : UITableViewDataSource
                 
                 
             case .enter3words:
-                return UITableViewCell()
+                
+                guard let enterWordCell = tableView.dequeueReusableCell(withIdentifier: "Day2word3InputCell", for: indexPath)
+                        as? Day2word3InputCell
+                else {return UITableViewCell() }
+                
+                enterWordCell.backgroundColor = .clear
+                enterWordCell.selectionStyle = .none
+                
+                enterWordCell.setTextField()
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    enterWordCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    enterWordCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return enterWordCell
+                
+     
+                
+                
             case .brightAndDark:
                 return UITableViewCell()
+                
+        
             default :
                 return UITableViewCell()
             }
