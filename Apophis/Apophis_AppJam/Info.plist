@@ -58,8 +58,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>$(PRODUCT_NAME) use Microphone .</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>GmarketSansTTFBold.ttf</string>
@@ -80,7 +78,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Login</string>
+					<string>Main</string>
 				</dict>
 			</array>
 		</dict>
