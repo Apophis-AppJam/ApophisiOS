@@ -64,6 +64,7 @@ enum messageTypeList
     //MARK:- 영재 PART
     case compassButton
     case camera
+    case select1
     case select1In3
     case selectAdjective
     
