@@ -168,6 +168,13 @@ extension Day2selectAnswerCell : UICollectionViewDelegateFlowLayout
         label.sizeToFit()
         
         return CGSize(width: label.frame.width + 20, height: 34)
-        
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+        
 }

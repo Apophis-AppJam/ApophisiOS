@@ -445,7 +445,7 @@ class Day3ViewController: UIViewController {
                                             isMine: true,
                                             isLastMessage: false,
                                             nextMessageType: .normal,
-                                            type: .setTimeButton,
+                                            type: .enterName,
                                             dataList: [], chatDetailsIdx: 1)
                 ])
                 
