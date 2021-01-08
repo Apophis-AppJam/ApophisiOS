@@ -93,7 +93,6 @@ class Day2word3InputCell: UITableViewCell {
         textField2.addTarget(self, action: #selector(hideInputView), for: .editingDidBegin)
         textField3.addTarget(self, action: #selector(hideInputView), for: .editingDidBegin)
         
-        
     }
     
     @objc func hideInputView()

@@ -63,6 +63,7 @@
 		FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */; };
 		FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE05A5B25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift */; };
 		FDE05A6025A85E6C00E92E1B /* ChatSelectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE05A5F25A85E6C00E92E1B /* ChatSelectListCell.swift */; };
+		FDE05A6425A866F300E92E1B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE05A6325A866F300E92E1B /* Home.storyboard */; };
 		FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */; };
 		FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */; };
 		FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */; };
@@ -138,6 +139,7 @@
 		FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPhoneRingViewController.swift; sourceTree = "<group>"; };
 		FDE05A5B25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMyMessageWithCompleteCell.swift; sourceTree = "<group>"; };
 		FDE05A5F25A85E6C00E92E1B /* ChatSelectListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSelectListCell.swift; sourceTree = "<group>"; };
+		FDE05A6325A866F300E92E1B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GmarketFont + UIFont.swift"; sourceTree = "<group>"; };
 		FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "numberOfLines + UITextView.swift"; sourceTree = "<group>"; };
 		FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2ViewController.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 		FDA98B612596ED8600F4DFDF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				FDE05A6225A866E900E92E1B /* Home */,
 				FDE2C804259A2691006659DA /* Intro */,
 				FD5207A82599AF4B00AAD1BA /* Day7 */,
 				FD5207A72599AF4700AAD1BA /* Day6 */,
@@ -559,6 +562,14 @@
 			path = Intro;
 			sourceTree = "<group>";
 		};
+		FDE05A6225A866E900E92E1B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FDE05A6325A866F300E92E1B /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		FDE2C804259A2691006659DA /* Intro */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +669,7 @@
 				FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */,
 				FD52078D2599A60200AAD1BA /* GmarketSansTTFBold.ttf in Resources */,
 				FD52078E2599A60200AAD1BA /* GmarketSansTTFLight.ttf in Resources */,
+				FDE05A6425A866F300E92E1B /* Home.storyboard in Resources */,
 				FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */,
 				FD5207AA2599AF5900AAD1BA /* Day2.storyboard in Resources */,
 				FD5207B02599AF6800AAD1BA /* Day4.storyboard in Resources */,

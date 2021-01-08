@@ -381,6 +381,14 @@
                                             <outlet property="textStackView" destination="uhx-tI-iJe" id="27h-ol-fDQ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Tsf-uh-gcn">
+                                        <rect key="frame" x="0.0" y="599" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tsf-uh-gcn" id="phZ-gn-shr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfs-63-EuU" userLabel="messageInputAreaView">
@@ -450,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kB7-Pv-czU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-823.20000000000005" y="324.7376311844078"/>
+            <point key="canvasLocation" x="-823.91304347826099" y="324.10714285714283"/>
         </scene>
         <!--Day2 Select Time View Controller-->
         <scene sceneID="fs4-aC-liE">
@@ -615,7 +623,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgFindme" translatesAutoresizingMaskIntoConstraints="NO" id="BwL-6v-BwN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgFindmeBright" translatesAutoresizingMaskIntoConstraints="NO" id="BwL-6v-BwN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-bK-dGL" userLabel="headerView">
@@ -717,7 +725,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgFindme" translatesAutoresizingMaskIntoConstraints="NO" id="xbu-jc-NPU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgFindmeDark" translatesAutoresizingMaskIntoConstraints="NO" id="xbu-jc-NPU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVR-IG-y1H" userLabel="headerView">
@@ -844,7 +852,8 @@
         <image name="ChatMyMessageBackgroundImage" width="37" height="39"/>
         <image name="ChatSendButtonDisabled" width="28" height="28"/>
         <image name="ChatYourMessageBackgroundImage" width="37" height="79"/>
-        <image name="bgFindme" width="375" height="667"/>
+        <image name="bgFindmeBright" width="375" height="667"/>
+        <image name="bgFindmeDark" width="374" height="667"/>
         <image name="bigMsgBackgroundLeft" width="240" height="32.5"/>
         <image name="bigMsgBackgroundRight" width="240" height="32.5"/>
         <image name="btnTimer" width="42" height="42"/>
