@@ -22,6 +22,7 @@ class Day3ViewController: UIViewController {
     @IBOutlet weak var massageInputAreaView: UIView!
     @IBOutlet weak var backgroundImageFirst: UIImageView!
     
+    
     //MARK:- Variable Part
     
     //  메세지 리스트
@@ -175,6 +176,9 @@ class Day3ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(myMessageEnd), name: NSNotification.Name("myMessageEnd"), object: nil)
         
+        //이름 입력했을 때
+        NotificationCenter.default.addObserver(self, selector: #selector(userNameEntered), name: NSNotification.Name("userNameEntered"), object: nil)
+        
     }
     
     
@@ -278,42 +282,80 @@ class Day3ViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
     
-    
-    
             self.present(vc, animated: true, completion: nil)
         }
     
-        @objc func setTimeComplete(notification : NSNotification)
-        {
-            let time = notification.object as? Int ?? 0
-            let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
     
     
-            isMessageLoadList[newMessageList.count - 1] = false
+    @objc func userNameEntered(notification : NSNotification)
+    {
+        print("작동하나?")
+        
+        let nameList = notification.object as? [String] ?? []
+        let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
+        
+        isMessageLoadList[newMessageList.count - 1] = false
+        
+                    newMessageList.remove(at: newMessageList.count - 1)
+                    messageListForTableView.remove(at: newMessageList.count - 1)
+        
+        newMessageList.append(ChatMessageNewDataModel(messageContent: nameList[0],
+                                                      isMine: true,
+                                                      isLastMessage: true,
+                                                      nextMessageType: .none,
+                                                      type: .normal,
+                                                      dataList: [],
+                                                      chatDetailsIdx: 1))
+        
+        messageListForTableView.append(ChatMessageNewDataModel(messageContent: nameList[0],
+                                                               isMine: true,
+                                                               isLastMessage: true,
+                                                               nextMessageType: .none,
+                                                               type: .normal,
+                                                               dataList: [],
+                                                               chatDetailsIdx: 1))
+        
+        chatTableView.reloadRows(at: [lastIndex], with: .none)
+        
+    }
     
-            newMessageList.remove(at: newMessageList.count - 1)
-            messageListForTableView.remove(at: newMessageList.count - 1)
     
     
-            newMessageList.append(ChatMessageNewDataModel(messageContent: "음, 나는 늦은 저녁에 떠날래",
-                                                          isMine: true,
-                                                          isLastMessage: true,
-                                                          nextMessageType: .none,
-                                                          type: .normal,
-                                                          dataList: [],
-                                                          chatDetailsIdx: 1))
-    
-            messageListForTableView.append(ChatMessageNewDataModel(messageContent: "음, 나는 늦은 저녁에 떠날래",
-                                                                   isMine: true,
-                                                                   isLastMessage: true,
-                                                                   nextMessageType: .none,
-                                                                   type: .normal,
-                                                                   dataList: [],
-                                                                   chatDetailsIdx: 1))
     
     
-            chatTableView.reloadRows(at: [lastIndex], with: .none)
-        }
+    
+//
+//        @objc func setTimeComplete(notification : NSNotification)
+//        {
+//            let time = notification.object as? Int ?? 0
+//            let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
+//
+//
+//            isMessageLoadList[newMessageList.count - 1] = false
+//
+//            newMessageList.remove(at: newMessageList.count - 1)
+//            messageListForTableView.remove(at: newMessageList.count - 1)
+//
+//
+//            newMessageList.append(ChatMessageNewDataModel(messageContent: "음, 나는 늦은 저녁에 떠날래",
+//                                                          isMine: true,
+//                                                          isLastMessage: true,
+//                                                          nextMessageType: .none,
+//                                                          type: .normal,
+//                                                          dataList: [],
+//                                                          chatDetailsIdx: 1))
+//
+//            messageListForTableView.append(ChatMessageNewDataModel(messageContent: "음, 나는 늦은 저녁에 떠날래",
+//                                                                   isMine: true,
+//                                                                   isLastMessage: true,
+//                                                                   nextMessageType: .none,
+//                                                                   type: .normal,
+//                                                                   dataList: [],
+//                                                                   chatDetailsIdx: 1))
+//
+//
+//            chatTableView.reloadRows(at: [lastIndex], with: .none)
+//        }
     
     
     func tableViewDefaultSetting()
@@ -463,13 +505,21 @@ class Day3ViewController: UIViewController {
                     ChatMessageNewDataModel(messageContent: "그 사람은 어떤 사람이야?",
                                             isMine: false,
                                             isLastMessage: true,
-                                            nextMessageType: .enter3words,
+                                            nextMessageType: .none,
                                             type: .normal,
-                                            dataList: [], chatDetailsIdx: 2)
+                                            dataList: [], chatDetailsIdx: 2),
+                    
+                    ChatMessageNewDataModel(messageContent: "어떤 얘기를 하고 싶어?",
+                                            isMine: false,
+                                            isLastMessage: true,
+                                            nextMessageType: .normal,
+                                            type: .normal,
+                                            dataList: [],
+                                            chatDetailsIdx: 2)
                 ])
                 
                 
-                isMessageLoadList.append(contentsOf: [false])
+                isMessageLoadList.append(contentsOf: [false,false])
             }
             else
             {
@@ -680,6 +730,8 @@ extension Day3ViewController : UITableViewDataSource
                 
                 
             case .userAnswerWithComplete:
+                
+                
                 return UITableViewCell()
                 
                 
@@ -709,7 +761,6 @@ extension Day3ViewController : UITableViewDataSource
                 
             case .setTimeButton:
                 
-                
                 guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2CircleButtonCell", for: indexPath)
                         as? Day2CircleButtonCell
                 else {return UITableViewCell() }
@@ -733,8 +784,29 @@ extension Day3ViewController : UITableViewDataSource
                 return selectCell
                 
                 
-            case .enter3words:
-                return UITableViewCell()
+            case .enterName:
+                guard let enterNameCell = tableView.dequeueReusableCell(withIdentifier: "Day3EntetNameCell", for: indexPath)
+                        as? Day3EntetNameCell
+                else {return UITableViewCell() }
+                
+                enterNameCell.backgroundColor = .clear
+                enterNameCell.selectionStyle = .none
+                
+                enterNameCell.setTextField()
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    enterNameCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    enterNameCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return enterNameCell
+
             case .brightAndDark:
                 return UITableViewCell()
             default :

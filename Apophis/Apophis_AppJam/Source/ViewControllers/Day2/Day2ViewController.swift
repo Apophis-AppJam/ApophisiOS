@@ -13,7 +13,7 @@ class Day2ViewController: UIViewController {
 
     //MARK:- IBOutlet Part
 
-    
+
 
     @IBOutlet weak var messageSendButton: UIButton!
     @IBOutlet weak var messageTextInputView: UITextView!
