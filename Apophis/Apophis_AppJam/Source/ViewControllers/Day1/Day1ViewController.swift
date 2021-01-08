@@ -797,18 +797,8 @@ extension Day1ViewController : UITableViewDataSource
 
         }
         
-        // 사진을 찍고난 뒤 사진뷰를 불러오는 경우
-        else if(messageList[indexPath.row].Day1Func == 5){
-            guard let Day1ImageViewCell =
-                    tableView.dequeueReusableCell(withIdentifier: "Day1ImageViewCell", for: indexPath)
-                    as? Day1ImageViewCell
-            else {return UITableViewCell() }
-            
-            Day1ImageViewCell.setPictureImage(ImgName: pictureImage)
-            Day1ImageViewCell.setImageView()
-            
-            return Day1ImageViewCell
-        }
+
+        
         
         else // 아포니머스 메세지인 경우
         {

@@ -18,10 +18,10 @@ class Day2selectAnswerCell: UITableViewCell {
 
     var selectList : [String] = []
     var selectedBoolList : [Bool] = []
-    
-    
+        
     
     //MARK:- Constraint Part
+
 
     //MARK:- Life Cycle Part
 
@@ -133,7 +133,7 @@ extension Day2selectAnswerCell : UICollectionViewDelegate
         // 여기서 상위 뷰컨으로 유저가 선택한 메세지가 들어가야 합니다.
         NotificationCenter.default.post(name: NSNotification.Name("receivedUserSelect"), object:
                                             selectList[indexPath.row])
-             
+
     }
 }
 
@@ -169,6 +169,7 @@ extension Day2selectAnswerCell : UICollectionViewDelegateFlowLayout
         
         return CGSize(width: label.frame.width + 20, height: 34)
     }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }

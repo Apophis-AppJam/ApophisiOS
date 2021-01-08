@@ -717,7 +717,7 @@ extension Day3ViewController : UITableViewDataSource
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
                 
-                selectCell.setData()
+                selectCell.setData(type: .setTimeButton)
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
