@@ -268,6 +268,7 @@
                                         <connections>
                                             <outlet property="selectButtonCollectionView" destination="fvL-nI-eKG" id="N0R-Xx-mOQ"/>
                                         </connections>
+
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -477,6 +478,7 @@
         <image name="ChatYourMessageBackgroundImage" width="37" height="79"/>
         <image name="chatMessageBackground" width="32.5" height="34"/>
         <image name="selected_answer_background" width="32.5" height="34"/>
+
         <image name="youngjae" width="145" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
