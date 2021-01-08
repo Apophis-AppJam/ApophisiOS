@@ -10,9 +10,11 @@ import UIKit
 class Day2CircleButtonCell: UITableViewCell {
 
     
+    
     @IBOutlet weak var circleButton: UIButton!
     
-    
+    var messageType : messageTypeList?
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,12 +28,38 @@ class Day2CircleButtonCell: UITableViewCell {
     
     @IBAction func ButtonClicked(_ sender: Any) {
         
-        NotificationCenter.default.post(name: NSNotification.Name("setTimeButtonClicked"), object: nil)
+        
+        if messageType == .brightAndDark
+        {
+            NotificationCenter.default.post(name: NSNotification.Name("setBrightAndDark"), object: nil)
+            
+        }
+        else if messageType == .setTimeButton
+        {
+            NotificationCenter.default.post(name: NSNotification.Name("setTimeButtonClicked"), object: nil)
+        }
+        
+
     }
     
     
-    func setData()
+    func setData(type : messageTypeList)
     {
+        if type == .brightAndDark
+        {
+            messageType = .brightAndDark
+            circleButton.setBackgroundImage(UIImage(named: "findLightDark"), for: .normal)
+            
+        }
+        else if type == .setTimeButton
+        {
+            
+            messageType = .setTimeButton
+
+            circleButton.setBackgroundImage(UIImage(named: "btnTimer"), for: .normal)
+        }
+        
+        
         circleButton.alpha = 0
     }
     

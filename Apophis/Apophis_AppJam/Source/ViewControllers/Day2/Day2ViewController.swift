@@ -31,9 +31,7 @@ class Day2ViewController: UIViewController {
     var messageListForTableView : [ChatMessageNewDataModel] = []
     
     var isMessageLoadList : [Bool] = []
-    
-    var isUserEnterAnswer : Bool = false
-    
+        
     var isTextFieldEnabled : Bool = false
     
     let appData = UIApplication.shared.delegate as? AppDelegate
@@ -125,8 +123,6 @@ class Day2ViewController: UIViewController {
             
             
             
-                                  
-            isUserEnterAnswer = true
 
             chatTableView.reloadRows(at: [lastIndex], with: .none)
             
@@ -189,9 +185,19 @@ class Day2ViewController: UIViewController {
         // 3개의 단어 입력이 완료되었을 때
         NotificationCenter.default.addObserver(self, selector: #selector(user3WordsEntered), name: NSNotification.Name("user3WordsEntered"), object: nil)
         
+        
+        // 장단점 부분 호출하기
+        NotificationCenter.default.addObserver(self, selector: #selector(setBrightAndDark), name: NSNotification.Name("setBrightAndDark"), object: nil)
+        
+        // 장단점 완료
+        NotificationCenter.default.addObserver(self, selector: #selector(brightDarkComplete), name: NSNotification.Name("brightDarkComplete"), object: nil)
+        
+        
         // 사용자 텍스트 입력받는 부분 숨길 때
         NotificationCenter.default.addObserver(self, selector: #selector(hideInputView), name: NSNotification.Name("hideInputView"), object: nil)
      
+        
+        
         
 
     }
@@ -361,6 +367,59 @@ class Day2ViewController: UIViewController {
 
 
 
+    }
+    
+    // 나의 장단점 버튼 클릭했을 떄 부분
+    @objc func setBrightAndDark()
+    {
+        
+        
+        let storyboard = UIStoryboard(name: "Day2", bundle: nil)
+
+        let vc = storyboard.instantiateViewController(identifier: "setLightDarkNavi")
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        
+
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @objc func brightDarkComplete(notification : NSNotification)
+    {
+        let reason = notification.object as? [String] ?? []
+        
+        print("REASON",reason)
+        
+
+        let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
+        
+        
+        isMessageLoadList[newMessageList.count - 1] = false
+        
+        newMessageList.remove(at: newMessageList.count - 1)
+        messageListForTableView.remove(at: newMessageList.count - 1)
+        
+        
+        newMessageList.append(ChatMessageNewDataModel(messageContent: "나의 장단점은 이거야",
+                                                      isMine: true,
+                                                      isLastMessage: true,
+                                                      nextMessageType: .none,
+                                                      type: .normal,
+                                                      dataList: [],
+                                                      chatDetailsIdx: 3))
+        
+        
+        messageListForTableView.append(ChatMessageNewDataModel(messageContent: "나의 장단점은 이거야",
+                                                               isMine: true,
+                                                               isLastMessage: true,
+                                                               nextMessageType: .none,
+                                                               type: .normal,
+                                                               dataList: [],
+                                                               chatDetailsIdx: 3))
+
+
+        chatTableView.reloadRows(at: [lastIndex], with: .none)
+        
     }
     
     @objc func setTimeButtonClicked()
@@ -715,14 +774,13 @@ class Day2ViewController: UIViewController {
         {
             messageTextInputView.isEditable = true
             messageTextInputView.isSelectable = true
-
+            
         }
         else
         {
             messageTextInputView.isEditable = false
             messageTextInputView.isSelectable = false
-        
- 
+
         }
     }
 
@@ -828,7 +886,7 @@ extension Day2ViewController : UITableViewDataSource
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
                 
-                selectCell.setData()
+                selectCell.setData(type: .setTimeButton)
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -872,7 +930,27 @@ extension Day2ViewController : UITableViewDataSource
                 
                 
             case .brightAndDark:
-                return UITableViewCell()
+                guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2CircleButtonCell", for: indexPath)
+                        as? Day2CircleButtonCell
+                        else {return UITableViewCell() }
+                
+                selectCell.backgroundColor = .clear
+                selectCell.selectionStyle = .none
+                
+                selectCell.setData(type: .brightAndDark)
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    selectCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    selectCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return selectCell
                 
         
             default :

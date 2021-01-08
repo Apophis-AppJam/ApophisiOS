@@ -38,13 +38,15 @@
 		FD5207B62599AF7A00AAD1BA /* Day6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B52599AF7A00AAD1BA /* Day6.storyboard */; };
 		FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B92599AF8500AAD1BA /* Day7.storyboard */; };
 		FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */; };
-		FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */; };
 		FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */; };
 		FD5F356625A5896F00330E9B /* Day2word3InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */; };
 		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
 		FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */; };
 		FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */; };
 		FD8A8CA325A76E5500DE3D27 /* placeHolderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */; };
+		FD8A8CAF25A810EE00DE3D27 /* Day2SetBrightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */; };
+		FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */; };
+		FD8A8CB825A822F000DE3D27 /* Day2BrightDarkNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CB725A822F000DE3D27 /* Day2BrightDarkNaviController.swift */; };
 		FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B692596EE1C00F4DFDF /* view.xib */; };
 		FDA98B6F2596FA4200F4DFDF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */; };
 		FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */; };
@@ -59,6 +61,8 @@
 		FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09232259B0B1900B92529 /* NewsCommentDataModel.swift */; };
 		FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */; };
 		FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */; };
+		FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE05A5B25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift */; };
+		FDE05A6025A85E6C00E92E1B /* ChatSelectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE05A5F25A85E6C00E92E1B /* ChatSelectListCell.swift */; };
 		FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */; };
 		FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */; };
 		FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */; };
@@ -109,13 +113,15 @@
 		FD5207B52599AF7A00AAD1BA /* Day6.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day6.storyboard; sourceTree = "<group>"; };
 		FD5207B92599AF8500AAD1BA /* Day7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day7.storyboard; sourceTree = "<group>"; };
 		FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDataModel.swift; sourceTree = "<group>"; };
-		FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageWaitingCell.swift; sourceTree = "<group>"; };
 		FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CircleButtonCell.swift; sourceTree = "<group>"; };
 		FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2word3InputCell.swift; sourceTree = "<group>"; };
 		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yukyungLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jihunLabViewController.swift; sourceTree = "<group>"; };
 		FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeHolderColor.swift; sourceTree = "<group>"; };
+		FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetBrightViewController.swift; sourceTree = "<group>"; };
+		FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetDarkViewController.swift; sourceTree = "<group>"; };
+		FD8A8CB725A822F000DE3D27 /* Day2BrightDarkNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2BrightDarkNaviController.swift; sourceTree = "<group>"; };
 		FDA98B692596EE1C00F4DFDF /* view.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = view.xib; sourceTree = "<group>"; };
 		FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeAlert + UIView.swift"; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 		FDD09232259B0B1900B92529 /* NewsCommentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCommentDataModel.swift; sourceTree = "<group>"; };
 		FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "scrollToBottom + UITableView.swift"; sourceTree = "<group>"; };
 		FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPhoneRingViewController.swift; sourceTree = "<group>"; };
+		FDE05A5B25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMyMessageWithCompleteCell.swift; sourceTree = "<group>"; };
+		FDE05A5F25A85E6C00E92E1B /* ChatSelectListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSelectListCell.swift; sourceTree = "<group>"; };
 		FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GmarketFont + UIFont.swift"; sourceTree = "<group>"; };
 		FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "numberOfLines + UITextView.swift"; sourceTree = "<group>"; };
 		FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2ViewController.swift; sourceTree = "<group>"; };
@@ -266,9 +274,10 @@
 		FD52078325999C6400AAD1BA /* Day2 */ = {
 			isa = PBXGroup;
 			children = (
+				FD8A8CAD25A810DE00DE3D27 /* SetTime */,
+				FD8A8CAC25A810D900DE3D27 /* BrightDark */,
 				FDFB702225A2018E006EEC04 /* ChatCells */,
 				FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */,
-				FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */,
 			);
 			path = Day2;
 			sourceTree = "<group>";
@@ -295,7 +304,8 @@
 			children = (
 				FD5207942599ACBF00AAD1BA /* ChatYourMessageCell.swift */,
 				FD5207982599ACCF00AAD1BA /* ChatMyMessageCell.swift */,
-				FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */,
+				FDE05A5B25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift */,
+				FDE05A5F25A85E6C00E92E1B /* ChatSelectListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -385,6 +395,24 @@
 				FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */,
 			);
 			path = Inspectable;
+			sourceTree = "<group>";
+		};
+		FD8A8CAC25A810D900DE3D27 /* BrightDark */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */,
+				FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */,
+				FD8A8CB725A822F000DE3D27 /* Day2BrightDarkNaviController.swift */,
+			);
+			path = BrightDark;
+			sourceTree = "<group>";
+		};
+		FD8A8CAD25A810DE00DE3D27 /* SetTime */ = {
+			isa = PBXGroup;
+			children = (
+				FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */,
+			);
+			path = SetTime;
 			sourceTree = "<group>";
 		};
 		FDA98B612596ED8600F4DFDF /* Storyboards */ = {
@@ -703,6 +731,7 @@
 				FDFB702825A206B1006EEC04 /* Day2SelectListCollectionCell.swift in Sources */,
 				FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */,
 				069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */,
+				FD8A8CB825A822F000DE3D27 /* Day2BrightDarkNaviController.swift in Sources */,
 				FD5207952599ACBF00AAD1BA /* ChatYourMessageCell.swift in Sources */,
 				FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */,
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
@@ -717,6 +746,7 @@
 				FD8A8CA325A76E5500DE3D27 /* placeHolderColor.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
 				FDBFFE2125A35B3900C46615 /* getAponimousChatService.swift in Sources */,
+				FD8A8CAF25A810EE00DE3D27 /* Day2SetBrightViewController.swift in Sources */,
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,
 				FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */,
 				FD5207A12599AEBC00AAD1BA /* SampleViewController.swift in Sources */,
@@ -724,8 +754,10 @@
 				0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */,
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
+				FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
+				FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */,
 				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
 				FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */,
 				FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */,
@@ -735,8 +767,8 @@
 				FD52078725999C8F00AAD1BA /* Day1ViewController.swift in Sources */,
 				FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */,
 				FDFC0A5E259F240A00DFD5CF /* Day2SelectTimeViewController.swift in Sources */,
+				FDE05A6025A85E6C00E92E1B /* ChatSelectListCell.swift in Sources */,
 				FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */,
-				FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */,
 				FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */,
 				FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */,
 				FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */,

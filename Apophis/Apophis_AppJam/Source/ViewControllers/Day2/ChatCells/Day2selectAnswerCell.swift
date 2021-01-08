@@ -132,8 +132,7 @@ extension Day2selectAnswerCell : UICollectionViewDelegate
         NotificationCenter.default.post(name: NSNotification.Name("receivedUserSelect"), object:
                                             selectList[indexPath.row])
         
-        
-     
+    
     }
 }
 
@@ -170,4 +169,6 @@ extension Day2selectAnswerCell : UICollectionViewDelegateFlowLayout
         return CGSize(width: label.frame.width + 20, height: 34)
         
     }
+    
+    
 }
