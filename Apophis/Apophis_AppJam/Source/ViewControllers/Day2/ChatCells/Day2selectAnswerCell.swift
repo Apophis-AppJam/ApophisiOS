@@ -50,6 +50,7 @@ class Day2selectAnswerCell: UITableViewCell {
     
     func setSelectList(selectList : [String])
     {
+        selectedBoolList.removeAll()
 
         self.selectList = selectList
         
@@ -68,6 +69,7 @@ class Day2selectAnswerCell: UITableViewCell {
 
         selectButtonCollectionView.reloadData()
     }
+    
     
 
     
@@ -131,9 +133,7 @@ extension Day2selectAnswerCell : UICollectionViewDelegate
         // 여기서 상위 뷰컨으로 유저가 선택한 메세지가 들어가야 합니다.
         NotificationCenter.default.post(name: NSNotification.Name("receivedUserSelect"), object:
                                             selectList[indexPath.row])
-        
-        
-     
+             
     }
 }
 
