@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="hpR-UC-7Ai">
+            <objects>
+                <viewController id="EZ0-Mp-gFn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gsr-hz-JMQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_main" translatesAutoresizingMaskIntoConstraints="NO" id="0Od-Ga-R9a">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s98-bH-RWq">
+                                <rect key="frame" x="45" y="687" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hgu-Gf-tf4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s98-bH-RWq" firstAttribute="leading" secondItem="hgu-Gf-tf4" secondAttribute="leading" constant="45" id="8L1-a7-uo0"/>
+                            <constraint firstAttribute="bottom" secondItem="s98-bH-RWq" secondAttribute="bottom" multiplier="1.25" id="JrH-KS-9JH"/>
+                            <constraint firstItem="hgu-Gf-tf4" firstAttribute="trailing" secondItem="0Od-Ga-R9a" secondAttribute="trailing" id="KYh-hb-70T"/>
+                            <constraint firstItem="0Od-Ga-R9a" firstAttribute="leading" secondItem="hgu-Gf-tf4" secondAttribute="leading" id="RkQ-aj-Cdj"/>
+                            <constraint firstAttribute="bottom" secondItem="0Od-Ga-R9a" secondAttribute="bottom" id="mjh-e3-6L4"/>
+                            <constraint firstItem="0Od-Ga-R9a" firstAttribute="top" secondItem="gsr-hz-JMQ" secondAttribute="top" id="xEK-0W-Woh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BWb-F4-DUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444.92753623188412" y="187.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ios_main" width="375" height="667"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

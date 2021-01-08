@@ -42,7 +42,6 @@ class Day1ViewController: UIViewController {
     var checkImage: Bool = false
     
     
-    
     //MARK:- Constraint Part
     
     @IBOutlet weak var messageInputAreaHeightConstraint: NSLayoutConstraint!
@@ -81,6 +80,7 @@ class Day1ViewController: UIViewController {
 //
 //        }
 //    }
+
     
     
     //MARK:- IBAction Part
@@ -366,6 +366,7 @@ class Day1ViewController: UIViewController {
             }
 
         }
+
         
         else if idx == 1
         {
@@ -591,6 +592,7 @@ class Day1ViewController: UIViewController {
             messageTextInputView.isSelectable = true
             messageSendButton.isEnabled = true
 
+
         }
         else
         {
@@ -792,7 +794,11 @@ extension Day1ViewController : UITableViewDataSource
             }
 
 
+
         }
+        
+
+        
         
         else // 아포니머스 메세지인 경우
         {
@@ -819,6 +825,8 @@ extension Day1ViewController : UITableViewDataSource
             return yourMessageCell
         }
     }
+    
+    
     
     
 }
