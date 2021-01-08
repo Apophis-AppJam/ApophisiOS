@@ -1,6 +1,30 @@
 PODS:
   - Alamofire (5.4.0)
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
   - GIFImageView (0.1.0)
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GTMAppAuth (1.1.0):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher (~> 1.4)
+  - GTMSessionFetcher (1.5.0):
+    - GTMSessionFetcher/Full (= 1.5.0)
+  - GTMSessionFetcher/Core (1.5.0)
+  - GTMSessionFetcher/Full (1.5.0):
+    - GTMSessionFetcher/Core (= 1.5.0)
+  - KakaoSDKAuth (2.2.0):
+    - KakaoSDKCommon (= 2.2.0)
+  - KakaoSDKCommon (2.2.0):
+    - Alamofire (~> 5.1)
+  - KakaoSDKUser (2.2.0):
+    - KakaoSDKAuth (= 2.2.0)
+    - KakaoSDKCommon (= 2.2.0)
   - Kingfisher (5.15.7):
     - Kingfisher/Core (= 5.15.7)
   - Kingfisher/Core (5.15.7)
@@ -9,22 +33,40 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.1)
   - GIFImageView
+  - GoogleSignIn
+  - KakaoSDKAuth
+  - KakaoSDKCommon
+  - KakaoSDKUser
   - Kingfisher (~> 5.0)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AppAuth
     - GIFImageView
+    - GoogleSignIn
+    - GTMAppAuth
+    - GTMSessionFetcher
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKUser
     - Kingfisher
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   GIFImageView: cd6a500b9bac1942cb66b73452b97baa6e75280d
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
+  GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  KakaoSDKAuth: a6fa63eb1a6a4e03de55d87da597a2976aad9cbf
+  KakaoSDKCommon: 90adb38b946ff42f26d70aadb67e679f79fe139c
+  KakaoSDKUser: b5ddfcdaf4adce40f172cafc9d4864d1a8b4f938
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: ced9118d3af14d7753b3c22dd5ee50b736f56e74
+PODFILE CHECKSUM: a071fadf9d6dae25d3f160678679eebf2c084e61
 
 COCOAPODS: 1.10.0

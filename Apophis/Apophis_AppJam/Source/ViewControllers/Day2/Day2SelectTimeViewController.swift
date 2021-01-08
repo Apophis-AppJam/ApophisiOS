@@ -347,7 +347,6 @@ extension Day2SelectTimeViewController : UIPickerViewDelegate,UIPickerViewDataSo
 
 }
 
-
 extension UIView {
     func addCircle(isComplete: Bool, size : Float, currentTimeValue : Float,previousTimeValue : Float){
         
