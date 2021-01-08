@@ -57,12 +57,15 @@ enum messageTypeList
     
     
     //MARK:- 유경 PART
+    case enterName
     case voiceRecordButton
+    case colorPicker
 
     
     //MARK:- 영재 PART
     case compassButton
     case camera
+    case select1
     case select1In3
     case selectAdjective
     

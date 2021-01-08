@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SiZ-3j-vTi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="9Ny-YV-x3Q">
+            <objects>
+                <viewController restorationIdentifier="LoginViewController" storyboardIdentifier="LoginViewController" id="SiZ-3j-vTi" customClass="LoginViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e0B-N2-z19">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_login" translatesAutoresizingMaskIntoConstraints="NO" id="7RC-xH-CmM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oG0-qL-QSW">
+                                <rect key="frame" x="109" y="158" width="196" height="196"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미리 맞이 해보는 당신의 이른 죽음" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Aa-wI-EkD">
+                                <rect key="frame" x="112.5" y="320" width="189" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="481-a2-VFh">
+                                <rect key="frame" x="185" y="719" width="44" height="44"/>
+                                <state key="normal" image="group53"/>
+                                <connections>
+                                    <action selector="onKakaoLoginByAppTouched:" destination="SiZ-3j-vTi" eventType="touchUpInside" id="lWn-86-EcS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23u-4i-cmM">
+                                <rect key="frame" x="91" y="719" width="44" height="44"/>
+                                <state key="normal" image="group50"/>
+                                <connections>
+                                    <action selector="onAppleLoginByAppTouched:" destination="SiZ-3j-vTi" eventType="touchUpInside" id="AyY-6C-BSq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhk-hy-Uuw">
+                                <rect key="frame" x="279" y="719" width="44" height="44"/>
+                                <state key="normal" image="google"/>
+                                <connections>
+                                    <action selector="onGoogleLoginByAppTouched:" destination="SiZ-3j-vTi" eventType="touchUpInside" id="cJ2-mK-Ddw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간편 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwU-Cv-iI4">
+                                <rect key="frame" x="168" y="659" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqN-EL-Ja0">
+                                <rect key="frame" x="16" y="669" width="144" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="h1e-Zc-JKC"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUW-zM-ywJ">
+                                <rect key="frame" x="254" y="669" width="144" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="8tc-Wa-uOV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IEy-UX-uKY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="481-a2-VFh" firstAttribute="centerX" secondItem="e0B-N2-z19" secondAttribute="centerX" id="1Tg-eb-kBb"/>
+                            <constraint firstItem="4Aa-wI-EkD" firstAttribute="centerX" secondItem="e0B-N2-z19" secondAttribute="centerX" id="1wV-Xa-f8F"/>
+                            <constraint firstItem="4Aa-wI-EkD" firstAttribute="top" secondItem="IEy-UX-uKY" secondAttribute="top" constant="276" id="3y7-Dc-31f"/>
+                            <constraint firstItem="oG0-qL-QSW" firstAttribute="top" secondItem="IEy-UX-uKY" secondAttribute="top" constant="114" id="5to-XN-XF5"/>
+                            <constraint firstItem="WwU-Cv-iI4" firstAttribute="centerX" secondItem="481-a2-VFh" secondAttribute="centerX" id="6ke-vx-o99"/>
+                            <constraint firstItem="7RC-xH-CmM" firstAttribute="top" secondItem="e0B-N2-z19" secondAttribute="top" id="9Lf-cI-fR1"/>
+                            <constraint firstItem="WwU-Cv-iI4" firstAttribute="leading" secondItem="cqN-EL-Ja0" secondAttribute="trailing" constant="8" id="9cF-o1-kkT"/>
+                            <constraint firstItem="cqN-EL-Ja0" firstAttribute="centerY" secondItem="WwU-Cv-iI4" secondAttribute="centerY" id="9e4-mc-NBx"/>
+                            <constraint firstItem="IEy-UX-uKY" firstAttribute="trailing" secondItem="7RC-xH-CmM" secondAttribute="trailing" id="BLr-lu-tiv"/>
+                            <constraint firstItem="481-a2-VFh" firstAttribute="top" secondItem="WwU-Cv-iI4" secondAttribute="bottom" constant="39" id="Kzm-nv-4ga"/>
+                            <constraint firstItem="23u-4i-cmM" firstAttribute="centerY" secondItem="481-a2-VFh" secondAttribute="centerY" id="Q8K-wM-4WY"/>
+                            <constraint firstItem="IEy-UX-uKY" firstAttribute="bottom" secondItem="481-a2-VFh" secondAttribute="bottom" constant="99" id="Z28-WR-Phe"/>
+                            <constraint firstItem="cqN-EL-Ja0" firstAttribute="leading" secondItem="e0B-N2-z19" secondAttribute="leading" constant="16" id="ZND-lb-IRJ"/>
+                            <constraint firstItem="dhk-hy-Uuw" firstAttribute="leading" secondItem="481-a2-VFh" secondAttribute="trailing" constant="50" id="bZE-NW-Y0d"/>
+                            <constraint firstItem="wUW-zM-ywJ" firstAttribute="leading" secondItem="WwU-Cv-iI4" secondAttribute="trailing" constant="8" id="bzs-Wz-kHW"/>
+                            <constraint firstItem="481-a2-VFh" firstAttribute="leading" secondItem="23u-4i-cmM" secondAttribute="trailing" constant="50" id="fSy-fF-9BH"/>
+                            <constraint firstItem="dhk-hy-Uuw" firstAttribute="centerY" secondItem="481-a2-VFh" secondAttribute="centerY" id="i2m-j6-5pa"/>
+                            <constraint firstItem="7RC-xH-CmM" firstAttribute="leading" secondItem="IEy-UX-uKY" secondAttribute="leading" id="oNo-f8-ndI"/>
+                            <constraint firstAttribute="trailing" secondItem="wUW-zM-ywJ" secondAttribute="trailing" constant="16" id="pZW-nE-jJz"/>
+                            <constraint firstItem="oG0-qL-QSW" firstAttribute="centerX" secondItem="e0B-N2-z19" secondAttribute="centerX" id="rDl-jK-Uuy"/>
+                            <constraint firstItem="wUW-zM-ywJ" firstAttribute="centerY" secondItem="WwU-Cv-iI4" secondAttribute="centerY" id="sri-s8-8u2"/>
+                            <constraint firstAttribute="bottom" secondItem="7RC-xH-CmM" secondAttribute="bottom" id="tiw-2E-7vj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="easyLoginLabel" destination="WwU-Cv-iI4" id="CKs-TZ-9RZ"/>
+                        <outlet property="googleLoginButton" destination="dhk-hy-Uuw" id="bsR-jy-WTL"/>
+                        <outlet property="kakaoLoginButton" destination="481-a2-VFh" id="CVw-Ri-Ydc"/>
+                        <outlet property="logoSubLabel" destination="4Aa-wI-EkD" id="Qbg-HV-p3Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2j-hI-h13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.82608695652175" y="102.45535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="google" width="44" height="44"/>
+        <image name="group50" width="44" height="44"/>
+        <image name="group53" width="44" height="44"/>
+        <image name="imgLogo" width="196" height="196"/>
+        <image name="ios_login" width="1875" height="3335"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

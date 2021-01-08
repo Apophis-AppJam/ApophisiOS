@@ -14,7 +14,7 @@ class Day2ViewController: UIViewController {
     //MARK:- IBOutlet Part
 
     
-    
+
     @IBOutlet weak var messageSendButton: UIButton!
     @IBOutlet weak var messageTextInputView: UITextView!
     @IBOutlet weak var chatTableView: UITableView!
@@ -856,10 +856,10 @@ extension Day2ViewController : UITableViewDataSource
             case .select1In2:
                 
                 guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
-                        as? Day2selectAnswerCell
-                        else {return UITableViewCell() }
-                
-                selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
+                                        as? Day2selectAnswerCell
+                                        else {return UITableViewCell() }
+                                
+                                selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
                 selectCell.selectionStyle = .none
                 
