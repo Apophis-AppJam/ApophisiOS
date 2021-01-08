@@ -95,7 +95,7 @@ class Day1ViewController: UIViewController {
     // 메세지 전송 버튼 클릭 했을 때
     @IBAction func messageSendButtonClicked(_ sender: Any) {
         
-        if appData?.chatIndex == 0
+        if appData?.chatIndex == 0 || appData?.chatIndex == 1
         {
           
             let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
@@ -131,6 +131,10 @@ class Day1ViewController: UIViewController {
             
             messageTextInputView.text = ""
             textViewDidChange(messageTextInputView)
+
+            print("액션이다 꾸아아아악?", appData?.chatIndex)
+            appData?.chatIndex = (appData?.chatIndex)! + 1
+            print("액션이다 꾸아아아악22?", appData?.chatIndex)
         }
     }
     
@@ -162,8 +166,12 @@ class Day1ViewController: UIViewController {
     {
         let index = notification.object as? Int ?? -1
         
-        appData?.chatIndex = index
+        print("index", index)
+        print("newMessageList", newMessageList)
         
+        
+        print("index2", index)
+        print("newMessageList2", newMessageList)
 
         if index != -1 // -1 이 올수가 없음
         {
@@ -354,6 +362,7 @@ class Day1ViewController: UIViewController {
                 ])
 
                 isMessageLoadList.append(contentsOf: [false])
+                print("지금 idx 0 과연 값은?", appData?.chatIndex)
             }
 
         }
@@ -425,16 +434,26 @@ class Day1ViewController: UIViewController {
                                             type: .select1,
                                             dataList: ["응. 그렇게 생각할게."], chatDetailsIdx: 1)
                 ])
-
+                
+          
                 isMessageLoadList.append(contentsOf: [false])
+                print("지금 idx 1 값은?", appData?.chatIndex)
+//                appData?.chatIndex = (appData?.chatIndex)! + 1
+                print("바뀐 idx 1 값은?", appData?.chatIndex)
+
             }
             
         }
         
         else if idx == 2
         {
+            
+            print("끼야야야야야야야야야야야야아아아아아악 ")
+            
             if isMine == false
             {
+                print("끼야야야야야야야야야야야야아아아아아악2")
+
                 newMessageList.append(contentsOf: [
 
                     ChatMessageNewDataModel(messageContent: "그렇구나, 그렇다면 어떤 것들을 챙겨 가고 싶어?",
@@ -450,6 +469,8 @@ class Day1ViewController: UIViewController {
             }
             else
             {
+                print("끼야야야야야야야야야야야야아아아아아악3")
+
                 newMessageList.append(contentsOf: [
                     ChatMessageNewDataModel(messageContent: "음...",
                                             isMine: true,
@@ -514,7 +535,7 @@ class Day1ViewController: UIViewController {
 
                     
                 ])
-
+                
                 isMessageLoadList.append(contentsOf: [false])
             }
             
@@ -568,13 +589,16 @@ class Day1ViewController: UIViewController {
         {
             messageTextInputView.isEditable = true
             messageTextInputView.isSelectable = true
+            messageSendButton.isEnabled = true
 
         }
         else
         {
             messageTextInputView.isEditable = false
             messageTextInputView.isSelectable = false
-        
+            messageSendButton.isEnabled = false
+
+
  
         }
     }

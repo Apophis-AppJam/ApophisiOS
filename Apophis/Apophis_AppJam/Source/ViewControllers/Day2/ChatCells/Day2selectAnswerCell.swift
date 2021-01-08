@@ -50,6 +50,7 @@ class Day2selectAnswerCell: UITableViewCell {
     
     func setSelectList(selectList : [String])
     {
+        selectedBoolList.removeAll()
 
         self.selectList = selectList
         
