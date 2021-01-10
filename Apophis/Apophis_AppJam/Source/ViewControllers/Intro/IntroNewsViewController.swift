@@ -218,7 +218,7 @@ class IntroNewsViewController: UIViewController {
             
             self.newsCommentList.append(self.newsCommentTempList[self.commentCount])
             self.chatTableView.reloadData()
-            self.chatTableView.scrollToBottomRow()
+            self.chatTableView.scrollToBottom()
 
             self.commentCount += 1
             
