@@ -33,7 +33,13 @@ class Day2SetBrightViewController: UIViewController {
         contentTextView.delegate = self
         etcSetting()
         setTextField()
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+                
+        view.addGestureRecognizer(tap)
     }
+    
+    
     
     //MARK:- IBAction Part
     

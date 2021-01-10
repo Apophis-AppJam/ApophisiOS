@@ -108,8 +108,12 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatYourMessageBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-Cp-AgI">
                                                     <rect key="frame" x="8" y="8" width="280.33333333333331" height="101"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CHatMessageWaiting" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-2G-y2R">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-2G-y2R">
                                                     <rect key="frame" x="7.9999999999999964" y="8" width="56.666666666666657" height="38"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38" id="5H4-AU-SjB"/>
+                                                        <constraint firstAttribute="width" constant="56.670000000000002" id="xbI-yO-xSA"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="안녕ㅁㄴㅇ러ㅣㅏㅁㄴㅇ러ㅣㅏㄴ머이란머ㅏㅣㅇ러ㅏㅣㄴㅁㅇ라ㅣㄴㅁㅇ린ㅁ일ㄴㅁ어ㅣㅏ린망러ㅏㅣㄴㅁ어라ㅣㄴㅇ멀ㄴㅁ" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgD-ae-VyB">
                                                     <rect key="frame" x="24.000000000000014" y="20" width="252.33333333333337" height="76"/>

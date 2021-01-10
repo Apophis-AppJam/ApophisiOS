@@ -101,7 +101,7 @@ class ChatMyMessageWithCompleteCell: UITableViewCell {
             
             
         } completion: { (_) in
-            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
+//            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
         }
 
 
