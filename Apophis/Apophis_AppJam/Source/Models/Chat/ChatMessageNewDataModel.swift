@@ -49,9 +49,15 @@ enum messageTypeList
     // 순수한 글자 메세지
     case photo
     // 사진 메세지
+    case vibrate
+    // 일반 메세지 + 진동
     
     case userAnswerWithComplete
-    // 유저가 직접 입력할 수 있고, 완료하기 버튼이 있는 형태 
+    // 유저가 직접 입력할 수 있고, 완료하기 버튼이 있는 형태
+    
+    case selectList
+    case voice
+    case ending
     
     /* ============ 유저의 특별한 메세지  ============ */
     
@@ -78,6 +84,9 @@ enum messageTypeList
     
     case brightAndDark
     // 나의 장단점 입력하는거
+    
+    case normalWithSnow
+    case normalWithSea
     
     
     

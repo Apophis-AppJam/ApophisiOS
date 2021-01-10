@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class ChatYourMessageCell: UITableViewCell {
     //MARK:- IBOutlet Part
@@ -17,7 +18,7 @@ class ChatYourMessageCell: UITableViewCell {
     
     //MARK:- Variable Part
 
-    
+    let loadingView = AnimationView()
     
     //MARK:- Constraint Part
 
@@ -46,12 +47,13 @@ class ChatYourMessageCell: UITableViewCell {
 
     //MARK:- default Setting Function Part
     
+    
+    
     func setMessage(message : String)
     {
-  
         
+
         
-     
         let padding = messageTextView.textContainer.lineFragmentPadding
         messageTextView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
         
@@ -59,23 +61,40 @@ class ChatYourMessageCell: UITableViewCell {
         messageTextView.textColor = .white
         messageTextView.text = message
 
-        messageTextView.sizeToFit()
         
         messageTextView.translatesAutoresizingMaskIntoConstraints = true
+        
+        messageTextView.sizeToFit()
+        
         messageTextView.isScrollEnabled = false
+
         messageTextView.contentInset = .zero
         
         messageTextView.alpha = 0
         waitMessageImageView.alpha = 0
         messageBackgroundImageView.alpha = 0
+        
+        print("너의 메세지",message,messageTextView.frame)
 
 
     }
     
+    func setSnowBackground()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("setSnowBackground"), object: nil)
+    }
+    
     func loadingAnimate(index : Int)
     {
+        loadingView.frame = waitMessageImageView.bounds
+        loadingView.animation = Animation.named("message_loading")
+        loadingView.contentMode = .scaleAspectFit
+        loadingView.loopMode = .loop
+        loadingView.play()
+        waitMessageImageView.addSubview(loadingView)
+        
 
-        UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: .allowUserInteraction) {
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
@@ -98,6 +117,7 @@ class ChatYourMessageCell: UITableViewCell {
                 })
             
         } completion: { (_) in
+            self.loadingView.stop()
             NotificationCenter.default.post(name: NSNotification.Name("AponimousMessageEnd"), object: index)
         }
 
@@ -105,6 +125,7 @@ class ChatYourMessageCell: UITableViewCell {
     
     func showMessageWithNoAnimation()
     {
+        loadingView.isHidden = true
         messageTextView.alpha = 1
         messageBackgroundImageView.alpha = 1
     }

@@ -28,6 +28,7 @@ PODS:
   - Kingfisher (5.15.7):
     - Kingfisher/Core (= 5.15.7)
   - Kingfisher/Core (5.15.7)
+  - lottie-ios (3.1.9)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - KakaoSDKCommon
   - KakaoSDKUser
   - Kingfisher (~> 5.0)
+  - lottie-ios
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -52,6 +54,7 @@ SPEC REPOS:
     - KakaoSDKCommon
     - KakaoSDKUser
     - Kingfisher
+    - lottie-ios
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -65,8 +68,9 @@ SPEC CHECKSUMS:
   KakaoSDKCommon: 90adb38b946ff42f26d70aadb67e679f79fe139c
   KakaoSDKUser: b5ddfcdaf4adce40f172cafc9d4864d1a8b4f938
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
+  lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: a071fadf9d6dae25d3f160678679eebf2c084e61
+PODFILE CHECKSUM: f9e1d6f8f7d3e87f3a43675b79c3368e61a745e9
 
 COCOAPODS: 1.10.0

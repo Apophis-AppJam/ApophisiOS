@@ -220,8 +220,7 @@ class Day1ViewController: UIViewController {
             chatTableView.beginUpdates()
             chatTableView.insertRows(at: [indexPath], with: .none)
             chatTableView.endUpdates()
-            
-            
+
         }
         
  
@@ -232,6 +231,7 @@ class Day1ViewController: UIViewController {
             chatTableView.beginUpdates()
             chatTableView.insertRows(at: [indexPath], with: .none)
             chatTableView.endUpdates()
+            
         }
         else
         {

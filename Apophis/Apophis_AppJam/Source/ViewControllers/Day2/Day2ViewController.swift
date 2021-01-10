@@ -13,14 +13,17 @@ class Day2ViewController: UIViewController {
 
     //MARK:- IBOutlet Part
 
+    @IBOutlet weak var chatSnowImageView: UIImageView!
     
 
     @IBOutlet weak var messageSendButton: UIButton!
     @IBOutlet weak var messageTextInputView: UITextView!
     @IBOutlet weak var chatTableView: UITableView!
+    
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerTitle: UILabel!
     
-    
+    @IBOutlet weak var messageInputView: UIView!
     
     
     //MARK:- Variable Part
@@ -64,14 +67,7 @@ class Day2ViewController: UIViewController {
         disableTextField(isEnable: isTextFieldEnabled)
         
         
-        loadDummyMessage(idx: (appData?.chatIndex)!, isMine: false)
- 
-        messageListForTableView.append(newMessageList[(appData?.chatIndex)!])
-        
-        let index = IndexPath(row: 0, section: 0)
-        chatTableView.reloadRows(at: [index], with: .none)
-        
-
+        firstMessageLoad()
 
     }
 
@@ -141,16 +137,33 @@ class Day2ViewController: UIViewController {
     //MARK:- default Setting Function Par
     
     
-    
-    func getAponimousMessageFromServer(chatDetailsIdx : Int)
+    func firstMessageLoad()
     {
-        
-        
 
-        
+        self.loadApoMessage(idx: 23) { (result) in
+            if result
+            {
+                print("여기서 리스트",self.newMessageList)
+                self.messageListForTableView.append(self.newMessageList[0])
+                
+                
+                let index = IndexPath(row: 0, section: 0)
+                self.chatTableView.insertRows(at: [index], with: .none)
+            }
+
+            
+        }
+
+
+
+
+ 
 
     }
     
+    
+    
+
 
     
     func addObserver()
@@ -195,10 +208,12 @@ class Day2ViewController: UIViewController {
         
         // 사용자 텍스트 입력받는 부분 숨길 때
         NotificationCenter.default.addObserver(self, selector: #selector(hideInputView), name: NSNotification.Name("hideInputView"), object: nil)
+        
+        
+        // 눈길 배경 만들기
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setSnowBackground), name: NSNotification.Name("setSnowBackground"), object: nil)
      
-        
-        
-        
 
     }
     
@@ -211,6 +226,48 @@ class Day2ViewController: UIViewController {
     }
     
     
+    @objc func setSnowBackground()
+    {
+        messageInputView.backgroundColor = .clear
+        headerView.backgroundColor = .clear
+        chatTableView.backgroundColor = .clear
+
+        
+        
+        chatSnowImageView.image = UIImage(named: "snowBG")
+        self.chatSnowImageView.alpha = 1
+
+   
+        
+        
+//
+//        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { timer in
+//
+//            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn) {
+//
+//                self.chatSnowImageView.alpha = 1
+//
+//
+//
+//            } completion: { (_) in
+//
+//            }
+//
+//
+//        }
+        
+//        messageInputView.backgroundColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
+//        headerView.backgroundColor =  .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
+//        chatTableView.backgroundColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
+        
+        
+//
+//        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn) {
+//            self.chatSnowImageView.alpha = 0
+//        }
+        
+    }
+    
     @objc func myMessageEnd(notification : NSNotification)
     {
         let index = notification.object as? Int ?? -1
@@ -222,16 +279,30 @@ class Day2ViewController: UIViewController {
         {
             if newMessageList.count - 1 == index // 마지막 메세지라면 아포니머스 메세지 로드해야함
             {
-                loadDummyMessage(idx: newMessageList[index].chatDetailsIdx + 1, isMine: false)
+                print("지금 보내고있는건 먼데여",newMessageList[index].chatDetailsIdx )
+                
+                loadApoMessage(idx: newMessageList[index].chatDetailsIdx + 1) { (result) in
+                    
+                    if result
+                    {
+                        self.messageListForTableView.append(self.newMessageList[index+1])
 
-                messageListForTableView.append(newMessageList[index+1])
+                        let index = IndexPath(row: index + 1, section: 0)
+                        
 
-                let index = IndexPath(row: index + 1, section: 0)
+                        self.chatTableView.beginUpdates()
+                        self.chatTableView.insertRows(at: [index], with: .none)
+                        self.chatTableView.endUpdates()
+                    }
+                    else
+                    {
+                        makeAlert(title: "알림", message: "메세지 정보를 불러오는데 실패하였습니다", vc: self)
+                    }
+                }
                 
 
-                chatTableView.beginUpdates()
-                chatTableView.insertRows(at: [index], with: .none)
-                chatTableView.endUpdates()
+
+
             }
             else if newMessageList.count - 1 > index  // 마지막 메세지가 아니라면
             {
@@ -269,19 +340,28 @@ class Day2ViewController: UIViewController {
         
         if newMessageList.count - 1 == index // 지금 마지막 메세지를 재생하고 온 것. 새로 데이터를 받아와야 한다.
         {
-            loadDummyMessage(idx: newMessageList[index].chatDetailsIdx,
-                             isMine: !newMessageList[index].isMine)
+            loadMyMessage(idx: newMessageList[index].chatDetailsIdx,
+                          type: newMessageList[index].nextMessageType) { (result) in
+                
+                if result
+                {
+                    self.messageListForTableView.append(self.newMessageList[index+1])
+
+                    let indexPath = IndexPath(row: index + 1, section: 0)
+                    
+                    self.chatTableView.beginUpdates()
+                    self.chatTableView.insertRows(at: [indexPath], with: .none)
+                    self.chatTableView.endUpdates()
+                }
+
+                
+                
+            }
+
             
  
       
 
-            messageListForTableView.append(newMessageList[index+1])
-
-            let indexPath = IndexPath(row: index + 1, section: 0)
-            
-            chatTableView.beginUpdates()
-            chatTableView.insertRows(at: [indexPath], with: .none)
-            chatTableView.endUpdates()
             
          
          
@@ -480,6 +560,9 @@ class Day2ViewController: UIViewController {
     
     func etcDefaultSetting()
     {
+        // 배경 이미지 숨겨야 함
+        chatSnowImageView.alpha = 0
+        
         // 네비게이션 바 숨기기
         self.navigationController?.navigationBar.isHidden = true
         
@@ -513,8 +596,6 @@ class Day2ViewController: UIViewController {
             .foregroundColor : UIColor.white
             ]
 
-
-        
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 
         let button = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(dismissKeyBoard))
@@ -541,181 +622,287 @@ class Day2ViewController: UIViewController {
         
     }
     
-    
-
-    
-    
-    func loadDummyMessage(idx : Int,isMine : Bool)
+    func loadMyMessage(idx : Int, type : messageTypeList,completion: @escaping (Bool) -> Void)
     {
-        if idx == 0
-        {
-            
-            if isMine == false
+        getChatService.shared.getMyMessage(chatDetailIdx: idx, messageType: type) { (result) in
+            switch(result)
             {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "정신없지? 시작하기 전에 물 한 잔 마시고 오는거 어때?",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .select1In2,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 0)
-                ])
+            case .success(let messageList, _):
                 
-                isMessageLoadList.append(contentsOf: [false])
+                let message = messageList as? [ChatMessageNewDataModel] ?? []
+                
+                if message.count > 0
+                {
+                    for i in 0 ... message.count - 1
+                    {
+                        self.newMessageList.append(message[i])
+                        self.isMessageLoadList.append(false)
+                    }
+                }
+                completion(true)
+                
+            case .networkFail :
+                completion(false)
+                makeAlert(title: "알림", message: "네트워크 상태를 확인해주세요", vc: self)
+                
+            default :
+                completion(false)
+                makeAlert(title: "알림", message: "오류가 발생하였습니다", vc: self)
+                
             }
-            else
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .select1In2,
-                                            dataList: ["응 마셨어.","딱히, 괜찮아."],
-                                            chatDetailsIdx: 0)
-                ])
-
-                isMessageLoadList.append(contentsOf: [false])
-            }
-
         }
         
-        else if idx == 1
-        {
-            if isMine == false
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "오늘 나는 너에게 가는 길에 눈길을 밟았어!",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .normal,
-                                            dataList: [], chatDetailsIdx: 1),
-                    
-                    ChatMessageNewDataModel(messageContent: "음 그러고보니 너는 여행을 떠날 때 어떨지 궁금하다",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .normal,
-                                            dataList: [], chatDetailsIdx: 1),
+    }
 
-                    ChatMessageNewDataModel(messageContent: "만약 여행을 떠난다면 언제 집을 나서고 싶어?",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .setTimeButton,
-                                            type: .normal,
-                                            dataList: [], chatDetailsIdx: 1)
-                ])
-                
-                isMessageLoadList.append(contentsOf: [false,false,false])
-            }
-            else
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .setTimeButton,
-                                            dataList: [], chatDetailsIdx: 1)
-                ])
-
-                isMessageLoadList.append(contentsOf: [false])
-            }
-            
-        }
+    
+    
+    func loadApoMessage(idx : Int,completion: @escaping (Bool) -> Void)
+    {
         
-        else if idx == 2
-        {
-            if isMine == false
+   
+   
+        getChatService.shared.getAponimousMessage(chatDetailIdx: idx) { (result) in
+            switch(result)
             {
-                newMessageList.append(contentsOf: [
-
-                    ChatMessageNewDataModel(messageContent: "그렇구나, 그렇다면 어떤 것들을 챙겨 가고 싶어?",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .enter3words,
-                                            type: .normal,
-                                            dataList: [], chatDetailsIdx: 2)
-                ])
+            case .success(let messageList, _):
                 
                 
-                isMessageLoadList.append(contentsOf: [false])
-            }
-            else
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "음...",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .enter3words,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 2),
-                    
-                    ChatMessageNewDataModel(messageContent: "",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .enter3words,
-                                            dataList: [],
-                                            chatDetailsIdx: 2)
-                    
-                    
-                ])
-
-                isMessageLoadList.append(contentsOf: [false,false])
+          
+                let message = messageList as? [ChatMessageNewDataModel] ?? []
+                
+                if message.count > 0
+                {
+                    for i in 0 ... message.count - 1
+                    {
+                        self.newMessageList.append(message[i])
+                        self.isMessageLoadList.append(false)
+                    }
+                }
+                
+                completion(true)
+                
+            case .networkFail :
+                makeAlert(title: "알림", message: "네트워크 상태를 확인해주세요", vc: self)
+                completion(false)
+                
+            default :
+                makeAlert(title: "알림", message: "오류가 발생하였습니다", vc: self)
+                completion(false)
+                
             }
             
+            print("newMessageList",self.newMessageList)
         }
         
         
-        else if idx == 3
-        {
-            if isMine == false
-            {
-                newMessageList.append(contentsOf: [
+     
 
-                    ChatMessageNewDataModel(messageContent: "음 그렇구나, 말해줘서 고마워. 너는 소중한 것이 있는 사림이구나.",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 3),
-                    
-                    ChatMessageNewDataModel(messageContent: "너는 어떤 모습일지 궁금하다.",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .brightAndDark,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 3)
-                    
-                    
-                ])
-                
-                isMessageLoadList.append(contentsOf: [false,false])
-            }
-            else
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .brightAndDark,
-                                            dataList: [],
-                                            chatDetailsIdx: 3),
 
-                    
-                ])
-
-                isMessageLoadList.append(contentsOf: [false])
-            }
-            
-        }
+//        if idx == 0
+//        {
+//
+//            if isMine == false
+//            {
+//                newMessageList.append(contentsOf: [
+//                    ChatMessageNewDataModel(messageContent: "안녕.",
+//                                            isMine: false,
+//                                            isLastMessage: true,
+//                                            nextMessageType: .select1In2,
+//                                            type: .normal,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 0),
+//
+//                    ChatMessageNewDataModel(messageContent: "다시 연락했어. 짧은 시간이었지만 잘 지냈어?",
+//                                            isMine: false,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .select1In2,
+//                                            type: .normal,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 0),
+//
+//                    ChatMessageNewDataModel(messageContent: "오늘은 내내 눈이 오네. 조용히 그리고 가만히 쌓여가.",
+//                                            isMine: false,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .select1In2,
+//                                            type: .normalWithSnow,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 0),
+//
+//                    ChatMessageNewDataModel(messageContent: "난 지금 어제보다는 조금 더 너와 가까이 있어. 내 생에 처음으로 그 동쪽 끝 마을에서 벗어난거야.",
+//                                            isMine: false,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .select1In2,
+//                                            type: .normal,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 0),
+//
+//                    ChatMessageNewDataModel(messageContent: "지금 주변 조용하니? 혼자 있어?",
+//                                            isMine: false,
+//                                            isLastMessage: true,
+//                                            nextMessageType: .select1In2,
+//                                            type: .normal,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 0)
+//
+//
+//
+//
+//                ])
+//
+//                isMessageLoadList.append(contentsOf: [false,false,false,false,false])
+//            }
+//            else
+//            {
+//                newMessageList.append(contentsOf: [
+//                    ChatMessageNewDataModel(messageContent: "",
+//                                            isMine: true,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .normal,
+//                                            type: .select1In2,
+//                                            dataList: ["응 마셨어.","딱히, 괜찮아."],
+//                                            chatDetailsIdx: 0)
+//                ])
+//
+//                isMessageLoadList.append(contentsOf: [false])
+//            }
+//
+//        }
+//
+//        else if idx == 1
+//        {
+//            if isMine == false
+//            {
+//                newMessageList.append(contentsOf: [
+//                    ChatMessageNewDataModel(messageContent: "오늘 나는 너에게 가는 길에 눈길을 밟았어!",
+//                                            isMine: false,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .normal,
+//                                            type: .normal,
+//                                            dataList: [], chatDetailsIdx: 1),
+//
+//                    ChatMessageNewDataModel(messageContent: "음 그러고보니 너는 여행을 떠날 때 어떨지 궁금하다",
+//                                            isMine: false,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .normal,
+//                                            type: .normal,
+//                                            dataList: [], chatDetailsIdx: 1),
+//
+//                    ChatMessageNewDataModel(messageContent: "만약 여행을 떠난다면 언제 집을 나서고 싶어?",
+//                                            isMine: false,
+//                                            isLastMessage: true,
+//                                            nextMessageType: .setTimeButton,
+//                                            type: .normal,
+//                                            dataList: [], chatDetailsIdx: 1)
+//                ])
+//
+//                isMessageLoadList.append(contentsOf: [false,false,false])
+//            }
+//            else
+//            {
+//                newMessageList.append(contentsOf: [
+//                    ChatMessageNewDataModel(messageContent: "",
+//                                            isMine: true,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .normal,
+//                                            type: .setTimeButton,
+//                                            dataList: [], chatDetailsIdx: 1)
+//                ])
+//
+//                isMessageLoadList.append(contentsOf: [false])
+//            }
+//
+//        }
+//
+//        else if idx == 2
+//        {
+//            if isMine == false
+//            {
+//                newMessageList.append(contentsOf: [
+//
+//                    ChatMessageNewDataModel(messageContent: "그렇구나, 그렇다면 어떤 것들을 챙겨 가고 싶어?",
+//                                            isMine: false,
+//                                            isLastMessage: true,
+//                                            nextMessageType: .enter3words,
+//                                            type: .normal,
+//                                            dataList: [], chatDetailsIdx: 2)
+//                ])
+//
+//
+//                isMessageLoadList.append(contentsOf: [false])
+//            }
+//            else
+//            {
+//                newMessageList.append(contentsOf: [
+//                    ChatMessageNewDataModel(messageContent: "음...",
+//                                            isMine: true,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .enter3words,
+//                                            type: .normal,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 2),
+//
+//                    ChatMessageNewDataModel(messageContent: "",
+//                                            isMine: true,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .normal,
+//                                            type: .enter3words,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 2)
+//
+//
+//                ])
+//
+//                isMessageLoadList.append(contentsOf: [false,false])
+//            }
+//
+//        }
+//
+//
+//        else if idx == 3
+//        {
+//            if isMine == false
+//            {
+//                newMessageList.append(contentsOf: [
+//
+//                    ChatMessageNewDataModel(messageContent: "음 그렇구나, 말해줘서 고마워. 너는 소중한 것이 있는 사림이구나.",
+//                                            isMine: false,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .normal,
+//                                            type: .normal,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 3),
+//
+//                    ChatMessageNewDataModel(messageContent: "너는 어떤 모습일지 궁금하다.",
+//                                            isMine: false,
+//                                            isLastMessage: true,
+//                                            nextMessageType: .brightAndDark,
+//                                            type: .normal,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 3)
+//
+//
+//                ])
+//
+//                isMessageLoadList.append(contentsOf: [false,false])
+//            }
+//            else
+//            {
+//                newMessageList.append(contentsOf: [
+//                    ChatMessageNewDataModel(messageContent: "",
+//                                            isMine: true,
+//                                            isLastMessage: false,
+//                                            nextMessageType: .normal,
+//                                            type: .brightAndDark,
+//                                            dataList: [],
+//                                            chatDetailsIdx: 3),
+//
+//
+//                ])
+//
+//                isMessageLoadList.append(contentsOf: [false])
+//            }
+//
+//        }
     }
     
     //MARK:- Function Part
@@ -829,7 +1016,7 @@ extension Day2ViewController : UITableViewDataSource
                         as? ChatMyMessageCell
                         else {return UITableViewCell() }
                 
-                
+                myMessageCell.backgroundColor = .clear
                 
                 myMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
@@ -926,7 +1113,29 @@ extension Day2ViewController : UITableViewDataSource
                 
                 return enterWordCell
                 
-     
+            case .selectList:
+                
+                guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
+                                        as? Day2selectAnswerCell
+                                        else {return UITableViewCell() }
+                                
+                                selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
+                selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+                selectCell.selectionStyle = .none
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    selectCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    selectCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return selectCell
+                
                 
                 
             case .brightAndDark:
@@ -962,27 +1171,67 @@ extension Day2ViewController : UITableViewDataSource
         
         else // 아포니머스 메세지인 경우
         {
-            guard let yourMessageCell =
-                    tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
-                    as? ChatYourMessageCell
-                    else {return UITableViewCell() }
             
-            
-            yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
-            
-            if isMessageLoadList[indexPath.row] == false
+            switch(newMessageList[indexPath.row].type)
             {
-                yourMessageCell.loadingAnimate(index: indexPath.row)
+            
+
+            case .normal:
+                
+                guard let yourMessageCell =
+                        tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
+                        as? ChatYourMessageCell
+                        else {return UITableViewCell() }
+
+
+                yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    yourMessageCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    yourMessageCell.showMessageWithNoAnimation()
+                }
+
+                isMessageLoadList[indexPath.row] = true
+
+                yourMessageCell.backgroundColor = .clear
+                return yourMessageCell
+
+
+            case .normalWithSnow:
+                
+                guard let yourMessageCell =
+                        tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
+                        as? ChatYourMessageCell
+                        else {return UITableViewCell() }
+
+
+                yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+                yourMessageCell.setSnowBackground()
+
+                
+
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    yourMessageCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    yourMessageCell.showMessageWithNoAnimation()
+                }
+
+                isMessageLoadList[indexPath.row] = true
+
+                yourMessageCell.backgroundColor = .clear
+                return yourMessageCell
+                
+            default :
+                return UITableViewCell()
             }
-            else
-            {
-                yourMessageCell.showMessageWithNoAnimation()
-            }
-            
-            isMessageLoadList[indexPath.row] = true
-            
-            
-            return yourMessageCell
+
         }
     }
     
