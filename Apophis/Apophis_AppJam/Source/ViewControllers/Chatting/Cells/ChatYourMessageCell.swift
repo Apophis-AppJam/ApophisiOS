@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ChatYourMessageCell: UITableViewCell {
     //MARK:- IBOutlet Part
@@ -14,7 +15,7 @@ class ChatYourMessageCell: UITableViewCell {
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var messageBackgroundImageView: UIImageView!
     
-    
+    var check: Bool = false
     //MARK:- Variable Part
 
     
@@ -50,8 +51,8 @@ class ChatYourMessageCell: UITableViewCell {
     {
   
         
-        
-     
+        print("여기는 셀 에서의 메세지 입니다.", message)
+
         let padding = messageTextView.textContainer.lineFragmentPadding
         messageTextView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
         
@@ -72,8 +73,9 @@ class ChatYourMessageCell: UITableViewCell {
 
     }
     
-    func loadingAnimate(index : Int)
+    func loadingAnimate(index : Int, vibrate : Bool)
     {
+        self.check = false
 
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
             
@@ -94,13 +96,18 @@ class ChatYourMessageCell: UITableViewCell {
                     
                     self.messageTextView.alpha = 1
                     self.messageBackgroundImageView.alpha = 1
-                    
+                    self.check = true
                 })
             
         } completion: { (_) in
+            // 애니메이션이 끝날 때 post를 해주는데, 그 때 object에 index값을 넣어서 쏜다.
+            // 여기서 index는 loadingAnimate를 호출할 때 받아온다.
             NotificationCenter.default.post(name: NSNotification.Name("AponimousMessageEnd"), object: index)
+            
+            if self.check && vibrate {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
         }
-
     }
     
     func showMessageWithNoAnimation()

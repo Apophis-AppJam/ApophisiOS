@@ -79,7 +79,7 @@
                                                 <constraint firstItem="pau-PF-0M3" firstAttribute="top" secondItem="nCr-of-L0S" secondAttribute="top" constant="20" id="F71-Uh-vkz"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="top" secondItem="pau-PF-0M3" secondAttribute="top" constant="-12" id="NBe-Hq-CbZ"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="leading" secondItem="pau-PF-0M3" secondAttribute="leading" constant="-16" id="TTg-3a-mBT"/>
-                                                <constraint firstItem="pau-PF-0M3" firstAttribute="width" relation="lessThanOrEqual" secondItem="nCr-of-L0S" secondAttribute="width" multiplier="230/375" id="Tt9-zv-2R8"/>
+                                                <constraint firstItem="pau-PF-0M3" firstAttribute="width" relation="lessThanOrEqual" secondItem="nCr-of-L0S" secondAttribute="width" multiplier="230/375" priority="999" id="Tt9-zv-2R8"/>
                                                 <constraint firstItem="pau-PF-0M3" firstAttribute="leading" secondItem="nCr-of-L0S" secondAttribute="leading" constant="24" id="azk-1r-wNU"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="trailing" secondItem="pau-PF-0M3" secondAttribute="trailing" constant="12" id="h55-8x-jFU"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="13" id="kMk-Tm-DeA"/>
@@ -268,7 +268,6 @@
                                         <connections>
                                             <outlet property="selectButtonCollectionView" destination="fvL-nI-eKG" id="N0R-Xx-mOQ"/>
                                         </connections>
-
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -478,7 +477,6 @@
         <image name="ChatYourMessageBackgroundImage" width="37" height="79"/>
         <image name="chatMessageBackground" width="32.5" height="34"/>
         <image name="selected_answer_background" width="32.5" height="34"/>
-
         <image name="youngjae" width="145" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -49,7 +49,8 @@ enum messageTypeList
     // 순수한 글자 메세지
     case photo
     // 사진 메세지
-    
+    case vibrate
+    // 일반 메세지 + 진동
     case userAnswerWithComplete
     // 유저가 직접 입력할 수 있고, 완료하기 버튼이 있는 형태 
     
