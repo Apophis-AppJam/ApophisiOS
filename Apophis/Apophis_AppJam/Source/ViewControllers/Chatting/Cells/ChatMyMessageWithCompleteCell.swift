@@ -11,6 +11,10 @@ class ChatMyMessageWithCompleteCell: UITableViewCell {
 
     @IBOutlet weak var messageBackgroundImageView: UIImageView!
     @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var CompleteLabel: UILabel!
+    @IBOutlet weak var CompleteButton: UIButton!
+    
+    
     
     //MARK:- Variable Part
 
@@ -27,13 +31,25 @@ class ChatMyMessageWithCompleteCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        self.CompleteLabel.textColor = .mainColor
+        CompleteLabel.font = .gmarketFont(weight: .Medium, size: 14)
         // Configure the view for the selected state
     }
 
     
     //MARK:- IBAction Part
 
+    @IBAction func completeButtonClicked(_ sender: Any) {
+        
+        print("완료하기 눌림")
+        var userMessagerList : [String] = []
+            
+            userMessagerList.append(contentsOf: [messageTextView.text!])
+            
+            NotificationCenter.default.post(name: NSNotification.Name("userMessageEntered"), object: userMessagerList)
+            
+        }
+        
     
     //MARK:- default Setting Function Part
 
@@ -58,7 +74,6 @@ class ChatMyMessageWithCompleteCell: UITableViewCell {
         
         messageBackgroundImageView.alpha = 0
         messageTextView.alpha = 0
-        
         
         
 
@@ -86,7 +101,7 @@ class ChatMyMessageWithCompleteCell: UITableViewCell {
             
             
         } completion: { (_) in
-            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
+//            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
         }
 
 
@@ -102,6 +117,8 @@ class ChatMyMessageWithCompleteCell: UITableViewCell {
 
 
 }
+
+
 
 //MARK:- extension 부분
 

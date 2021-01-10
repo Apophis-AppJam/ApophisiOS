@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "3DayBackgroundImageSecond.png",
+      "filename" : "손가락 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "손가락 1-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "손가락 1-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
