@@ -48,25 +48,29 @@
                                     <constraint firstAttribute="bottom" secondItem="OYd-aU-FlF" secondAttribute="bottom" constant="25" id="rLo-ST-fTn"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QCj-4Y-dIa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QCj-4Y-dIa">
                                 <rect key="frame" x="0.0" y="56" width="375" height="869"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatYourMessageCell" rowHeight="109" id="YQy-EC-bj4" customClass="ChatYourMessageCell" customModule="Apophis_AppJam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="109"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatYourMessageCell" rowHeight="151" id="YQy-EC-bj4" customClass="ChatYourMessageCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQy-EC-bj4" id="nCr-of-L0S">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatYourMessageBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="xu9-rK-053">
-                                                    <rect key="frame" x="8" y="8" width="256" height="101"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apoMessageBG" translatesAutoresizingMaskIntoConstraints="NO" id="xu9-rK-053">
+                                                    <rect key="frame" x="8" y="8" width="256" height="142"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatMessageWaiting" translatesAutoresizingMaskIntoConstraints="NO" id="Kbc-sp-ACr">
-                                                    <rect key="frame" x="8" y="8" width="56.5" height="38"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kbc-sp-ACr">
+                                                    <rect key="frame" x="8" y="8" width="56.5" height="38.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Kbc-sp-ACr" secondAttribute="height" multiplier="28:19" id="SOg-BQ-MSK"/>
+                                                        <constraint firstAttribute="width" constant="56.5" id="sZl-Z8-mXI"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="안녕ㅁㄴㅇ러ㅣㅏㅁㄴㅇ러ㅣㅏㄴ머이란머ㅏㅣㅇ러ㅏㅣㄴㅁㅇ라ㅣㄴㅁㅇ린ㅁ일ㄴㅁ어ㅣㅏ린망러ㅏㅣㄴㅁ어라ㅣㄴㅇ멀ㄴㅁ" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pau-PF-0M3">
-                                                    <rect key="frame" x="24" y="20" width="228" height="76"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="안녕ㅁㄴㅇ러ㅣㅏㅁㄴㅇ러ㅣㅏㄴ머이란머ㅏㅣㅇ러ㅏㅣㄴㅁㅇ라ㅣㄴㅁㅇ린ㅁ일ㄴㅁ어ㅣㅏ린망러ㅏㅣㄴㅁ어라ㅣㄴㅇ멀ㄴㅁ" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pau-PF-0M3">
+                                                    <rect key="frame" x="24" y="20" width="228" height="118"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -75,38 +79,35 @@
                                             <color key="backgroundColor" red="0.14902743700000001" green="0.14897164700000001" blue="0.15294024349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="Kbc-sp-ACr" firstAttribute="top" secondItem="nCr-of-L0S" secondAttribute="top" constant="8" id="4iN-BW-hUK"/>
+                                                <constraint firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="13" id="ASt-a7-Z06"/>
+                                                <constraint firstItem="xu9-rK-053" firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="12" id="E85-PW-duh"/>
                                                 <constraint firstItem="pau-PF-0M3" firstAttribute="top" secondItem="nCr-of-L0S" secondAttribute="top" constant="20" id="F71-Uh-vkz"/>
-                                                <constraint firstItem="xu9-rK-053" firstAttribute="top" secondItem="pau-PF-0M3" secondAttribute="top" constant="-12" id="NBe-Hq-CbZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="13" id="QcN-oU-3lE"/>
+                                                <constraint firstItem="xu9-rK-053" firstAttribute="top" secondItem="pau-PF-0M3" secondAttribute="top" constant="-12" id="Ruw-mG-iqU"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="leading" secondItem="pau-PF-0M3" secondAttribute="leading" constant="-16" id="TTg-3a-mBT"/>
                                                 <constraint firstItem="pau-PF-0M3" firstAttribute="width" relation="lessThanOrEqual" secondItem="nCr-of-L0S" secondAttribute="width" multiplier="230/375" priority="999" id="Tt9-zv-2R8"/>
                                                 <constraint firstItem="pau-PF-0M3" firstAttribute="leading" secondItem="nCr-of-L0S" secondAttribute="leading" constant="24" id="azk-1r-wNU"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="trailing" secondItem="pau-PF-0M3" secondAttribute="trailing" constant="12" id="h55-8x-jFU"/>
-                                                <constraint firstItem="xu9-rK-053" firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="13" id="kMk-Tm-DeA"/>
                                                 <constraint firstItem="Kbc-sp-ACr" firstAttribute="leading" secondItem="nCr-of-L0S" secondAttribute="leading" constant="8" id="x8g-pN-RTV"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="pau-PF-0M3" firstAttribute="height" relation="greaterThanOrEqual" secondItem="YQy-EC-bj4" secondAttribute="height" multiplier="0.1" id="OjI-q6-zz1"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="messageBackgroundImageView" destination="xu9-rK-053" id="QwY-04-kWC"/>
                                             <outlet property="messageTextView" destination="pau-PF-0M3" id="Dzq-ZX-ikU"/>
                                             <outlet property="waitMessageImageView" destination="Kbc-sp-ACr" id="Fef-yy-03g"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyMessageCell" rowHeight="116" id="Ujk-b8-ke3" customClass="ChatMyMessageCell" customModule="Apophis_AppJam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="137" width="375" height="116"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyMessageCell" rowHeight="134" id="Ujk-b8-ke3" customClass="ChatMyMessageCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="179" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ujk-b8-ke3" id="WVE-bf-GsX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatMyMessageBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="1Nf-4e-xMz">
-                                                    <rect key="frame" x="109.5" y="8" width="257.5" height="108"/>
+                                                    <rect key="frame" x="109.5" y="8" width="257.5" height="126"/>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="안dkssydlsjfglkajflkadjslkfaklsfjklsadjfkladsklflkasdfklajslkfjklasfjklsadjfklajsdklflksdaflkads" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="va5-mb-biR">
-                                                    <rect key="frame" x="121.5" y="20" width="229.5" height="83"/>
+                                                    <rect key="frame" x="121.5" y="20" width="229.5" height="101"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -130,7 +131,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMessageWaitingCell" rowHeight="46" id="mGg-Q6-Xn1" customClass="ChatMessageWaitingCell" customModule="Apophis_AppJam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="253" width="375" height="46"/>
+                                        <rect key="frame" x="0.0" y="313" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mGg-Q6-Xn1" id="OtL-OM-HHs">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
@@ -149,7 +150,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChatButtonCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatButtonCell" id="mdS-VO-3Ca" customClass="ChatButtonCell" customModule="Apophis_AppJam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="299" width="375" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="359" width="375" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mdS-VO-3Ca" id="Bq4-CO-pRy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
@@ -179,7 +180,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day1ImageViewCell" id="Kwh-GX-OZg" customClass="Day1ImageViewCell" customModule="Apophis_AppJam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="354.5" width="375" height="199.5"/>
+                                        <rect key="frame" x="0.0" y="414.5" width="375" height="199.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kwh-GX-OZg" id="SLP-Cv-hrf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
@@ -205,7 +206,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day2selectAnswerCell" rowHeight="75" id="WYf-O6-QGQ" customClass="Day2selectAnswerCell" customModule="Apophis_AppJam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="554" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="614" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WYf-O6-QGQ" id="Z91-UP-A0F">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
@@ -273,6 +274,7 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wnw-2P-fuC" userLabel="messageInputAreaView">
                                 <rect key="frame" x="0.0" y="925" width="375" height="75"/>
@@ -477,7 +479,7 @@
         <image name="ChatMessageWaiting" width="56.5" height="38"/>
         <image name="ChatMyMessageBackgroundImage" width="37" height="39"/>
         <image name="ChatSendButtonDisabled" width="28" height="28"/>
-        <image name="ChatYourMessageBackgroundImage" width="37" height="79"/>
+        <image name="apoMessageBG" width="37" height="43"/>
         <image name="chatMessageBackground" width="32.5" height="34"/>
         <image name="selected_answer_background" width="32.5" height="34"/>
         <image name="youngjae" width="145" height="128"/>

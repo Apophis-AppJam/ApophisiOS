@@ -126,11 +126,6 @@ class Day2ViewController: UIViewController {
             textViewDidChange(messageTextInputView)
         }
         
-
-
-        
-        
-        
         
     }
     
@@ -140,7 +135,12 @@ class Day2ViewController: UIViewController {
     func firstMessageLoad()
     {
 
+
+        
+  
+        
         self.loadApoMessage(idx: 23) { (result) in
+            
             if result
             {
                 print("여기서 리스트",self.newMessageList)
@@ -323,7 +323,7 @@ class Day2ViewController: UIViewController {
  
         }
         
-        chatTableView.scrollToBottomRow()
+        chatTableView.scrollToBottom()
         
     }
     
@@ -388,7 +388,7 @@ class Day2ViewController: UIViewController {
 //            chatTableView.reloadData()
         }
         
-        chatTableView.scrollToBottomRow()
+        chatTableView.scrollToBottom()
     }
     
     @objc func user3WordsEntered(notification : NSNotification)

@@ -104,13 +104,13 @@ class Day1ViewController: UIViewController {
             print("여기는 Action 버튼을 눌렀을 때 실행되는 부분이란다.", newMessageList)
             print("여기는 lastLastIndex 값이란다.", lastLastIndex)
             print("newMessageList[lastLastIndex].chatDetailsIdx : ",newMessageList[lastLastIndex].chatDetailsIdx)
+            
             let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
             
             isMessageLoadList[newMessageList.count - 1] = false
             
             newMessageList.remove(at: newMessageList.count - 1)
             messageListForTableView.remove(at: newMessageList.count - 1)
-            
             
             newMessageList.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
                                                           isMine: true,
@@ -161,10 +161,20 @@ class Day1ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(myMessageEnd), name: NSNotification.Name("myMessageEnd"), object: nil)
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollToBottom), name: NSNotification.Name("scrollToBottom"), object: nil)
+        
+        
+        
     }
     
     
     //MARK:- @objc func 부분
+    
+    @objc func scrollToBottom()
+    {
+        chatTableView.scrollToBottom()
+    }
     
     @objc func myMessageEnd(notification : NSNotification)
     {
@@ -183,12 +193,18 @@ class Day1ViewController: UIViewController {
             let indexPath = IndexPath(row: index + 1, section: 0)
             
             
-            chatTableView.beginUpdates()
-            chatTableView.insertRows(at: [indexPath], with: .none)
-            chatTableView.endUpdates()
+            DispatchQueue.global().sync {
+                chatTableView.beginUpdates()
+                chatTableView.insertRows(at: [indexPath], with: .none)
+                chatTableView.endUpdates()
+            }
+
+            
+//            chatTableView.scrollToRow(at: indexPath, at: .none, animated: true)
             
         }
-        chatTableView.scrollToBottomRow()
+        
+      
     }
     
     @objc func aponimousMessageEnd(notification : NSNotification)
@@ -216,9 +232,12 @@ class Day1ViewController: UIViewController {
             
             let indexPath = IndexPath(row: index + 1, section: 0)
             
-            chatTableView.beginUpdates()
-            chatTableView.insertRows(at: [indexPath], with: .none)
-            chatTableView.endUpdates()
+            DispatchQueue.global().sync {
+                chatTableView.beginUpdates()
+                chatTableView.insertRows(at: [indexPath], with: .none)
+                chatTableView.endUpdates()
+            }
+
 
         }
         
@@ -228,10 +247,13 @@ class Day1ViewController: UIViewController {
         {
             messageListForTableView.append(newMessageList[index+1])
             let indexPath = IndexPath(row: index + 1, section: 0)
-            chatTableView.beginUpdates()
-            chatTableView.insertRows(at: [indexPath], with: .none)
-            chatTableView.endUpdates()
             
+            DispatchQueue.global().sync {
+                chatTableView.beginUpdates()
+                chatTableView.insertRows(at: [indexPath], with: .none)
+                chatTableView.endUpdates()
+            }
+//
         }
 //        else
 //        {
@@ -240,7 +262,7 @@ class Day1ViewController: UIViewController {
 //            //            chatTableView.reloadData()
 //        }
         
-        chatTableView.scrollToBottomRow()
+     
     }
     
     
@@ -665,8 +687,39 @@ class Day1ViewController: UIViewController {
 extension Day1ViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
         return UITableView.automaticDimension
+//
+//        let messageWidth = UIScreen.main.bounds.width * 230/375
+//
+//
+//        let sampleTextView = UITextView()
+//        sampleTextView.textAlignment = .left
+//
+//        sampleTextView.text = messageListForTableView[indexPath.row].messageContent
+//        sampleTextView.font = .gmarketFont(weight: .Medium, size: 14)
+//        sampleTextView.sizeToFit()
+//        let lineNum = Int( sampleTextView.frame.width / messageWidth )
+//
+//
+//
+//        print("잘봐봡",sampleTextView.frame.width, messageWidth)
+//
+//        print("줄 갯수",lineNum)
+//
+//        print("컨테늧 내용",messageListForTableView[indexPath.row].messageContent)
+//        print("")
+//
+//
+//
+//        return CGFloat(lineNum * 16 ) + 16.5 + 16 + 32
+//        
+        
+
     }
+    
+
 }
 
 

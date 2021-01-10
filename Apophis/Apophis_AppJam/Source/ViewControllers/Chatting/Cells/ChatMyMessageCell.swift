@@ -45,8 +45,7 @@ class ChatMyMessageCell: UITableViewCell {
     func setMessage(message : String)
     {
         
-        
-        
+
         let padding = messageTextView.textContainer.lineFragmentPadding
         messageTextView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
         
@@ -60,8 +59,6 @@ class ChatMyMessageCell: UITableViewCell {
         messageBackgroundImageView.alpha = 0
         messageTextView.alpha = 0
         
-        
-        
 
     }
     
@@ -69,7 +66,8 @@ class ChatMyMessageCell: UITableViewCell {
     func loadingAnimate(idx : Int)
     {
   
-        
+        NotificationCenter.default.post(name: NSNotification.Name("scrollToBottom"), object: nil)
+
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
             
 
