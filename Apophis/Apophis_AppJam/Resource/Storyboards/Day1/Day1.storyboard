@@ -65,7 +65,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatMessageWaiting" translatesAutoresizingMaskIntoConstraints="NO" id="Kbc-sp-ACr">
                                                     <rect key="frame" x="8" y="8" width="56.5" height="38"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="안녕ㅁㄴㅇ러ㅣㅏㅁㄴㅇ러ㅣㅏㄴ머이란머ㅏㅣㅇ러ㅏㅣㄴㅁㅇ라ㅣㄴㅁㅇ린ㅁ일ㄴㅁ어ㅣㅏ린망러ㅏㅣㄴㅁ어라ㅣㄴㅇ멀ㄴㅁ" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pau-PF-0M3">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="안녕ㅁㄴㅇ러ㅣㅏㅁㄴㅇ러ㅣㅏㄴ머이란머ㅏㅣㅇ러ㅏㅣㄴㅁㅇ라ㅣㄴㅁㅇ린ㅁ일ㄴㅁ어ㅣㅏ린망러ㅏㅣㄴㅁ어라ㅣㄴㅇ멀ㄴㅁ" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pau-PF-0M3">
                                                     <rect key="frame" x="24" y="20" width="228" height="76"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
@@ -74,10 +74,10 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.14902743700000001" green="0.14897164700000001" blue="0.15294024349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="13" id="45s-RG-GIC"/>
                                                 <constraint firstItem="Kbc-sp-ACr" firstAttribute="top" secondItem="nCr-of-L0S" secondAttribute="top" constant="8" id="4iN-BW-hUK"/>
                                                 <constraint firstItem="pau-PF-0M3" firstAttribute="top" secondItem="nCr-of-L0S" secondAttribute="top" constant="20" id="F71-Uh-vkz"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="top" secondItem="pau-PF-0M3" secondAttribute="top" constant="-12" id="NBe-Hq-CbZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="13" id="QcN-oU-3lE"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="leading" secondItem="pau-PF-0M3" secondAttribute="leading" constant="-16" id="TTg-3a-mBT"/>
                                                 <constraint firstItem="pau-PF-0M3" firstAttribute="width" relation="lessThanOrEqual" secondItem="nCr-of-L0S" secondAttribute="width" multiplier="230/375" priority="999" id="Tt9-zv-2R8"/>
                                                 <constraint firstItem="pau-PF-0M3" firstAttribute="leading" secondItem="nCr-of-L0S" secondAttribute="leading" constant="24" id="azk-1r-wNU"/>
@@ -86,6 +86,9 @@
                                                 <constraint firstItem="Kbc-sp-ACr" firstAttribute="leading" secondItem="nCr-of-L0S" secondAttribute="leading" constant="8" id="x8g-pN-RTV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="pau-PF-0M3" firstAttribute="height" relation="greaterThanOrEqual" secondItem="YQy-EC-bj4" secondAttribute="height" multiplier="0.1" id="OjI-q6-zz1"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="messageBackgroundImageView" destination="xu9-rK-053" id="QwY-04-kWC"/>
                                             <outlet property="messageTextView" destination="pau-PF-0M3" id="Dzq-ZX-ikU"/>
@@ -403,14 +406,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvm-Kb-z2L">
-                                <rect key="frame" x="174" y="98" width="27" height="520"/>
+                                <rect key="frame" x="174" y="101" width="27" height="520"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rvm-Kb-z2L" secondAttribute="height" multiplier="27:520" id="61g-Vc-dcn"/>
                                     <constraint firstAttribute="width" constant="27" id="A1v-8M-f6f"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqs-8d-QJO">
-                                <rect key="frame" x="170" y="50" width="35" height="18"/>
+                                <rect key="frame" x="172" y="50" width="31.5" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="동쪽">
                                         <attributes>
@@ -423,7 +426,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygg-TX-p3G">
-                                <rect key="frame" x="73.5" y="244" width="228" height="228"/>
+                                <rect key="frame" x="73.5" y="247" width="228" height="228"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ygg-TX-p3G" secondAttribute="height" multiplier="1:1" id="HOd-zk-RPP"/>
                                     <constraint firstAttribute="width" constant="228" id="P6p-zs-kAR"/>

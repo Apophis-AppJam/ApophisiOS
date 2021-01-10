@@ -34,8 +34,17 @@ class Day2SetDarkViewController: UIViewController {
         etcSetting()
         setTextField()
         
-
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+                
+        view.addGestureRecognizer(tap)
+        
     }
+    
+    @objc func dismissKeyBoard()
+    {
+        self.view.endEditing(true)
+    }
+    
     
     //MARK:- IBAction Part
 
@@ -89,10 +98,7 @@ class Day2SetDarkViewController: UIViewController {
         
     }
     
-    @objc func dismissKeyBoard()
-    {
-        self.view.endEditing(true)
-    }
+
     
     func etcSetting()
     {
