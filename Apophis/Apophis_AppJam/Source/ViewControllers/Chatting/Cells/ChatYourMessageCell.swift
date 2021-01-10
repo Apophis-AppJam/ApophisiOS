@@ -129,10 +129,10 @@ class ChatYourMessageCell: UITableViewCell {
         messageTextView.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         messageTextView.textColor = .white
         messageTextView.text = message
+        messageTextView.translatesAutoresizingMaskIntoConstraints = false
 
-        messageTextView.sizeToFit()
+//        messageTextView.sizeToFit()
         
-        messageTextView.translatesAutoresizingMaskIntoConstraints = true
         messageTextView.isScrollEnabled = false
         messageTextView.contentInset = .zero
         
