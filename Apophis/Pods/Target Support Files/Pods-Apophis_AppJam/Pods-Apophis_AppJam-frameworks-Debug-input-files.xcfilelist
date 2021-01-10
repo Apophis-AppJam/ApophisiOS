@@ -1,5 +1,12 @@
 ${PODS_ROOT}/Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework
 ${BUILT_PRODUCTS_DIR}/GIFImageView/GIFImageView.framework
+${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework
+${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework
+${BUILT_PRODUCTS_DIR}/KakaoSDKAuth/KakaoSDKAuth.framework
+${BUILT_PRODUCTS_DIR}/KakaoSDKCommon/KakaoSDKCommon.framework
+${BUILT_PRODUCTS_DIR}/KakaoSDKUser/KakaoSDKUser.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework

@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644944825A0C99600ABA62E /* ChatButtonCell.swift */; };
+		0644944F25A1A5F500ABA62E /* Day1ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */; };
+		069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */; };
+		069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */; };
+		069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */; };
 		AE2E82F5D36D7460962246C6 /* Pods_Apophis_AppJam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */; };
 		FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC394F3E259D110500E70307 /* ColorViewController.swift */; };
 		FC92374C259E6BEE0039AB32 /* audioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */; };
+		FC956AAD25A8CE530007717C /* Day3EntetNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC956AAC25A8CE530007717C /* Day3EntetNameCell.swift */; };
 		FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */; };
+		FCDE84AA25A57ADB003D288E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDE84A925A57ADB003D288E /* Login.storyboard */; };
+		FCDE84AF25A57B2E003D288E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE84AE25A57B2E003D288E /* LoginViewController.swift */; };
 		FD07156D2596E99700940094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD07156C2596E99700940094 /* AppDelegate.swift */; };
 		FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD07156E2596E99700940094 /* SceneDelegate.swift */; };
 		FD0715712596E99700940094 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715702596E99700940094 /* ViewController.swift */; };
@@ -33,11 +41,18 @@
 		FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B22599AF7100AAD1BA /* Day5.storyboard */; };
 		FD5207B62599AF7A00AAD1BA /* Day6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B52599AF7A00AAD1BA /* Day6.storyboard */; };
 		FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B92599AF8500AAD1BA /* Day7.storyboard */; };
-		FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */; };
-		FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */; };
+		FD5D51A325A9715300705E60 /* message_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = FD5D51A225A9715300705E60 /* message_loading.json */; };
+		FD5D51A725AA2F0600705E60 /* NextActionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51A625AA2F0600705E60 /* NextActionList.swift */; };
+		FD5D51AA25AA329700705E60 /* replyTypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51A925AA329700705E60 /* replyTypeList.swift */; };
+		FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */; };
+		FD5F356625A5896F00330E9B /* Day2word3InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */; };
 		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
 		FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */; };
 		FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */; };
+		FD8A8CA325A76E5500DE3D27 /* placeHolderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */; };
+		FD8A8CAF25A810EE00DE3D27 /* Day2SetBrightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */; };
+		FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */; };
+		FD8A8CB825A822F000DE3D27 /* Day2BrightDarkNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CB725A822F000DE3D27 /* Day2BrightDarkNaviController.swift */; };
 		FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B692596EE1C00F4DFDF /* view.xib */; };
 		FDA98B6F2596FA4200F4DFDF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */; };
 		FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */; };
@@ -45,28 +60,46 @@
 		FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B7C25970D8A00F4DFDF /* SplashViewController.swift */; };
 		FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B822597104700F4DFDF /* ColorList.xcassets */; };
 		FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B852597133500F4DFDF /* NetworkResult.swift */; };
+		FDBFFE1E25A2E46600C46615 /* ChatMessageNewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBFFE1D25A2E46600C46615 /* ChatMessageNewDataModel.swift */; };
+		FDBFFE2125A35B3900C46615 /* getChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBFFE2025A35B3900C46615 /* getChatService.swift */; };
 		FDD0922A259AF58100B92529 /* sampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FDD09229259AF58100B92529 /* sampleVideo.mp4 */; };
 		FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0922D259B01AF00B92529 /* IntroNewsCommentCell.swift */; };
 		FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09232259B0B1900B92529 /* NewsCommentDataModel.swift */; };
 		FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */; };
 		FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */; };
+		FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE05A5B25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift */; };
+		FDE05A6025A85E6C00E92E1B /* ChatSelectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE05A5F25A85E6C00E92E1B /* ChatSelectListCell.swift */; };
+		FDE05A6425A866F300E92E1B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE05A6325A866F300E92E1B /* Home.storyboard */; };
+		FDE05A8225A8C98D00E92E1B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE05A8125A8C98D00E92E1B /* HomeViewController.swift */; };
 		FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */; };
 		FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */; };
 		FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */; };
 		FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */; };
 		FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE2C805259A2D32006659DA /* Intro.storyboard */; };
 		FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */; };
+		FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */; };
+		FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701F25A0D33C006EEC04 /* ColorList.swift */; };
+		FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */; };
+		FDFB702825A206B1006EEC04 /* Day2SelectListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB702725A206B1006EEC04 /* Day2SelectListCollectionCell.swift */; };
 		FDFC0A5E259F240A00DFD5CF /* Day2SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */; };
 		FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC0A61259F532B00DFD5CF /* makeCircleView + Designable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0644944825A0C99600ABA62E /* ChatButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatButtonCell.swift; sourceTree = "<group>"; };
+		0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ImageViewCell.swift; sourceTree = "<group>"; };
+		069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CameraViewController.swift; sourceTree = "<group>"; };
+		069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CompassViewController.swift; sourceTree = "<group>"; };
+		069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ChatMessageDataModel.swift; sourceTree = "<group>"; };
 		2727856C1D01EC217465EB2F /* Pods-Apophis_AppJam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.release.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.release.xcconfig"; sourceTree = "<group>"; };
 		4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apophis_AppJam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23F09E174B44478E4702746 /* Pods-Apophis_AppJam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.debug.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.debug.xcconfig"; sourceTree = "<group>"; };
 		FC394F3E259D110500E70307 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioRecordViewController.swift; sourceTree = "<group>"; };
+		FC956AAC25A8CE530007717C /* Day3EntetNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3EntetNameCell.swift; sourceTree = "<group>"; };
 		FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3DrawingViewController.swift; sourceTree = "<group>"; };
+		FCDE84A925A57ADB003D288E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		FCDE84AE25A57B2E003D288E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FD0715692596E99700940094 /* Apophis_AppJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apophis_AppJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD07156C2596E99700940094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD07156E2596E99700940094 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,11 +124,18 @@
 		FD5207B22599AF7100AAD1BA /* Day5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day5.storyboard; sourceTree = "<group>"; };
 		FD5207B52599AF7A00AAD1BA /* Day6.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day6.storyboard; sourceTree = "<group>"; };
 		FD5207B92599AF8500AAD1BA /* Day7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day7.storyboard; sourceTree = "<group>"; };
-		FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDataModel.swift; sourceTree = "<group>"; };
-		FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageWaitingCell.swift; sourceTree = "<group>"; };
+		FD5D51A225A9715300705E60 /* message_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message_loading.json; sourceTree = "<group>"; };
+		FD5D51A625AA2F0600705E60 /* NextActionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextActionList.swift; sourceTree = "<group>"; };
+		FD5D51A925AA329700705E60 /* replyTypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = replyTypeList.swift; sourceTree = "<group>"; };
+		FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CircleButtonCell.swift; sourceTree = "<group>"; };
+		FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2word3InputCell.swift; sourceTree = "<group>"; };
 		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yukyungLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jihunLabViewController.swift; sourceTree = "<group>"; };
+		FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeHolderColor.swift; sourceTree = "<group>"; };
+		FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetBrightViewController.swift; sourceTree = "<group>"; };
+		FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetDarkViewController.swift; sourceTree = "<group>"; };
+		FD8A8CB725A822F000DE3D27 /* Day2BrightDarkNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2BrightDarkNaviController.swift; sourceTree = "<group>"; };
 		FDA98B692596EE1C00F4DFDF /* view.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = view.xib; sourceTree = "<group>"; };
 		FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeAlert + UIView.swift"; sourceTree = "<group>"; };
@@ -103,17 +143,28 @@
 		FDA98B7C25970D8A00F4DFDF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		FDA98B822597104700F4DFDF /* ColorList.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorList.xcassets; sourceTree = "<group>"; };
 		FDA98B852597133500F4DFDF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		FDBFFE1D25A2E46600C46615 /* ChatMessageNewDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageNewDataModel.swift; sourceTree = "<group>"; };
+		FDBFFE2025A35B3900C46615 /* getChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getChatService.swift; sourceTree = "<group>"; };
 		FDD09229259AF58100B92529 /* sampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampleVideo.mp4; sourceTree = "<group>"; };
 		FDD0922D259B01AF00B92529 /* IntroNewsCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsCommentCell.swift; sourceTree = "<group>"; };
 		FDD09232259B0B1900B92529 /* NewsCommentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCommentDataModel.swift; sourceTree = "<group>"; };
 		FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "scrollToBottom + UITableView.swift"; sourceTree = "<group>"; };
 		FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPhoneRingViewController.swift; sourceTree = "<group>"; };
+		FDE05A5B25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMyMessageWithCompleteCell.swift; sourceTree = "<group>"; };
+		FDE05A5F25A85E6C00E92E1B /* ChatSelectListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSelectListCell.swift; sourceTree = "<group>"; };
+		FDE05A6325A866F300E92E1B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		FDE05A8125A8C98D00E92E1B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GmarketFont + UIFont.swift"; sourceTree = "<group>"; };
 		FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "numberOfLines + UITextView.swift"; sourceTree = "<group>"; };
 		FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2ViewController.swift; sourceTree = "<group>"; };
 		FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
 		FDE2C805259A2D32006659DA /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsViewController.swift; sourceTree = "<group>"; };
+		FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "circleProgressView + UIView.swift"; sourceTree = "<group>"; };
+		FDFB701C25A0ACAB006EEC04 /* Apophis_AppJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apophis_AppJam.entitlements; sourceTree = "<group>"; };
+		FDFB701F25A0D33C006EEC04 /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
+		FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2selectAnswerCell.swift; sourceTree = "<group>"; };
+		FDFB702725A206B1006EEC04 /* Day2SelectListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SelectListCollectionCell.swift; sourceTree = "<group>"; };
 		FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SelectTimeViewController.swift; sourceTree = "<group>"; };
 		FDFC0A61259F532B00DFD5CF /* makeCircleView + Designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeCircleView + Designable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +181,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		069E95DD25A07489006C36D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0644944825A0C99600ABA62E /* ChatButtonCell.swift */,
+				0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B086E4AF5CA333E8748461F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +205,30 @@
 				2727856C1D01EC217465EB2F /* Pods-Apophis_AppJam.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC956AA725A8CDAF0007717C /* ChatCells */ = {
+			isa = PBXGroup;
+			children = (
+				FC956AAC25A8CE530007717C /* Day3EntetNameCell.swift */,
+			);
+			path = ChatCells;
+			sourceTree = "<group>";
+		};
+		FCDE84A425A57A6F003D288E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FCDE84A925A57ADB003D288E /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FCDE84AD25A57B1B003D288E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FCDE84AE25A57B2E003D288E /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		FD0715602596E99700940094 = {
@@ -168,6 +252,7 @@
 		FD07156B2596E99700940094 /* Apophis_AppJam */ = {
 			isa = PBXGroup;
 			children = (
+				FDFB701C25A0ACAB006EEC04 /* Apophis_AppJam.entitlements */,
 				FD0715842596EA9C00940094 /* Resource */,
 				FD0715832596EA5900940094 /* Source */,
 				FD07157A2596E99700940094 /* Info.plist */,
@@ -219,7 +304,10 @@
 		FD52077A259997A100AAD1BA /* Day1 */ = {
 			isa = PBXGroup;
 			children = (
+				069E95DD25A07489006C36D6 /* Cells */,
 				FD52078625999C8F00AAD1BA /* Day1ViewController.swift */,
+				069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */,
+				069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */,
 			);
 			path = Day1;
 			sourceTree = "<group>";
@@ -227,8 +315,10 @@
 		FD52078325999C6400AAD1BA /* Day2 */ = {
 			isa = PBXGroup;
 			children = (
+				FD8A8CAD25A810DE00DE3D27 /* SetTime */,
+				FD8A8CAC25A810D900DE3D27 /* BrightDark */,
+				FDFB702225A2018E006EEC04 /* ChatCells */,
 				FDE2C7F8259A14AD006659DA /* Day2ViewController.swift */,
-				FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */,
 			);
 			path = Day2;
 			sourceTree = "<group>";
@@ -238,6 +328,7 @@
 			children = (
 				FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */,
 				FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */,
+				FC956AA725A8CDAF0007717C /* ChatCells */,
 			);
 			path = Day3;
 			sourceTree = "<group>";
@@ -255,7 +346,8 @@
 			children = (
 				FD5207942599ACBF00AAD1BA /* ChatYourMessageCell.swift */,
 				FD5207982599ACCF00AAD1BA /* ChatMyMessageCell.swift */,
-				FD5207C12599BA3E00AAD1BA /* ChatMessageWaitingCell.swift */,
+				FDE05A5B25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift */,
+				FDE05A5F25A85E6C00E92E1B /* ChatSelectListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -320,7 +412,8 @@
 		FD5207BC2599B77E00AAD1BA /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				FD5207BD2599B78E00AAD1BA /* ChatMessageDataModel.swift */,
+				FDBFFE1D25A2E46600C46615 /* ChatMessageNewDataModel.swift */,
+				069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -337,9 +430,37 @@
 			path = Lab;
 			sourceTree = "<group>";
 		};
+		FD8A8CA125A76E1B00DE3D27 /* Inspectable */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */,
+			);
+			path = Inspectable;
+			sourceTree = "<group>";
+		};
+		FD8A8CAC25A810D900DE3D27 /* BrightDark */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */,
+				FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */,
+				FD8A8CB725A822F000DE3D27 /* Day2BrightDarkNaviController.swift */,
+			);
+			path = BrightDark;
+			sourceTree = "<group>";
+		};
+		FD8A8CAD25A810DE00DE3D27 /* SetTime */ = {
+			isa = PBXGroup;
+			children = (
+				FDFC0A5D259F240A00DFD5CF /* Day2SelectTimeViewController.swift */,
+			);
+			path = SetTime;
+			sourceTree = "<group>";
+		};
 		FDA98B612596ED8600F4DFDF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				FDE05A6225A866E900E92E1B /* Home */,
+				FCDE84A425A57A6F003D288E /* Login */,
 				FDE2C804259A2691006659DA /* Intro */,
 				FD5207A82599AF4B00AAD1BA /* Day7 */,
 				FD5207A72599AF4700AAD1BA /* Day6 */,
@@ -365,6 +486,7 @@
 		FDA98B632596EDA200F4DFDF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FD5D51A225A9715300705E60 /* message_loading.json */,
 				FDD09229259AF58100B92529 /* sampleVideo.mp4 */,
 				FD0715752596E99700940094 /* Assets.xcassets */,
 				FDA98B822597104700F4DFDF /* ColorList.xcassets */,
@@ -385,6 +507,8 @@
 		FDA98B652596EDAE00F4DFDF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FDE05A8025A8C95700E92E1B /* Home */,
+				FCDE84AD25A57B1B003D288E /* Login */,
 				FD6D0EBC259C4B8B00993BBC /* Lab */,
 				FD52079B2599AE7C00AAD1BA /* MarkTemplate */,
 				FD5207922599AC9000AAD1BA /* Chatting */,
@@ -412,12 +536,15 @@
 		FDA98B672596EDC600F4DFDF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FD8A8CA125A76E1B00DE3D27 /* Inspectable */,
 				FDFC0A60259F531500DFD5CF /* Designable */,
 				FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */,
 				FDA98B7925970BA700F4DFDF /* TimeCalculate.swift */,
 				FDE2C7F22599D2EB006659DA /* GmarketFont + UIFont.swift */,
 				FDE2C7F52599D860006659DA /* numberOfLines + UITextView.swift */,
 				FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */,
+				FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */,
+				FDFB701F25A0D33C006EEC04 /* ColorList.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,6 +555,8 @@
 				FDA98B6D2596FA3600F4DFDF /* Services */,
 				FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */,
 				FDA98B852597133500F4DFDF /* NetworkResult.swift */,
+				FD5D51A625AA2F0600705E60 /* NextActionList.swift */,
+				FD5D51A925AA329700705E60 /* replyTypeList.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -435,6 +564,7 @@
 		FDA98B6D2596FA3600F4DFDF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FDBFFE2025A35B3900C46615 /* getChatService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -477,6 +607,22 @@
 			path = Intro;
 			sourceTree = "<group>";
 		};
+		FDE05A6225A866E900E92E1B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FDE05A6325A866F300E92E1B /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FDE05A8025A8C95700E92E1B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FDE05A8125A8C98D00E92E1B /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		FDE2C804259A2691006659DA /* Intro */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +639,17 @@
 				FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		FDFB702225A2018E006EEC04 /* ChatCells */ = {
+			isa = PBXGroup;
+			children = (
+				FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */,
+				FDFB702725A206B1006EEC04 /* Day2SelectListCollectionCell.swift */,
+				FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */,
+				FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */,
+			);
+			path = ChatCells;
 			sourceTree = "<group>";
 		};
 		FDFC0A60259F531500DFD5CF /* Designable */ = {
@@ -515,6 +672,7 @@
 				FD0715662596E99700940094 /* Frameworks */,
 				FD0715672596E99700940094 /* Resources */,
 				F59C33B05CF04BD32736E5E1 /* [CP] Embed Pods Frameworks */,
+				08DA3B36947E4B8F5EFFFE25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -565,15 +723,18 @@
 				FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */,
 				FD52078D2599A60200AAD1BA /* GmarketSansTTFBold.ttf in Resources */,
 				FD52078E2599A60200AAD1BA /* GmarketSansTTFLight.ttf in Resources */,
+				FDE05A6425A866F300E92E1B /* Home.storyboard in Resources */,
 				FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */,
 				FD5207AA2599AF5900AAD1BA /* Day2.storyboard in Resources */,
 				FD5207B02599AF6800AAD1BA /* Day4.storyboard in Resources */,
 				FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */,
 				FD52077225998F7F00AAD1BA /* Day1.storyboard in Resources */,
+				FCDE84AA25A57ADB003D288E /* Login.storyboard in Resources */,
 				FD0715792596E99700940094 /* LaunchScreen.storyboard in Resources */,
 				FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */,
 				FD5207B62599AF7A00AAD1BA /* Day6.storyboard in Resources */,
 				FDD0922A259AF58100B92529 /* sampleVideo.mp4 in Resources */,
+				FD5D51A325A9715300705E60 /* message_loading.json in Resources */,
 				FD52078F2599A60200AAD1BA /* GmarketSansTTFMedium.ttf in Resources */,
 				FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */,
 				FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */,
@@ -585,6 +746,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		08DA3B36947E4B8F5EFFFE25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9996B47CF6B0717C05E6884C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,34 +811,57 @@
 			files = (
 				FDA98B6F2596FA4200F4DFDF /* APIConstants.swift in Sources */,
 				FD5207772599960800AAD1BA /* SampleView.swift in Sources */,
+				FDBFFE1E25A2E46600C46615 /* ChatMessageNewDataModel.swift in Sources */,
 				FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */,
+				FDFB702825A206B1006EEC04 /* Day2SelectListCollectionCell.swift in Sources */,
 				FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */,
+				069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */,
+				FD8A8CB825A822F000DE3D27 /* Day2BrightDarkNaviController.swift in Sources */,
+				FD5D51A725AA2F0600705E60 /* NextActionList.swift in Sources */,
 				FD5207952599ACBF00AAD1BA /* ChatYourMessageCell.swift in Sources */,
 				FDE2C7F62599D860006659DA /* numberOfLines + UITextView.swift in Sources */,
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
 				FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */,
+				FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */,
+				FD5F356625A5896F00330E9B /* Day2word3InputCell.swift in Sources */,
+				FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */,
+				069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */,
+				069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */,
 				FDD0923A259B3CD600B92529 /* IntroPhoneRingViewController.swift in Sources */,
 				FDD09237259B0DBB00B92529 /* scrollToBottom + UITableView.swift in Sources */,
+				FD8A8CA325A76E5500DE3D27 /* placeHolderColor.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
+				FDBFFE2125A35B3900C46615 /* getChatService.swift in Sources */,
+				FD8A8CAF25A810EE00DE3D27 /* Day2SetBrightViewController.swift in Sources */,
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,
 				FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */,
 				FD5207A12599AEBC00AAD1BA /* SampleViewController.swift in Sources */,
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
+				0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */,
+				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
+				FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
+				FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */,
+				FC956AAD25A8CE530007717C /* Day3EntetNameCell.swift in Sources */,
 				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
-				FD5207BE2599B78E00AAD1BA /* ChatMessageDataModel.swift in Sources */,
+				FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */,
 				FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */,
 				FD5207992599ACCF00AAD1BA /* ChatMyMessageCell.swift in Sources */,
 				FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */,
 				FD52078725999C8F00AAD1BA /* Day1ViewController.swift in Sources */,
+				FDE05A8225A8C98D00E92E1B /* HomeViewController.swift in Sources */,
 				FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */,
 				FDFC0A5E259F240A00DFD5CF /* Day2SelectTimeViewController.swift in Sources */,
+				FDE05A6025A85E6C00E92E1B /* ChatSelectListCell.swift in Sources */,
+				0644944F25A1A5F500ABA62E /* Day1ImageViewCell.swift in Sources */,
+				FD5D51AA25AA329700705E60 /* replyTypeList.swift in Sources */,
 				FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */,
-				FD5207C22599BA3E00AAD1BA /* ChatMessageWaitingCell.swift in Sources */,
 				FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */,
 				FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */,
+				FCDE84AF25A57B2E003D288E /* LoginViewController.swift in Sources */,
+				FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */,
 				FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */,
 				FC92374C259E6BEE0039AB32 /* audioRecordViewController.swift in Sources */,
 				FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */,
@@ -811,6 +1012,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Apophis_AppJam/Apophis_AppJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020122601;
 				DEVELOPMENT_TEAM = L9D5M5DM3Y;
@@ -820,7 +1022,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sopt.Apophis;
+				PRODUCT_BUNDLE_IDENTIFIER = sopt.apophis.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -833,6 +1035,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Apophis_AppJam/Apophis_AppJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020122601;
 				DEVELOPMENT_TEAM = L9D5M5DM3Y;
@@ -842,7 +1045,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sopt.Apophis;
+				PRODUCT_BUNDLE_IDENTIFIER = sopt.apophis.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

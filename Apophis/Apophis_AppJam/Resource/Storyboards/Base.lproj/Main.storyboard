@@ -252,18 +252,54 @@
         <!--Audio Record View Controller-->
         <scene sceneID="R1X-eM-URA">
             <objects>
-                <viewController id="abe-YH-5UU" customClass="audioRecordViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="audioRecordViewController" storyboardIdentifier="audioRecordViewController" id="abe-YH-5UU" customClass="audioRecordViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jF2-FP-Keg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xK7-WV-akz">
+                                <rect key="frame" x="164.5" y="432" width="85" height="42"/>
+                                <state key="normal" title="  Play" image="playbtn"/>
+                                <connections>
+                                    <action selector="playAudio:" destination="abe-YH-5UU" eventType="touchUpInside" id="iTi-kq-Pa5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEd-tO-OuI">
+                                <rect key="frame" x="162.5" y="494" width="89" height="42"/>
+                                <state key="normal" title="  Stop" image="stopbtn"/>
+                                <connections>
+                                    <action selector="stopAudio:" destination="abe-YH-5UU" eventType="touchUpInside" id="0h2-HD-es2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mc2-2Z-KNu">
+                                <rect key="frame" x="152.5" y="370" width="109" height="42"/>
+                                <state key="normal" title="  Record" image="btn_findme"/>
+                                <connections>
+                                    <action selector="recordAudio:" destination="abe-YH-5UU" eventType="touchUpInside" id="kCE-dU-pD5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="i9Y-8c-ejh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mc2-2Z-KNu" firstAttribute="centerX" secondItem="xK7-WV-akz" secondAttribute="centerX" id="2Aj-br-psC"/>
+                            <constraint firstItem="xK7-WV-akz" firstAttribute="centerX" secondItem="i9Y-8c-ejh" secondAttribute="centerX" id="OFk-mL-t30"/>
+                            <constraint firstItem="xK7-WV-akz" firstAttribute="centerY" secondItem="i9Y-8c-ejh" secondAttribute="centerY" id="UMl-tJ-ace"/>
+                            <constraint firstItem="jEd-tO-OuI" firstAttribute="top" secondItem="xK7-WV-akz" secondAttribute="bottom" constant="20" id="UTW-cL-9Ft"/>
+                            <constraint firstItem="xK7-WV-akz" firstAttribute="top" secondItem="Mc2-2Z-KNu" secondAttribute="bottom" constant="20" id="ank-og-CWC"/>
+                            <constraint firstItem="jEd-tO-OuI" firstAttribute="centerX" secondItem="xK7-WV-akz" secondAttribute="centerX" id="bc8-Zr-bTb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lk0-M6-FyN"/>
+                    <connections>
+                        <outlet property="playButton" destination="xK7-WV-akz" id="CTO-z7-oDP"/>
+                        <outlet property="recordButton" destination="Mc2-2Z-KNu" id="9NO-Cf-7ce"/>
+                        <outlet property="stopButton" destination="jEd-tO-OuI" id="dV4-lJ-RKp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vop-7j-aov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="371" y="1657"/>
+            <point key="canvasLocation" x="369.56521739130437" y="1656.6964285714284"/>
         </scene>
         <!--Yukyung Lab View Controller-->
         <scene sceneID="I2q-HY-Isq">
@@ -341,7 +377,6 @@
         <!--Color View Controller-->
         <scene sceneID="hKv-oS-a7f">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wJW-Z3-n57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Wev-c9-C8u" customClass="ColorViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DYb-UO-lyE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -448,6 +483,7 @@
                         <outlet property="yellow" destination="yHH-MK-hqJ" id="za9-ed-gdn"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJW-Z3-n57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076.8115942028987" y="1656.6964285714284"/>
         </scene>
@@ -465,12 +501,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcq-aB-kDj">
+                                <rect key="frame" x="187.5" y="230" width="39" height="30"/>
+                                <state key="normal" title="나침반"/>
+                                <connections>
+                                    <action selector="compassButtonClicked:" destination="OH6-KD-4rn" eventType="touchUpInside" id="ZIa-i6-Iys"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9I-7A-OWW">
+                                <rect key="frame" x="181" y="300" width="52" height="30"/>
+                                <state key="normal" title="사진찍기"/>
+                                <connections>
+                                    <action selector="cameraButtonClicked:" destination="OH6-KD-4rn" eventType="touchUpInside" id="6Dr-ZE-5iH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hOz-Mz-0Rv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZnL-GS-tmb" firstAttribute="centerX" secondItem="H75-Hb-JGW" secondAttribute="centerX" id="8dx-Ji-jV4"/>
                             <constraint firstItem="ZnL-GS-tmb" firstAttribute="top" secondItem="hOz-Mz-0Rv" secondAttribute="top" constant="60" id="9hh-we-sGH"/>
+                            <constraint firstItem="u9I-7A-OWW" firstAttribute="top" secondItem="dcq-aB-kDj" secondAttribute="bottom" constant="40" id="AOa-1m-323"/>
+                            <constraint firstItem="dcq-aB-kDj" firstAttribute="top" secondItem="ZnL-GS-tmb" secondAttribute="bottom" constant="100" id="BMJ-XK-xEm"/>
+                            <constraint firstItem="dcq-aB-kDj" firstAttribute="centerX" secondItem="H75-Hb-JGW" secondAttribute="centerX" id="SpS-tE-NKP"/>
+                            <constraint firstItem="u9I-7A-OWW" firstAttribute="centerX" secondItem="H75-Hb-JGW" secondAttribute="centerX" id="nPO-PU-KEQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FXh-5F-2bm"/>
@@ -499,21 +553,17 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
         <image name="WhiteMessageBackgroundImage" width="197" height="43"/>
+        <image name="btn_findme" width="42" height="42"/>
         <image name="jihun" width="260" height="260"/>
-        <image name="labBackground" width="520" height="1125"/>
+        <image name="labBackground" width="260" height="562.5"/>
+        <image name="playbtn" width="42" height="42"/>
+        <image name="stopbtn" width="42" height="42"/>
         <image name="youngjae" width="290" height="256"/>
         <image name="yukyung" width="295" height="252"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-=======
-        <image name="jihun" width="130" height="130"/>
-        <image name="labBackground" width="260" height="562.5"/>
-        <image name="youngjae" width="145" height="128"/>
-        <image name="yukyung" width="147.5" height="126"/>
->>>>>>> 72243cda492d60e5aedf6d854b906dfa19e9f276
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

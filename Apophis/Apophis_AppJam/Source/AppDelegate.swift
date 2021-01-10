@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import KakaoSDKCommon
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    var chatIndex : Int?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        KakaoSDKCommon.initSDK(appKey: "ed4a1873bf08643f58830e871d123db1")
+        
+        GIDSignIn.sharedInstance().clientID = "470939586141-nro0nnh1u74f0bkroi0piln476nk1eme.apps.googleusercontent.com"
+
+        
         return true
     }
 

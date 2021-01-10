@@ -14,18 +14,26 @@ class youngjaeLabViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = false
 
-        // Do any additional setup after loading the view.
+    
     }
     
+    @IBAction func compassButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Day1", bundle: nil)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let vc = storyboard.instantiateViewController(identifier: "Day1CompassViewController") as? Day1CompassViewController else  {return}
+        
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
-    */
+    
+    @IBAction func cameraButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Day1", bundle: nil)
 
+        guard let vc = storyboard.instantiateViewController(identifier: "Day1CameraViewController") as? Day1CameraViewController else  {return}
+        
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }
