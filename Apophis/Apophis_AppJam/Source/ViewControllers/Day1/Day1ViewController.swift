@@ -96,6 +96,11 @@ class Day1ViewController: UIViewController {
         // select1 인 경우
         if newMessageList[lastLastIndex].chatDetailsIdx == 0 || newMessageList[lastLastIndex].chatDetailsIdx == 1 || newMessageList[lastLastIndex].chatDetailsIdx == 2 || newMessageList[lastLastIndex].chatDetailsIdx == 3 || newMessageList[lastLastIndex].chatDetailsIdx == 4
         {
+            print("여기는 Action 버튼을 눌렀을 때 실행되는 부분이란다.", newMessageList)
+            print("여기는 lastLastIndex 값이란다.", lastLastIndex)
+            print("newMessageList[lastLastIndex].chatDetailsIdx : ",newMessageList[lastLastIndex].chatDetailsIdx)
+            
+
             let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
             print("전송 버튼 누를 때 detainIdx", newMessageList[lastLastIndex].chatDetailsIdx)
             print("전송 버튼 누를 때 List", newMessageList)
@@ -105,6 +110,7 @@ class Day1ViewController: UIViewController {
             newMessageList.remove(at: newMessageList.count - 1)
             messageListForTableView.remove(at: newMessageList.count - 1)
             
+
             tempIndex = newMessageList[newMessageList.count - 1].chatDetailsIdx
                 
             newMessageList.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
@@ -171,10 +177,20 @@ class Day1ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(myMessageEnd), name: NSNotification.Name("myMessageEnd"), object: nil)
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollToBottom), name: NSNotification.Name("scrollToBottom"), object: nil)
+        
+        
+        
     }
     
     
     //MARK:- @objc func 부분
+    
+    @objc func scrollToBottom()
+    {
+        chatTableView.scrollToBottom()
+    }
     
     @objc func myMessageEnd(notification : NSNotification)
     {
@@ -227,10 +243,15 @@ class Day1ViewController: UIViewController {
             
             
             
+
+
+            
+//            chatTableView.scrollToRow(at: indexPath, at: .none, animated: true)
             
         }
         
-        chatTableView.scrollToBottomRow()
+      
+
     }
     
     @objc func aponimousMessageEnd(notification : NSNotification)
@@ -264,24 +285,25 @@ class Day1ViewController: UIViewController {
                 
             }
             
-            
+
+
+
         }
         
         else if newMessageList.count - 1 > index // 마지막 메세지가 아니라면
         {
             messageListForTableView.append(newMessageList[index+1])
             let indexPath = IndexPath(row: index + 1, section: 0)
-            chatTableView.beginUpdates()
-            chatTableView.insertRows(at: [indexPath], with: .none)
-            chatTableView.endUpdates()
-        }
-        else
-        {
             
-            //            chatTableView.reloadData()
+            DispatchQueue.global().sync {
+                chatTableView.beginUpdates()
+                chatTableView.insertRows(at: [indexPath], with: .none)
+                chatTableView.endUpdates()
+            }
+
         }
         
-        chatTableView.scrollToBottomRow()
+     
     }
     
     
@@ -777,8 +799,39 @@ class Day1ViewController: UIViewController {
 extension Day1ViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
         return UITableView.automaticDimension
+//
+//        let messageWidth = UIScreen.main.bounds.width * 230/375
+//
+//
+//        let sampleTextView = UITextView()
+//        sampleTextView.textAlignment = .left
+//
+//        sampleTextView.text = messageListForTableView[indexPath.row].messageContent
+//        sampleTextView.font = .gmarketFont(weight: .Medium, size: 14)
+//        sampleTextView.sizeToFit()
+//        let lineNum = Int( sampleTextView.frame.width / messageWidth )
+//
+//
+//
+//        print("잘봐봡",sampleTextView.frame.width, messageWidth)
+//
+//        print("줄 갯수",lineNum)
+//
+//        print("컨테늧 내용",messageListForTableView[indexPath.row].messageContent)
+//        print("")
+//
+//
+//
+//        return CGFloat(lineNum * 16 ) + 16.5 + 16 + 32
+//        
+        
+
     }
+    
+
 }
 
 

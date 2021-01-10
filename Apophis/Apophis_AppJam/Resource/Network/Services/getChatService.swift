@@ -1,5 +1,5 @@
 //
-//  getAponimousChatService.swift
+//  getChatService.swift
 //  Apophis_AppJam
 //
 //  Created by 송지훈 on 2021/01/04.
@@ -92,7 +92,8 @@ struct getChatService {
                                                        isMine: false,
                                                        isLastMessage: true,
                                                        nextMessageType: replyTypeFromKorean(replyType: data["postInfo"]["replyType"].stringValue),
-                                                       type: nextActionFromKorean(nextAction: chat[i]["nextAction"].stringValue),
+                                                       type:
+                                                        nextActionFromKorean(nextAction: chat[i]["nextAction"].stringValue),
                                                        dataList: [],
                                                        chatDetailsIdx: detailIndex)
                     

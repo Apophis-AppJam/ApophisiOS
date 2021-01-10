@@ -1,14 +1,14 @@
 {
   "images" : [
     {
-      "filename" : "Group 1.png",
+      "filename" : "apoMessageBG.png",
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 39,
+          "bottom" : 19,
           "left" : 21,
-          "right" : 15,
-          "top" : 39
+          "right" : 16,
+          "top" : 21
         },
         "center" : {
           "height" : 1,
@@ -20,14 +20,14 @@
       "scale" : "1x"
     },
     {
-      "filename" : "Group 1@2x.png",
+      "filename" : "apoMessageBG@2x.png",
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 79,
+          "bottom" : 43,
           "left" : 42,
           "right" : 31,
-          "top" : 78
+          "top" : 42
         },
         "center" : {
           "height" : 1,
@@ -39,14 +39,14 @@
       "scale" : "2x"
     },
     {
-      "filename" : "Group 1@3x.png",
+      "filename" : "apoMessageBG@3x.png",
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 118,
+          "bottom" : 64,
           "left" : 64,
           "right" : 48,
-          "top" : 118
+          "top" : 64
         },
         "center" : {
           "height" : 1,
