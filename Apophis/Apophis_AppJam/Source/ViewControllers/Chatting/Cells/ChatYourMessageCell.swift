@@ -53,9 +53,6 @@ class ChatYourMessageCell: UITableViewCell {
     func setMessage(message : String)
     {
         
-
-        print("여기는 셀 에서의 메세지 입니다.", message)
-
         let padding = messageTextView.textContainer.lineFragmentPadding
         messageTextView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
         
@@ -64,7 +61,7 @@ class ChatYourMessageCell: UITableViewCell {
         messageTextView.text = message
 
         
-        messageTextView.translatesAutoresizingMaskIntoConstraints = true
+        messageTextView.translatesAutoresizingMaskIntoConstraints = false
         
         messageTextView.sizeToFit()
         
@@ -76,8 +73,6 @@ class ChatYourMessageCell: UITableViewCell {
         waitMessageImageView.alpha = 0
         messageBackgroundImageView.alpha = 0
         
-        print("너의 메세지",message,messageTextView.frame)
-
 
     }
     

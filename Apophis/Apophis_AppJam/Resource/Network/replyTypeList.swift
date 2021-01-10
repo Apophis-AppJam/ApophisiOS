@@ -15,7 +15,7 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     }
     else if replyType == "단일 보기 선택"
     {
-        return .selectList
+        return .select1
     }
     else if replyType == "장문형 텍스트 입력"
     {

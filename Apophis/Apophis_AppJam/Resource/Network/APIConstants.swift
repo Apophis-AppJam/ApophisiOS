@@ -31,7 +31,6 @@ struct APIConstants {
     static let getChatURL = APIConstants.baseURL + "/chat"
     
     
-    
 
     //MARK:- 유경 PART
 
@@ -41,7 +40,9 @@ struct APIConstants {
     
     
     //MARK:- 영재 PART
-  
+    
+    static let getChoiceURL = APIConstants.baseURL + "/choice"
+
     
 
     
