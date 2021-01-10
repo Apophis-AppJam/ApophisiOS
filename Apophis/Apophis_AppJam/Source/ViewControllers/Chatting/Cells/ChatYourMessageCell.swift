@@ -53,9 +53,6 @@ class ChatYourMessageCell: UITableViewCell {
     func setMessage(message : String)
     {
         
-
-        print("여기는 셀 에서의 메세지 입니다.", message)
-
         let padding = messageTextView.textContainer.lineFragmentPadding
         messageTextView.textContainerInset =  UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
         
@@ -63,8 +60,9 @@ class ChatYourMessageCell: UITableViewCell {
         messageTextView.textColor = .white
         messageTextView.text = message
 
-        
 
+        messageTextView.translatesAutoresizingMaskIntoConstraints = false
+        
         messageTextView.sizeToFit()
     
 
@@ -153,8 +151,9 @@ class ChatYourMessageCell: UITableViewCell {
         messageTextView.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         messageTextView.textColor = .white
         messageTextView.text = message
+        messageTextView.translatesAutoresizingMaskIntoConstraints = false
 
-        messageTextView.sizeToFit()
+//        messageTextView.sizeToFit()
         
         messageTextView.isScrollEnabled = false
         messageTextView.contentInset = .zero
