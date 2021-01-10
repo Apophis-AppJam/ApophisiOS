@@ -756,7 +756,7 @@ extension Day3ViewController : UITableViewDataSource
             
             if isMessageLoadList[indexPath.row] == false
             {
-                yourMessageCell.loadingAnimate(index: indexPath.row)
+                yourMessageCell.loadingAnimate(index: indexPath.row, vibrate: false)
             }
             else
             {
