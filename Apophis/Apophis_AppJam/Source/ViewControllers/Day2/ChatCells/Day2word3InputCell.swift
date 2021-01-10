@@ -12,8 +12,7 @@ class Day2word3InputCell: UITableViewCell {
     
     
     @IBOutlet weak var textStackView: UIStackView!
-    
-    
+
     @IBOutlet weak var textField1: UITextField!
     
     @IBOutlet weak var textField2: UITextField!
@@ -21,6 +20,7 @@ class Day2word3InputCell: UITableViewCell {
     @IBOutlet weak var textField3: UITextField!
     
     @IBOutlet weak var completeLabel: UILabel!
+    
     @IBOutlet weak var completeButton: UIButton!
     
     
