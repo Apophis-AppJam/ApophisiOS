@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 import AudioToolbox
 
 class ChatYourMessageCell: UITableViewCell {
@@ -18,7 +19,7 @@ class ChatYourMessageCell: UITableViewCell {
     var check: Bool = false
     //MARK:- Variable Part
 
-    
+    let loadingView = AnimationView()
     
     //MARK:- Constraint Part
 
@@ -47,10 +48,12 @@ class ChatYourMessageCell: UITableViewCell {
 
     //MARK:- default Setting Function Part
     
+    
+    
     func setMessage(message : String)
     {
-  
         
+
         print("여기는 셀 에서의 메세지 입니다.", message)
 
         let padding = messageTextView.textContainer.lineFragmentPadding
@@ -60,22 +63,42 @@ class ChatYourMessageCell: UITableViewCell {
         messageTextView.textColor = .white
         messageTextView.text = message
 
-        messageTextView.sizeToFit()
         
         messageTextView.translatesAutoresizingMaskIntoConstraints = true
+        
+        messageTextView.sizeToFit()
+        
         messageTextView.isScrollEnabled = false
+
         messageTextView.contentInset = .zero
         
         messageTextView.alpha = 0
         waitMessageImageView.alpha = 0
         messageBackgroundImageView.alpha = 0
+        
+        print("너의 메세지",message,messageTextView.frame)
 
 
     }
     
+    func setSnowBackground()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("setSnowBackground"), object: nil)
+    }
+    
+
     func loadingAnimate(index : Int, vibrate : Bool)
     {
         self.check = false
+        
+        
+        loadingView.frame = waitMessageImageView.bounds
+        loadingView.animation = Animation.named("message_loading")
+        loadingView.contentMode = .scaleAspectFit
+        loadingView.loopMode = .loop
+        loadingView.play()
+        waitMessageImageView.addSubview(loadingView)
+        
 
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
             
@@ -100,6 +123,7 @@ class ChatYourMessageCell: UITableViewCell {
                 })
             
         } completion: { (_) in
+            self.loadingView.stop()
             // 애니메이션이 끝날 때 post를 해주는데, 그 때 object에 index값을 넣어서 쏜다.
             // 여기서 index는 loadingAnimate를 호출할 때 받아온다.
             NotificationCenter.default.post(name: NSNotification.Name("AponimousMessageEnd"), object: index)
@@ -112,6 +136,7 @@ class ChatYourMessageCell: UITableViewCell {
     
     func showMessageWithNoAnimation()
     {
+        loadingView.isHidden = true
         messageTextView.alpha = 1
         messageBackgroundImageView.alpha = 1
     }
