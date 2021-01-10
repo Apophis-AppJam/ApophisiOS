@@ -65,9 +65,8 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatMessageWaiting" translatesAutoresizingMaskIntoConstraints="NO" id="Kbc-sp-ACr">
                                                     <rect key="frame" x="8" y="8" width="56.5" height="38"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="안녕ㅁㄴㅇ러ㅣㅏㅁㄴㅇ러ㅣㅏㄴ머이란머ㅏㅣㅇ러ㅏㅣㄴㅁㅇ라ㅣㄴㅁㅇ린ㅁ일ㄴㅁ어ㅣㅏ린망러ㅏㅣㄴㅁ어라ㅣㄴㅇ멀ㄴㅁ" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" id="pau-PF-0M3">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="안녕ㅁㄴㅇ러ㅣㅏㅁㄴㅇ러ㅣㅏㄴ머이란머ㅏㅣㅇ러ㅏㅣㄴㅁㅇ라ㅣㄴㅁㅇ린ㅁ일ㄴㅁ어ㅣㅏ린망러ㅏㅣㄴㅁ어라ㅣㄴㅇ멀ㄴㅁ" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pau-PF-0M3">
                                                     <rect key="frame" x="24" y="20" width="228" height="76"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -80,7 +79,7 @@
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="top" secondItem="pau-PF-0M3" secondAttribute="top" constant="-12" id="NBe-Hq-CbZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="13" id="QcN-oU-3lE"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="leading" secondItem="pau-PF-0M3" secondAttribute="leading" constant="-16" id="TTg-3a-mBT"/>
-                                                <constraint firstItem="pau-PF-0M3" firstAttribute="width" relation="lessThanOrEqual" secondItem="nCr-of-L0S" secondAttribute="width" multiplier="230/375" id="Tt9-zv-2R8"/>
+                                                <constraint firstItem="pau-PF-0M3" firstAttribute="width" relation="lessThanOrEqual" secondItem="nCr-of-L0S" secondAttribute="width" multiplier="230/375" priority="999" id="Tt9-zv-2R8"/>
                                                 <constraint firstItem="pau-PF-0M3" firstAttribute="leading" secondItem="nCr-of-L0S" secondAttribute="leading" constant="24" id="azk-1r-wNU"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="trailing" secondItem="pau-PF-0M3" secondAttribute="trailing" constant="12" id="h55-8x-jFU"/>
                                                 <constraint firstItem="xu9-rK-053" firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="13" id="kMk-Tm-DeA"/>

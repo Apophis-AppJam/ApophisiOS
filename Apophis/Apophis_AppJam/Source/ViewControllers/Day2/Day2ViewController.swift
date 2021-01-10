@@ -1173,6 +1173,7 @@ extension Day2ViewController : UITableViewDataSource
         {
             
             switch(newMessageList[indexPath.row].type)
+
             {
             
 
@@ -1188,7 +1189,7 @@ extension Day2ViewController : UITableViewDataSource
 
                 if isMessageLoadList[indexPath.row] == false
                 {
-                    yourMessageCell.loadingAnimate(index: indexPath.row)
+                    yourMessageCell.loadingAnimate(index: indexPath.row, vibrate: false)
                 }
                 else
                 {
@@ -1216,7 +1217,7 @@ extension Day2ViewController : UITableViewDataSource
 
                 if isMessageLoadList[indexPath.row] == false
                 {
-                    yourMessageCell.loadingAnimate(index: indexPath.row)
+                    yourMessageCell.loadingAnimate(index: indexPath.row, vibrate: false)
                 }
                 else
                 {
