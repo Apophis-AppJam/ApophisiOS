@@ -1,29 +1,23 @@
 //
-//  Day2word3InputCell.swift
+//  Day3EntetNameCell.swift
 //  Apophis_AppJam
 //
-//  Created by 송지훈 on 2021/01/06.
+//  Created by kong on 2021/01/09.
 //
 
 import UIKit
 
-class Day2word3InputCell: UITableViewCell {
+class Day3EntetNameCell: UITableViewCell {
     
     
     
     @IBOutlet weak var textStackView: UIStackView!
-
+    
     @IBOutlet weak var textField1: UITextField!
-    
-    @IBOutlet weak var textField2: UITextField!
-    
-    @IBOutlet weak var textField3: UITextField!
-    
+
     @IBOutlet weak var completeLabel: UILabel!
     
     @IBOutlet weak var completeButton: UIButton!
-    
-    
     
     
 
@@ -43,7 +37,6 @@ class Day2word3InputCell: UITableViewCell {
     {
 
         completeLabel.font = .gmarketFont(weight: .Medium, size: 14)
-        
         completeLabel.textColor = .init(red: 112/255, green: 112/255, blue: 112/255, alpha: 1)
         completeButton.isHidden = true
         self.textStackView.alpha = 0
@@ -78,20 +71,13 @@ class Day2word3InputCell: UITableViewCell {
         toolBar.barTintColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
         
         textField1.textColor = .mainColor
-        textField2.textColor = .mainColor
-        textField3.textColor = .mainColor
         
         textField1.inputAccessoryView = toolBar
-        textField2.inputAccessoryView = toolBar
-        textField3.inputAccessoryView = toolBar
+        textField1.font = .gmarketFont(weight: .Medium, size: 14)
         
         textField1.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        textField2.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        textField3.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
         textField1.addTarget(self, action: #selector(hideInputView), for: .editingDidBegin)
-        textField2.addTarget(self, action: #selector(hideInputView), for: .editingDidBegin)
-        textField3.addTarget(self, action: #selector(hideInputView), for: .editingDidBegin)
         
     }
     
@@ -104,9 +90,7 @@ class Day2word3InputCell: UITableViewCell {
     {
 
         
-        if !textField1.text!.isEmpty &&
-            !textField2.text!.isEmpty &&
-            !textField3.text!.isEmpty  {
+        if !textField1.text!.isEmpty {
             
             completeLabel.textColor = .mainColor
             completeButton.isHidden = false
@@ -155,16 +139,16 @@ class Day2word3InputCell: UITableViewCell {
     
     @IBAction func completeButtonClicked(_ sender: Any) {
         
-        if !textField1.text!.isEmpty && !textField2.text!.isEmpty && !textField3.text!.isEmpty  {
+        if !textField1.text!.isEmpty {
+            print("눌리냐?")
+            var nameList : [String] = []
             
-            var wordList : [String] = []
+            nameList.append(contentsOf: [textField1.text!])
             
-            wordList.append(contentsOf: [textField1.text!, textField2.text!, textField3.text!])
-            
-            NotificationCenter.default.post(name: NSNotification.Name("user3WordsEntered"), object: wordList)
+            NotificationCenter.default.post(name: NSNotification.Name("userNameEntered"), object: nameList)
         }
     }
     
     
+    
 }
-

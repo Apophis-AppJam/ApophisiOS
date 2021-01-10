@@ -15,6 +15,7 @@
 		AE2E82F5D36D7460962246C6 /* Pods_Apophis_AppJam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */; };
 		FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC394F3E259D110500E70307 /* ColorViewController.swift */; };
 		FC92374C259E6BEE0039AB32 /* audioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */; };
+		FC956AAD25A8CE530007717C /* Day3EntetNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC956AAC25A8CE530007717C /* Day3EntetNameCell.swift */; };
 		FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */; };
 		FCDE84AA25A57ADB003D288E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDE84A925A57ADB003D288E /* Login.storyboard */; };
 		FCDE84AF25A57B2E003D288E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE84AE25A57B2E003D288E /* LoginViewController.swift */; };
@@ -95,6 +96,7 @@
 		D23F09E174B44478E4702746 /* Pods-Apophis_AppJam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.debug.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.debug.xcconfig"; sourceTree = "<group>"; };
 		FC394F3E259D110500E70307 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioRecordViewController.swift; sourceTree = "<group>"; };
+		FC956AAC25A8CE530007717C /* Day3EntetNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3EntetNameCell.swift; sourceTree = "<group>"; };
 		FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3DrawingViewController.swift; sourceTree = "<group>"; };
 		FCDE84A925A57ADB003D288E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FCDE84AE25A57B2E003D288E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 				2727856C1D01EC217465EB2F /* Pods-Apophis_AppJam.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC956AA725A8CDAF0007717C /* ChatCells */ = {
+			isa = PBXGroup;
+			children = (
+				FC956AAC25A8CE530007717C /* Day3EntetNameCell.swift */,
+			);
+			path = ChatCells;
 			sourceTree = "<group>";
 		};
 		FCDE84A425A57A6F003D288E /* Login */ = {
@@ -318,6 +328,7 @@
 			children = (
 				FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */,
 				FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */,
+				FC956AA725A8CDAF0007717C /* ChatCells */,
 			);
 			path = Day3;
 			sourceTree = "<group>";
@@ -833,6 +844,7 @@
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
 				FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */,
+				FC956AAD25A8CE530007717C /* Day3EntetNameCell.swift in Sources */,
 				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
 				FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */,
 				FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */,

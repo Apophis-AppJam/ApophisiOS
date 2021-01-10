@@ -13,6 +13,7 @@ class Day2ViewController: UIViewController {
 
     //MARK:- IBOutlet Part
 
+
     @IBOutlet weak var chatSnowImageView: UIImageView!
     
 
