@@ -55,20 +55,15 @@ class Day1ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        appData?.chatIndex = 0
+        //        appData?.chatIndex = 0
         
         addObserver()
         tableViewDefaultSetting()
         etcDefaultSetting()
         disableTextField(isEnable: isTextFieldEnabled)
         
-        loadDummyMessage(idx: 0, isMine: false)
-        messageListForTableView.append(newMessageList[0])
         
-        
-        let index = IndexPath(row: 0, section: 0)
-        chatTableView.reloadRows(at: [index], with: .none)
-        
+        firstMessageLoad()
     }
     
     //    override func viewDidAppear(_ animated: Bool) {
@@ -99,19 +94,19 @@ class Day1ViewController: UIViewController {
         let lastLastIndex = newMessageList.count - 1
         
         // select1 인 경우
-        if newMessageList[lastLastIndex].chatDetailsIdx == 0 || newMessageList[lastLastIndex].chatDetailsIdx == 1 || newMessageList[lastLastIndex].chatDetailsIdx == 2 || newMessageList[lastLastIndex].chatDetailsIdx == 3
+        if newMessageList[lastLastIndex].chatDetailsIdx == 0 || newMessageList[lastLastIndex].chatDetailsIdx == 1 || newMessageList[lastLastIndex].chatDetailsIdx == 2 || newMessageList[lastLastIndex].chatDetailsIdx == 3 || newMessageList[lastLastIndex].chatDetailsIdx == 4
         {
-            print("여기는 Action 버튼을 눌렀을 때 실행되는 부분이란다.", newMessageList)
-            print("여기는 lastLastIndex 값이란다.", lastLastIndex)
-            print("newMessageList[lastLastIndex].chatDetailsIdx : ",newMessageList[lastLastIndex].chatDetailsIdx)
             let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
-            
+            print("전송 버튼 누를 때 detainIdx", newMessageList[lastLastIndex].chatDetailsIdx)
+            print("전송 버튼 누를 때 List", newMessageList)
+
             isMessageLoadList[newMessageList.count - 1] = false
             
             newMessageList.remove(at: newMessageList.count - 1)
             messageListForTableView.remove(at: newMessageList.count - 1)
             
-            
+            tempIndex = newMessageList[newMessageList.count - 1].chatDetailsIdx
+                
             newMessageList.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
                                                           isMine: true,
                                                           isLastMessage: true,
@@ -138,13 +133,28 @@ class Day1ViewController: UIViewController {
             messageTextInputView.text = ""
             textViewDidChange(messageTextInputView)
             
-//            appData?.chatIndex = (appData?.chatIndex)! + 1
+            //            appData?.chatIndex = (appData?.chatIndex)! + 1
         }
     }
     
     
     //MARK:- default Setting Function Part
-    
+    func firstMessageLoad()
+    {
+        self.loadApoMessage(idx: 1) { (result) in
+            if result
+            {
+                print("여기서 리스트",self.newMessageList)
+                self.messageListForTableView.append(self.newMessageList[0])
+                
+                
+                let index = IndexPath(row: 0, section: 0)
+                self.chatTableView.insertRows(at: [index], with: .none)
+            }
+            
+        }
+        
+    }
     
     func addObserver()
     {
@@ -172,22 +182,54 @@ class Day1ViewController: UIViewController {
         
         if index != -1 // -1 이 올수가 없음
         {
+            if newMessageList.count - 1 == index // 마지막 메세지라면 아포니머스 메세지 로드해야함
+            {
+                print("지금 보내고있는건 먼데여",newMessageList[index].chatDetailsIdx )
+                print("지금 보내고있는 index ", index)
+                print("지금 보내고있는 list ", newMessageList)
+                
+                loadApoMessage(idx: (newMessageList[index].chatDetailsIdx + 1)) { (result) in
+                                        
+                    if result
+                    {
+                        self.messageListForTableView.append(self.newMessageList[index+1])
+                        
+                        let index = IndexPath(row: index + 1, section: 0)
+                        
+                        
+                        self.chatTableView.beginUpdates()
+                        self.chatTableView.insertRows(at: [index], with: .none)
+                        self.chatTableView.endUpdates()
+                    }
+                    else
+                    {
+                        makeAlert(title: "알림", message: "메세지 정보를 불러오는데 실패하였습니다", vc: self)
+                    }
+                }
+                
+                
+                
+                
+            }
+            else if newMessageList.count - 1 > index  // 마지막 메세지가 아니라면
+            {
+                messageListForTableView.append(newMessageList[index+1])
+                let indexPath = IndexPath(row: index + 1, section: 0)
+                chatTableView.beginUpdates()
+                chatTableView.insertRows(at: [indexPath], with: .none)
+                chatTableView.endUpdates()
+            }
             
-            loadDummyMessage(idx: newMessageList[index].chatDetailsIdx + 1, isMine: false)
-            
-            messageListForTableView.append(newMessageList[index+1])
-            //            isMessageLoadList.append(false)
-            
-            
-            
-            let indexPath = IndexPath(row: index + 1, section: 0)
+            else
+            {
+                
+            }
             
             
-            chatTableView.beginUpdates()
-            chatTableView.insertRows(at: [indexPath], with: .none)
-            chatTableView.endUpdates()
+            
             
         }
+        
         chatTableView.scrollToBottomRow()
     }
     
@@ -202,43 +244,42 @@ class Day1ViewController: UIViewController {
         // 여기서의 index는 방금 재생이 끝난 테이블 셀의 index를 의미함.
         
         print("이곳은 유어 메세지 엔드에서 들어오는 인덱스란다?", index )
-
+        
         
         if newMessageList.count - 1 == index // 지금 마지막 메세지를 재생하고 온 것. 새로 데이터를 받아와야 한다.
         {
-            loadDummyMessage(idx: newMessageList[index].chatDetailsIdx,
-                             isMine: !newMessageList[index].isMine)
+            loadMyMessage(idx: newMessageList[index].chatDetailsIdx,
+                          type: newMessageList[index].nextMessageType) { (result) in
+                
+                if result
+                {
+                    self.messageListForTableView.append(self.newMessageList[index+1])
+                    
+                    let indexPath = IndexPath(row: index + 1, section: 0)
+                    
+                    self.chatTableView.beginUpdates()
+                    self.chatTableView.insertRows(at: [indexPath], with: .none)
+                    self.chatTableView.endUpdates()
+                }
+                
+            }
             
             
-            messageListForTableView.append(newMessageList[index+1])
-            
-            
-            
-            let indexPath = IndexPath(row: index + 1, section: 0)
-            
-            chatTableView.beginUpdates()
-            chatTableView.insertRows(at: [indexPath], with: .none)
-            chatTableView.endUpdates()
-
         }
         
-        
-        else
-//        if newMessageList.count - 1 > index // 마지막 메세지가 아니라면
+        else if newMessageList.count - 1 > index // 마지막 메세지가 아니라면
         {
             messageListForTableView.append(newMessageList[index+1])
             let indexPath = IndexPath(row: index + 1, section: 0)
             chatTableView.beginUpdates()
             chatTableView.insertRows(at: [indexPath], with: .none)
             chatTableView.endUpdates()
-            
         }
-//        else
-//        {
-//
-//
-//            //            chatTableView.reloadData()
-//        }
+        else
+        {
+            
+            //            chatTableView.reloadData()
+        }
         
         chatTableView.scrollToBottomRow()
     }
@@ -314,268 +355,339 @@ class Day1ViewController: UIViewController {
     
     
     
-    func loadDummyMessage(idx : Int,isMine : Bool)
+    func loadMyMessage(idx : Int, type : messageTypeList,completion: @escaping (Bool) -> Void)
+    {
+        getChatService.shared.getMyMessage(chatDetailIdx: idx, messageType: type) { (result) in
+            switch(result)
+            {
+            case .success(let messageList, _):
+                
+                let message = messageList as? [ChatMessageNewDataModel] ?? []
+                
+                if message.count > 0
+                {
+                    for i in 0 ... message.count - 1
+                    {
+                        self.newMessageList.append(message[i])
+                        self.isMessageLoadList.append(false)
+                    }
+                }
+                completion(true)
+                
+            case .networkFail :
+                completion(false)
+                makeAlert(title: "알림", message: "네트워크 상태를 확인해주세요", vc: self)
+                
+            default :
+                completion(false)
+                makeAlert(title: "알림", message: "오류가 발생하였습니다", vc: self)
+                
+            }
+        }
+        
+    }
+    
+    
+    
+    func loadApoMessage(idx : Int,completion: @escaping (Bool) -> Void)
     {
         
-        if idx == 0
-        {
-            
-            if isMine == false
+        getChatService.shared.getAponimousMessage(chatDetailIdx: idx) { (result) in
+            switch(result)
             {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "안녕",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .normal,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 0),
-                    
-                    ChatMessageNewDataModel(messageContent: "먼저 나랑 연락을 이어나가겠다고 해줘서 고마워.",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .normal,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 0),
-                    
-                    ChatMessageNewDataModel(messageContent: "세상이 7일 뒤에 멸망한다는데 대뜸 모르는 사람이 전화해서 당황했을 것 같아.",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .select1,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 0)
-                ])
+        
+            case .success(let messageList, _):
+                print("로드아포메세지 func 여기서 chatDetailIdx가 뭐지?",idx)
                 
-                isMessageLoadList.append(contentsOf: [false, false, false])
-            }
-            else
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .select1,
-                                            dataList: ["음.. 그냥 받고 싶었어."],
-                                            chatDetailsIdx: 0)
-                ])
                 
-                isMessageLoadList.append(contentsOf: [false])
-                tempIndex = idx
+                let message = messageList as? [ChatMessageNewDataModel] ?? []
+                
+                if message.count > 0
+                {
+                    for i in 0 ... message.count - 1
+                    {
+                        self.newMessageList.append(message[i])
+                        self.isMessageLoadList.append(false)
+                    }
+                }
+                
+                completion(true)
+                
+            case .networkFail :
+                makeAlert(title: "알림", message: "네트워크 상태를 확인해주세요", vc: self)
+                completion(false)
+                
+            default :
+                makeAlert(title: "알림", message: "오류가 발생하였습니다", vc: self)
+                completion(false)
                 
             }
             
-        }
-        
-        
-        else if idx == 1
-        {
-            if isMine == false
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "사실 너한테 했던 게 딱 9번째 시도였어. 손가락으로 세어가면서. 번호를 바꿔가며 전화를 했지.",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .vibrate,
-                                            type: .normal,
-                                            dataList: [], chatDetailsIdx: 1),
-                    
-                    ChatMessageNewDataModel(messageContent: "한 번.",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .vibrate,
-                                            type: .vibrate,
-                                            dataList: [], chatDetailsIdx: 1),
-                    
-                    ChatMessageNewDataModel(messageContent: "두 번.",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .vibrate,
-                                            type: .vibrate,
-                                            dataList: [], chatDetailsIdx: 1),
-                    
-                    ChatMessageNewDataModel(messageContent: "세 번.",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .vibrate,
-                                            dataList: [], chatDetailsIdx: 1),
-                    
-                    ChatMessageNewDataModel(messageContent: "10번까지 안 받으면 단념해야지 싶었는데. 딱 9번 째에 네가 받아준거야. ",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .normal,
-                                            dataList: [], chatDetailsIdx: 1),
-                    
-                    ChatMessageNewDataModel(messageContent: "누군가의 목소리가 들리는 순간 꿈 같았어. 이 난리통에 모르는 번호로 온 전화를 받는 사람이 어디 있겠어.",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .normal,
-                                            dataList: [], chatDetailsIdx: 1),
-                    
-                    ChatMessageNewDataModel(messageContent: "아 네가 이상하다는 건 아니야. 고맙다는 표현이라고 생각해줘. ",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .select1,
-                                            type: .normal,
-                                            dataList: [], chatDetailsIdx: 1)
-                ])
-                
-                isMessageLoadList.append(contentsOf: [false,false,false,false,false,false,false])
-            }
-            else
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .select1,
-                                            dataList: ["응. 그렇게 생각할게."], chatDetailsIdx: 1)
-                ])
-                
-                
-                isMessageLoadList.append(contentsOf: [false])
-                tempIndex = idx
-            }
-            
-        }
-        
-        else if idx == 2
-        {
-            if isMine == false
-            {
-                
-                newMessageList.append(contentsOf: [
-                    
-                    ChatMessageNewDataModel(messageContent: "지구가 멸망한다는 뉴스를 처음 봤을 때 말야. 그다지 실감이 안 났는데도 불구하고 마음이 쿵 내려앉더라. ",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .select1,
-                                            type: .normal,
-                                            dataList: [], chatDetailsIdx: 2)
-                ])
-                
-                
-                isMessageLoadList.append(contentsOf: [false])
-            }
-            else
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .select1,
-                                            dataList: ["쿵?"],
-                                            chatDetailsIdx: 2)
-                    
-                ])
-                
-                isMessageLoadList.append(contentsOf: [false])
-                tempIndex = idx
-                
-            }
-            
-        }
-        
-        
-        else if idx == 3
-        {
-            if isMine == false
-            {
-                newMessageList.append(contentsOf: [
-                    
-                    ChatMessageNewDataModel(messageContent: "그래 쿵! 마치 소행성이 지구가 아니라 내 마음에 떨어진 것처럼 말야.",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 3),
-                    
-                    ChatMessageNewDataModel(messageContent: "그 순간이 되니까 누군가와 이어져있고 싶더라고. 아무래도 사람과 이어져있는 게 불안함이 덜 하잖아. 나는 사실 딱히 이어져있다고 생각하는 관계들이 없었거든..",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .select1,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 3)
-                ])
-                
-                isMessageLoadList.append(contentsOf: [false,false])
-            }
-            else
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .select1,
-                                            dataList: ["음.."],
-                                            chatDetailsIdx: 3),
-                    
-                    
-                ])
-                
-                isMessageLoadList.append(contentsOf: [false])
-                tempIndex = idx
-                
-            }
-            
-        }
-        
-        else if idx == 4
-        {
-            if isMine == false
-            {
-                newMessageList.append(contentsOf: [
-                    
-                    ChatMessageNewDataModel(messageContent: "뭐. 이런 연락을 언젠가 한 번쯤 해보고 싶기도 했어. 마치 펜팔처럼.",
-                                            isMine: false,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 4),
-                    
-                    ChatMessageNewDataModel(messageContent: "일면식도 없는 사람과 연락을 이어나가보는 거. 낭만적이지 않아? 생애 마지막쯤은 좀 낭만적이어도 되잖아.",
-                                            isMine: false,
-                                            isLastMessage: true,
-                                            nextMessageType: .userAnswerWithComplete,
-                                            type: .normal,
-                                            dataList: [],
-                                            chatDetailsIdx: 4)
-                ])
-                
-                isMessageLoadList.append(contentsOf: [false,false])
-            }
-            else
-            {
-                newMessageList.append(contentsOf: [
-                    ChatMessageNewDataModel(messageContent: "",
-                                            isMine: true,
-                                            isLastMessage: false,
-                                            nextMessageType: .normal,
-                                            type: .userAnswerWithComplete,
-                                            dataList: [""],
-                                            chatDetailsIdx: 4),
-                    
-                    
-                ])
-                
-                isMessageLoadList.append(contentsOf: [false])
-                tempIndex = idx
-                
-            }
-            
+            print("newMessageList",self.newMessageList)
         }
     }
+    //    func loadDummyMessage(idx : Int,isMine : Bool)
+    //    {
+    //
+    //        if idx == 0
+    //        {
+    //
+    //            if isMine == false
+    //            {
+    //                newMessageList.append(contentsOf: [
+    //                    ChatMessageNewDataModel(messageContent: "안녕",
+    //                                            isMine: false,
+    //                                            isLastMessage: true,
+    //                                            nextMessageType: .normal,
+    //                                            type: .normal,
+    //                                            dataList: [],
+    //                                            chatDetailsIdx: 0),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "먼저 나랑 연락을 이어나가겠다고 해줘서 고마워.",
+    //                                            isMine: false,
+    //                                            isLastMessage: true,
+    //                                            nextMessageType: .normal,
+    //                                            type: .normal,
+    //                                            dataList: [],
+    //                                            chatDetailsIdx: 0),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "세상이 7일 뒤에 멸망한다는데 대뜸 모르는 사람이 전화해서 당황했을 것 같아.",
+    //                                            isMine: false,
+    //                                            isLastMessage: true,
+    //                                            nextMessageType: .select1,
+    //                                            type: .normal,
+    //                                            dataList: [],
+    //                                            chatDetailsIdx: 0)
+    //                ])
+    //
+    //                isMessageLoadList.append(contentsOf: [false, false, false])
+    //            }
+    //            else
+    //            {
+    //                newMessageList.append(contentsOf: [
+    //                    ChatMessageNewDataModel(messageContent: "",
+    //                                            isMine: true,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .select1,
+    //                                            dataList: ["음.. 그냥 받고 싶었어."],
+    //                                            chatDetailsIdx: 0)
+    //                ])
+    //
+    //                isMessageLoadList.append(contentsOf: [false])
+    //                tempIndex = idx
+    //
+    //            }
+    //
+    //        }
+    //
+    //
+    //        else if idx == 1
+    //        {
+    //            if isMine == false
+    //            {
+    //                newMessageList.append(contentsOf: [
+    //                    ChatMessageNewDataModel(messageContent: "사실 너한테 했던 게 딱 9번째 시도였어. 손가락으로 세어가면서. 번호를 바꿔가며 전화를 했지.",
+    //                                            isMine: false,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .vibrate,
+    //                                            type: .normal,
+    //                                            dataList: [], chatDetailsIdx: 1),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "한 번.",
+    //                                            isMine: false,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .vibrate,
+    //                                            type: .vibrate,
+    //                                            dataList: [], chatDetailsIdx: 1),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "두 번.",
+    //                                            isMine: false,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .vibrate,
+    //                                            type: .vibrate,
+    //                                            dataList: [], chatDetailsIdx: 1),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "세 번.",
+    //                                            isMine: false,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .vibrate,
+    //                                            dataList: [], chatDetailsIdx: 1),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "10번까지 안 받으면 단념해야지 싶었는데. 딱 9번 째에 네가 받아준거야. ",
+    //                                            isMine: false,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .normal,
+    //                                            dataList: [], chatDetailsIdx: 1),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "누군가의 목소리가 들리는 순간 꿈 같았어. 이 난리통에 모르는 번호로 온 전화를 받는 사람이 어디 있겠어.",
+    //                                            isMine: false,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .normal,
+    //                                            dataList: [], chatDetailsIdx: 1),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "아 네가 이상하다는 건 아니야. 고맙다는 표현이라고 생각해줘. ",
+    //                                            isMine: false,
+    //                                            isLastMessage: true,
+    //                                            nextMessageType: .select1,
+    //                                            type: .normal,
+    //                                            dataList: [], chatDetailsIdx: 1)
+    //                ])
+    //
+    //                isMessageLoadList.append(contentsOf: [false,false,false,false,false,false,false])
+    //            }
+    //            else
+    //            {
+    //                newMessageList.append(contentsOf: [
+    //                    ChatMessageNewDataModel(messageContent: "",
+    //                                            isMine: true,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .select1,
+    //                                            dataList: ["응. 그렇게 생각할게."], chatDetailsIdx: 1)
+    //                ])
+    //
+    //
+    //                isMessageLoadList.append(contentsOf: [false])
+    //                tempIndex = idx
+    //            }
+    //
+    //        }
+    //
+    //        else if idx == 2
+    //        {
+    //            if isMine == false
+    //            {
+    //
+    //                newMessageList.append(contentsOf: [
+    //
+    //                    ChatMessageNewDataModel(messageContent: "지구가 멸망한다는 뉴스를 처음 봤을 때 말야. 그다지 실감이 안 났는데도 불구하고 마음이 쿵 내려앉더라. ",
+    //                                            isMine: false,
+    //                                            isLastMessage: true,
+    //                                            nextMessageType: .select1,
+    //                                            type: .normal,
+    //                                            dataList: [], chatDetailsIdx: 2)
+    //                ])
+    //
+    //
+    //                isMessageLoadList.append(contentsOf: [false])
+    //            }
+    //            else
+    //            {
+    //                newMessageList.append(contentsOf: [
+    //                    ChatMessageNewDataModel(messageContent: "",
+    //                                            isMine: true,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .select1,
+    //                                            dataList: ["쿵?"],
+    //                                            chatDetailsIdx: 2)
+    //
+    //                ])
+    //
+    //                isMessageLoadList.append(contentsOf: [false])
+    //                tempIndex = idx
+    //
+    //            }
+    //
+    //        }
+    //
+    //
+    //        else if idx == 3
+    //        {
+    //            if isMine == false
+    //            {
+    //                newMessageList.append(contentsOf: [
+    //
+    //                    ChatMessageNewDataModel(messageContent: "그래 쿵! 마치 소행성이 지구가 아니라 내 마음에 떨어진 것처럼 말야.",
+    //                                            isMine: false,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .normal,
+    //                                            dataList: [],
+    //                                            chatDetailsIdx: 3),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "그 순간이 되니까 누군가와 이어져있고 싶더라고. 아무래도 사람과 이어져있는 게 불안함이 덜 하잖아. 나는 사실 딱히 이어져있다고 생각하는 관계들이 없었거든..",
+    //                                            isMine: false,
+    //                                            isLastMessage: true,
+    //                                            nextMessageType: .select1,
+    //                                            type: .normal,
+    //                                            dataList: [],
+    //                                            chatDetailsIdx: 3)
+    //                ])
+    //
+    //                isMessageLoadList.append(contentsOf: [false,false])
+    //            }
+    //            else
+    //            {
+    //                newMessageList.append(contentsOf: [
+    //                    ChatMessageNewDataModel(messageContent: "",
+    //                                            isMine: true,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .select1,
+    //                                            dataList: ["음.."],
+    //                                            chatDetailsIdx: 3),
+    //
+    //
+    //                ])
+    //
+    //                isMessageLoadList.append(contentsOf: [false])
+    //                tempIndex = idx
+    //
+    //            }
+    //
+    //        }
+    //
+    //        else if idx == 4
+    //        {
+    //            if isMine == false
+    //            {
+    //                newMessageList.append(contentsOf: [
+    //
+    //                    ChatMessageNewDataModel(messageContent: "뭐. 이런 연락을 언젠가 한 번쯤 해보고 싶기도 했어. 마치 펜팔처럼.",
+    //                                            isMine: false,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .normal,
+    //                                            dataList: [],
+    //                                            chatDetailsIdx: 4),
+    //
+    //                    ChatMessageNewDataModel(messageContent: "일면식도 없는 사람과 연락을 이어나가보는 거. 낭만적이지 않아? 생애 마지막쯤은 좀 낭만적이어도 되잖아.",
+    //                                            isMine: false,
+    //                                            isLastMessage: true,
+    //                                            nextMessageType: .userAnswerWithComplete,
+    //                                            type: .normal,
+    //                                            dataList: [],
+    //                                            chatDetailsIdx: 4)
+    //                ])
+    //
+    //                isMessageLoadList.append(contentsOf: [false,false])
+    //            }
+    //            else
+    //            {
+    //                newMessageList.append(contentsOf: [
+    //                    ChatMessageNewDataModel(messageContent: "",
+    //                                            isMine: true,
+    //                                            isLastMessage: false,
+    //                                            nextMessageType: .normal,
+    //                                            type: .userAnswerWithComplete,
+    //                                            dataList: [""],
+    //                                            chatDetailsIdx: 4),
+    //
+    //
+    //                ])
+    //
+    //                isMessageLoadList.append(contentsOf: [false])
+    //                tempIndex = idx
+    //
+    //            }
+    //
+    //        }
+    //    }
     
     
     
@@ -774,11 +886,11 @@ extension Day1ViewController : UITableViewDataSource
                         tableView.dequeueReusableCell(withIdentifier: "ChatMyMessageCell", for: indexPath)
                         as? ChatMyMessageCell
                 else {return UITableViewCell() }
-            
+                
                 
                 
                 myMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
-                                
+                
                 if isMessageLoadList[indexPath.row] == false
                 {
                     myMessageCell.loadingAnimate(idx: indexPath.row)
@@ -801,7 +913,7 @@ extension Day1ViewController : UITableViewDataSource
                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
                 selectCell.selectionStyle = .none
-                                
+                
                 if isMessageLoadList[indexPath.row] == false
                 {
                     selectCell.loadingAnimate(index: indexPath.row)
@@ -840,41 +952,40 @@ extension Day1ViewController : UITableViewDataSource
             switch(newMessageList[indexPath.row].type)
             {
             case .normal :
-            guard let yourMessageCell =
-                    tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
-                    as? ChatYourMessageCell
-            else {return UITableViewCell() }
-            
-            
-            yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
-            
-            if isMessageLoadList[indexPath.row] == false
-            {
-                yourMessageCell.loadingAnimate(index: indexPath.row, vibrate: false)
-                print("row: ",indexPath.row,newMessageList[indexPath.row].messageContent, "끼야야아아아아아악 애니메이션을 해야해")
-
-            }
-            else
-            {
-                print("row: ",indexPath.row,newMessageList[indexPath.row].messageContent,"끼야아아아아아악 애니메이션을 안하냐 왜")
-                yourMessageCell.showMessageWithNoAnimation()
-            }
-            
-            isMessageLoadList[indexPath.row] = true
-                        
-            return yourMessageCell
-            
-            
-            
+                guard let yourMessageCell =
+                        tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
+                        as? ChatYourMessageCell
+                else {return UITableViewCell() }
+                
+                
+                yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+                
+                // 애니메이션 안했으면 애니메이션 실행해주고 아니면 그냥 띄운다.
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    yourMessageCell.loadingAnimate(index: indexPath.row, vibrate: false)
+                    
+                }
+                else
+                {
+                    yourMessageCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return yourMessageCell
+                
+                
+                
             case .vibrate :
                 guard let vibrateCell =
                         tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
                         as? ChatYourMessageCell
                 else {return UITableViewCell() }
                 
-            
+                
                 vibrateCell.setMessage(message: newMessageList[indexPath.row].messageContent)
-                                
+                
                 if isMessageLoadList[indexPath.row] == false
                 {
                     vibrateCell.loadingAnimate(index: indexPath.row, vibrate: true)
