@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644944825A0C99600ABA62E /* ChatButtonCell.swift */; };
 		0644944F25A1A5F500ABA62E /* Day1ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */; };
+		0659A38C25ACC353004E21CE /* Day1ApoImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0659A38B25ACC352004E21CE /* Day1ApoImageViewCell.swift */; };
+		0659A38F25ACF3C9004E21CE /* KingfisherImageBlaBla.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0659A38E25ACF3C9004E21CE /* KingfisherImageBlaBla.swift */; };
 		069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */; };
 		069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */; };
 		069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */; };
@@ -88,6 +90,8 @@
 /* Begin PBXFileReference section */
 		0644944825A0C99600ABA62E /* ChatButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatButtonCell.swift; sourceTree = "<group>"; };
 		0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ImageViewCell.swift; sourceTree = "<group>"; };
+		0659A38B25ACC352004E21CE /* Day1ApoImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ApoImageViewCell.swift; sourceTree = "<group>"; };
+		0659A38E25ACF3C9004E21CE /* KingfisherImageBlaBla.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageBlaBla.swift; sourceTree = "<group>"; };
 		069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CameraViewController.swift; sourceTree = "<group>"; };
 		069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CompassViewController.swift; sourceTree = "<group>"; };
 		069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ChatMessageDataModel.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			children = (
 				0644944825A0C99600ABA62E /* ChatButtonCell.swift */,
 				0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */,
+				0659A38B25ACC352004E21CE /* Day1ApoImageViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 				FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */,
 				FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */,
 				FDFB701F25A0D33C006EEC04 /* ColorList.swift */,
+				0659A38E25ACF3C9004E21CE /* KingfisherImageBlaBla.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -839,6 +845,8 @@
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
 				0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */,
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
+				0659A38C25ACC353004E21CE /* Day1ApoImageViewCell.swift in Sources */,
+				0659A38F25ACF3C9004E21CE /* KingfisherImageBlaBla.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
 				FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
