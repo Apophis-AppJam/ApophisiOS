@@ -22,10 +22,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3DayBackgroundImage" id="h1K-k4-aD7">
-                                <rect key="frame" x="0.0" y="0.0" width="1362" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtr-AH-lim" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
@@ -79,7 +75,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.17255705599999999" green="0.17250087859999999" blue="0.17646950480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hlV-hK-qI0" secondAttribute="trailing" constant="12" id="1Gm-WF-OAo"/>
                                     <constraint firstItem="hlV-hK-qI0" firstAttribute="bottom" secondItem="2vv-0a-Rs3" secondAttribute="bottom" constant="8" id="Foi-hb-fkh"/>
@@ -97,6 +93,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pkc-v2-ADp">
                                 <rect key="frame" x="0.0" y="100" width="414" height="721"/>
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatYourMessageCell" rowHeight="109" id="rL5-PB-IrV" customClass="ChatYourMessageCell" customModule="Apophis_AppJam" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="109"/>
@@ -105,7 +102,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="109"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatYourMessageBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-Cp-AgI">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apoMessageBG" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-Cp-AgI">
                                                     <rect key="frame" x="8" y="8" width="280.33333333333331" height="101"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-2G-y2R">
@@ -122,7 +119,6 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.14902743700000001" green="0.14897164700000001" blue="0.15294024349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="kgD-ae-VyB" firstAttribute="top" secondItem="KpS-l7-4Ym" secondAttribute="top" constant="20" id="2q2-eA-em3"/>
                                                 <constraint firstItem="oEb-Cp-AgI" firstAttribute="trailing" secondItem="kgD-ae-VyB" secondAttribute="trailing" constant="12" id="6vW-iE-LIH"/>
@@ -159,7 +155,6 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.14902743700000001" green="0.14897164700000001" blue="0.15294024349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="ha4-Ak-8LF" firstAttribute="top" secondItem="wM9-gq-1Ky" secondAttribute="top" constant="-12" id="Eaw-w1-cLo"/>
                                                 <constraint firstItem="ha4-Ak-8LF" firstAttribute="trailing" secondItem="wM9-gq-1Ky" secondAttribute="trailing" priority="999" constant="16" id="KnQ-F6-oUL"/>
@@ -193,7 +188,6 @@
                                                 <constraint firstItem="QqV-TP-WV9" firstAttribute="top" secondItem="lfi-FG-fLj" secondAttribute="top" constant="8" id="h9X-2E-G4P"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14897164700000001" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day2selectAnswerCell" rowHeight="75" id="COM-6X-UtX" customClass="Day2selectAnswerCell" customModule="Apophis_AppJam" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="299" width="414" height="75"/>
@@ -450,8 +444,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageFirst" destination="h1K-k4-aD7" id="B1M-zB-8dO"/>
                         <outlet property="chatTableView" destination="Pkc-v2-ADp" id="5Q3-UF-XKp"/>
+                        <outlet property="handBackgroundImage" destination="fFH-Bm-82N" id="3qX-qV-kje"/>
                         <outlet property="headerTitle" destination="ezn-rH-dlO" id="cRy-uf-ijp"/>
                         <outlet property="headerView" destination="qtr-AH-lim" id="2rg-XR-ilD"/>
                         <outlet property="massageInputAreaView" destination="qAq-Ef-3Z7" id="oVI-Ly-51M"/>
@@ -473,9 +467,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3DayBackgroundImageSecond" translatesAutoresizingMaskIntoConstraints="NO" id="Sro-d1-NeI">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="두 손을 선으로 이어보자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t71-H8-qMD">
                                 <rect key="frame" x="127" y="95" width="161" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -483,6 +474,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3DayBackgroundImageSecond" translatesAutoresizingMaskIntoConstraints="NO" id="Sro-d1-NeI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jiL-29-jFt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -503,13 +497,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3DayBackgroundImage" width="1491" height="1004"/>
         <image name="3DayBackgroundImageSecond" width="255.33332824707031" height="505"/>
         <image name="CHatMessageWaiting" width="56.666667938232422" height="38"/>
         <image name="ChatHomeButton" width="53" height="53"/>
         <image name="ChatMyMessageBackgroundImage" width="37.666667938232422" height="39"/>
         <image name="ChatSendButtonDisabled" width="28" height="28"/>
-        <image name="ChatYourMessageBackgroundImage" width="37.666667938232422" height="79"/>
+        <image name="apoMessageBG" width="37.666667938232422" height="43"/>
         <image name="btn_findme" width="42" height="42"/>
         <image name="chatMessageBackground" width="33" height="34"/>
         <image name="selected_answer_background" width="33" height="34"/>

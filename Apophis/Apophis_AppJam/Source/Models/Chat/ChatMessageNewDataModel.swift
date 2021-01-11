@@ -64,6 +64,7 @@ enum messageTypeList
     
     //MARK:- 유경 PART
     case enterName
+    case normalWithHand
     case voiceRecordButton
     case colorPicker
 
