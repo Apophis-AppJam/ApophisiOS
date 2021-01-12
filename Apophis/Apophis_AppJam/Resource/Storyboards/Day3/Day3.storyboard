@@ -684,6 +684,13 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lqW-Ac-8ty">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta9-g6-f21">
+                                                    <rect key="frame" x="24" y="26" width="42" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="btnRed"/>
+                                                </button>
+                                            </subviews>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
@@ -728,6 +735,7 @@
         <image name="apoMessageBG" width="37.666667938232422" height="43"/>
         <image name="bg3Voice" width="375" height="667"/>
         <image name="bg_3_colorpicker" width="375" height="667"/>
+        <image name="btnRed" width="42" height="42"/>
         <image name="btn_back" width="32" height="32"/>
         <image name="btn_findme" width="42" height="42"/>
         <image name="chatMessageBackground" width="33" height="34"/>
