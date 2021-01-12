@@ -155,7 +155,7 @@ class Day3ViewController: UIViewController {
             newMessageList.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
                                                           isMine: true,
                                                           isLastMessage: true,
-                                                          nextMessageType: .userAnswerWithComplete,
+                                                          nextMessageType: .none,
                                                           type: .normal,
                                                           dataList: [],
                                                           chatDetailsIdx: 1))
@@ -163,7 +163,7 @@ class Day3ViewController: UIViewController {
             messageListForTableView.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
                                                                    isMine: true,
                                                                    isLastMessage: true,
-                                                                   nextMessageType: .userAnswerWithComplete,
+                                                                   nextMessageType: .none,
                                                                    type: .normal,
                                                                    dataList: [],
                                                                    chatDetailsIdx: 1))
@@ -182,15 +182,12 @@ class Day3ViewController: UIViewController {
             
             
             if newMessageList[newMessageList.count - 1].isMine == false {
-                print("너가뭔데",newMessageList[lastIndex.row])
-         
-
-                print("최초의 메세지")
+                
                 newMessageList.append(ChatMessageNewDataModel(messageContent: messageTextInputView.text,
                                                           isMine: true,
                                                           isLastMessage: true,
                                                           nextMessageType: .none,
-                                                          type: .userAnswerWithComplete,
+                                                          type: .enterName,
                                                           dataList: [],
                                                           chatDetailsIdx: 2))
 
@@ -198,14 +195,9 @@ class Day3ViewController: UIViewController {
                                                                    isMine: true,
                                                                    isLastMessage: true,
                                                                    nextMessageType: .none,
-                                                                   type: .userAnswerWithComplete,
+                                                                   type: .enterName,
                                                                    dataList: [],
                                                                    chatDetailsIdx: 2))
-                
-                //isMessageLoadList[newMessageList.count - 1] = false
-                //리로드할때 true를 false로 바꿔주는.. 여기서는 인서트이기때문에 필요가 없다
-//                print("마지막 인덱스", newMessageList[lastIndex.row])
-//                print("메세지 리스트", newMessageList)
 
             isMessageLoadList.append(false)
                 messageTextInputView.text = ""
@@ -213,7 +205,42 @@ class Day3ViewController: UIViewController {
                 let finalIndex = IndexPath(row: newMessageList.count - 1, section: 0)
             chatTableView.insertRows(at: [finalIndex], with: .none)
                 
-            } else {
+            } } else if newMessageList[newMessageList.count - 1].chatDetailsIdx == 3 {
+                
+                
+                if newMessageList[newMessageList.count - 1].isMine == false {
+                    print("너가뭔데",newMessageList[lastIndex.row])
+                    print("최초의 메세지")
+                    newMessageList.append(ChatMessageNewDataModel(messageContent: messageTextInputView.text,
+                                                              isMine: true,
+                                                              isLastMessage: true,
+                                                              nextMessageType: .none,
+                                                              type: .userAnswerWithComplete,
+                                                              dataList: [],
+                                                              chatDetailsIdx: 3))
+
+                    messageListForTableView.append(ChatMessageNewDataModel(messageContent: messageTextInputView.text,
+                                                                       isMine: true,
+                                                                       isLastMessage: true,
+                                                                       nextMessageType: .none,
+                                                                       type: .userAnswerWithComplete,
+                                                                       dataList: [],
+                                                                       chatDetailsIdx: 3))
+                    
+                    //isMessageLoadList[newMessageList.count - 1] = false
+                    //리로드할때 true를 false로 바꿔주는.. 여기서는 인서트이기때문에 필요가 없다
+    //                print("마지막 인덱스", newMessageList[lastIndex.row])
+    //                print("메세지 리스트", newMessageList)
+
+                isMessageLoadList.append(false)
+                    messageTextInputView.text = ""
+
+                    let finalIndex = IndexPath(row: newMessageList.count - 1, section: 0)
+                chatTableView.insertRows(at: [finalIndex], with: .none)
+                    
+                }
+                
+                else {
                 
                 // 2번째에서는
                 
@@ -224,7 +251,7 @@ class Day3ViewController: UIViewController {
                                                               nextMessageType: .none,
                                                               type: .normal,
                                                               dataList: [],
-                                                              chatDetailsIdx: 2))
+                                                              chatDetailsIdx: 3))
 
                     messageListForTableView.append(ChatMessageNewDataModel(messageContent: newMessageList[lastIndex.row].messageContent,
                                                                        isMine: true,
@@ -232,7 +259,7 @@ class Day3ViewController: UIViewController {
                                                                        nextMessageType: .none,
                                                                        type: .normal,
                                                                        dataList: [],
-                                                                       chatDetailsIdx: 2))
+                                                                       chatDetailsIdx: 3))
                 
                 print("두번째 메세지 마지막 인덱스", newMessageList[lastIndex.row])
                 print("두번째메세지 메세지 리스트", newMessageList)
@@ -251,7 +278,7 @@ class Day3ViewController: UIViewController {
                                                           nextMessageType: .none,
                                                           type: .userAnswerWithComplete,
                                                           dataList: [],
-                                                          chatDetailsIdx: 2))
+                                                          chatDetailsIdx: 3))
 
                 messageListForTableView.append(ChatMessageNewDataModel(messageContent: messageTextInputView.text,
                                                                    isMine: true,
@@ -259,7 +286,7 @@ class Day3ViewController: UIViewController {
                                                                    nextMessageType: .none,
                                                                    type: .userAnswerWithComplete,
                                                                    dataList: [],
-                                                                   chatDetailsIdx: 2))
+                                                                   chatDetailsIdx: 3))
                 
                 //isMessageLoadList[newMessageList.count - 1] = false
                 //리로드할때 true를 false로 바꿔주는.. 여기서는 인서트이기때문에 필요가 없다
@@ -284,7 +311,7 @@ class Day3ViewController: UIViewController {
 }
 
     
-    
+
     
     //MARK:- default Setting Function Part
     
@@ -396,7 +423,8 @@ class Day3ViewController: UIViewController {
         
         if index != -1 // -1 이 올수가 없음
         {
-            if newMessageList[index].chatDetailsIdx == 2 {
+            //장문 대답 인덱스 와야함요
+            if newMessageList[index].chatDetailsIdx == 3 {
                 
                 loadDummyMessage(idx: newMessageList[index].chatDetailsIdx + 1, isMine: false)
                             
@@ -404,7 +432,6 @@ class Day3ViewController: UIViewController {
                             
                             messageListForTableView.append(newMessageList[index+1])
                             //            isMessageLoadList.append(false)
-                            
                             
                             let index = IndexPath(row: index + 1, section: 0)
                             
@@ -450,7 +477,9 @@ class Day3ViewController: UIViewController {
         print("@@@@@@@@@@@@@@@@ ##### 방금 받은 index",index)
         if newMessageList.count - 1 == index // 지금 마지막 메세지를 재생하고 온 것. 새로 데이터를 받아와야 한다.
         {
-            if newMessageList[index].chatDetailsIdx == 2 {
+            
+            //장문 메세지
+            if newMessageList[index].chatDetailsIdx == 3 {
                 //
                 print("메세지 리스트", newMessageList)
             } else {
@@ -531,7 +560,7 @@ class Day3ViewController: UIViewController {
                                                       nextMessageType: .none,
                                                       type: .normal,
                                                       dataList: [],
-                                                      chatDetailsIdx: 1))
+                                                      chatDetailsIdx: 2))
         
         messageListForTableView.append(ChatMessageNewDataModel(messageContent: nameList[0],
                                                                isMine: true,
@@ -539,7 +568,7 @@ class Day3ViewController: UIViewController {
                                                                nextMessageType: .none,
                                                                type: .normal,
                                                                dataList: [],
-                                                               chatDetailsIdx: 1))
+                                                               chatDetailsIdx: 2))
         
         chatTableView.reloadRows(at: [lastIndex], with: .none)
         
@@ -556,13 +585,14 @@ class Day3ViewController: UIViewController {
                     newMessageList.remove(at: newMessageList.count - 1)
                     messageListForTableView.remove(at: newMessageList.count - 1)
         
+        //장문
         newMessageList.append(ChatMessageNewDataModel(messageContent: userMessageList[0],
                                                       isMine: true,
                                                       isLastMessage: true,
                                                       nextMessageType: .none,
                                                       type: .normal,
                                                       dataList: [],
-                                                      chatDetailsIdx: 2))
+                                                      chatDetailsIdx: 3))
         
         messageListForTableView.append(ChatMessageNewDataModel(messageContent: userMessageList[0],
                                                                isMine: true,
@@ -570,7 +600,7 @@ class Day3ViewController: UIViewController {
                                                                nextMessageType: .none,
                                                                type: .normal,
                                                                dataList: [],
-                                                               chatDetailsIdx: 2))
+                                                               chatDetailsIdx: 3))
         
         let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
 
@@ -820,8 +850,8 @@ class Day3ViewController: UIViewController {
                 isMessageLoadList.append(contentsOf: [false, false, false, false, false])
                 
             }
-            else
-            {
+            
+            else {
                 
                 newMessageList.append(contentsOf: [
                     ChatMessageNewDataModel(messageContent: "",
@@ -838,10 +868,7 @@ class Day3ViewController: UIViewController {
             }
             
             
-        }
-        
-        
-        else if idx == 2
+        } else if idx == 2
         {
             if isMine == false
             {
@@ -872,9 +899,8 @@ class Day3ViewController: UIViewController {
             }
             
             
-        }
+        } else if idx == 3
         
-        else if idx == 3
         {
             if isMine == false
             {
@@ -934,7 +960,7 @@ class Day3ViewController: UIViewController {
                                             isMine: false,
                                             isLastMessage: false,
                                             nextMessageType: .normal,
-                                            type: .voiceRecordButton,
+                                            type: .normal,
                                             dataList: [],
                                             chatDetailsIdx: 4),
 
@@ -1174,8 +1200,8 @@ extension Day3ViewController : UITableViewDataSource
                 
             case .enterName:
                 
-                guard let enterNameCell = tableView.dequeueReusableCell(withIdentifier: "Day3EntetNameCell", for: indexPath)
-                        as? Day3EntetNameCell
+                guard let enterNameCell = tableView.dequeueReusableCell(withIdentifier: "Day3EnterNameCell", for: indexPath)
+                        as? Day3EnterNameCell
                 else { return UITableViewCell() }
                 
                 enterNameCell.backgroundColor = .clear
