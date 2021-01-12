@@ -50,9 +50,6 @@ class jihunLabViewController: UIViewController {
         
         self.present(vc, animated: true, completion: nil)
     }
-    
-
-    
 
     @IBAction func goToValue(_ sender: Any) {
         
@@ -64,8 +61,7 @@ class jihunLabViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         
         self.present(vc, animated: true, completion: nil)
-        
-        
+
     }
     
 }

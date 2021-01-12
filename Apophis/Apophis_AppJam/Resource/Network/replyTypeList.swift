@@ -58,6 +58,10 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .brightAndDark
     }
+    else if replyType == "일차 종료 (reply 없음)"
+    {
+        return .ending
+    }
     
     else
     {

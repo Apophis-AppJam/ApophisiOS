@@ -9,7 +9,6 @@ import UIKit
 import AVFoundation
 
 
-var soundEffect: AVAudioPlayer?
 
 class Day2ViewController: UIViewController {
 
@@ -73,7 +72,6 @@ class Day2ViewController: UIViewController {
         
         
         firstMessageLoad()
-        playAudio()
 
     }
 
@@ -376,7 +374,7 @@ class Day2ViewController: UIViewController {
       
         
         
-        let time = DispatchTime.now() + .seconds(10)
+        let time = DispatchTime.now() + .seconds(40)
         DispatchQueue.main.asyncAfter(deadline: time) {
             self.hideBackgroundImage()
             
@@ -401,8 +399,6 @@ class Day2ViewController: UIViewController {
     func playAudio()
     {
 
-        
-
         let url = Bundle.main.url(forResource: "main_bgm", withExtension: "mp3")
 
         if let url = url{
@@ -413,6 +409,7 @@ class Day2ViewController: UIViewController {
                 soundEffect = try AVAudioPlayer(contentsOf: url)
 
                 guard let sound = soundEffect else { return }
+                sound.numberOfLoops = 100
 
 
                 sound.play()
@@ -470,11 +467,8 @@ class Day2ViewController: UIViewController {
             chatTableView.reloadRows(at: [lastIndex], with: .none)
 
         }
-//        chatTableView.scrollToBottom()
-        
-        
-        
-        
+
+
     }
     
     
@@ -1414,7 +1408,8 @@ extension Day2ViewController : UITableViewDataSource
                 
                 return myMessageCell
 
-                
+            case .ending:
+                return UITableViewCell()
         
             case .select1In2:
                 

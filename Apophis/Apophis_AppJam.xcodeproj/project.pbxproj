@@ -52,6 +52,7 @@
 		FD5F3C1325ACF8D8007BD93C /* Day2SetValueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F3C1225ACF8D8007BD93C /* Day2SetValueNavigationController.swift */; };
 		FD5F3C1725AD8020007BD93C /* message_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = FD5F3C1625AD8020007BD93C /* message_loading.json */; };
 		FD5F3C1A25AD92AD007BD93C /* main_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FD5F3C1925AD92AD007BD93C /* main_bgm.mp3 */; };
+		FD5F3C2025ADD12C007BD93C /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F3C1F25ADD12C007BD93C /* TimerViewController.swift */; };
 		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
 		FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */; };
 		FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */; };
@@ -106,7 +107,7 @@
 		FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3DrawingViewController.swift; sourceTree = "<group>"; };
 		FCDE84A925A57ADB003D288E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FCDE84AE25A57B2E003D288E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FD0715692596E99700940094 /* Apophis_AppJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apophis_AppJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0715692596E99700940094 /* Apophis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apophis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD07156C2596E99700940094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD07156E2596E99700940094 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FD0715702596E99700940094 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 		FD5F3C1225ACF8D8007BD93C /* Day2SetValueNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetValueNavigationController.swift; sourceTree = "<group>"; };
 		FD5F3C1625AD8020007BD93C /* message_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message_loading.json; sourceTree = "<group>"; };
 		FD5F3C1925AD92AD007BD93C /* main_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = main_bgm.mp3; sourceTree = "<group>"; };
+		FD5F3C1F25ADD12C007BD93C /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yukyungLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jihunLabViewController.swift; sourceTree = "<group>"; };
@@ -256,7 +258,7 @@
 		FD07156A2596E99700940094 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD0715692596E99700940094 /* Apophis_AppJam.app */,
+				FD0715692596E99700940094 /* Apophis.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -441,6 +443,14 @@
 			path = SetValue;
 			sourceTree = "<group>";
 		};
+		FD5F3C1E25ADD120007BD93C /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				FD5F3C1F25ADD12C007BD93C /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		FD6D0EBC259C4B8B00993BBC /* Lab */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +541,7 @@
 		FDA98B652596EDAE00F4DFDF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD5F3C1E25ADD120007BD93C /* Timer */,
 				FDE05A8025A8C95700E92E1B /* Home */,
 				FCDE84AD25A57B1B003D288E /* Login */,
 				FD6D0EBC259C4B8B00993BBC /* Lab */,
@@ -706,7 +717,7 @@
 			);
 			name = Apophis_AppJam;
 			productName = Apophis_AppJam;
-			productReference = FD0715692596E99700940094 /* Apophis_AppJam.app */;
+			productReference = FD0715692596E99700940094 /* Apophis.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -880,6 +891,7 @@
 				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
 				FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */,
 				FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */,
+				FD5F3C2025ADD12C007BD93C /* TimerViewController.swift in Sources */,
 				FD5207992599ACCF00AAD1BA /* ChatMyMessageCell.swift in Sources */,
 				FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */,
 				FD52078725999C8F00AAD1BA /* Day1ViewController.swift in Sources */,
@@ -1055,7 +1067,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sopt.apophis.release;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Apophis;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1078,7 +1090,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sopt.apophis.release;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Apophis;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

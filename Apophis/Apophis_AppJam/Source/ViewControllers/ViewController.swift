@@ -6,6 +6,12 @@
 //
 
 import UIKit
+
+import AVFoundation
+
+
+var soundEffect: AVAudioPlayer?
+
 // 실험실 전용 뷰컨이라서 마구잡이로 쓸 예정임 !
 class ViewController: UIViewController {
     
@@ -26,7 +32,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        playAudio()
 
         
         
@@ -55,6 +61,38 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
     }
+    
+    
+    func playAudio()
+    {
+
+        let url = Bundle.main.url(forResource: "main_bgm", withExtension: "mp3")
+
+        if let url = url{
+
+
+            do {
+
+                soundEffect = try AVAudioPlayer(contentsOf: url)
+
+                guard let sound = soundEffect else { return }
+                sound.numberOfLoops = 100
+
+
+                sound.play()
+
+            } catch let error {
+
+                print(error.localizedDescription)
+
+            }
+
+        }
+
+    }
+
+
+
 
     @IBAction func goToSample(_ sender: Any) {
         
