@@ -5,6 +5,8 @@
 //  Created by 송지훈 on 2021/01/04.
 //
 
+//
+
 import Foundation
 import Alamofire
 import SwiftyJSON
@@ -12,10 +14,8 @@ import SwiftyJSON
 
 struct getChatService {
     static let shared = getChatService()
-
-
     
-       
+
        // MARK:- 아포니머스 메시지 받아오는 부분
     
     

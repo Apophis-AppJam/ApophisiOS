@@ -88,6 +88,8 @@ enum messageTypeList
     case normalWithSnow
     case normalWithSea
     
+    case selectValue
+    
     
     
 

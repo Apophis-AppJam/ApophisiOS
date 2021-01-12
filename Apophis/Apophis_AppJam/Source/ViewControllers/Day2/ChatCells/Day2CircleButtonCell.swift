@@ -38,6 +38,10 @@ class Day2CircleButtonCell: UITableViewCell {
         {
             NotificationCenter.default.post(name: NSNotification.Name("setTimeButtonClicked"), object: nil)
         }
+        else if messageType == .selectValue
+        {
+            NotificationCenter.default.post(name: NSNotification.Name("setValueButtonClicked"), object: nil)
+        }
         
 
     }
@@ -57,6 +61,11 @@ class Day2CircleButtonCell: UITableViewCell {
             messageType = .setTimeButton
 
             circleButton.setBackgroundImage(UIImage(named: "btnTimer"), for: .normal)
+        }
+        else if type == .selectValue
+        {
+            messageType = .selectValue
+            circleButton.setBackgroundImage(UIImage(named: "selectValue"), for: .normal)
         }
         
         

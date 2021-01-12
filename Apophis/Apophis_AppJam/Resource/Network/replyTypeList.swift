@@ -37,6 +37,10 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .selectList
     }
+    else if replyType == "기능 액션 버튼 - 가치 선택"
+    {
+        return .selectValue
+    }
     
     
     

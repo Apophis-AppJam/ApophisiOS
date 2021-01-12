@@ -54,5 +54,18 @@ class jihunLabViewController: UIViewController {
 
     
 
+    @IBAction func goToValue(_ sender: Any) {
+        
+        
+        
+        let storyboard = UIStoryboard(name: "Day2", bundle: nil)
 
+        guard let vc = storyboard.instantiateViewController(identifier: "Day2SetValueNavigationController") as? Day2SetValueNavigationController else  {return}
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.present(vc, animated: true, completion: nil)
+        
+        
+    }
+    
 }
