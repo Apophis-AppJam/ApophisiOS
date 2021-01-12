@@ -855,7 +855,6 @@ extension Day1ViewController : UITableViewDataSource
                 
                 
                 ChatButtonCell.selectionStyle = .none
-                ChatButtonCell.isSelected = false
                 ChatButtonCell.setChatButton(buttonCase: newMessageList[indexPath.row].type)
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -922,6 +921,7 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 vibrateCell.selectionStyle = .none
+                
                 vibrateCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -945,7 +945,8 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
-                apoImageViewCell.selectionStyle = .none
+//                apoImageViewCell.selectionStyle = .none
+                apoImageViewCell.isSelected = false
                 apoImageViewCell.setImageView(imgUrl: newMessageList[indexPath.row].messageContent)
                 
                 if isMessageLoadList[indexPath.row] == false

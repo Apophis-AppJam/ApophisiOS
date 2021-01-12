@@ -352,6 +352,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="cXR-yv-prQ" secondAttribute="bottom" id="vku-5X-FR5"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.16859221460000001" green="0.1685668528" blue="0.1726828218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="hyeYuImage" destination="cXR-yv-prQ" id="8Jd-mr-PvU"/>
                                         </connections>

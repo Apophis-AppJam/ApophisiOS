@@ -74,7 +74,7 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
         default:
             print("actionButtonCaseDefault")
         }
-        
+
         
     }
     
