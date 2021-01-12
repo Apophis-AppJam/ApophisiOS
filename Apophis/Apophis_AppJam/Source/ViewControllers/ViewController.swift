@@ -123,6 +123,15 @@ class ViewController: UIViewController {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
+    
+    @IBAction func homeButtonClicked(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        guard let homeVC = storyboard.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else {return}
+        
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
 }
 

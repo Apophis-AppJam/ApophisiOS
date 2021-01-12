@@ -33,6 +33,12 @@ class HomeViewController: UIViewController {
     
     @IBAction func apophisTimerButtonClicked(_ sender: Any) {
         
+        
+        guard let timerVC = self.storyboard?.instantiateViewController(identifier: "TimerViewController") as? TimerViewController else {return}
+        
+        
+        self.navigationController?.pushViewController(timerVC, animated: true)
+        
     }
     
     
