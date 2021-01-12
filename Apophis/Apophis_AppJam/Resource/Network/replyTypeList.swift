@@ -31,7 +31,7 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     }
     else if replyType == "기능 액션 버튼 - 카메라"
     {
-        return .camera
+        return .cameraButton
     }
     else if replyType == "다중 보기 선택"
     {

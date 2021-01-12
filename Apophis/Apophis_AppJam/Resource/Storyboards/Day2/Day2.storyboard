@@ -164,6 +164,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="yEN-vf-ul3"/>
                                                     </constraints>
+
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XQI-eY-eDQ">
                                                         <size key="itemSize" width="137" height="36"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>

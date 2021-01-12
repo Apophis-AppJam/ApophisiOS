@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644944825A0C99600ABA62E /* ChatButtonCell.swift */; };
 		0644944F25A1A5F500ABA62E /* Day1ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */; };
+		0659A38C25ACC353004E21CE /* Day1ApoImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0659A38B25ACC352004E21CE /* Day1ApoImageViewCell.swift */; };
+		0659A38F25ACF3C9004E21CE /* KingfisherImageBlaBla.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0659A38E25ACF3C9004E21CE /* KingfisherImageBlaBla.swift */; };
 		069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */; };
 		069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */; };
 		069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */; };
 		AE2E82F5D36D7460962246C6 /* Pods_Apophis_AppJam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */; };
 		FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC394F3E259D110500E70307 /* ColorViewController.swift */; };
 		FC92374C259E6BEE0039AB32 /* audioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */; };
-		FC956AAD25A8CE530007717C /* Day3EntetNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC956AAC25A8CE530007717C /* Day3EntetNameCell.swift */; };
+		FC956AAD25A8CE530007717C /* Day3EnterNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC956AAC25A8CE530007717C /* Day3EnterNameCell.swift */; };
+		FCB278DF25ADCF6300A1979D /* Day3ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB278DE25ADCF6300A1979D /* Day3ColorViewController.swift */; };
 		FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */; };
 		FCDE84AA25A57ADB003D288E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDE84A925A57ADB003D288E /* Login.storyboard */; };
 		FCDE84AF25A57B2E003D288E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE84AE25A57B2E003D288E /* LoginViewController.swift */; };
@@ -95,6 +98,8 @@
 /* Begin PBXFileReference section */
 		0644944825A0C99600ABA62E /* ChatButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatButtonCell.swift; sourceTree = "<group>"; };
 		0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ImageViewCell.swift; sourceTree = "<group>"; };
+		0659A38B25ACC352004E21CE /* Day1ApoImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ApoImageViewCell.swift; sourceTree = "<group>"; };
+		0659A38E25ACF3C9004E21CE /* KingfisherImageBlaBla.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageBlaBla.swift; sourceTree = "<group>"; };
 		069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CameraViewController.swift; sourceTree = "<group>"; };
 		069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CompassViewController.swift; sourceTree = "<group>"; };
 		069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ChatMessageDataModel.swift; sourceTree = "<group>"; };
@@ -103,7 +108,8 @@
 		D23F09E174B44478E4702746 /* Pods-Apophis_AppJam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.debug.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.debug.xcconfig"; sourceTree = "<group>"; };
 		FC394F3E259D110500E70307 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioRecordViewController.swift; sourceTree = "<group>"; };
-		FC956AAC25A8CE530007717C /* Day3EntetNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3EntetNameCell.swift; sourceTree = "<group>"; };
+		FC956AAC25A8CE530007717C /* Day3EnterNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3EnterNameCell.swift; sourceTree = "<group>"; };
+		FCB278DE25ADCF6300A1979D /* Day3ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ColorViewController.swift; sourceTree = "<group>"; };
 		FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3DrawingViewController.swift; sourceTree = "<group>"; };
 		FCDE84A925A57ADB003D288E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FCDE84AE25A57B2E003D288E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 			children = (
 				0644944825A0C99600ABA62E /* ChatButtonCell.swift */,
 				0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */,
+				0659A38B25ACC352004E21CE /* Day1ApoImageViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -224,7 +231,7 @@
 		FC956AA725A8CDAF0007717C /* ChatCells */ = {
 			isa = PBXGroup;
 			children = (
-				FC956AAC25A8CE530007717C /* Day3EntetNameCell.swift */,
+				FC956AAC25A8CE530007717C /* Day3EnterNameCell.swift */,
 			);
 			path = ChatCells;
 			sourceTree = "<group>";
@@ -343,6 +350,7 @@
 			children = (
 				FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */,
 				FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */,
+				FCB278DE25ADCF6300A1979D /* Day3ColorViewController.swift */,
 				FC956AA725A8CDAF0007717C /* ChatCells */,
 			);
 			path = Day3;
@@ -580,6 +588,7 @@
 				FDD09236259B0DBB00B92529 /* scrollToBottom + UITableView.swift */,
 				FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */,
 				FDFB701F25A0D33C006EEC04 /* ColorList.swift */,
+				0659A38E25ACF3C9004E21CE /* KingfisherImageBlaBla.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -879,15 +888,18 @@
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
 				0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */,
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
+				0659A38C25ACC353004E21CE /* Day1ApoImageViewCell.swift in Sources */,
+				0659A38F25ACF3C9004E21CE /* KingfisherImageBlaBla.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
 				FD5F3C1025AC90FB007BD93C /* Day2ConfirmValueViewController.swift in Sources */,
 				FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */,
+				FCB278DF25ADCF6300A1979D /* Day3ColorViewController.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
 				FD5D51BC25AB5E3200705E60 /* Day2SnowBackgroundCell.swift in Sources */,
 				FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */,
 				FD5F3C1325ACF8D8007BD93C /* Day2SetValueNavigationController.swift in Sources */,
-				FC956AAD25A8CE530007717C /* Day3EntetNameCell.swift in Sources */,
+				FC956AAD25A8CE530007717C /* Day3EnterNameCell.swift in Sources */,
 				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
 				FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */,
 				FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */,
