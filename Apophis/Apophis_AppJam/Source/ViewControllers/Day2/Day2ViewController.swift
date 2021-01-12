@@ -88,13 +88,11 @@ class Day2ViewController: UIViewController {
     
     @IBAction func messageButtonClicked(_ sender: Any) {
         
-        
-        // appData.chatIndex에 따라서 분기 처리 들어가야 합니다.
-            
-        if appData?.chatIndex == 0
-        {
+
           
             let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
+            
+            let lastChatDetailsIndex = newMessageList[newMessageList.count - 1].chatDetailsIdx
             
             isMessageLoadList[newMessageList.count - 1] = false
             
@@ -108,7 +106,7 @@ class Day2ViewController: UIViewController {
                                                           nextMessageType: .none,
                                                           type: .normal,
                                                           dataList: [],
-                                                          chatDetailsIdx: 0))
+                                                          chatDetailsIdx: lastChatDetailsIndex))
             
             messageListForTableView.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
                                                                    isMine: true,
@@ -116,7 +114,7 @@ class Day2ViewController: UIViewController {
                                                                    nextMessageType: .none,
                                                                    type: .normal,
                                                                    dataList: [],
-                                                                   chatDetailsIdx: 0))
+                                                                   chatDetailsIdx: lastChatDetailsIndex))
             
             
             
@@ -125,8 +123,7 @@ class Day2ViewController: UIViewController {
             
             messageTextInputView.text = ""
             textViewDidChange(messageTextInputView)
-        }
-        
+    
         
     }
     
@@ -236,37 +233,32 @@ class Day2ViewController: UIViewController {
         
         
         chatSnowImageView.image = UIImage(named: "snowBG")
-        self.chatSnowImageView.alpha = 1
+        UIView.animate(withDuration: 2) {
+            self.chatSnowImageView.alpha = 1
+        }
+      
+        
+        
+        let time = DispatchTime.now() + .seconds(10)
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            self.hideBackgroundImage()
+            
+        }
+        
+        
+    }
+    
+    func hideBackgroundImage()
+    {
+        UIView.animate(withDuration: 2) {
+            self.chatSnowImageView.alpha = 0
+            self.messageInputView.backgroundColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
+            self.headerView.backgroundColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
+            self.chatTableView.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+            
+        }
 
    
-        
-        
-//
-//        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { timer in
-//
-//            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn) {
-//
-//                self.chatSnowImageView.alpha = 1
-//
-//
-//
-//            } completion: { (_) in
-//
-//            }
-//
-//
-//        }
-        
-//        messageInputView.backgroundColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
-//        headerView.backgroundColor =  .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
-//        chatTableView.backgroundColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
-        
-        
-//
-//        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn) {
-//            self.chatSnowImageView.alpha = 0
-//        }
-        
     }
     
     @objc func myMessageEnd(notification : NSNotification)
@@ -324,7 +316,6 @@ class Day2ViewController: UIViewController {
  
         }
         
-        chatTableView.scrollToBottom()
         
     }
     
@@ -389,7 +380,6 @@ class Day2ViewController: UIViewController {
 //            chatTableView.reloadData()
         }
         
-        chatTableView.scrollToBottom()
     }
     
     @objc func user3WordsEntered(notification : NSNotification)
@@ -1114,6 +1104,28 @@ extension Day2ViewController : UITableViewDataSource
                 
                 return enterWordCell
                 
+            case .select1:
+                guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
+                                        as? Day2selectAnswerCell
+                                        else {return UITableViewCell() }
+                                
+                                selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
+                selectCell.backgroundColor = .clear
+                selectCell.selectionStyle = .none
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    selectCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    selectCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return selectCell
+                
             case .selectList:
                 
                 guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
@@ -1121,7 +1133,7 @@ extension Day2ViewController : UITableViewDataSource
                                         else {return UITableViewCell() }
                                 
                                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
-                selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+                selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -1212,12 +1224,13 @@ extension Day2ViewController : UITableViewDataSource
 
 
                 yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
-                yourMessageCell.setSnowBackground()
+   
 
                 
 
                 if isMessageLoadList[indexPath.row] == false
                 {
+                    yourMessageCell.setSnowBackground()
                     yourMessageCell.loadingAnimate(index: indexPath.row, vibrate: false)
                 }
                 else

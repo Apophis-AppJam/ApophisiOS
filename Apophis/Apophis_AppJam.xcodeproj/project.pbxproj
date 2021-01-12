@@ -46,6 +46,7 @@
 		FD5D51A325A9715300705E60 /* message_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = FD5D51A225A9715300705E60 /* message_loading.json */; };
 		FD5D51A725AA2F0600705E60 /* NextActionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51A625AA2F0600705E60 /* NextActionList.swift */; };
 		FD5D51AA25AA329700705E60 /* replyTypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51A925AA329700705E60 /* replyTypeList.swift */; };
+		FD5D51BC25AB5E3200705E60 /* Day2SnowBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51BB25AB5E3200705E60 /* Day2SnowBackgroundCell.swift */; };
 		FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */; };
 		FD5F356625A5896F00330E9B /* Day2word3InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */; };
 		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
@@ -131,6 +132,7 @@
 		FD5D51A225A9715300705E60 /* message_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message_loading.json; sourceTree = "<group>"; };
 		FD5D51A625AA2F0600705E60 /* NextActionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextActionList.swift; sourceTree = "<group>"; };
 		FD5D51A925AA329700705E60 /* replyTypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = replyTypeList.swift; sourceTree = "<group>"; };
+		FD5D51BB25AB5E3200705E60 /* Day2SnowBackgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SnowBackgroundCell.swift; sourceTree = "<group>"; };
 		FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CircleButtonCell.swift; sourceTree = "<group>"; };
 		FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2word3InputCell.swift; sourceTree = "<group>"; };
 		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
@@ -654,6 +656,7 @@
 				FDFB702725A206B1006EEC04 /* Day2SelectListCollectionCell.swift */,
 				FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */,
 				FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */,
+				FD5D51BB25AB5E3200705E60 /* Day2SnowBackgroundCell.swift */,
 			);
 			path = ChatCells;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
+				FD5D51BC25AB5E3200705E60 /* Day2SnowBackgroundCell.swift in Sources */,
 				FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */,
 				FC956AAD25A8CE530007717C /* Day3EntetNameCell.swift in Sources */,
 				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
