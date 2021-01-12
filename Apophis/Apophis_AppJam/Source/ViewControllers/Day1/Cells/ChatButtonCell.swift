@@ -28,12 +28,12 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
     
     // 리스트를 받아올 변수
     var messageList : [Day1ChatMessageDataModel] = []
+    var buttonCaseList : messageTypeList?
     
     @IBAction func ChatButtonAction(_ sender: Any) {
-        
-        guard let funcNum = funcNum else {return}
-        if (funcNum == 1){
-            print ("눌리냐?")
+        switch (buttonCaseList) {
+        case .compassButton:
+            print ("나침반")
             
             let storyboard = UIStoryboard(name: "Day1", bundle: nil)
             
@@ -42,10 +42,8 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             viewController?.present(vc, animated: true, completion: nil)
-        }
-        else{
-           
             
+        case .cameraButton:
             // 카메라를 사용할 수 있다면(카메라의 사용 가능 여부 확인)
             if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
                 // 사진 저장 플래그를 true로 설정
@@ -63,7 +61,7 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
                 
                 
                 // noti로 list 받아와 수정 후 return하는 함수
-//                addListObserver()
+                //                addListObserver()
                 
                 // 현재 뷰 컨트롤러를 imagePicker로 대체. 즉 뷰에 imagePicker가 보이게 함
                 viewController?.present(imagePicker, animated: true, completion: nil)
@@ -73,7 +71,11 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
                 print("카메라 안켜진다")
             }
             
+        default:
+            print("actionButtonCaseDefault")
         }
+
+        
     }
     
     
@@ -84,14 +86,53 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
         
         // Configure the view for the selected state
     }
     
     
-    func setChatButton(ImgName: String){
+    func setChatButton(buttonCase: messageTypeList){
         ChatFuncButton.setTitle("", for: .normal)
-        ChatFuncButton.setBackgroundImage(UIImage(named: "\(ImgName)"), for: .normal)
+        buttonCaseList = buttonCase
+        switch (buttonCase){
+        case .compassButton:
+            ChatFuncButton.setBackgroundImage(UIImage(named: "btnCompass"), for: .normal)
+            
+        case .cameraButton:
+            ChatFuncButton.setBackgroundImage(UIImage(named: "btnCamera"), for: .normal)
+            
+            
+        default :
+            print("case default")
+        }
+    }
+    
+    func loadingAnimate(idx : Int)
+    {
+        
+        NotificationCenter.default.post(name: NSNotification.Name("scrollToBottom"), object: nil)
+        
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
+            
+            
+            
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1,animations: {
+                
+                self.ChatFuncButton.alpha = 1
+            })
+            
+        } completion: { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
+        }
+        
+        
+        
+    }
+    
+    func showMessageWithNoAnimation()
+    {
+        ChatFuncButton.alpha = 1
     }
     
     
@@ -114,10 +155,10 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
                 UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
             }
             NotificationCenter.default.post(name: .sendImage, object: nil, userInfo: ["image": captureImage!])
-
+            
         }
         
-
+        
         // 현재의 뷰 컨트롤러를 제거. 즉, 뷰에서 이미지 피커 화면을 제거하여 초기 뷰를 보여줌
         viewController?.dismiss(animated: true, completion: nil)
         
