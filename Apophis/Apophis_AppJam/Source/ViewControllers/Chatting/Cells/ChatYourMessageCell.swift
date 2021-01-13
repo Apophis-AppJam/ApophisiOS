@@ -77,6 +77,10 @@ class ChatYourMessageCell: UITableViewCell {
     {
         NotificationCenter.default.post(name: NSNotification.Name("setSnowBackground"), object: nil)
     }
+    func setSeaBackground()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("setSeaBackground"), object: nil)
+    }
     
     func setHandDrawing()
     {
@@ -86,7 +90,6 @@ class ChatYourMessageCell: UITableViewCell {
     func startHandDrawing()
     {
         
-        NotificationCenter.default.post(name: NSNotification.Name("scrollToBottom"), object: nil)
         self.check = false
         
         
@@ -137,7 +140,6 @@ class ChatYourMessageCell: UITableViewCell {
     func loadingAnimate(index : Int, vibrate : Bool)
     {
         
-        NotificationCenter.default.post(name: NSNotification.Name("scrollToBottom"), object: nil)
         self.check = false
         
         
@@ -152,7 +154,7 @@ class ChatYourMessageCell: UITableViewCell {
         
         
 
-        UIView.animateKeyframes(withDuration: 3, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: .allowUserInteraction) {
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {

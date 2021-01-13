@@ -18,11 +18,13 @@ class Day2selectAnswerCell: UITableViewCell {
 
     var selectList : [String] = []
     var selectedBoolList : [Bool] = []
+    var adjectiveCheck : Bool = false
         
     
     //MARK:- Constraint Part
 
-
+    @IBOutlet weak var adjectiveCollectionViewHeight: NSLayoutConstraint!
+    
     //MARK:- Life Cycle Part
 
     
@@ -70,13 +72,41 @@ class Day2selectAnswerCell: UITableViewCell {
         selectButtonCollectionView.reloadData()
     }
     
+    func setAdjectiveList(selectList : [String])
+    {
+        adjectiveCheck = true
+        adjectiveCollectionViewHeight.constant = 210
+        selectButtonCollectionView.isScrollEnabled = false
+        if let layout = selectButtonCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .vertical
+        }
+        
+        selectedBoolList.removeAll()
+        self.selectList = selectList
+        
+        if selectList.count > 0
+        {
+            for _ in 0 ... selectList.count - 1
+            {
+                selectedBoolList.append(false)
+            }
+            selectButtonCollectionView.backgroundColor = .clear
+            
+        }
+        selectButtonCollectionView.alpha = 0
+        
+        
+
+        selectButtonCollectionView.reloadData()
+    }
+    
     
 
     
     func loadingAnimate(index : Int)
     {
         
-        UIView.animateKeyframes(withDuration: 2, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: .allowUserInteraction) {
             
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1,animations: {
                 
@@ -171,6 +201,10 @@ extension Day2selectAnswerCell : UICollectionViewDelegateFlowLayout
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
     

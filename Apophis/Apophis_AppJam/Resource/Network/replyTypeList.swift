@@ -41,7 +41,10 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .selectValue
     }
-    
+    else if replyType == "백그라운드 이미지 - 바다 뷰"
+    {
+        return .normalWithSea
+    }
     
     
     

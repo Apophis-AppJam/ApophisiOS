@@ -13,11 +13,14 @@
         <!--Day1 View Controller-->
         <scene sceneID="wX6-Im-y2N">
             <objects>
-                <viewController storyboardIdentifier="Day1ViewController" id="NVz-Wc-Cni" customClass="Day1ViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Day1ViewController" id="NVz-Wc-Cni" customClass="Day1ViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kza-bZ-eeu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowBG" translatesAutoresizingMaskIntoConstraints="NO" id="2bD-fy-e6e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24n-p8-qMp" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="-44" width="375" height="100"/>
                                 <subviews>
@@ -38,7 +41,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.17255705599999999" green="0.17250087859999999" blue="0.17646950480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.16859221460000001" green="0.1685668528" blue="0.1726828218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="0iE-gn-IWX" firstAttribute="leading" secondItem="24n-p8-qMp" secondAttribute="leading" constant="16" id="VvB-It-5sA"/>
                                     <constraint firstItem="0iE-gn-IWX" firstAttribute="top" secondItem="24n-p8-qMp" secondAttribute="top" constant="43" id="bgc-TI-Hrr"/>
@@ -52,7 +55,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="1369"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatYourMessageCell" rowHeight="151" id="YQy-EC-bj4" customClass="ChatYourMessageCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatYourMessageCell" rowHeight="151" id="YQy-EC-bj4" customClass="ChatYourMessageCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQy-EC-bj4" id="nCr-of-L0S">
@@ -76,7 +79,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.14902743700000001" green="0.14897164700000001" blue="0.15294024349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Kbc-sp-ACr" firstAttribute="top" secondItem="nCr-of-L0S" secondAttribute="top" constant="8" id="4iN-BW-hUK"/>
                                                 <constraint firstAttribute="bottom" secondItem="pau-PF-0M3" secondAttribute="bottom" constant="13" id="ASt-a7-Z06"/>
@@ -90,13 +93,14 @@
                                                 <constraint firstItem="Kbc-sp-ACr" firstAttribute="leading" secondItem="nCr-of-L0S" secondAttribute="leading" constant="8" id="x8g-pN-RTV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="messageBackgroundImageView" destination="xu9-rK-053" id="QwY-04-kWC"/>
                                             <outlet property="messageTextView" destination="pau-PF-0M3" id="Dzq-ZX-ikU"/>
                                             <outlet property="waitMessageImageView" destination="Kbc-sp-ACr" id="Fef-yy-03g"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyMessageCell" rowHeight="134" id="Ujk-b8-ke3" customClass="ChatMyMessageCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyMessageCell" rowHeight="134" id="Ujk-b8-ke3" customClass="ChatMyMessageCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="179" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ujk-b8-ke3" id="WVE-bf-GsX">
@@ -113,7 +117,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.14902743700000001" green="0.14897164700000001" blue="0.15294024349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="va5-mb-biR" secondAttribute="bottom" constant="13" id="Hg1-Nj-d2a"/>
                                                 <constraint firstItem="va5-mb-biR" firstAttribute="top" secondItem="WVE-bf-GsX" secondAttribute="top" constant="20" id="LBc-Dz-Xea"/>
@@ -125,12 +129,13 @@
                                                 <constraint firstItem="1Nf-4e-xMz" firstAttribute="leading" secondItem="va5-mb-biR" secondAttribute="leading" constant="-12" id="y6A-zl-FyJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="messageBackgroundImageView" destination="1Nf-4e-xMz" id="VIE-lo-ccD"/>
                                             <outlet property="messageTextView" destination="va5-mb-biR" id="nid-Ns-c5m"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMessageWaitingCell" rowHeight="46" id="mGg-Q6-Xn1" customClass="ChatMessageWaitingCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMessageWaitingCell" rowHeight="46" id="mGg-Q6-Xn1" customClass="ChatMessageWaitingCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="313" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mGg-Q6-Xn1" id="OtL-OM-HHs">
@@ -141,15 +146,16 @@
                                                     <rect key="frame" x="8" y="8" width="56.5" height="38"/>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.16862745100000001" green="0.1676458418" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="5WL-Ya-BoM" secondAttribute="bottom" id="8tH-n5-fUk"/>
                                                 <constraint firstItem="5WL-Ya-BoM" firstAttribute="leading" secondItem="OtL-OM-HHs" secondAttribute="leading" constant="8" id="Cvq-Nn-YuJ"/>
                                                 <constraint firstItem="5WL-Ya-BoM" firstAttribute="top" secondItem="OtL-OM-HHs" secondAttribute="top" constant="8" id="PsR-Pt-nzf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChatButtonCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatButtonCell" id="mdS-VO-3Ca" customClass="ChatButtonCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChatButtonCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatButtonCell" id="mdS-VO-3Ca" customClass="ChatButtonCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="359" width="375" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mdS-VO-3Ca" id="Bq4-CO-pRy">
@@ -168,18 +174,19 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.16859221460000001" green="0.1685668528" blue="0.1726828218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="ebn-9I-eGd" firstAttribute="top" secondItem="Bq4-CO-pRy" secondAttribute="top" constant="13" id="stN-g7-IBe"/>
                                                 <constraint firstItem="ebn-9I-eGd" firstAttribute="leading" secondItem="Bq4-CO-pRy" secondAttribute="leading" constant="16" id="vZA-Lc-ga1"/>
                                                 <constraint firstAttribute="bottom" secondItem="ebn-9I-eGd" secondAttribute="bottom" id="zhg-03-RAj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="ChatFuncButton" destination="ebn-9I-eGd" id="4e8-Yk-Imx"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day1ImageViewCell" id="Kwh-GX-OZg" customClass="Day1ImageViewCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day1ImageViewCell" id="Kwh-GX-OZg" customClass="Day1ImageViewCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="414.5" width="375" height="199.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kwh-GX-OZg" id="SLP-Cv-hrf">
@@ -194,18 +201,19 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.16859221460000001" green="0.1685668528" blue="0.1726828218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="07p-yP-dyS" firstAttribute="top" secondItem="SLP-Cv-hrf" secondAttribute="top" constant="8" id="3LG-Em-WUQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="07p-yP-dyS" secondAttribute="bottom" id="fnL-95-6Fx"/>
                                                 <constraint firstAttribute="trailing" secondItem="07p-yP-dyS" secondAttribute="trailing" constant="8" id="tdF-Zs-zmf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="pictureImage" destination="07p-yP-dyS" id="a9G-Y1-FdI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day2selectAnswerCell" rowHeight="75" id="WYf-O6-QGQ" customClass="Day2selectAnswerCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day2selectAnswerCell" rowHeight="75" id="WYf-O6-QGQ" customClass="Day2selectAnswerCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="614" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WYf-O6-QGQ" id="Z91-UP-A0F">
@@ -214,7 +222,7 @@
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fvL-nI-eKG">
                                                     <rect key="frame" x="16" y="12" width="359" height="63"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="NCz-It-Wbl"/>
                                                     </constraints>
@@ -225,7 +233,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Day2SelectListCollectionCell" id="nJP-X2-la7" customClass="Day2SelectListCollectionCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Day2SelectListCollectionCell" id="nJP-X2-la7" customClass="Day2SelectListCollectionCell" customModule="Apophis" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="13.5" width="137" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fIb-j0-I4X">
@@ -261,6 +269,7 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="fvL-nI-eKG" firstAttribute="top" secondItem="Z91-UP-A0F" secondAttribute="top" constant="12" id="0jS-sp-jKp"/>
                                                 <constraint firstAttribute="bottom" secondItem="fvL-nI-eKG" secondAttribute="bottom" id="KpP-XJ-2qn"/>
@@ -268,12 +277,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="fvL-nI-eKG" secondAttribute="trailing" id="w5b-sZ-7Ld"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14902743700000001" green="0.14897164700000001" blue="0.15294024349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="adjectiveCollectionViewHeight" destination="NCz-It-Wbl" id="RRN-Mj-K1U"/>
                                             <outlet property="selectButtonCollectionView" destination="fvL-nI-eKG" id="N0R-Xx-mOQ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChatMyMessageWithCompleteCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyMessageWithCompleteCell" rowHeight="137" id="mq7-qw-hd9" customClass="ChatMyMessageWithCompleteCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChatMyMessageWithCompleteCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyMessageWithCompleteCell" rowHeight="137" id="mq7-qw-hd9" customClass="ChatMyMessageWithCompleteCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="689" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mq7-qw-hd9" id="u6b-VS-Q2y">
@@ -310,6 +320,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Vj0-92-d4r" firstAttribute="trailing" secondItem="6j9-2G-ywS" secondAttribute="trailing" constant="12" id="0er-Lg-4bc"/>
                                                 <constraint firstItem="6j9-2G-ywS" firstAttribute="top" secondItem="u6b-VS-Q2y" secondAttribute="top" constant="20" id="2bW-RV-Q6s"/>
@@ -324,6 +335,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="AEL-0t-qt9" secondAttribute="trailing" id="hpG-sC-lld"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="CompleteButton" destination="AEL-0t-qt9" id="YGH-dt-JVa"/>
                                             <outlet property="CompleteLabel" destination="UVX-yw-3rK" id="W4d-ee-7v8"/>
@@ -331,7 +343,7 @@
                                             <outlet property="messageTextView" destination="6j9-2G-ywS" id="R6Z-Qr-dL2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Day1ApoImageViewCell" id="n9u-Wi-fsb" customClass="Day1ApoImageViewCell" customModule="Apophis_AppJam" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day1ApoImageViewCell" id="n9u-Wi-fsb" customClass="Day1ApoImageViewCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="826" width="375" height="199.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n9u-Wi-fsb" id="DcX-Qg-Qc3">
@@ -346,13 +358,14 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="cXR-yv-prQ" firstAttribute="leading" secondItem="DcX-Qg-Qc3" secondAttribute="leading" constant="8" id="LNN-km-VQ5"/>
                                                 <constraint firstItem="cXR-yv-prQ" firstAttribute="top" secondItem="DcX-Qg-Qc3" secondAttribute="top" constant="8" id="cvj-rZ-GIH"/>
                                                 <constraint firstAttribute="bottom" secondItem="cXR-yv-prQ" secondAttribute="bottom" id="vku-5X-FR5"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.16859221460000001" green="0.1685668528" blue="0.1726828218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="hyeYuImage" destination="cXR-yv-prQ" id="8Jd-mr-PvU"/>
                                         </connections>
@@ -405,10 +418,14 @@
                             <constraint firstItem="QCj-4Y-dIa" firstAttribute="leading" secondItem="5aK-GO-5bY" secondAttribute="leading" id="4Ch-ex-uvw"/>
                             <constraint firstItem="24n-p8-qMp" firstAttribute="top" secondItem="5aK-GO-5bY" secondAttribute="top" constant="-44" id="8Tx-PU-kPq"/>
                             <constraint firstItem="5aK-GO-5bY" firstAttribute="trailing" secondItem="QCj-4Y-dIa" secondAttribute="trailing" id="9Sn-eW-9v2"/>
+                            <constraint firstAttribute="trailing" secondItem="2bD-fy-e6e" secondAttribute="trailing" id="J2I-zz-UoR"/>
+                            <constraint firstItem="2bD-fy-e6e" firstAttribute="leading" secondItem="Kza-bZ-eeu" secondAttribute="leading" id="Ktb-8t-l04"/>
+                            <constraint firstItem="2bD-fy-e6e" firstAttribute="top" secondItem="Kza-bZ-eeu" secondAttribute="top" id="Nd5-Qn-xxT"/>
                             <constraint firstItem="QCj-4Y-dIa" firstAttribute="top" secondItem="24n-p8-qMp" secondAttribute="bottom" id="Uha-0G-r7D"/>
                             <constraint firstAttribute="bottom" secondItem="Wnw-2P-fuC" secondAttribute="bottom" id="VTS-wY-0ig"/>
                             <constraint firstItem="24n-p8-qMp" firstAttribute="leading" secondItem="5aK-GO-5bY" secondAttribute="leading" id="VbC-hw-qW8"/>
                             <constraint firstItem="Wnw-2P-fuC" firstAttribute="top" secondItem="QCj-4Y-dIa" secondAttribute="bottom" id="XHj-QS-X5m"/>
+                            <constraint firstAttribute="bottom" secondItem="2bD-fy-e6e" secondAttribute="bottom" id="Xt7-qL-Tkh"/>
                             <constraint firstItem="24n-p8-qMp" firstAttribute="trailing" secondItem="5aK-GO-5bY" secondAttribute="trailing" id="cVY-fI-xYa"/>
                             <constraint firstItem="Wnw-2P-fuC" firstAttribute="leading" secondItem="5aK-GO-5bY" secondAttribute="leading" id="d2W-m8-Wiy"/>
                             <constraint firstItem="Wnw-2P-fuC" firstAttribute="trailing" secondItem="5aK-GO-5bY" secondAttribute="trailing" id="dVD-nW-EXX"/>
@@ -416,10 +433,13 @@
                     </view>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
+                        <outlet property="chatSeaImageView" destination="2bD-fy-e6e" id="8iF-ry-kE3"/>
                         <outlet property="chatTableView" destination="QCj-4Y-dIa" id="Y2w-A4-Dk4"/>
                         <outlet property="headerTitle" destination="OYd-aU-FlF" id="yYU-lP-6il"/>
+                        <outlet property="headerView" destination="24n-p8-qMp" id="r8P-65-YIR"/>
                         <outlet property="messageInputAreaBottomConstraint" destination="VTS-wY-0ig" id="dGA-93-4Ug"/>
                         <outlet property="messageInputAreaHeightConstraint" destination="Y4P-OS-nOF" id="Czz-au-wXc"/>
+                        <outlet property="messageInputView" destination="Wnw-2P-fuC" id="MnV-wB-dfj"/>
                         <outlet property="messageSendButton" destination="qW6-qU-r9Y" id="6x2-Cj-82a"/>
                         <outlet property="messageTextInputView" destination="Nqw-eh-1AC" id="4EX-Id-jj9"/>
                     </connections>
@@ -431,7 +451,7 @@
         <!--Day1 Camera View Controller-->
         <scene sceneID="X0m-Cw-LEE">
             <objects>
-                <viewController storyboardIdentifier="Day1CameraViewController" id="cnZ-gM-H6K" customClass="Day1CameraViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Day1CameraViewController" id="cnZ-gM-H6K" customClass="Day1CameraViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qGQ-Km-5dC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -483,7 +503,7 @@
         <!--Day1 Compass View Controller-->
         <scene sceneID="vbb-aG-NNu">
             <objects>
-                <viewController storyboardIdentifier="Day1CompassViewController" id="3BW-Io-gd6" customClass="Day1CompassViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Day1CompassViewController" id="3BW-Io-gd6" customClass="Day1CompassViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t5v-vz-xxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -492,14 +512,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvm-Kb-z2L">
-                                <rect key="frame" x="174" y="98" width="27" height="520"/>
+                                <rect key="frame" x="174" y="101" width="27" height="520"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rvm-Kb-z2L" secondAttribute="height" multiplier="27:520" id="61g-Vc-dcn"/>
                                     <constraint firstAttribute="width" constant="27" id="A1v-8M-f6f"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqs-8d-QJO">
-                                <rect key="frame" x="170" y="50" width="35" height="18"/>
+                                <rect key="frame" x="172" y="50" width="31.5" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="동쪽">
                                         <attributes>
@@ -512,7 +532,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygg-TX-p3G">
-                                <rect key="frame" x="73.5" y="244" width="228" height="228"/>
+                                <rect key="frame" x="73.5" y="247" width="228" height="228"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ygg-TX-p3G" secondAttribute="height" multiplier="1:1" id="HOd-zk-RPP"/>
                                     <constraint firstAttribute="width" constant="228" id="P6p-zs-kAR"/>
@@ -566,6 +586,7 @@
         <image name="apoMessageBG" width="37" height="43"/>
         <image name="chatMessageBackground" width="32.5" height="34"/>
         <image name="selected_answer_background" width="32.5" height="34"/>
+        <image name="snowBG" width="375" height="667"/>
         <image name="youngjae" width="145" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

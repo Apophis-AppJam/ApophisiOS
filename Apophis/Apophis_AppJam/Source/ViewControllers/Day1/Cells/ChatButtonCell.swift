@@ -13,7 +13,7 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
     
     @IBOutlet weak var ChatFuncButton: UIButton!
     
-    var index: Int?
+    var index: Int = 0
     var funcNum: Int?
     weak var viewController: UIViewController?
     let storyboard = UIStoryboard(name: "Day1", bundle: nil)
@@ -33,15 +33,11 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
     @IBAction func ChatButtonAction(_ sender: Any) {
         switch (buttonCaseList) {
         case .compassButton:
-            print ("나침반")
+            print ("나침반", index)
             
-            let storyboard = UIStoryboard(name: "Day1", bundle: nil)
-            
-            guard let vc = storyboard.instantiateViewController(identifier: "Day1CompassViewController") as? Day1CompassViewController else  {return}
-            
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .fullScreen
-            viewController?.present(vc, animated: true, completion: nil)
+            NotificationCenter.default.post(name: .getIndex, object: nil, userInfo: ["Index" : index])
+            NotificationCenter.default.post(name: NSNotification.Name("compassPresent"), object: nil)
+
             
         case .cameraButton:
             // 카메라를 사용할 수 있다면(카메라의 사용 가능 여부 확인)
@@ -123,7 +119,6 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
             })
             
         } completion: { (_) in
-            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
         }
         
         
@@ -134,8 +129,6 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
     {
         ChatFuncButton.alpha = 1
     }
-    
-    
     
     
     
@@ -181,4 +174,7 @@ class ChatButtonCell: UITableViewCell, UIImagePickerControllerDelegate, UINaviga
 
 extension NSNotification.Name {
     static let sendImage = NSNotification.Name("sendImage")
+    static let getIndex = NSNotification.Name("getIndex")
+    
 }
+
