@@ -22,4 +22,15 @@ extension UIFont
     {
         return UIFont(name: "GmarketSansTTF\(weight)", size: size)!
     }
+    
+    
+    static func chosunFont(size : CGFloat = 14) -> UIFont
+    {
+
+        
+        return UIFont(name: "ChosunilboNM", size: size)!
+    }
 }
+
+
+

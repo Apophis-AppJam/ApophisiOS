@@ -135,6 +135,9 @@
                                 <state key="normal" title="홈">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="homeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9HF-pZ-bJj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

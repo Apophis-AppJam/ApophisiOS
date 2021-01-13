@@ -1148,7 +1148,7 @@ extension Day1ViewController : UITextViewDelegate
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "댓글을 입력해주세요"
+            textView.text = "텍스트를 입력해주세요"
             self.messageSendButton.isEnabled = false
             self.messageSendButton.setBackgroundImage(UIImage(named: "chatIcSendUnactivate"), for: .normal)
             

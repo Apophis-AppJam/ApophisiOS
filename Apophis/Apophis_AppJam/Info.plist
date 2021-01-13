@@ -60,6 +60,7 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>ChosunNm.ttf</string>
 		<string>GmarketSansTTFBold.ttf</string>
 		<string>GmarketSansTTFLight.ttf</string>
 		<string>GmarketSansTTFMedium.ttf</string>
