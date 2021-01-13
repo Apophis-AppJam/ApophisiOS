@@ -63,14 +63,33 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        UserDefaults.standard.setValue(6, forKey: "remainUserDay")
+        
+        dayLabel.alpha = 0
+        hourLabel.alpha = 0
+        minuteLabel.alpha = 0
+        secondLabel.alpha = 0
+        distanceCountLabel.alpha = 0
+        
+        
+        
         
         setRemainSecond()
         fontSetting()
        
         rotateAnimation(imageView: apoStoneImageView)
         startCount()
+        
+
+        
+
+        
+        
+        
+        UserDefaults.standard.setValue(6, forKey: "remainUserDay")
+        
+ 
 
     }
     
@@ -172,6 +191,9 @@ class TimerViewController: UIViewController {
     
     func startCount()
     {
+        
+ 
+        
         if let timer = mTimer {
             //timer 객체가 nil 이 아닌경우에는 invalid 상태에만 시작한다
             if !timer.isValid {
@@ -188,6 +210,14 @@ class TimerViewController: UIViewController {
             
             distanceTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(distanceCount), userInfo: nil, repeats: true)
         }
+        
+        UIView.animate(withDuration: 1.5, delay: 1, options: .curveEaseIn, animations: {
+            self.dayLabel.alpha = 1
+            self.hourLabel.alpha = 1
+            self.minuteLabel.alpha = 1
+            self.secondLabel.alpha = 1
+            self.distanceCountLabel.alpha = 1
+        }, completion: nil)
 
     }
     
