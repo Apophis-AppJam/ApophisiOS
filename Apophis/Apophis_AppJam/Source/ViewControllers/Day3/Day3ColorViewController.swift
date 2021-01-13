@@ -71,6 +71,7 @@ class Day3ColorViewController: UIViewController {
         colorListCollectionView.backgroundColor = .none
         ColorLabel.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         completeLabel.font = UIFont.gmarketFont(weight: .Medium, size: 14)
+        ColorLabel.alpha = 0
         
     }
     
@@ -107,6 +108,8 @@ class Day3ColorViewController: UIViewController {
 
 @objc func colorChecked(notification : NSNotification)
 {
+    ColorLabel.alpha = 1
+    
     let attributedString = NSMutableAttributedString(string: ColorLabel.text!)
     
     let index = notification.object as? Int ?? -1
@@ -121,7 +124,8 @@ class Day3ColorViewController: UIViewController {
     colorListCollectionView.reloadData()
     
     switch (index){
-
+    
+    
     case 0:
         
         selectedColorImage.image = UIImage(named: "imgRed")
@@ -332,6 +336,7 @@ extension Day3ColorViewController: UICollectionViewDelegateFlowLayout {
     // cell 사이즈( 옆 라인을 고려하여 설정 )
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
+        
 //
 //        let width = collectionView.frame.width / 3 - 1 ///  3등분하여 배치, 옆 간격이 1이므로 1을 빼줌
 //        print("collectionView width=\(collectionView.frame.width)")
@@ -340,6 +345,10 @@ extension Day3ColorViewController: UICollectionViewDelegateFlowLayout {
 
         let size = CGSize(width: 42, height: 42)
         return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 22)
     }
 }
 

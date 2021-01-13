@@ -666,12 +666,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorListBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GwW-cc-rnD">
-                                <rect key="frame" x="0.0" y="632" width="414" height="264"/>
+                                <rect key="frame" x="0.0" y="668" width="414" height="228"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="228" id="BY2-5O-hA1"/>
+                                </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="colorListCollectionView" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-Zt-ora">
-                                <rect key="frame" x="0.0" y="658" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="694" width="414" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="WO6-zp-BsQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="3X8-Ki-bAC"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Icp-zf-TlH">
                                     <size key="itemSize" width="128" height="128"/>
@@ -717,11 +720,11 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWE-fz-IS4">
-                                <rect key="frame" x="177" y="734" width="60" height="60"/>
+                                <rect key="frame" x="177" y="770" width="60" height="60"/>
                                 <state key="normal" image="btn_complete_act"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4y-ZA-bs9">
-                                <rect key="frame" x="192" y="804" width="30" height="21"/>
+                                <rect key="frame" x="192" y="840" width="30" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -730,30 +733,29 @@
                         <viewLayoutGuide key="safeArea" id="5aE-hm-yY7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YCI-Zt-ora" firstAttribute="leading" secondItem="5aE-hm-yY7" secondAttribute="leading" id="2z1-G3-Ts5"/>
                             <constraint firstItem="A4y-ZA-bs9" firstAttribute="centerX" secondItem="oEY-ka-H5m" secondAttribute="centerX" id="4UA-Uu-R6S"/>
+                            <constraint firstItem="iWE-fz-IS4" firstAttribute="top" secondItem="YCI-Zt-ora" secondAttribute="bottom" constant="32" id="5md-zO-EX9"/>
                             <constraint firstItem="ta4-Ah-nDC" firstAttribute="top" secondItem="gfs-6y-X5W" secondAttribute="bottom" constant="23" id="7Xm-4E-NkW"/>
                             <constraint firstItem="A4y-ZA-bs9" firstAttribute="top" secondItem="iWE-fz-IS4" secondAttribute="bottom" constant="10" id="8RS-td-t54"/>
                             <constraint firstItem="l8P-gS-6wj" firstAttribute="centerY" secondItem="ta4-Ah-nDC" secondAttribute="centerY" constant="2" id="HH1-Ck-ra8"/>
-                            <constraint firstItem="GwW-cc-rnD" firstAttribute="trailing" secondItem="5aE-hm-yY7" secondAttribute="trailing" id="Rdo-xK-3DC"/>
+                            <constraint firstItem="GwW-cc-rnD" firstAttribute="trailing" secondItem="5aE-hm-yY7" secondAttribute="trailing" id="Jto-Yv-lXL"/>
                             <constraint firstItem="05h-dg-HFm" firstAttribute="leading" secondItem="5aE-hm-yY7" secondAttribute="leading" id="VMk-lW-o9R"/>
                             <constraint firstItem="gfs-6y-X5W" firstAttribute="trailing" secondItem="5aE-hm-yY7" secondAttribute="trailing" id="Vh8-py-iM7"/>
-                            <constraint firstItem="GwW-cc-rnD" firstAttribute="leading" secondItem="5aE-hm-yY7" secondAttribute="leading" id="Y73-s5-sDE"/>
                             <constraint firstItem="5aE-hm-yY7" firstAttribute="trailing" secondItem="05h-dg-HFm" secondAttribute="trailing" id="Yhk-qf-ybu"/>
                             <constraint firstItem="l8P-gS-6wj" firstAttribute="centerX" secondItem="ta4-Ah-nDC" secondAttribute="centerX" id="cmi-nd-X1L"/>
+                            <constraint firstItem="GwW-cc-rnD" firstAttribute="leading" secondItem="5aE-hm-yY7" secondAttribute="leading" id="d3w-2N-9Xf"/>
+                            <constraint firstItem="YCI-Zt-ora" firstAttribute="top" secondItem="GwW-cc-rnD" secondAttribute="top" constant="26" id="dSC-05-Lgs"/>
                             <constraint firstItem="6hs-Nz-lAZ" firstAttribute="top" secondItem="ta4-Ah-nDC" secondAttribute="bottom" constant="19" id="e8W-37-jHy"/>
                             <constraint firstItem="6hs-Nz-lAZ" firstAttribute="centerX" secondItem="ta4-Ah-nDC" secondAttribute="centerX" id="epq-ty-CYZ"/>
-                            <constraint firstItem="iWE-fz-IS4" firstAttribute="top" secondItem="YCI-Zt-ora" secondAttribute="bottom" constant="32" id="f3U-UL-GeB"/>
-                            <constraint firstItem="YCI-Zt-ora" firstAttribute="top" secondItem="GwW-cc-rnD" secondAttribute="top" constant="26" id="jSg-M1-NSr"/>
                             <constraint firstItem="iWE-fz-IS4" firstAttribute="centerX" secondItem="oEY-ka-H5m" secondAttribute="centerX" id="mb7-LH-nTY"/>
-                            <constraint firstItem="YCI-Zt-ora" firstAttribute="trailing" secondItem="5aE-hm-yY7" secondAttribute="trailing" id="mdm-kZ-Qaa"/>
+                            <constraint firstAttribute="bottom" secondItem="GwW-cc-rnD" secondAttribute="bottom" id="mgQ-ZD-WDa"/>
+                            <constraint firstAttribute="trailing" secondItem="YCI-Zt-ora" secondAttribute="trailing" id="oXj-fz-uPl"/>
                             <constraint firstItem="gfs-6y-X5W" firstAttribute="leading" secondItem="5aE-hm-yY7" secondAttribute="leading" id="qAs-9r-zTj"/>
-                            <constraint firstItem="iWE-fz-IS4" firstAttribute="centerY" secondItem="GwW-cc-rnD" secondAttribute="centerY" id="sDo-pO-nZ5"/>
                             <constraint firstAttribute="bottom" secondItem="05h-dg-HFm" secondAttribute="bottom" id="u4W-6m-WFX"/>
-                            <constraint firstAttribute="bottom" secondItem="GwW-cc-rnD" secondAttribute="bottom" id="ucO-Hg-0NS"/>
                             <constraint firstItem="05h-dg-HFm" firstAttribute="top" secondItem="oEY-ka-H5m" secondAttribute="top" id="vVv-Zd-N6p"/>
                             <constraint firstItem="ta4-Ah-nDC" firstAttribute="centerX" secondItem="5aE-hm-yY7" secondAttribute="centerX" id="vsl-et-ilI"/>
                             <constraint firstItem="gfs-6y-X5W" firstAttribute="top" secondItem="5aE-hm-yY7" secondAttribute="top" constant="-46" id="wDb-8E-vAN"/>
+                            <constraint firstItem="YCI-Zt-ora" firstAttribute="leading" secondItem="5aE-hm-yY7" secondAttribute="leading" id="ygc-Bi-ulh"/>
                         </constraints>
                     </view>
                     <connections>
