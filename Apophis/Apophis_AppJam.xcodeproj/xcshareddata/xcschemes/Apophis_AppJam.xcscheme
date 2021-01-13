@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FD0715682596E99700940094"
-               BuildableName = "Apophis_AppJam.app"
+               BuildableName = "Apophis.app"
                BlueprintName = "Apophis_AppJam"
                ReferencedContainer = "container:Apophis_AppJam.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FD0715682596E99700940094"
-            BuildableName = "Apophis_AppJam.app"
+            BuildableName = "Apophis.app"
             BlueprintName = "Apophis_AppJam"
             ReferencedContainer = "container:Apophis_AppJam.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FD0715682596E99700940094"
-            BuildableName = "Apophis_AppJam.app"
+            BuildableName = "Apophis.app"
             BlueprintName = "Apophis_AppJam"
             ReferencedContainer = "container:Apophis_AppJam.xcodeproj">
          </BuildableReference>

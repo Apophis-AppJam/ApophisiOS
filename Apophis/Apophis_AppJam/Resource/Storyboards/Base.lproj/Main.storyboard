@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQk-tt-g06">
-                                <rect key="frame" x="50" y="682" width="80" height="30"/>
+                                <rect key="frame" x="50" y="822" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="u5q-pm-PFA"/>
                                 </constraints>
@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vor-gz-SfB">
-                                <rect key="frame" x="167" y="682" width="80" height="30"/>
+                                <rect key="frame" x="167" y="822" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="p4g-j5-x1Q"/>
                                 </constraints>
@@ -73,7 +73,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-qH-ezT">
-                                <rect key="frame" x="284" y="682" width="80" height="30"/>
+                                <rect key="frame" x="284" y="822" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="MVh-Ia-AWM"/>
                                 </constraints>
@@ -85,21 +85,21 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yukyung" translatesAutoresizingMaskIntoConstraints="NO" id="NrR-Mw-Dv3">
-                                <rect key="frame" x="50" y="594" width="80" height="80"/>
+                                <rect key="frame" x="50" y="734" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="9GM-Lp-vxz"/>
                                     <constraint firstAttribute="height" constant="80" id="Vcg-N4-03h"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youngjae" translatesAutoresizingMaskIntoConstraints="NO" id="GuK-sz-KRQ">
-                                <rect key="frame" x="167" y="594" width="80" height="80"/>
+                                <rect key="frame" x="167" y="734" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="aGF-Xj-iKd"/>
                                     <constraint firstAttribute="width" constant="80" id="hau-ys-WHE"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jihun" translatesAutoresizingMaskIntoConstraints="NO" id="m32-xm-aQ8">
-                                <rect key="frame" x="284" y="594" width="80" height="80"/>
+                                <rect key="frame" x="284" y="734" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="BjY-6C-l9n"/>
                                     <constraint firstAttribute="height" constant="80" id="hs6-S4-6iW"/>
@@ -147,7 +147,7 @@
                             <constraint firstItem="XjR-ox-zEc" firstAttribute="top" secondItem="Td9-Sn-64D" secondAttribute="bottom" constant="40" id="AEd-CE-s6C"/>
                             <constraint firstItem="XjR-ox-zEc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BAq-TL-sF1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ilu-qH-ezT" secondAttribute="trailing" constant="50" id="CdH-RS-UqR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ilu-qH-ezT" secondAttribute="bottom" constant="150" id="F7J-r1-HUW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ilu-qH-ezT" secondAttribute="bottom" constant="10" id="F7J-r1-HUW"/>
                             <constraint firstItem="BrA-gH-FeY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="Ht9-PB-XYT"/>
                             <constraint firstItem="fOj-Ln-lfb" firstAttribute="top" secondItem="Ecl-ay-wJg" secondAttribute="bottom" constant="40" id="IHp-f8-cMs"/>
                             <constraint firstItem="up2-rV-U59" firstAttribute="top" secondItem="L8m-0O-0Eb" secondAttribute="bottom" constant="40" id="JM5-rr-xIj"/>
@@ -161,11 +161,11 @@
                             <constraint firstItem="vor-gz-SfB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aZu-Q7-saG"/>
                             <constraint firstItem="ilu-qH-ezT" firstAttribute="top" secondItem="m32-xm-aQ8" secondAttribute="bottom" constant="8" symbolic="YES" id="dkT-wy-mvD"/>
                             <constraint firstAttribute="bottom" secondItem="dVL-Eh-aOn" secondAttribute="bottom" id="fcu-fG-7qn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IQk-tt-g06" secondAttribute="bottom" constant="150" id="fq6-O0-h36"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IQk-tt-g06" secondAttribute="bottom" constant="10" id="fq6-O0-h36"/>
                             <constraint firstItem="dVL-Eh-aOn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gCh-Jz-4yN"/>
                             <constraint firstItem="dVL-Eh-aOn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-5" id="kad-rU-MA9"/>
                             <constraint firstItem="vor-gz-SfB" firstAttribute="top" secondItem="GuK-sz-KRQ" secondAttribute="bottom" constant="8" symbolic="YES" id="m5H-Go-hvt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vor-gz-SfB" secondAttribute="bottom" constant="150" id="mwD-du-h0U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vor-gz-SfB" secondAttribute="bottom" constant="10" id="mwD-du-h0U"/>
                             <constraint firstItem="IQk-tt-g06" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="nqe-e2-2Ge"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m32-xm-aQ8" secondAttribute="trailing" constant="50" id="pqj-Rn-lE8"/>
                             <constraint firstItem="IQk-tt-g06" firstAttribute="top" secondItem="NrR-Mw-Dv3" secondAttribute="bottom" constant="8" symbolic="YES" id="qGg-ab-X2x"/>
@@ -197,7 +197,7 @@
         <!--Jihun Lab View Controller-->
         <scene sceneID="jN3-0w-kfO">
             <objects>
-                <viewController storyboardIdentifier="jihunLabViewController" id="gYh-Cu-WCh" customClass="jihunLabViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="jihunLabViewController" id="gYh-Cu-WCh" customClass="jihunLabViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jwV-cm-eFP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -229,18 +229,27 @@
                                     <action selector="goToClockDay2:" destination="gYh-Cu-WCh" eventType="touchUpInside" id="A5c-It-9m4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eII-N9-Knn">
+                                <rect key="frame" x="179" y="430" width="56" height="30"/>
+                                <state key="normal" title="가치 선택"/>
+                                <connections>
+                                    <action selector="goToValue:" destination="gYh-Cu-WCh" eventType="touchUpInside" id="jGG-Yb-O3X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l1E-Af-1F9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="r7W-wQ-o9f" firstAttribute="centerX" secondItem="jwV-cm-eFP" secondAttribute="centerX" id="2hc-eL-e5Q"/>
                             <constraint firstItem="UMx-kX-WRd" firstAttribute="top" secondItem="rbH-To-e3P" secondAttribute="bottom" constant="40" id="E50-yg-Xkw"/>
+                            <constraint firstItem="eII-N9-Knn" firstAttribute="top" secondItem="JjB-nk-hfN" secondAttribute="bottom" constant="20" id="R01-dx-LRE"/>
                             <constraint firstItem="JjB-nk-hfN" firstAttribute="centerX" secondItem="jwV-cm-eFP" secondAttribute="centerX" id="XBz-la-Q1h"/>
                             <constraint firstItem="rbH-To-e3P" firstAttribute="top" secondItem="r7W-wQ-o9f" secondAttribute="bottom" constant="100" id="Yju-FY-ldT"/>
                             <constraint firstItem="UMx-kX-WRd" firstAttribute="centerX" secondItem="jwV-cm-eFP" secondAttribute="centerX" id="Zss-XW-UQe"/>
                             <constraint firstItem="JjB-nk-hfN" firstAttribute="top" secondItem="UMx-kX-WRd" secondAttribute="bottom" constant="50" id="aLy-h4-JxX"/>
                             <constraint firstItem="rbH-To-e3P" firstAttribute="centerX" secondItem="jwV-cm-eFP" secondAttribute="centerX" id="l7e-xT-EGF"/>
                             <constraint firstItem="r7W-wQ-o9f" firstAttribute="top" secondItem="l1E-Af-1F9" secondAttribute="top" constant="60" id="tDp-HK-mYN"/>
+                            <constraint firstItem="eII-N9-Knn" firstAttribute="centerX" secondItem="jwV-cm-eFP" secondAttribute="centerX" id="xBk-JS-v1d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4K2-cH-HSd"/>
@@ -252,7 +261,7 @@
         <!--Audio Record View Controller-->
         <scene sceneID="R1X-eM-URA">
             <objects>
-                <viewController restorationIdentifier="audioRecordViewController" storyboardIdentifier="audioRecordViewController" id="abe-YH-5UU" customClass="audioRecordViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="audioRecordViewController" storyboardIdentifier="audioRecordViewController" id="abe-YH-5UU" customClass="audioRecordViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jF2-FP-Keg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +313,7 @@
         <!--Yukyung Lab View Controller-->
         <scene sceneID="I2q-HY-Isq">
             <objects>
-                <viewController storyboardIdentifier="yukyungLabViewController" id="RHB-tf-LDo" customClass="yukyungLabViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="yukyungLabViewController" id="RHB-tf-LDo" customClass="yukyungLabViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GMd-2L-lth">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -377,7 +386,7 @@
         <!--Color View Controller-->
         <scene sceneID="hKv-oS-a7f">
             <objects>
-                <viewController id="Wev-c9-C8u" customClass="ColorViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Wev-c9-C8u" customClass="ColorViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DYb-UO-lyE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -490,7 +499,7 @@
         <!--Youngjae Lab View Controller-->
         <scene sceneID="jBq-fY-9lY">
             <objects>
-                <viewController storyboardIdentifier="youngjaeLabViewController" id="OH6-KD-4rn" customClass="youngjaeLabViewController" customModule="Apophis_AppJam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="youngjaeLabViewController" id="OH6-KD-4rn" customClass="youngjaeLabViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H75-Hb-JGW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -555,12 +564,12 @@
     <resources>
         <image name="WhiteMessageBackgroundImage" width="197" height="43"/>
         <image name="btn_findme" width="42" height="42"/>
-        <image name="jihun" width="260" height="260"/>
+        <image name="jihun" width="130" height="130"/>
         <image name="labBackground" width="260" height="562.5"/>
         <image name="playbtn" width="42" height="42"/>
         <image name="stopbtn" width="42" height="42"/>
-        <image name="youngjae" width="290" height="256"/>
-        <image name="yukyung" width="295" height="252"/>
+        <image name="youngjae" width="145" height="128"/>
+        <image name="yukyung" width="147.5" height="126"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -21,6 +21,7 @@ class Day2SelectTimeViewController: UIViewController {
     @IBOutlet weak var setTimeTextField: UITextField!
     @IBOutlet weak var circleAnimationView: UIView!
     
+    @IBOutlet weak var timeDescriptionLabel: UILabel!
     @IBOutlet weak var setTimeLabel: UILabel!
     @IBOutlet weak var completeLabel: UILabel!
     @IBOutlet weak var completeButtonImageView: UIImageView!
@@ -78,6 +79,8 @@ class Day2SelectTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createCircularPath(time: 0, isComplete: false)
+        timeDescriptionLabel.text = ""
+        
     }
 
 
@@ -108,7 +111,7 @@ class Day2SelectTimeViewController: UIViewController {
         
         
         dismiss(animated: true) {
-            NotificationCenter.default.post(name: NSNotification.Name("setTimeComplete"), object: self.timeLabel.text)
+            NotificationCenter.default.post(name: NSNotification.Name("setTimeComplete"), object: self.timeDescriptionLabel.text)
             
         }
         
@@ -128,6 +131,8 @@ class Day2SelectTimeViewController: UIViewController {
         setTimeLabel.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         completeLabel.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         completeLabel.textColor = .init(red: 112/255, green: 112/255, blue: 112/255, alpha: 1)
+        
+        timeDescriptionLabel.font = .gmarketFont(weight: .Medium, size: 14)
         
     }
 
@@ -222,6 +227,57 @@ class Day2SelectTimeViewController: UIViewController {
         createCircularPath(time: tempTimeValue, isComplete: true)
         turnOnCompleteButton()
         self.view.endEditing(true)
+        
+        
+        
+        
+        print("지금 hourValue",hourValue)
+        let hourInt = hourValue * 24
+        
+        if hourInt >= 1 && hourInt < 4 // 1시 ~ 4시 부분
+        {
+            timeDescriptionLabel.text = "차분하고 적막한 새벽에 떠나고 싶어."
+        }
+        else if hourInt >= 4 && hourInt < 6
+        {
+            timeDescriptionLabel.text = "동 트기 전 가장 추운 새벽에 떠나고 싶어."
+        }
+        else if hourInt >= 6 && hourInt < 7
+        {
+            timeDescriptionLabel.text = "아직 아무도 일어나지 않은 아침에 떠나고 싶어."
+        }
+        else if hourInt >= 7 && hourInt < 10
+        {
+            timeDescriptionLabel.text = "활기찬 아침에 떠나고 싶어."
+        }
+        else if hourInt >= 10 && hourInt < 12
+        {
+            timeDescriptionLabel.text = "포근한 햇살이 쬐는 낮에 떠나고 싶어."
+        }
+        else if hourInt >= 12 && hourInt < 17
+        {
+            timeDescriptionLabel.text = "여유로운 낮에 떠나고 싶어."
+        }
+        else if hourInt >= 17 && hourInt < 19
+        {
+            timeDescriptionLabel.text = "노을을 볼 수 있는 저녁에 떠나고 싶어."
+        }
+        else if hourInt >= 19 && hourInt < 22
+        {
+            timeDescriptionLabel.text = "아직 열기가 식지 않은 저녁에 떠나고 싶어."
+        }
+        else if hourInt >= 22 && hourInt <= 24
+        {
+            timeDescriptionLabel.text = "고요한 어둠이 깔린 밤에 떠나고 싶어."
+        }
+        else if hourInt > 0 && hourInt <= 1
+        {
+            timeDescriptionLabel.text = "고요한 어둠이 깔린 밤에 떠나고 싶어."
+        }
+        else
+        {
+            timeDescriptionLabel.text = ""
+        }
     }
     
 
@@ -293,6 +349,9 @@ extension Day2SelectTimeViewController : UIPickerViewDelegate,UIPickerViewDataSo
         
         
         timeLabel.text = hourString + "시 " + minuteString + "분"
+    
+        
+        
         
         print("지금 값",hourValue + minuteValue)
         
@@ -304,6 +363,8 @@ extension Day2SelectTimeViewController : UIPickerViewDelegate,UIPickerViewDataSo
  
         previousTimeValue = tempTimeValue
         
+        
+
 
     }
     

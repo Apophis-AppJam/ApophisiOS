@@ -16,6 +16,7 @@
 		069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */; };
 		AE2E82F5D36D7460962246C6 /* Pods_Apophis_AppJam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */; };
 		FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC394F3E259D110500E70307 /* ColorViewController.swift */; };
+		FC43DF9525AE21A20017E178 /* Day3ColorListcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43DF9425AE21A20017E178 /* Day3ColorListcell.swift */; };
 		FC92374C259E6BEE0039AB32 /* audioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */; };
 		FC956AAD25A8CE530007717C /* Day3EnterNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC956AAC25A8CE530007717C /* Day3EnterNameCell.swift */; };
 		FCB278DF25ADCF6300A1979D /* Day3ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB278DE25ADCF6300A1979D /* Day3ColorViewController.swift */; };
@@ -44,12 +45,18 @@
 		FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B22599AF7100AAD1BA /* Day5.storyboard */; };
 		FD5207B62599AF7A00AAD1BA /* Day6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B52599AF7A00AAD1BA /* Day6.storyboard */; };
 		FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B92599AF8500AAD1BA /* Day7.storyboard */; };
-		FD5D51A325A9715300705E60 /* message_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = FD5D51A225A9715300705E60 /* message_loading.json */; };
 		FD5D51A725AA2F0600705E60 /* NextActionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51A625AA2F0600705E60 /* NextActionList.swift */; };
 		FD5D51AA25AA329700705E60 /* replyTypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51A925AA329700705E60 /* replyTypeList.swift */; };
 		FD5D51BC25AB5E3200705E60 /* Day2SnowBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51BB25AB5E3200705E60 /* Day2SnowBackgroundCell.swift */; };
+		FD5D51BF25ABB5FB00705E60 /* Day2UserAnswerCompleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51BE25ABB5FB00705E60 /* Day2UserAnswerCompleteCell.swift */; };
 		FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */; };
 		FD5F356625A5896F00330E9B /* Day2word3InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */; };
+		FD5F3C0C25AC90E6007BD93C /* Day2SelectValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F3C0B25AC90E6007BD93C /* Day2SelectValueViewController.swift */; };
+		FD5F3C1025AC90FB007BD93C /* Day2ConfirmValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F3C0F25AC90FB007BD93C /* Day2ConfirmValueViewController.swift */; };
+		FD5F3C1325ACF8D8007BD93C /* Day2SetValueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F3C1225ACF8D8007BD93C /* Day2SetValueNavigationController.swift */; };
+		FD5F3C1725AD8020007BD93C /* message_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = FD5F3C1625AD8020007BD93C /* message_loading.json */; };
+		FD5F3C1A25AD92AD007BD93C /* main_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FD5F3C1925AD92AD007BD93C /* main_bgm.mp3 */; };
+		FD5F3C2025ADD12C007BD93C /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F3C1F25ADD12C007BD93C /* TimerViewController.swift */; };
 		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
 		FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */; };
 		FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */; };
@@ -101,13 +108,14 @@
 		4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apophis_AppJam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23F09E174B44478E4702746 /* Pods-Apophis_AppJam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.debug.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.debug.xcconfig"; sourceTree = "<group>"; };
 		FC394F3E259D110500E70307 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		FC43DF9425AE21A20017E178 /* Day3ColorListcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ColorListcell.swift; sourceTree = "<group>"; };
 		FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioRecordViewController.swift; sourceTree = "<group>"; };
 		FC956AAC25A8CE530007717C /* Day3EnterNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3EnterNameCell.swift; sourceTree = "<group>"; };
 		FCB278DE25ADCF6300A1979D /* Day3ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ColorViewController.swift; sourceTree = "<group>"; };
 		FCC78908259B79CD00422CD4 /* Day3DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3DrawingViewController.swift; sourceTree = "<group>"; };
 		FCDE84A925A57ADB003D288E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FCDE84AE25A57B2E003D288E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FD0715692596E99700940094 /* Apophis_AppJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apophis_AppJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0715692596E99700940094 /* Apophis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apophis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD07156C2596E99700940094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD07156E2596E99700940094 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FD0715702596E99700940094 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,12 +139,18 @@
 		FD5207B22599AF7100AAD1BA /* Day5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day5.storyboard; sourceTree = "<group>"; };
 		FD5207B52599AF7A00AAD1BA /* Day6.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day6.storyboard; sourceTree = "<group>"; };
 		FD5207B92599AF8500AAD1BA /* Day7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day7.storyboard; sourceTree = "<group>"; };
-		FD5D51A225A9715300705E60 /* message_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message_loading.json; sourceTree = "<group>"; };
 		FD5D51A625AA2F0600705E60 /* NextActionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextActionList.swift; sourceTree = "<group>"; };
 		FD5D51A925AA329700705E60 /* replyTypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = replyTypeList.swift; sourceTree = "<group>"; };
 		FD5D51BB25AB5E3200705E60 /* Day2SnowBackgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SnowBackgroundCell.swift; sourceTree = "<group>"; };
+		FD5D51BE25ABB5FB00705E60 /* Day2UserAnswerCompleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2UserAnswerCompleteCell.swift; sourceTree = "<group>"; };
 		FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CircleButtonCell.swift; sourceTree = "<group>"; };
 		FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2word3InputCell.swift; sourceTree = "<group>"; };
+		FD5F3C0B25AC90E6007BD93C /* Day2SelectValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SelectValueViewController.swift; sourceTree = "<group>"; };
+		FD5F3C0F25AC90FB007BD93C /* Day2ConfirmValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2ConfirmValueViewController.swift; sourceTree = "<group>"; };
+		FD5F3C1225ACF8D8007BD93C /* Day2SetValueNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetValueNavigationController.swift; sourceTree = "<group>"; };
+		FD5F3C1625AD8020007BD93C /* message_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message_loading.json; sourceTree = "<group>"; };
+		FD5F3C1925AD92AD007BD93C /* main_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = main_bgm.mp3; sourceTree = "<group>"; };
+		FD5F3C1F25ADD12C007BD93C /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yukyungLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jihunLabViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +233,7 @@
 		FC956AA725A8CDAF0007717C /* ChatCells */ = {
 			isa = PBXGroup;
 			children = (
+				FC43DF9425AE21A20017E178 /* Day3ColorListcell.swift */,
 				FC956AAC25A8CE530007717C /* Day3EnterNameCell.swift */,
 			);
 			path = ChatCells;
@@ -253,7 +268,7 @@
 		FD07156A2596E99700940094 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD0715692596E99700940094 /* Apophis_AppJam.app */,
+				FD0715692596E99700940094 /* Apophis.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,6 +339,7 @@
 		FD52078325999C6400AAD1BA /* Day2 */ = {
 			isa = PBXGroup;
 			children = (
+				FD5F3C0A25AC907B007BD93C /* SetValue */,
 				FD8A8CAD25A810DE00DE3D27 /* SetTime */,
 				FD8A8CAC25A810D900DE3D27 /* BrightDark */,
 				FDFB702225A2018E006EEC04 /* ChatCells */,
@@ -428,6 +444,24 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		FD5F3C0A25AC907B007BD93C /* SetValue */ = {
+			isa = PBXGroup;
+			children = (
+				FD5F3C0B25AC90E6007BD93C /* Day2SelectValueViewController.swift */,
+				FD5F3C0F25AC90FB007BD93C /* Day2ConfirmValueViewController.swift */,
+				FD5F3C1225ACF8D8007BD93C /* Day2SetValueNavigationController.swift */,
+			);
+			path = SetValue;
+			sourceTree = "<group>";
+		};
+		FD5F3C1E25ADD120007BD93C /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				FD5F3C1F25ADD12C007BD93C /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		FD6D0EBC259C4B8B00993BBC /* Lab */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,7 +530,8 @@
 		FDA98B632596EDA200F4DFDF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				FD5D51A225A9715300705E60 /* message_loading.json */,
+				FD5F3C1925AD92AD007BD93C /* main_bgm.mp3 */,
+				FD5F3C1625AD8020007BD93C /* message_loading.json */,
 				FDD09229259AF58100B92529 /* sampleVideo.mp4 */,
 				FD0715752596E99700940094 /* Assets.xcassets */,
 				FDA98B822597104700F4DFDF /* ColorList.xcassets */,
@@ -517,6 +552,7 @@
 		FDA98B652596EDAE00F4DFDF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD5F3C1E25ADD120007BD93C /* Timer */,
 				FDE05A8025A8C95700E92E1B /* Home */,
 				FCDE84AD25A57B1B003D288E /* Login */,
 				FD6D0EBC259C4B8B00993BBC /* Lab */,
@@ -660,6 +696,7 @@
 				FD5F356025A48CBE00330E9B /* Day2CircleButtonCell.swift */,
 				FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */,
 				FD5D51BB25AB5E3200705E60 /* Day2SnowBackgroundCell.swift */,
+				FD5D51BE25ABB5FB00705E60 /* Day2UserAnswerCompleteCell.swift */,
 			);
 			path = ChatCells;
 			sourceTree = "<group>";
@@ -692,7 +729,7 @@
 			);
 			name = Apophis_AppJam;
 			productName = Apophis_AppJam;
-			productReference = FD0715692596E99700940094 /* Apophis_AppJam.app */;
+			productReference = FD0715692596E99700940094 /* Apophis.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -746,7 +783,8 @@
 				FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */,
 				FD5207B62599AF7A00AAD1BA /* Day6.storyboard in Resources */,
 				FDD0922A259AF58100B92529 /* sampleVideo.mp4 in Resources */,
-				FD5D51A325A9715300705E60 /* message_loading.json in Resources */,
+				FD5F3C1725AD8020007BD93C /* message_loading.json in Resources */,
+				FD5F3C1A25AD92AD007BD93C /* main_bgm.mp3 in Resources */,
 				FD52078F2599A60200AAD1BA /* GmarketSansTTFMedium.ttf in Resources */,
 				FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */,
 				FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */,
@@ -827,6 +865,7 @@
 				FDE2C7F9259A14AD006659DA /* Day2ViewController.swift in Sources */,
 				FDFB702825A206B1006EEC04 /* Day2SelectListCollectionCell.swift in Sources */,
 				FDE2C7F32599D2EB006659DA /* GmarketFont + UIFont.swift in Sources */,
+				FD5D51BF25ABB5FB00705E60 /* Day2UserAnswerCompleteCell.swift in Sources */,
 				069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */,
 				FD8A8CB825A822F000DE3D27 /* Day2BrightDarkNaviController.swift in Sources */,
 				FD5D51A725AA2F0600705E60 /* NextActionList.swift in Sources */,
@@ -844,6 +883,7 @@
 				FD8A8CA325A76E5500DE3D27 /* placeHolderColor.swift in Sources */,
 				FD0715712596E99700940094 /* ViewController.swift in Sources */,
 				FDBFFE2125A35B3900C46615 /* getChatService.swift in Sources */,
+				FD5F3C0C25AC90E6007BD93C /* Day2SelectValueViewController.swift in Sources */,
 				FD8A8CAF25A810EE00DE3D27 /* Day2SetBrightViewController.swift in Sources */,
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,
 				FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */,
@@ -854,16 +894,19 @@
 				0659A38C25ACC353004E21CE /* Day1ApoImageViewCell.swift in Sources */,
 				0659A38F25ACF3C9004E21CE /* KingfisherImageBlaBla.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
+				FD5F3C1025AC90FB007BD93C /* Day2ConfirmValueViewController.swift in Sources */,
 				FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */,
 				FCB278DF25ADCF6300A1979D /* Day3ColorViewController.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
 				FD5D51BC25AB5E3200705E60 /* Day2SnowBackgroundCell.swift in Sources */,
 				FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */,
+				FD5F3C1325ACF8D8007BD93C /* Day2SetValueNavigationController.swift in Sources */,
 				FC956AAD25A8CE530007717C /* Day3EnterNameCell.swift in Sources */,
 				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
 				FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */,
 				FD07156F2596E99700940094 /* SceneDelegate.swift in Sources */,
+				FD5F3C2025ADD12C007BD93C /* TimerViewController.swift in Sources */,
 				FD5207992599ACCF00AAD1BA /* ChatMyMessageCell.swift in Sources */,
 				FDA98B862597133500F4DFDF /* NetworkResult.swift in Sources */,
 				FD52078725999C8F00AAD1BA /* Day1ViewController.swift in Sources */,
@@ -878,6 +921,7 @@
 				FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */,
 				FCDE84AF25A57B2E003D288E /* LoginViewController.swift in Sources */,
 				FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */,
+				FC43DF9525AE21A20017E178 /* Day3ColorListcell.swift in Sources */,
 				FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */,
 				FC92374C259E6BEE0039AB32 /* audioRecordViewController.swift in Sources */,
 				FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */,
@@ -1039,7 +1083,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sopt.apophis.release;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Apophis;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1062,7 +1106,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sopt.apophis.release;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Apophis;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

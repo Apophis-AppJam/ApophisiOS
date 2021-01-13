@@ -30,6 +30,28 @@ class HomeViewController: UIViewController {
     //MARK:- IBAction Part
 
     
+    
+    @IBAction func apophisTimerButtonClicked(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func phoneButtonClicked(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func settingButtonClicked(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func bucketListButtonClicked(_ sender: Any) {
+        
+    }
+    
+    
+    
     //MARK:- default Setting Function Part
 
     

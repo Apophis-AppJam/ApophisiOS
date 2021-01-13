@@ -50,11 +50,15 @@ class Day2SetDarkViewController: UIViewController {
 
     @IBAction func completeButtonClicked(_ sender: Any) {
         
+        var result = ""
         var reason : [String] = []
         reason.append(contentsOf: [brightContent,contentTextView.text])
         
+        
+        result = "나의 장점은 " + brightContent + ", 단점은 " + contentTextView.text + "인 것 같아."
+        
         self.dismiss(animated: true) {
-            NotificationCenter.default.post(name: NSNotification.Name("brightDarkComplete"), object: reason)
+            NotificationCenter.default.post(name: NSNotification.Name("brightDarkComplete"), object: result)
         }
     }
     

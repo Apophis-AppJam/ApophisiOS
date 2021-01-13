@@ -19,7 +19,7 @@ class ChatYourMessageCell: UITableViewCell {
     var check: Bool = false
     //MARK:- Variable Part
 
-    let loadingView = AnimationView()
+    var loadingView = AnimationView()
     
     //MARK:- Constraint Part
 
@@ -141,6 +141,7 @@ class ChatYourMessageCell: UITableViewCell {
         self.check = false
         
         
+        loadingView = AnimationView()
         loadingView.frame = waitMessageImageView.bounds
         loadingView.animation = Animation.named("message_loading")
         loadingView.contentMode = .scaleAspectFit
@@ -151,7 +152,7 @@ class ChatYourMessageCell: UITableViewCell {
         
         
 
-        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 3, delay: 0, options: .allowUserInteraction) {
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
