@@ -164,7 +164,6 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="yEN-vf-ul3"/>
                                                     </constraints>
-
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XQI-eY-eDQ">
                                                         <size key="itemSize" width="137" height="36"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -199,6 +198,7 @@
                                                                     <constraint firstItem="rZt-Bz-5NI" firstAttribute="leading" secondItem="vaa-Zb-inU" secondAttribute="leading" constant="10" id="uWw-pA-GUs"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <size key="customSize" width="137" height="36"/>
                                                             <connections>
                                                                 <outlet property="backgroundImageView" destination="SA5-Sf-QKW" id="rAr-wt-RSJ"/>
@@ -208,6 +208,7 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="0aa-QF-sAG" secondAttribute="trailing" id="Jym-cm-3wt"/>
                                                 <constraint firstAttribute="bottom" secondItem="0aa-QF-sAG" secondAttribute="bottom" id="YXG-Gf-fmi"/>
@@ -215,9 +216,7 @@
                                                 <constraint firstItem="0aa-QF-sAG" firstAttribute="leading" secondItem="r4b-bB-QiD" secondAttribute="leading" constant="16" id="jJK-m3-FrB"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="selectButtonCollectionView" destination="0aa-QF-sAG" id="9d3-1B-yuP"/>
-                                        </connections>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day2CircleButtonCell" rowHeight="43" id="Giw-7J-9Oi" customClass="Day2CircleButtonCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="374" width="375" height="43"/>
