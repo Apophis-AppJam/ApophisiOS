@@ -12,11 +12,15 @@ class Day1ViewController: UIViewController {
     
     //MARK:- IBOutlet Part
     
+    @IBOutlet weak var chatSeaImageView: UIImageView!
+   
     @IBOutlet weak var headerTitle: UILabel!
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var messageTextInputView: UITextView!
     @IBOutlet weak var messageSendButton: UIButton!
     
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var messageInputView: UIView!
     
     
     
@@ -265,8 +269,6 @@ class Day1ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name:UIResponder.keyboardWillHideNotification, object: nil)
         
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(receivedUserSelect), name: NSNotification.Name("receivedUserSelect"), object: nil)
         
         // 메세지 신호 처리
@@ -274,13 +276,20 @@ class Day1ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(myMessageEnd), name: NSNotification.Name("myMessageEnd"), object: nil)
         
-        
         NotificationCenter.default.addObserver(self, selector: #selector(scrollToBottom), name: NSNotification.Name("scrollToBottom"), object: nil)
         
         //유저 장문 메세지 전송
         NotificationCenter.default.addObserver(self, selector: #selector(userMessageEntered), name: NSNotification.Name("userMessageEntered"), object: nil)
         
+        // 나침반 불러오기
+        NotificationCenter.default.addObserver(self, selector: #selector(compassPresent), name: NSNotification.Name("compassPresent"), object: nil)
+        // 나침반이 완료되었을 때
+        NotificationCenter.default.addObserver(self, selector: #selector(compassComplete), name: NSNotification.Name("compassComplete"), object: nil)
+        
+        // 바다 배경 만들기
+        NotificationCenter.default.addObserver(self, selector: #selector(setSeaBackground), name: NSNotification.Name("setSeaBackground"), object: nil)
     }
+  
     
     
     //MARK:- @objc func 부분
@@ -414,9 +423,7 @@ class Day1ViewController: UIViewController {
         messageListForTableView.remove(at: newMessageList.count - 1)
         
         tempIndex = newMessageList[newMessageList.count - 1].chatDetailsIdx
-        
-        print("자, 여기는 userMessageEntered에서 구한 tempIndex다", tempIndex)
-        
+                
         newMessageList.append(ChatMessageNewDataModel(messageContent: userMessageList[0],
                                                       isMine: true,
                                                       isLastMessage: true,
@@ -441,6 +448,54 @@ class Day1ViewController: UIViewController {
         
     }
     
+    @objc func compassPresent()
+    {
+        let storyboard = UIStoryboard(name: "Day1", bundle: nil)
+        
+        guard let vc = storyboard.instantiateViewController(identifier: "Day1CompassViewController") as? Day1CompassViewController else  {return}
+        
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        vc.index = messageListForTableView.count-1
+        print("여기는 인덱스 값을 넘기는거",messageListForTableView.count-1)
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    @objc func setSeaBackground()
+    {
+        
+        print("setseabackground 시작함")
+        messageInputView.backgroundColor = .clear
+        headerView.backgroundColor = .clear
+        chatTableView.backgroundColor = .clear
+
+        
+        chatSeaImageView.image = UIImage(named: "seaBG")
+        UIView.animate(withDuration: 2) {
+            self.chatSeaImageView.alpha = 1
+        }
+      
+        let time = DispatchTime.now() + .seconds(40)
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            self.hideBackgroundImage()
+            
+        }
+    }
+    
+    func hideBackgroundImage()
+    {
+        UIView.animate(withDuration: 2) {
+            self.chatSeaImageView.alpha = 0
+            self.messageInputView.backgroundColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
+            self.headerView.backgroundColor = .init(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
+            self.chatTableView.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+            
+        }
+        
+    }
+    
+    
     func tableViewDefaultSetting()
     {
         chatTableView.delegate = self
@@ -449,6 +504,9 @@ class Day1ViewController: UIViewController {
         chatTableView.allowsSelection = true
         chatTableView.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
     }
+    
+    
+
     
     
     func etcDefaultSetting()
@@ -623,6 +681,40 @@ class Day1ViewController: UIViewController {
         textViewDidChange(messageTextInputView)
     }
     
+    @objc func compassComplete(notification : NSNotification)
+    {
+        let messageDescription = notification.object as? String ?? ""
+        
+        let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
+        
+        
+        isMessageLoadList[newMessageList.count - 1] = false
+        
+        newMessageList.remove(at: newMessageList.count - 1)
+        messageListForTableView.remove(at: newMessageList.count - 1)
+        
+        let lastChatDetailIDx =
+            newMessageList[newMessageList.count - 1].chatDetailsIdx
+        
+        newMessageList.append(ChatMessageNewDataModel(messageContent: "여긴가?",
+                                                      isMine: true,
+                                                      isLastMessage: true,
+                                                      nextMessageType: .none,
+                                                      type: .normal,
+                                                      dataList: [],
+                                                      chatDetailsIdx: lastChatDetailIDx))
+        
+        messageListForTableView.append(ChatMessageNewDataModel(messageContent: "여긴가?",
+                                                               isMine: true,
+                                                               isLastMessage: true,
+                                                               nextMessageType: .none,
+                                                               type: .normal,
+                                                               dataList: [],
+                                                               chatDetailsIdx: lastChatDetailIDx))
+
+
+        chatTableView.reloadRows(at: [lastIndex], with: .none)
+    }
     
     func disableTextField(isEnable: Bool)
     {
@@ -870,6 +962,30 @@ extension Day1ViewController : UITableViewDataSource
                 
                 return ChatButtonCell
                 
+            case .selectAdjective:
+                guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
+                        as? Day2selectAnswerCell
+                else {return UITableViewCell() }
+                
+                
+
+                selectCell.setAdjectiveList(selectList: newMessageList[indexPath.row].dataList)
+                selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+                selectCell.selectionStyle = .none
+                                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    selectCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    selectCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return selectCell
+                
             case .enter3words:
                 return UITableViewCell()
             case .brightAndDark:
@@ -962,7 +1078,33 @@ extension Day1ViewController : UITableViewDataSource
                 
                 return apoImageViewCell
                 
+            case .normalWithSea:
+                print("셀 생성 normalwithsea 분기처리")
+                guard let yourMessageCell =
+                        tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
+                        as? ChatYourMessageCell
+                        else {return UITableViewCell() }
+
+
+                yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+   
+
                 
+
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    yourMessageCell.setSeaBackground()
+                    yourMessageCell.loadingAnimate(index: indexPath.row, vibrate: false)
+                }
+                else
+                {
+                    yourMessageCell.showMessageWithNoAnimation()
+                }
+
+                isMessageLoadList[indexPath.row] = true
+
+                yourMessageCell.backgroundColor = .clear
+                return yourMessageCell
                 
             default :
                 return UITableViewCell()

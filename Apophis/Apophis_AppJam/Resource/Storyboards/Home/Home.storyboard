@@ -276,13 +276,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="죽기 전에 꼭 해야할 일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dby-FI-zhv">
-                                <rect key="frame" x="124.33333333333333" y="57.999999999999993" width="141.33333333333337" height="19.666666666666664"/>
+                                <rect key="frame" x="124.33333333333333" y="58" width="141.33333333333337" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deg-R7-fLh">
-                                <rect key="frame" x="332" y="60" width="30" height="30"/>
+                                <rect key="frame" x="332" y="58" width="30" height="39"/>
                                 <state key="normal" title="추가">
                                     <color key="titleColor" name="mainColor"/>
                                 </state>
@@ -297,22 +297,22 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1o-9L-fbv">
-                                <rect key="frame" x="0.0" y="90" width="390" height="754"/>
+                                <rect key="frame" x="0.0" y="97" width="390" height="747"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_bucketlist_card" translatesAutoresizingMaskIntoConstraints="NO" id="YI2-5s-3J9">
-                                        <rect key="frame" x="37" y="98.666666666666686" width="316" height="556.66666666666652"/>
+                                        <rect key="frame" x="37" y="95.333333333333314" width="316" height="556.33333333333348"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YI2-5s-3J9" secondAttribute="height" multiplier="304:535" id="UOH-hM-Wko"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아포니머스와의 약속" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNO-vG-4qN">
-                                        <rect key="frame" x="87.333333333333329" y="185.66666666666669" width="211.33333333333337" height="19.333333333333343"/>
+                                        <rect key="frame" x="87.333333333333329" y="182.33333333333331" width="211.33333333333337" height="19.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OgY-eE-W3J">
-                                        <rect key="frame" x="90" y="232" width="212" height="83"/>
+                                        <rect key="frame" x="90" y="228.66666666666669" width="212" height="83"/>
                                         <string key="text">나는 부대찌개를 먹을거야 7일안에 
 꼭 해야할 일은 바로 부대찌게를 먹는거야 왜냐하면 지훈이가 만든 부대찌개는 정말 맛있거든!</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -320,13 +320,13 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D - 7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ms3-Gk-Y8I">
-                                        <rect key="frame" x="166.33333333333334" y="587.33333333333337" width="51.333333333333343" height="29"/>
+                                        <rect key="frame" x="166.33333333333334" y="583.66666666666663" width="51.333333333333343" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" name="mainColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Q-7n-BbO">
-                                        <rect key="frame" x="168.66666666666666" y="482.33333333333337" width="47" height="34"/>
+                                        <rect key="frame" x="168.66666666666666" y="478.66666666666663" width="47" height="34"/>
                                         <state key="normal" backgroundImage="success_button"/>
                                     </button>
                                 </subviews>
@@ -351,6 +351,7 @@
                         <viewLayoutGuide key="safeArea" id="b2s-JE-BNr"/>
                         <constraints>
                             <constraint firstItem="cCJ-a0-Smx" firstAttribute="leading" secondItem="b2s-JE-BNr" secondAttribute="leading" id="0cq-cr-wy7"/>
+                            <constraint firstItem="Dby-FI-zhv" firstAttribute="centerY" secondItem="1xI-00-KuG" secondAttribute="centerY" id="1WP-KX-lOg"/>
                             <constraint firstItem="Dby-FI-zhv" firstAttribute="top" secondItem="S3d-ag-sxl" secondAttribute="top" constant="58" id="1us-1j-6YU"/>
                             <constraint firstAttribute="bottom" secondItem="cCJ-a0-Smx" secondAttribute="bottom" id="Brr-ax-3Tp"/>
                             <constraint firstItem="b2s-JE-BNr" firstAttribute="trailing" secondItem="deg-R7-fLh" secondAttribute="trailing" constant="28" id="NRC-vn-95b"/>
@@ -361,9 +362,10 @@
                             <constraint firstItem="q1o-9L-fbv" firstAttribute="trailing" secondItem="b2s-JE-BNr" secondAttribute="trailing" id="XBv-hV-cC7"/>
                             <constraint firstItem="YI2-5s-3J9" firstAttribute="width" secondItem="S3d-ag-sxl" secondAttribute="width" multiplier="304/375" id="Z5d-aF-Gu8"/>
                             <constraint firstItem="Dby-FI-zhv" firstAttribute="centerX" secondItem="S3d-ag-sxl" secondAttribute="centerX" id="bGm-Kx-tZM"/>
+                            <constraint firstItem="deg-R7-fLh" firstAttribute="centerY" secondItem="1xI-00-KuG" secondAttribute="centerY" id="dki-pY-9p4"/>
                             <constraint firstItem="q1o-9L-fbv" firstAttribute="bottom" secondItem="S3d-ag-sxl" secondAttribute="bottom" id="gsp-Av-MN7"/>
                             <constraint firstItem="Dby-FI-zhv" firstAttribute="centerX" secondItem="S3d-ag-sxl" secondAttribute="centerX" id="lr9-Yi-tT9"/>
-                            <constraint firstItem="deg-R7-fLh" firstAttribute="top" secondItem="S3d-ag-sxl" secondAttribute="top" constant="60" id="pFE-9d-8iJ"/>
+                            <constraint firstItem="deg-R7-fLh" firstAttribute="top" secondItem="S3d-ag-sxl" secondAttribute="top" constant="58" id="pFE-9d-8iJ"/>
                             <constraint firstItem="q1o-9L-fbv" firstAttribute="top" secondItem="deg-R7-fLh" secondAttribute="bottom" id="rx5-tq-qNx"/>
                             <constraint firstItem="cCJ-a0-Smx" firstAttribute="top" secondItem="S3d-ag-sxl" secondAttribute="top" id="vxD-6y-e1A"/>
                         </constraints>

@@ -21,6 +21,8 @@ class Day1CompassViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK:- Variable Part
     
+    var index : Int = 0
+    
     // 나침반을 위한 변수
     let east = 90
     var locManager = CLLocationManager()
@@ -142,7 +144,15 @@ class Day1CompassViewController: UIViewController, CLLocationManagerDelegate {
         UIView.animate(withDuration: 0, animations: {
             self.imgCompass.transform = CGAffineTransform(rotationAngle: -.pi/2)
         })
+        
+        
+        NotificationCenter.default.post(name: NSNotification.Name("compassComplete"), object: index)
+
+        dismiss(animated: true, completion: nil)
+
     }
+    
+    
     
     
 }
