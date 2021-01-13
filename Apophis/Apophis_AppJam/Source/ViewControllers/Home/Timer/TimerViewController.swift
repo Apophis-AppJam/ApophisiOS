@@ -200,7 +200,7 @@ class TimerViewController: UIViewController {
                 /** 1초마다 timerCallback함수를 호출하는 타이머 */
                 mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
                 
-                distanceTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(distanceCount), userInfo: nil, repeats: true)
+                distanceTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(distanceCount), userInfo: nil, repeats: true)
                 
             }
         }else{
@@ -208,7 +208,7 @@ class TimerViewController: UIViewController {
             /** 1초마다 timerCallback함수를 호출하는 타이머 */
             mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
             
-            distanceTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(distanceCount), userInfo: nil, repeats: true)
+            distanceTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(distanceCount), userInfo: nil, repeats: true)
         }
         
         UIView.animate(withDuration: 1.5, delay: 1, options: .curveEaseIn, animations: {
@@ -229,7 +229,7 @@ class TimerViewController: UIViewController {
     
     @objc func distanceCount()
     {
-        remainCountInMilli -= 0.1
+        remainCountInMilli -= 0.01
         let day = UserDefaults.standard.integer(forKey: "remainUserDay")
         let second = day * 86400
         let percent = (Float(second) + remainCountInMilli) / Float(604800)
@@ -240,7 +240,7 @@ class TimerViewController: UIViewController {
     }
     
     let normalize: ((Float) -> Float) = { (input) in
-        return round(input * 1000) / 1000
+        return round(input * 1000) / 10000
     } // 소수점 3자리까지 처리 하는 함수
     
     

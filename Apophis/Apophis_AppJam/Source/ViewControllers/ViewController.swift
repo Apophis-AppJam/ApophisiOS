@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         playAudio()
 
+
+ 
         
         
         day1Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
@@ -62,6 +64,7 @@ class ViewController: UIViewController {
         
     }
     
+
     
     func playAudio()
     {

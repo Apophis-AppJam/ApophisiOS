@@ -49,13 +49,32 @@ class HomeViewController: UIViewController {
     
     @IBAction func settingButtonClicked(_ sender: Any) {
         
+        
+        
+        guard let timerVC = self.storyboard?.instantiateViewController(identifier: "SettingViewController") as? SettingViewController else {return}
+        
+        
+        self.navigationController?.pushViewController(timerVC, animated: true)
     }
     
     
     @IBAction func bucketListButtonClicked(_ sender: Any) {
         
+        guard let bucketVC = self.storyboard?.instantiateViewController(identifier: "BucketListViewController") as? BucketListViewController else {return}
+        
+        self.navigationController?.pushViewController(bucketVC, animated: true)
+        
     }
     
+    
+    
+    @IBAction func letterButtonClicked(_ sender: Any) {
+        
+        guard let letterVC = self.storyboard?.instantiateViewController(identifier: "LetterViewController") as? LetterViewController else {return}
+        
+        self.navigationController?.pushViewController(letterVC, animated: true)
+        
+    }
     
     
     //MARK:- default Setting Function Part
