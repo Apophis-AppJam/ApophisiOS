@@ -18,6 +18,7 @@ class ChatYourMessageCell: UITableViewCell {
     
     var check: Bool = false
     
+    
     //MARK:- Variable Part
 
     var loadingView = AnimationView()
