@@ -50,7 +50,7 @@ class IntroNewsViewController: UIViewController {
         
         
         
-        let time = DispatchTime.now() + .seconds(5)
+        let time = DispatchTime.now() + .seconds(20)
         DispatchQueue.main.asyncAfter(deadline: time) {
             
             

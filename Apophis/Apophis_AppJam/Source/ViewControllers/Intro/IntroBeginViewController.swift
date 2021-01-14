@@ -25,6 +25,7 @@ class IntroBeginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setFont()
 
     }
     
@@ -32,6 +33,14 @@ class IntroBeginViewController: UIViewController {
     
     @IBAction func startButtonClicked(_ sender: Any) {
         
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        guard let homeVC = storyboard.instantiateViewController(identifier: "HomeNavigationController") as? HomeNavigationController else {return}
+        
+        homeVC.modalPresentationStyle = .fullScreen
+        homeVC.modalTransitionStyle = .crossDissolve
+        
+        self.present(homeVC, animated: true, completion: nil)
         
     }
     

@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,15 +130,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TC2-bl-nLW">
-                                <rect key="frame" x="192" y="434" width="30" height="30"/>
-                                <state key="normal" title="홈">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="homeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9HF-pZ-bJj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -146,7 +137,6 @@
                             <constraint firstItem="Ecl-ay-wJg" firstAttribute="top" secondItem="BrA-gH-FeY" secondAttribute="bottom" constant="40" id="34O-t9-dA3"/>
                             <constraint firstItem="L8m-0O-0Eb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="5zK-Uf-o06"/>
                             <constraint firstItem="dVL-Eh-aOn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6jH-ft-kYT"/>
-                            <constraint firstItem="TC2-bl-nLW" firstAttribute="top" secondItem="XjR-ox-zEc" secondAttribute="bottom" constant="40" id="9V5-W4-QkF"/>
                             <constraint firstItem="XjR-ox-zEc" firstAttribute="top" secondItem="Td9-Sn-64D" secondAttribute="bottom" constant="40" id="AEd-CE-s6C"/>
                             <constraint firstItem="XjR-ox-zEc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BAq-TL-sF1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ilu-qH-ezT" secondAttribute="trailing" constant="50" id="CdH-RS-UqR"/>
@@ -159,7 +149,6 @@
                             <constraint firstItem="NrR-Mw-Dv3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="MIv-a2-xpq"/>
                             <constraint firstItem="Td9-Sn-64D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NcO-Qp-ZSt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L8m-0O-0Eb" secondAttribute="trailing" constant="70" id="Tnp-au-gFD"/>
-                            <constraint firstItem="TC2-bl-nLW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ukc-MC-lUg"/>
                             <constraint firstItem="Td9-Sn-64D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="a9b-AY-hyA"/>
                             <constraint firstItem="vor-gz-SfB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aZu-Q7-saG"/>
                             <constraint firstItem="ilu-qH-ezT" firstAttribute="top" secondItem="m32-xm-aQ8" secondAttribute="bottom" constant="8" symbolic="YES" id="dkT-wy-mvD"/>
@@ -180,7 +169,6 @@
                     <navigationItem key="navigationItem" id="4Fc-IE-Qv8"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="HomeButton" destination="TC2-bl-nLW" id="LOz-wt-6Ob"/>
                         <outlet property="day1Button" destination="BrA-gH-FeY" id="Oh2-De-1b8"/>
                         <outlet property="day2Button" destination="Td9-Sn-64D" id="r7H-W4-4ty"/>
                         <outlet property="day3Button" destination="L8m-0O-0Eb" id="e40-vE-zSG"/>
@@ -583,10 +571,10 @@
             </objects>
             <point key="canvasLocation" x="-1430.4347826086957" y="91.741071428571431"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Lab Navigation Controller-->
         <scene sceneID="DsJ-rI-rFf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PF2-66-Ojr" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LabNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="PF2-66-Ojr" customClass="LabNavigationController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4gS-Sa-fJV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

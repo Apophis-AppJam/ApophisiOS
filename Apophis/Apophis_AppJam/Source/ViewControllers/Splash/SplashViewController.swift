@@ -28,6 +28,26 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         play()
+        
+        
+        
+        let time = DispatchTime.now() + .seconds(2)
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            
+            if UserDefaults.standard.bool(forKey: "isOnboardingComplete") == true
+            {
+                self.goToNews()
+                UserDefaults.standard.setValue(true, forKey: "isOnboardingComplete")
+            }
+            else
+            {
+                self.goToHome()
+            }
+  
+            
+            
+        }
+        
     }
     
     //MARK:- IBAction Part
@@ -53,6 +73,46 @@ class SplashViewController: UIViewController {
         splashView.addSubview(loadingView)
         
         
+    }
+    
+    func goToNews()
+    {
+        let storyboard = UIStoryboard(name: "Intro", bundle: nil)
+        guard let newsVC = storyboard.instantiateViewController(identifier: "IntroNavigationController") as? IntroNavigationController else {return}
+        
+        newsVC.modalPresentationStyle = .fullScreen
+        newsVC.modalTransitionStyle = .crossDissolve
+        self.present(newsVC, animated: true, completion: nil)
+
+    }
+    
+    func goToLoginView()
+    {
+        
+    }
+    
+    
+    
+    func goToHome()
+    {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        guard let homeVC = storyboard.instantiateViewController(identifier: "HomeNavigationController") as? HomeNavigationController else {return}
+        
+        homeVC.modalPresentationStyle = .fullScreen
+        homeVC.modalTransitionStyle = .crossDissolve
+        self.present(homeVC, animated: true, completion: nil)
+    }
+    
+    func goToLabs()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let labVC = storyboard.instantiateViewController(identifier: "LabNavigationController") as? LabNavigationController else {return}
+        
+        labVC.modalPresentationStyle = .fullScreen
+        labVC.modalTransitionStyle = .crossDissolve
+        self.present(labVC, animated: true, completion: nil)
     }
 
 }

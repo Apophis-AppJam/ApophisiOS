@@ -68,6 +68,8 @@ class TimerViewController: UIViewController {
 
         
         
+        UserDefaults.standard.setValue(6, forKey: "remainUserDay")
+        
         dayLabel.alpha = 0
         hourLabel.alpha = 0
         minuteLabel.alpha = 0
@@ -88,8 +90,6 @@ class TimerViewController: UIViewController {
 
         
         
-        
-        UserDefaults.standard.setValue(6, forKey: "remainUserDay")
         
  
 

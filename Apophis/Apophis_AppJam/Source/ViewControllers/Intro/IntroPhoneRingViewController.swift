@@ -7,6 +7,12 @@
 
 import UIKit
 import AudioToolbox
+import Lottie
+
+import AVFoundation
+
+var soundEffect: AVAudioPlayer?
+
 
 class IntroPhoneRingViewController: UIViewController {
 
@@ -14,6 +20,9 @@ class IntroPhoneRingViewController: UIViewController {
     
     //MARK:- IBOutlet Part
 
+    
+    @IBOutlet weak var starLottieView: UIView!
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
@@ -76,13 +85,14 @@ class IntroPhoneRingViewController: UIViewController {
         makeText()
         vibrate()
         
-        
-        
-        
+
         chatBackgroundView.alpha = 0
         chatLabel.alpha = 0
         
-        
+
+
+
+      
 
         
         
@@ -96,7 +106,27 @@ class IntroPhoneRingViewController: UIViewController {
     @IBAction func phoneButtonClicked(_ sender: Any) {
         
         if mode == 0
-        {
+        {    let loadingView = AnimationView()
+            
+            Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { timer in
+               
+     
+               loadingView.frame = self.starLottieView.bounds
+               loadingView.animation = Animation.named("fallingstar")
+               loadingView.contentMode = .scaleAspectFit
+               loadingView.loopMode = .loop
+               
+               
+               self.starLottieView.addSubview(loadingView)
+                
+                loadingView.play()
+               
+               
+           })
+            
+            
+            
+            playAudio()
             mTimer?.invalidate()
             self.chatBackgroundView.isHidden = false
             self.circleButtonDescriptionLabel.text = "끊기"
@@ -104,7 +134,7 @@ class IntroPhoneRingViewController: UIViewController {
             
        
         
-            UIView.animateKeyframes(withDuration: 58, delay: 0, options: .beginFromCurrentState) {
+            UIView.animateKeyframes(withDuration: 50, delay: 0, options: .beginFromCurrentState) {
        
                 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1.0/116.0,animations: {
@@ -262,10 +292,15 @@ class IntroPhoneRingViewController: UIViewController {
         }
         else if self.mode == 1
         {
+            print("여긴 되고 있음")
 //            self.mode = 0
             guard let startVC = self.storyboard?.instantiateViewController(identifier: "IntroBeginViewController") as? IntroBeginViewController else {return}
             
-            self.navigationController?.pushViewController(startVC, animated: true)
+            startVC.modalTransitionStyle = .crossDissolve
+            startVC.modalPresentationStyle = .fullScreen
+            
+            self.present(startVC, animated: true, completion: nil)
+            
         }
       
         
@@ -359,6 +394,38 @@ class IntroPhoneRingViewController: UIViewController {
 
     
     //MARK:- Function Part
+    
+    
+    
+    func playAudio()
+     {
+
+         let url = Bundle.main.url(forResource: "main_bgm", withExtension: "mp3")
+
+         if let url = url{
+
+
+             do {
+
+                 soundEffect = try AVAudioPlayer(contentsOf: url)
+
+                 guard let sound = soundEffect else { return }
+                 sound.numberOfLoops = 100
+
+
+                 sound.play()
+
+             } catch let error {
+
+                 print(error.localizedDescription)
+
+             }
+
+         }
+
+     }
+
+    
     
     
     func rotateAnimation(imageView:UIImageView,duration: CFTimeInterval = 200) {
