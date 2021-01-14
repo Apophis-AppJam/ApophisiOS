@@ -11,15 +11,17 @@ import AudioToolbox
 
 class ChatYourMessageCell: UITableViewCell {
     //MARK:- IBOutlet Part
-
+    
     @IBOutlet weak var waitMessageImageView: UIImageView!
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var messageBackgroundImageView: UIImageView!
     
     var check: Bool = false
+    
+    
     //MARK:- Variable Part
 
-    let loadingView = AnimationView()
+    var loadingView = AnimationView()
     
     //MARK:- Constraint Part
 
@@ -77,12 +79,19 @@ class ChatYourMessageCell: UITableViewCell {
     {
         NotificationCenter.default.post(name: NSNotification.Name("setSnowBackground"), object: nil)
     }
+    func setSeaBackground()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("setSeaBackground"), object: nil)
+    }
     
-
-    func loadingAnimate(index : Int, vibrate : Bool)
+    func setHandDrawing()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("setHandDrawing"), object: nil)
+    }
+    
+    func startHandDrawing()
     {
         
-        NotificationCenter.default.post(name: NSNotification.Name("scrollToBottom"), object: nil)
         self.check = false
         
         
@@ -119,10 +128,59 @@ class ChatYourMessageCell: UITableViewCell {
                 })
             
         } completion: { (_) in
+            
+            self.loadingView.stop()
+            // 애니메이션이 끝날 때 post를 해주는데, 그 때 object에 index값을 넣어서 쏜다.
+            // 여기서 index는 loadingAnimate를 호출할 때 받아온다.
+            
+            NotificationCenter.default.post(name: NSNotification.Name("startHandDrawing"), object: nil)
+            
+            
+        }
+    }
+
+    func loadingAnimate(index : Int, vibrate : Bool)
+    {
+        
+        self.check = false
+        
+        
+        loadingView = AnimationView()
+        loadingView.frame = waitMessageImageView.bounds
+        loadingView.animation = Animation.named("message_loading")
+        loadingView.contentMode = .scaleAspectFit
+        loadingView.loopMode = .loop
+        loadingView.play()
+        
+        waitMessageImageView.addSubview(loadingView)
+        
+        
+
+        UIView.animateKeyframes(withDuration: 4, delay: 0, options: .allowUserInteraction) {
+            
+
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
+                    self.waitMessageImageView.alpha = 1
+                    
+                })
+                
+                UIView.addKeyframe(withRelativeStartTime: 10/12, relativeDuration: 1/12, animations: {
+                    self.waitMessageImageView.alpha = 0
+                    
+                })
+            
+                UIView.addKeyframe(withRelativeStartTime: 11/12, relativeDuration: 1/12, animations: {
+                    self.messageTextView.alpha = 1
+                    self.messageBackgroundImageView.alpha = 1
+                    self.check = true
+                })
+            
+        } completion: { (_) in
             self.loadingView.stop()
             // 애니메이션이 끝날 때 post를 해주는데, 그 때 object에 index값을 넣어서 쏜다.
             // 여기서 index는 loadingAnimate를 호출할 때 받아온다.
             NotificationCenter.default.post(name: NSNotification.Name("AponimousMessageEnd"), object: index)
+
             
             if self.check && vibrate {
                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -166,7 +224,21 @@ class ChatYourMessageCell: UITableViewCell {
 
     }
     
+    func shutterSound()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("shutterSound"), object: nil)
+    }
     
+    func shutterAnimation()
+    {
+        
+        NotificationCenter.default.post(name: NSNotification.Name("shutterAnimation"), object: nil)
+    }
+    
+    func lightBackground()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("lightBackground"), object: nil)
+    }
 
     //MARK:- Function Part
 

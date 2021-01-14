@@ -64,13 +64,19 @@ enum messageTypeList
     
     //MARK:- 유경 PART
     case enterName
+    case setHandDrawing
+    case normalWithHandDrawing
+    case normalWithStartHandDrawing
     case voiceRecordButton
     case colorPicker
+    case shutterSound
+    case shutterAnimation
+    case lightBackground
 
     
     //MARK:- 영재 PART
     case compassButton
-    case camera
+    case cameraButton
     case select1
     case select1In3
     case selectAdjective
@@ -87,6 +93,8 @@ enum messageTypeList
     
     case normalWithSnow
     case normalWithSea
+    
+    case selectValue
     
     
     
