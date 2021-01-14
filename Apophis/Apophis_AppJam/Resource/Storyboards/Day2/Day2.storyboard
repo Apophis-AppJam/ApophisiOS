@@ -513,6 +513,7 @@
                         <outlet property="chatTableView" destination="mTR-MK-PxU" id="N4E-nH-oc3"/>
                         <outlet property="headerTitle" destination="y1N-NH-NOG" id="Ost-7X-mHv"/>
                         <outlet property="headerView" destination="DKc-Qi-r4b" id="vo4-be-TY3"/>
+                        <outlet property="ligthImageView" destination="IJI-Ey-fI9" id="nxe-gC-wRm"/>
                         <outlet property="messageInputAreaBottomConstraint" destination="FFk-tV-v7A" id="ith-sj-ap9"/>
                         <outlet property="messageInputAreaHeightConstraint" destination="shh-bG-3a4" id="pfr-Sc-Cb8"/>
                         <outlet property="messageInputView" destination="Cfs-63-EuU" id="eQT-KH-fm5"/>

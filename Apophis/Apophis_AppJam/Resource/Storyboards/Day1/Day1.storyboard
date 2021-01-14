@@ -350,7 +350,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youngjae" translatesAutoresizingMaskIntoConstraints="NO" id="cXR-yv-prQ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yukyung" translatesAutoresizingMaskIntoConstraints="NO" id="cXR-yv-prQ">
                                                     <rect key="frame" x="8" y="8" width="132" height="191.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="191" id="FU6-ft-U3h"/>
@@ -524,7 +524,7 @@
                                     <fragment content="동쪽">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="18" name="GmarketSansTTFMedium"/>
+                                            <font key="NSFont" metaFont="system" size="18"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -587,7 +587,8 @@
         <image name="chatMessageBackground" width="32.5" height="34"/>
         <image name="selected_answer_background" width="32.5" height="34"/>
         <image name="snowBG" width="375" height="667"/>
-        <image name="youngjae" width="145" height="128"/>
+        <image name="youngjae" width="96.666664123535156" height="85.333335876464844"/>
+        <image name="yukyung" width="98.333335876464844" height="84"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

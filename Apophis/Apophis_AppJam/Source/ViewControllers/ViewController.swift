@@ -132,6 +132,11 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Day7", bundle: nil)
 
         guard let vc = storyboard.instantiateViewController(identifier: "Day7ViewController") as? Day7ViewController else  {return}
+    @IBAction func goToDay6Sample(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Day6", bundle: nil)
+
+        guard let vc = storyboard.instantiateViewController(identifier: "Day6ViewController") as? Day6ViewController else  {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
         
