@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "ios_login-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "ios_login-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -10,8 +10,6 @@ import UIKit
 import AVFoundation
 
 
-var soundEffect: AVAudioPlayer?
-
 // 실험실 전용 뷰컨이라서 마구잡이로 쓸 예정임 !
 class ViewController: UIViewController {
     
@@ -24,7 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var day5Button: UIButton!
     @IBOutlet weak var day6Button: UIButton!
     @IBOutlet weak var day7Button: UIButton!
-    @IBOutlet weak var HomeButton: UIButton!
+
     @IBOutlet weak var yukyungButton: UIButton!
     @IBOutlet weak var youngjaeButton: UIButton!
     @IBOutlet weak var jihunButton: UIButton!
@@ -32,9 +30,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playAudio()
-        
-        
+
+
         
         
         
@@ -45,7 +42,6 @@ class ViewController: UIViewController {
         day5Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
         day6Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
         day7Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
-        HomeButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
         yukyungButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         youngjaeButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         jihunButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 14)
@@ -63,40 +59,9 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
     }
-    
-    
-    
-    func playAudio()
-    {
-        
-        let url = Bundle.main.url(forResource: "main_bgm", withExtension: "mp3")
-        
-        if let url = url{
-            
-            
-            do {
-                
-                soundEffect = try AVAudioPlayer(contentsOf: url)
-                
-                guard let sound = soundEffect else { return }
-                sound.numberOfLoops = 100
-                
-                
-                sound.play()
-                
-            } catch let error {
-                
-                print(error.localizedDescription)
-                
-            }
-            
-        }
-        
-    }
-    
-    
-    
-    
+
+
+
     @IBAction func goToSample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day1", bundle: nil)
@@ -127,6 +92,7 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+
     @IBAction func goToDay7Sample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day7", bundle: nil)
