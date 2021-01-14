@@ -48,6 +48,8 @@ class Day6ViewController: UIViewController {
     var soundEffect: AVAudioPlayer?
     
     var shutterView = AnimationView()
+    
+    var lightCheck = false
 
     //MARK:- Constraint Part
 
@@ -209,7 +211,7 @@ class Day6ViewController: UIViewController {
                 newMessageList.append(ChatMessageNewDataModel(messageContent: messageTextInputView.text,
                                                               isMine: true,
                                                               isLastMessage: false,
-                                                              nextMessageType: .normal,
+                                                              nextMessageType: .userAnswerWithComplete,
                                                               type: .userAnswerWithComplete,
                                                               dataList: [],
                                                               chatDetailsIdx: newMessageList[newMessageList.count - 1].chatDetailsIdx))
@@ -217,7 +219,7 @@ class Day6ViewController: UIViewController {
                 messageListForTableView.append(ChatMessageNewDataModel(messageContent: messageTextInputView.text,
                                                                        isMine: true,
                                                                        isLastMessage: false,
-                                                                       nextMessageType: .normal,
+                                                                       nextMessageType: .userAnswerWithComplete,
                                                                        type: .userAnswerWithComplete,
                                                                        dataList: [],
                                                                        chatDetailsIdx: newMessageList[newMessageList.count - 1].chatDetailsIdx))
@@ -229,6 +231,8 @@ class Day6ViewController: UIViewController {
                 
                 DispatchQueue.global().sync {
                     chatTableView.insertRows(at: [finalIndex], with: .none)
+                    
+                    
                 }
 //                chatTableView.scrollToBottom()
                 
@@ -1238,11 +1242,15 @@ class Day6ViewController: UIViewController {
            //실행
         shutterView.play()
            //view안에 Subview로 넣어준다,
+        
         self.view.addSubview(shutterView)
         
-        
-        
-       }
+        let time = DispatchTime.now() + .seconds(2)
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            self.shutterView.removeFromSuperview()
+        }
+
+    }
     
     @objc func shutterSound()
     {
@@ -1627,17 +1635,20 @@ extension Day6ViewController : UITableViewDataSource
                 
             case .shutterAnimation :
                 
+                
                 guard let shutterAnimationCell =
                         tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
                         as? ChatYourMessageCell
                 else {return UITableViewCell() }
-                
                 
                 shutterAnimationCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 shutterAnimationCell.selectionStyle = .none
                 shutterAnimationCell.backgroundColor = .clear
                 shutterAnimationCell.shutterSound()
                 shutterAnimationCell.shutterAnimation()
+                
+                
+                
                 print("셔터애니메이션")
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -1663,6 +1674,7 @@ extension Day6ViewController : UITableViewDataSource
                 
             case .lightBackground :
                 
+                
                 guard let lightCell =
                         tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
                         as? ChatYourMessageCell
@@ -1670,10 +1682,15 @@ extension Day6ViewController : UITableViewDataSource
                 
                 
                 lightCell.setMessage(message: newMessageList[indexPath.row].messageContent)
-                lightCell.selectionStyle = .none
-                lightCell.backgroundColor = .clear
-                lightCell.lightBackground()
-                print("찰나")
+                
+                if lightCheck == false {
+                    
+                    lightCheck = true
+                    lightCell.selectionStyle = .none
+                    lightCell.backgroundColor = .clear
+                    lightCell.lightBackground()
+                    
+                }
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
