@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
- 
+        
         
         
         day1Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
@@ -62,12 +62,10 @@ class ViewController: UIViewController {
 
 
 
-
-
     @IBAction func goToSample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day1", bundle: nil)
-
+        
         guard let vc = storyboard.instantiateViewController(identifier: "Day1ViewController") as? Day1ViewController else  {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -78,7 +76,7 @@ class ViewController: UIViewController {
     @IBAction func goToDay2Sample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day2", bundle: nil)
-
+        
         guard let vc = storyboard.instantiateViewController(identifier: "Day2ViewController") as? Day2ViewController else  {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -88,13 +86,43 @@ class ViewController: UIViewController {
     @IBAction func goToDay3Sample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day3", bundle: nil)
-
+        
         guard let vc = storyboard.instantiateViewController(identifier: "Day3ViewController") as? Day3ViewController else  {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
 
+    @IBAction func goToDay7Sample(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Day7", bundle: nil)
+        
+        guard let vc = storyboard.instantiateViewController(identifier: "Day7ViewController") as? Day7ViewController else  {return}
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+
+        
+    }
+    @IBAction func goToDay6Sample(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Day6", bundle: nil)
+        
+        guard let vc = storyboard.instantiateViewController(identifier: "Day6ViewController") as? Day6ViewController else  {return}
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
+    @IBAction func homeButtonClicked(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        guard let homeVC = storyboard.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else {return}
+        
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    
     
 }
-

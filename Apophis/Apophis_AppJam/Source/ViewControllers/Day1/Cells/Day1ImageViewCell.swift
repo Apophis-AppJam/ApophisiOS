@@ -27,13 +27,39 @@ class Day1ImageViewCell: UITableViewCell {
     
     func setPictureImage(ImgName: UIImage!){
         pictureImage.image = ImgName
-        print("이거 잘 되고 있는거 맞지??", pictureImage)
     }
     
     func setImageView(){
         
         pictureImage.layer.cornerRadius = 8.5
         pictureImage.layer.masksToBounds = true
+    }
+    
+    func loadingAnimate(idx : Int)
+    {
+        
+        NotificationCenter.default.post(name: NSNotification.Name("scrollToBottom"), object: nil)
+        
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
+            
+            
+            
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1,animations: {
+                
+                self.pictureImage.alpha = 1
+            })
+            
+        } completion: { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
+
+        }
+        
+        
+        
+    }
+    func showMessageWithNoAnimation()
+    {
+        pictureImage.alpha = 1
     }
 
 }

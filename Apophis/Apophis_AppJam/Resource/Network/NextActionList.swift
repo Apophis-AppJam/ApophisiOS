@@ -35,10 +35,23 @@ func nextActionFromKorean(nextAction : String) -> messageTypeList
     {
         return .normalWithSnow
     }
+    else if nextAction == "백그라운드 이미지 반짝"
+    {
+        return .lightBackground
+    }
     else if nextAction == "음성송출"
     {
         return .voice
     }
+    else if nextAction == "진동, 찰칵 음성"
+    {
+        return .shutterSound
+    }
+    else if nextAction == "진동, 찰칵 음성, 애니메이션-카메라 조리개"
+    {
+        return .shutterAnimation
+    }
+    
     else
     {
         return .normal

@@ -34,7 +34,7 @@ class SplashViewController: UIViewController {
         let time = DispatchTime.now() + .seconds(2)
         DispatchQueue.main.asyncAfter(deadline: time) {
             
-            if UserDefaults.standard.bool(forKey: "isOnboardingComplete") == true
+            if UserDefaults.standard.bool(forKey: "isOnboardingComplete") == false
             {
                 self.goToNews()
                 UserDefaults.standard.setValue(true, forKey: "isOnboardingComplete")

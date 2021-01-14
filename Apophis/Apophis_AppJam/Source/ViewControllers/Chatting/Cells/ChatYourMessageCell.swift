@@ -11,12 +11,14 @@ import AudioToolbox
 
 class ChatYourMessageCell: UITableViewCell {
     //MARK:- IBOutlet Part
-
+    
     @IBOutlet weak var waitMessageImageView: UIImageView!
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var messageBackgroundImageView: UIImageView!
     
     var check: Bool = false
+    
+    
     //MARK:- Variable Part
 
     var loadingView = AnimationView()
@@ -222,7 +224,21 @@ class ChatYourMessageCell: UITableViewCell {
 
     }
     
+    func shutterSound()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("shutterSound"), object: nil)
+    }
     
+    func shutterAnimation()
+    {
+        
+        NotificationCenter.default.post(name: NSNotification.Name("shutterAnimation"), object: nil)
+    }
+    
+    func lightBackground()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("lightBackground"), object: nil)
+    }
 
     //MARK:- Function Part
 
