@@ -154,23 +154,20 @@ class ChatYourMessageCell: UITableViewCell {
         
         
 
-        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 4, delay: 0, options: .allowUserInteraction) {
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
-                    
                     self.waitMessageImageView.alpha = 1
                     
                 })
                 
                 UIView.addKeyframe(withRelativeStartTime: 10/12, relativeDuration: 1/12, animations: {
-                    
                     self.waitMessageImageView.alpha = 0
                     
                 })
             
                 UIView.addKeyframe(withRelativeStartTime: 11/12, relativeDuration: 1/12, animations: {
-                    
                     self.messageTextView.alpha = 1
                     self.messageBackgroundImageView.alpha = 1
                     self.check = true

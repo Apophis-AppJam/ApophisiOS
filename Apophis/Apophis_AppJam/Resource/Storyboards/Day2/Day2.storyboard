@@ -217,6 +217,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="selectButtonCollectionView" destination="0aa-QF-sAG" id="oSP-Jz-FN1"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day2CircleButtonCell" rowHeight="43" id="Giw-7J-9Oi" customClass="Day2CircleButtonCell" customModule="Apophis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="374" width="375" height="43"/>

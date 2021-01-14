@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class TimerViewController: UIViewController {
     
     
@@ -199,6 +201,7 @@ class TimerViewController: UIViewController {
             if !timer.isValid {
                 /** 1초마다 timerCallback함수를 호출하는 타이머 */
                 mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+                
                 
                 distanceTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(distanceCount), userInfo: nil, repeats: true)
                 

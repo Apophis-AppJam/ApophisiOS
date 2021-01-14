@@ -35,6 +35,12 @@
 		FD41369825AEC1A40041B5B1 /* LetterWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41369725AEC1A40041B5B1 /* LetterWriteViewController.swift */; };
 		FD41369B25AEC97A0041B5B1 /* textView Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41369A25AEC97A0041B5B1 /* textView Spacing.swift */; };
 		FD4136A525AF00A20041B5B1 /* BucketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4136A425AF00A20041B5B1 /* BucketListViewController.swift */; };
+		FD4136AB25AFBE1D0041B5B1 /* IntroBeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4136AA25AFBE1D0041B5B1 /* IntroBeginViewController.swift */; };
+		FD4136AF25B026130041B5B1 /* apophis_splash.json in Resources */ = {isa = PBXBuildFile; fileRef = FD4136AD25B026130041B5B1 /* apophis_splash.json */; };
+		FD4136B025B026130041B5B1 /* fallingstar.json in Resources */ = {isa = PBXBuildFile; fileRef = FD4136AE25B026130041B5B1 /* fallingstar.json */; };
+		FD4136C525B0358B0041B5B1 /* bg_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = FD4136C225B0358A0041B5B1 /* bg_splash.png */; };
+		FD4136C625B0358B0041B5B1 /* bg_splash@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD4136C325B0358A0041B5B1 /* bg_splash@3x.png */; };
+		FD4136C725B0358B0041B5B1 /* bg_splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD4136C425B0358B0041B5B1 /* bg_splash@2x.png */; };
 		FD52077225998F7F00AAD1BA /* Day1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD52077125998F7F00AAD1BA /* Day1.storyboard */; };
 		FD5207772599960800AAD1BA /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5207762599960800AAD1BA /* SampleView.swift */; };
 		FD52078725999C8F00AAD1BA /* Day1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52078625999C8F00AAD1BA /* Day1ViewController.swift */; };
@@ -135,6 +141,12 @@
 		FD41369725AEC1A40041B5B1 /* LetterWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterWriteViewController.swift; sourceTree = "<group>"; };
 		FD41369A25AEC97A0041B5B1 /* textView Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "textView Spacing.swift"; sourceTree = "<group>"; };
 		FD4136A425AF00A20041B5B1 /* BucketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListViewController.swift; sourceTree = "<group>"; };
+		FD4136AA25AFBE1D0041B5B1 /* IntroBeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroBeginViewController.swift; sourceTree = "<group>"; };
+		FD4136AD25B026130041B5B1 /* apophis_splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apophis_splash.json; sourceTree = "<group>"; };
+		FD4136AE25B026130041B5B1 /* fallingstar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fallingstar.json; sourceTree = "<group>"; };
+		FD4136C225B0358A0041B5B1 /* bg_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_splash.png; sourceTree = "<group>"; };
+		FD4136C325B0358A0041B5B1 /* bg_splash@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_splash@3x.png"; sourceTree = "<group>"; };
+		FD4136C425B0358B0041B5B1 /* bg_splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_splash@2x.png"; sourceTree = "<group>"; };
 		FD52077125998F7F00AAD1BA /* Day1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day1.storyboard; sourceTree = "<group>"; };
 		FD5207762599960800AAD1BA /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		FD52078625999C8F00AAD1BA /* Day1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ViewController.swift; sourceTree = "<group>"; };
@@ -567,7 +579,12 @@
 		FDA98B632596EDA200F4DFDF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FD4136AD25B026130041B5B1 /* apophis_splash.json */,
+				FD4136AE25B026130041B5B1 /* fallingstar.json */,
 				FD5F3C1925AD92AD007BD93C /* main_bgm.mp3 */,
+				FD4136C225B0358A0041B5B1 /* bg_splash.png */,
+				FD4136C425B0358B0041B5B1 /* bg_splash@2x.png */,
+				FD4136C325B0358A0041B5B1 /* bg_splash@3x.png */,
 				FD5F3C1625AD8020007BD93C /* message_loading.json */,
 				FDD09229259AF58100B92529 /* sampleVideo.mp4 */,
 				FD0715752596E99700940094 /* Assets.xcassets */,
@@ -726,6 +743,7 @@
 				FDD0922C259B019A00B92529 /* Cells */,
 				FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */,
 				FDD09239259B3CD600B92529 /* IntroPhoneRingViewController.swift */,
+				FD4136AA25AFBE1D0041B5B1 /* IntroBeginViewController.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -812,11 +830,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */,
+				FD4136AF25B026130041B5B1 /* apophis_splash.json in Resources */,
 				FD52078D2599A60200AAD1BA /* GmarketSansTTFBold.ttf in Resources */,
 				FD52078E2599A60200AAD1BA /* GmarketSansTTFLight.ttf in Resources */,
 				FDE05A6425A866F300E92E1B /* Home.storyboard in Resources */,
 				FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */,
 				FD5207AA2599AF5900AAD1BA /* Day2.storyboard in Resources */,
+				FD4136B025B026130041B5B1 /* fallingstar.json in Resources */,
 				FD5207B02599AF6800AAD1BA /* Day4.storyboard in Resources */,
 				FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */,
 				FD52077225998F7F00AAD1BA /* Day1.storyboard in Resources */,
@@ -824,6 +844,7 @@
 				FCDE84AA25A57ADB003D288E /* Login.storyboard in Resources */,
 				FD0715792596E99700940094 /* LaunchScreen.storyboard in Resources */,
 				FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */,
+				FD4136C525B0358B0041B5B1 /* bg_splash.png in Resources */,
 				FD5207B62599AF7A00AAD1BA /* Day6.storyboard in Resources */,
 				FDD0922A259AF58100B92529 /* sampleVideo.mp4 in Resources */,
 				FD5F3C1725AD8020007BD93C /* message_loading.json in Resources */,
@@ -831,8 +852,10 @@
 				FD52078F2599A60200AAD1BA /* GmarketSansTTFMedium.ttf in Resources */,
 				FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */,
 				FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */,
+				FD4136C625B0358B0041B5B1 /* bg_splash@3x.png in Resources */,
 				FD0715762596E99700940094 /* Assets.xcassets in Resources */,
 				FD0715742596E99700940094 /* Main.storyboard in Resources */,
+				FD4136C725B0358B0041B5B1 /* bg_splash@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,6 +966,7 @@
 				FD5F3C1025AC90FB007BD93C /* Day2ConfirmValueViewController.swift in Sources */,
 				FD41369825AEC1A40041B5B1 /* LetterWriteViewController.swift in Sources */,
 				FDE05A5C25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift in Sources */,
+				FD4136AB25AFBE1D0041B5B1 /* IntroBeginViewController.swift in Sources */,
 				FCB278DF25ADCF6300A1979D /* Day3ColorViewController.swift in Sources */,
 				FDA98B7D25970D8A00F4DFDF /* SplashViewController.swift in Sources */,
 				FD52079D2599AEA100AAD1BA /* SampleTableViewCell.swift in Sources */,
@@ -1049,7 +1073,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1104,7 +1128,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
