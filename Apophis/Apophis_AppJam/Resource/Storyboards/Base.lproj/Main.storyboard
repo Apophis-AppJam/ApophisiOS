@@ -117,6 +117,9 @@
                                 <state key="normal" title="7일차">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="goToDay7Sample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iLR-bL-rzj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjR-ox-zEc">
                                 <rect key="frame" x="189.5" y="364" width="35" height="30"/>

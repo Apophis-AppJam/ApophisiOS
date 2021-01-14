@@ -697,14 +697,12 @@ class Day6ViewController: UIViewController {
             {
         
 
-                
                 loadMyMessage(idx: newMessageList[index].chatDetailsIdx,
                               type: newMessageList[index].nextMessageType) { (result) in
                     
                     if result
                     {
                         
-                        DispatchQueue.global().sync {
                             self.messageListForTableView.append(self.newMessageList[index+1])
                             
                             let indexPath = IndexPath(row: index + 1, section: 0)
@@ -712,8 +710,7 @@ class Day6ViewController: UIViewController {
                             self.chatTableView.beginUpdates()
                             self.chatTableView.insertRows(at: [indexPath], with: .none)
                             self.chatTableView.endUpdates()
-                        }
-                        
+                      
 //                        self.chatTableView.scrollToBottom()
         
                     }

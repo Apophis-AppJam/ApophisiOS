@@ -8,37 +8,38 @@
 import UIKit
 
 class Day2selectAnswerCell: UITableViewCell {
-
+    
     //MARK:- IBOutlet Part
-
+    
     @IBOutlet weak var selectButtonCollectionView: UICollectionView!
     // 버튼들을 넣을 collectionView
     
     //MARK:- Variable Part
-
+    
     var selectList : [String] = []
     var selectedBoolList : [Bool] = []
     var adjectiveCheck : Bool = false
-        
+    var adjectiveBoolList : [Bool] = []
+    
     
     //MARK:- Constraint Part
-
+    
     @IBOutlet weak var adjectiveCollectionViewHeight: NSLayoutConstraint!
     
     //MARK:- Life Cycle Part
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         selectButtonCollectionView.delegate = self
         selectButtonCollectionView.dataSource = self
-
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
     
@@ -46,14 +47,17 @@ class Day2selectAnswerCell: UITableViewCell {
     
     
     //MARK:- IBAction Part
-
+    
     
     //MARK:- default Setting Function Part
     
     func setSelectList(selectList : [String])
     {
+        adjectiveCheck = false
+        adjectiveCollectionViewHeight.constant = 40
+        
         selectedBoolList.removeAll()
-
+        
         self.selectList = selectList
         
         if selectList.count > 0
@@ -68,7 +72,7 @@ class Day2selectAnswerCell: UITableViewCell {
         selectButtonCollectionView.alpha = 0
         
         
-
+        
         selectButtonCollectionView.reloadData()
     }
     
@@ -76,6 +80,7 @@ class Day2selectAnswerCell: UITableViewCell {
     {
         adjectiveCheck = true
         adjectiveCollectionViewHeight.constant = 210
+        
         selectButtonCollectionView.isScrollEnabled = false
         if let layout = selectButtonCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
@@ -94,14 +99,11 @@ class Day2selectAnswerCell: UITableViewCell {
             
         }
         selectButtonCollectionView.alpha = 0
-        
-        
-
         selectButtonCollectionView.reloadData()
     }
     
     
-
+    
     
     func loadingAnimate(index : Int)
     {
@@ -113,7 +115,7 @@ class Day2selectAnswerCell: UITableViewCell {
                 self.selectButtonCollectionView.alpha = 1
                 
             })
-
+            
         } completion: { (_) in
         }
         
@@ -125,11 +127,11 @@ class Day2selectAnswerCell: UITableViewCell {
     }
     
     
-
+    
     
     //MARK:- Function Part
-
-
+    
+    
 }
 
 //MARK:- extension 부분
@@ -140,30 +142,57 @@ extension Day2selectAnswerCell : UICollectionViewDelegate
         
         /// 1,2,3 선택지 있다고 가정
         
-        
-        if selectedBoolList[indexPath.row] == false
-        {
-            selectedBoolList[indexPath.row] = true
-            
-            for i in 0 ... selectedBoolList.count - 1
+        if !adjectiveCheck{
+            if selectedBoolList[indexPath.row] == false
             {
-                if i == indexPath.row
+                selectedBoolList[indexPath.row] = true
+                
+                for i in 0 ... selectedBoolList.count - 1
                 {
-                    continue
+                    if i == indexPath.row
+                    {
+                        continue
+                    }
+                    else
+                    {
+                        selectedBoolList[i] = false
+                    }
                 }
-                else
-                {
-                    selectedBoolList[i] = false
+                self.selectButtonCollectionView.reloadData()
+                
+            }
+            
+            // 여기서 상위 뷰컨으로 유저가 선택한 메세지가 들어가야 합니다.
+            NotificationCenter.default.post(name: NSNotification.Name("receivedUserSelect"), object:
+                                                selectList[indexPath.row])}
+        
+        // 형용사 선택 부분
+        else {
+            // 형용사 선택할 때
+         
+                if selectedBoolList[indexPath.row] == false {
+                    if (adjectiveBoolList.count<3){
+                    selectedBoolList[indexPath.row] = true
+                    adjectiveBoolList.append(true)
+                   
+                    self.selectButtonCollectionView.reloadData()
+                    NotificationCenter.default.post(name: NSNotification.Name("receivedAdjectiveSelect"), object:
+                                                        selectList[indexPath.row])
                 }
             }
-            self.selectButtonCollectionView.reloadData()
+                // 형용사 선택 해제할 때
+                else {
+                    selectedBoolList[indexPath.row] = false
+                    selectButtonCollectionView.backgroundColor = .clear
+                    adjectiveBoolList.remove(at: adjectiveBoolList.count-1)
+                    self.selectButtonCollectionView.reloadData()
+                    NotificationCenter.default.post(name: NSNotification.Name("receivedAdjectiveUnselect"), object:
+                                                        selectList[indexPath.row])
+                }
+                
             
         }
         
-        // 여기서 상위 뷰컨으로 유저가 선택한 메세지가 들어가야 합니다.
-        NotificationCenter.default.post(name: NSNotification.Name("receivedUserSelect"), object:
-                                            selectList[indexPath.row])
-
     }
 }
 
@@ -180,7 +209,7 @@ extension Day2selectAnswerCell : UICollectionViewDataSource
         
         selectCell.setSelectData(isSelected: selectedBoolList[indexPath.row],
                                  title: selectList[indexPath.row])
-
+        
         return selectCell
     }
     
@@ -199,12 +228,12 @@ extension Day2selectAnswerCell : UICollectionViewDelegateFlowLayout
         
         return CGSize(width: label.frame.width + 20, height: 34)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
@@ -212,5 +241,5 @@ extension Day2selectAnswerCell : UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-        
+    
 }
