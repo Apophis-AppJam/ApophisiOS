@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PF2-66-Ojr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2uB-vr-fPl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,15 +136,6 @@
                                     <action selector="goToDay6Sample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pn1-Zj-f5f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TC2-bl-nLW">
-                                <rect key="frame" x="192" y="434" width="30" height="30"/>
-                                <state key="normal" title="홈">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="homeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9HF-pZ-bJj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -152,7 +143,6 @@
                             <constraint firstItem="Ecl-ay-wJg" firstAttribute="top" secondItem="BrA-gH-FeY" secondAttribute="bottom" constant="40" id="34O-t9-dA3"/>
                             <constraint firstItem="L8m-0O-0Eb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="5zK-Uf-o06"/>
                             <constraint firstItem="dVL-Eh-aOn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6jH-ft-kYT"/>
-                            <constraint firstItem="TC2-bl-nLW" firstAttribute="top" secondItem="XjR-ox-zEc" secondAttribute="bottom" constant="40" id="9V5-W4-QkF"/>
                             <constraint firstItem="XjR-ox-zEc" firstAttribute="top" secondItem="Td9-Sn-64D" secondAttribute="bottom" constant="40" id="AEd-CE-s6C"/>
                             <constraint firstItem="XjR-ox-zEc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BAq-TL-sF1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ilu-qH-ezT" secondAttribute="trailing" constant="50" id="CdH-RS-UqR"/>
@@ -165,7 +155,6 @@
                             <constraint firstItem="NrR-Mw-Dv3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="MIv-a2-xpq"/>
                             <constraint firstItem="Td9-Sn-64D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NcO-Qp-ZSt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L8m-0O-0Eb" secondAttribute="trailing" constant="70" id="Tnp-au-gFD"/>
-                            <constraint firstItem="TC2-bl-nLW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ukc-MC-lUg"/>
                             <constraint firstItem="Td9-Sn-64D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="a9b-AY-hyA"/>
                             <constraint firstItem="vor-gz-SfB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aZu-Q7-saG"/>
                             <constraint firstItem="ilu-qH-ezT" firstAttribute="top" secondItem="m32-xm-aQ8" secondAttribute="bottom" constant="8" symbolic="YES" id="dkT-wy-mvD"/>
@@ -186,7 +175,6 @@
                     <navigationItem key="navigationItem" id="4Fc-IE-Qv8"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="HomeButton" destination="TC2-bl-nLW" id="LOz-wt-6Ob"/>
                         <outlet property="day1Button" destination="BrA-gH-FeY" id="Oh2-De-1b8"/>
                         <outlet property="day2Button" destination="Td9-Sn-64D" id="r7H-W4-4ty"/>
                         <outlet property="day3Button" destination="L8m-0O-0Eb" id="e40-vE-zSG"/>
@@ -551,10 +539,48 @@
             </objects>
             <point key="canvasLocation" x="2066.666666666667" y="898.66071428571422"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Splash View Controller-->
+        <scene sceneID="IUU-Yw-zRU">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="2uB-vr-fPl" customClass="SplashViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zeo-sI-dFg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_login" translatesAutoresizingMaskIntoConstraints="NO" id="m24-X6-ZLg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m21-0W-wJ0">
+                                <rect key="frame" x="19.5" y="70.5" width="375" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="XI6-6L-7QV"/>
+                                    <constraint firstAttribute="width" secondItem="m21-0W-wJ0" secondAttribute="height" multiplier="375:667" id="yRT-He-UFb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qWy-GJ-vbz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m24-X6-ZLg" firstAttribute="leading" secondItem="qWy-GJ-vbz" secondAttribute="leading" id="CK3-9E-hdi"/>
+                            <constraint firstItem="m24-X6-ZLg" firstAttribute="top" secondItem="zeo-sI-dFg" secondAttribute="top" id="Td6-CL-RYw"/>
+                            <constraint firstItem="m21-0W-wJ0" firstAttribute="centerY" secondItem="zeo-sI-dFg" secondAttribute="centerY" constant="-44" id="fnI-HQ-A5a"/>
+                            <constraint firstItem="m24-X6-ZLg" firstAttribute="trailing" secondItem="qWy-GJ-vbz" secondAttribute="trailing" id="khi-Kb-FX8"/>
+                            <constraint firstAttribute="bottom" secondItem="m24-X6-ZLg" secondAttribute="bottom" id="pc2-9F-wtF"/>
+                            <constraint firstItem="m21-0W-wJ0" firstAttribute="centerX" secondItem="zeo-sI-dFg" secondAttribute="centerX" id="tA8-Om-mdn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="splashView" destination="m21-0W-wJ0" id="qNl-Zs-fll"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNi-YO-dbR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1430.4347826086957" y="91.741071428571431"/>
+        </scene>
+        <!--Lab Navigation Controller-->
         <scene sceneID="DsJ-rI-rFf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PF2-66-Ojr" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LabNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="PF2-66-Ojr" customClass="LabNavigationController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4gS-Sa-fJV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -573,7 +599,8 @@
     <resources>
         <image name="WhiteMessageBackgroundImage" width="197" height="43"/>
         <image name="btn_findme" width="42" height="42"/>
-        <image name="jihun" width="86.666664123535156" height="86.666664123535156"/>
+        <image name="ios_login" width="937.5" height="1667.5"/>
+        <image name="jihun" width="130" height="130"/>
         <image name="labBackground" width="260" height="562.5"/>
         <image name="playbtn" width="42" height="42"/>
         <image name="stopbtn" width="42" height="42"/>

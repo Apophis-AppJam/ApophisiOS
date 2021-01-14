@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class HomeViewController: UIViewController {
 
@@ -24,6 +25,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playAudio()
 
     }
     
@@ -43,6 +45,13 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func phoneButtonClicked(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let labVC = storyboard.instantiateViewController(identifier: "ViewController") as? ViewController else {return}
+        
+        
+        self.navigationController?.pushViewController(labVC, animated: true)
+        
         
     }
     
@@ -81,6 +90,36 @@ class HomeViewController: UIViewController {
 
     
     //MARK:- Function Part
+    
+    
+    func playAudio()
+     {
+
+         let url = Bundle.main.url(forResource: "main_bgm", withExtension: "mp3")
+
+         if let url = url{
+
+
+             do {
+
+                 soundEffect = try AVAudioPlayer(contentsOf: url)
+
+                 guard let sound = soundEffect else { return }
+                 sound.numberOfLoops = 100
+
+
+                 sound.play()
+
+             } catch let error {
+
+                 print(error.localizedDescription)
+
+             }
+
+         }
+
+     }
 
 }
 //MARK:- extension 부분
+
