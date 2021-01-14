@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class Day1ViewController: UIViewController {
+
+class Day1ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     //MARK:- IBOutlet Part
@@ -45,6 +47,20 @@ class Day1ViewController: UIViewController {
     var pictureImage: UIImage!
     
     var checkImage: Bool = false
+    
+    // 형용사 위한 리스트
+    var completeList: [String] = []
+    var tempCompleteIndex: Int = 0
+    
+    // 사진 관련
+    // UIImagePickerController의 인스턴스 변수 생성
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
+    // 사진을 저장할 변수
+    var captureImage: UIImage!
+    // 사진 저장 여부를 나타낼 변수
+    var flagImageSave = false
+    weak var viewController: UIViewController?
+
     
     
     //MARK:- Constraint Part
@@ -102,10 +118,6 @@ class Day1ViewController: UIViewController {
         
         // select1 인 경우
         case .select1 :
-            //        if newMessageList[lastLastIndex].chatDetailsIdx == 0 || newMessageList[lastLastIndex].chatDetailsIdx == 1 || newMessageList[lastLastIndex].chatDetailsIdx == 2 || newMessageList[lastLastIndex].chatDetailsIdx == 3 || newMessageList[lastLastIndex].chatDetailsIdx == 4
-            //        {
-            
-            
             isMessageLoadList[newMessageList.count - 1] = false
             
             newMessageList.remove(at: newMessageList.count - 1)
@@ -177,6 +189,42 @@ class Day1ViewController: UIViewController {
                 chatTableView.insertRows(at: [finalIndex], with: .none)
             }
             
+        case .selectAdjective:
+            print("액션에서 케이스는 넘어가냐?")
+            isMessageLoadList[newMessageList.count - 1] = false
+
+            newMessageList.remove(at: newMessageList.count - 1)
+            messageListForTableView.remove(at: newMessageList.count - 1)
+            
+            
+            tempIndex = newMessageList[newMessageList.count - 1].chatDetailsIdx
+            
+            newMessageList.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
+                                                          isMine: true,
+                                                          isLastMessage: true,
+                                                          nextMessageType: .none,
+                                                          type: .normal,
+                                                          dataList: [],
+                                                          chatDetailsIdx: tempIndex))
+            
+            messageListForTableView.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
+                                                                   isMine: true,
+                                                                   isLastMessage: true,
+                                                                   nextMessageType: .none,
+                                                                   type: .normal,
+                                                                   dataList: [],
+                                                                   chatDetailsIdx: tempIndex))
+            
+            
+            
+            
+            isUserEnterAnswer = true
+            
+            chatTableView.reloadRows(at: [lastIndex], with: .none)
+            
+            messageTextInputView.text = ""
+            textViewDidChange(messageTextInputView)
+            
         case .userAnswerWithComplete :
             print("두번째 +  메세지")
             
@@ -235,7 +283,40 @@ class Day1ViewController: UIViewController {
             let finalIndex = IndexPath(row: newMessageList.count - 1, section: 0)
             chatTableView.insertRows(at: [finalIndex], with: .none)
             
+        case .selectList :
+            isMessageLoadList[newMessageList.count - 1] = false
             
+            newMessageList.remove(at: newMessageList.count - 1)
+            messageListForTableView.remove(at: newMessageList.count - 1)
+            
+            
+            tempIndex = newMessageList[newMessageList.count - 1].chatDetailsIdx
+            
+            newMessageList.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
+                                                          isMine: true,
+                                                          isLastMessage: true,
+                                                          nextMessageType: .none,
+                                                          type: .normal,
+                                                          dataList: [],
+                                                          chatDetailsIdx: tempIndex))
+            
+            messageListForTableView.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
+                                                                   isMine: true,
+                                                                   isLastMessage: true,
+                                                                   nextMessageType: .none,
+                                                                   type: .normal,
+                                                                   dataList: [],
+                                                                   chatDetailsIdx: tempIndex))
+            
+            
+            
+            
+            isUserEnterAnswer = true
+            
+            chatTableView.reloadRows(at: [lastIndex], with: .none)
+            
+            messageTextInputView.text = ""
+            textViewDidChange(messageTextInputView)
             
             
             
@@ -288,6 +369,20 @@ class Day1ViewController: UIViewController {
         
         // 바다 배경 만들기
         NotificationCenter.default.addObserver(self, selector: #selector(setSeaBackground), name: NSNotification.Name("setSeaBackground"), object: nil)
+        
+        // 형용사 선택
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedAdjectiveSelect), name: NSNotification.Name("receivedAdjectiveSelect"), object: nil)
+        // 형용사 선택 해제
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedAdjectiveUnselect), name: NSNotification.Name("receivedAdjectiveUnselect"), object: nil)
+        
+        // 사진 찍기
+        NotificationCenter.default.addObserver(self, selector: #selector(cameraPresent), name: NSNotification.Name("cameraPresent"), object: nil)
+        // 사진 받아오기
+        NotificationCenter.default.addObserver(self, selector: #selector(getImage), name: NSNotification.Name("sendImage"), object: nil)
+        // 사진 찍기가 완료되었을 때
+        NotificationCenter.default.addObserver(self, selector: #selector(cameraComplete), name: NSNotification.Name("cameraComplete"), object: nil)
+
+        
     }
   
     
@@ -372,6 +467,8 @@ class Day1ViewController: UIViewController {
                 self.messageTextInputView.becomeFirstResponder()
             }
             else {
+                self.disableTextField(isEnable: false)
+
                 loadMyMessage(idx: newMessageList[index].chatDetailsIdx,
                               type: newMessageList[index].nextMessageType) { (result) in
                     
@@ -380,9 +477,7 @@ class Day1ViewController: UIViewController {
                         self.messageListForTableView.append(self.newMessageList[index+1])
                         
                         let indexPath = IndexPath(row: index + 1, section: 0)
-                        
-                        print("ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ", self.messageListForTableView)
-                        
+                                                
                         self.chatTableView.beginUpdates()
                         self.chatTableView.insertRows(at: [indexPath], with: .none)
                         self.chatTableView.endUpdates()
@@ -662,7 +757,6 @@ class Day1ViewController: UIViewController {
         
         self.messageInputAreaBottomConstraint.constant = 0
         
-        
         self.view.layoutIfNeeded()
         
     }
@@ -714,6 +808,8 @@ class Day1ViewController: UIViewController {
 
 
         chatTableView.reloadRows(at: [lastIndex], with: .none)
+        disableTextField(isEnable: false)
+
     }
     
     func disableTextField(isEnable: Bool)
@@ -737,19 +833,236 @@ class Day1ViewController: UIViewController {
         }
     }
     
-    // 사진 관련
-    private func addImageObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(getImage(_ :)), name: .sendImage, object: nil)
+    // 형용사 선택 관련
+    @objc func receivedAdjectiveSelect(notification : NSNotification)
+    {
+        let adjectiveSelect = notification.object as? String ?? ""
+        completeList.append(adjectiveSelect)
+        print("append", completeList)
+        
+        // 최종적으로 사용할 형용사 리스트
+        var adjectiveList : [String] = []
+        
+        if completeList.count == 3 {
+
+            for i in 0 ... 1 {
+                adjectiveList.append(adjectiveCheck(adj: completeList[i]))
+            }
+            adjectiveList.append(completeList[2])
+            
+            self.messageTextInputView.text = "나는 \(adjectiveList[0]) \(adjectiveList[1]) \(adjectiveList[2]) 사람이야"
+            self.messageTextInputView.textColor = .white
+            textViewDidChange(messageTextInputView)
+            
+            disableTextField(isEnable: true)
+        }
+      
     }
     
+    func adjectiveCheck(adj :String) -> String
+    {
+        if adj == "따뜻한"{
+            return "따뜻하고"
+        }
+        else if adj == "담백한"{
+            return "담백하고"
+        }
+        else if adj == "정열적인"{
+            return "정열적이고"
+        }
+        else if adj == "냉소적인"{
+            return "냉소적이고"
+        }
+        else if adj == "낭만적인"{
+            return "낭만적이고"
+        }
+        else if adj == "현실적인"{
+            return "현실적이고"
+        }
+        else if adj == "깊은"{
+            return "깊고"
+        }
+        else if adj == "넓은"{
+            return "넓고"
+        }
+        else if adj == "잔잔한"{
+            return "잔잔하고"
+        }
+        else if adj == "강렬한"{
+            return "강렬하고"
+        }
+        else if adj == "싱그러운"{
+            return "싱그럽고"
+        }
+        else if adj == "성숙한"{
+            return "성숙하고"
+        }
+        else if adj == "무게감 있는"{
+            return "무게감 있고"
+        }
+        else if adj == "자유분방한"{
+            return "자유분방하고"
+        }
+        else if adj == "수수한"{
+            return "수수하고"
+        }
+        else if adj == "화려란"{
+            return "화려하고"
+        }
+        else if adj == "유연한"{
+            return "유연하고"
+        }
+        else if adj == "굳센"{
+            return "굳세고"
+        }
+        else if adj == "단순한"{
+            return "단순하고"
+        }
+        else {
+            return "복잡하고"
+        }
+        
+    }
+    
+    @objc func receivedAdjectiveUnselect(notification : NSNotification)
+    {
+        let adjectiveUnselect = notification.object as? String ?? ""
+//        let tempindex: Int?
+        
+        for i in 0 ... completeList.count-1{
+            if completeList[i] == adjectiveUnselect {
+                tempCompleteIndex = i
+            }
+        }
+        
+        completeList.remove(at: tempCompleteIndex)
+        print(tempCompleteIndex)
+        self.messageTextInputView.text = ""
+        self.messageTextInputView.textColor = .white
+        
+        disableTextField(isEnable: false)
+
+     
+    }
+    
+    // 사진 관련
+    @objc func cameraPresent()
+    {
+        print("카메라 프레젠트 넘어옴?")
+        
+        // 카메라를 사용할 수 있다면(카메라의 사용 가능 여부 확인)
+        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
+            // 사진 저장 플래그를 true로 설정
+            flagImageSave = true
+            
+            
+            // 이미지 피커의 델리케이트 self로 설정
+            imagePicker.delegate = self
+            // 이미지 피커의 소스 타입을 camera로 설정
+            imagePicker.sourceType = .camera
+            // 미디어 타입 kUTTypeImage로 설정
+            imagePicker.mediaTypes = [kUTTypeImage as String]
+            // 편집을 허용하지 않음
+            imagePicker.allowsEditing = false
+            
+            
+            // noti로 list 받아와 수정 후 return하는 함수
+            //                addListObserver()
+            
+            // 현재 뷰 컨트롤러를 imagePicker로 대체. 즉 뷰에 imagePicker가 보이게 함
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            // 카메라를 사용할 수 없을 때는 경고창을 나타냄
+            myAlert("Camera inaccessable", message: "Application cannot access the camera.")
+            print("카메라 안켜진다")
+        }
+    }
+    
+    // 사진, 비디오 촬영이나 선택이 끝났을 때 호출되는 델리게이트 메서드
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 미디어 종류 확인
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
+        
+        // 미디어 종류가 사진(Image)일 경우
+        if mediaType.isEqual(to: kUTTypeImage as NSString as String){
+            
+            // 사진을 가져와 captureImage에 저장
+            captureImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            
+            if flagImageSave { // flagImageSave가 true이면
+                // 사진을 포토 라이브러리에 저장
+                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
+            }
+            NotificationCenter.default.post(name: NSNotification.Name("sendImage"), object: nil, userInfo: ["image": captureImage!])
+            
+        }
+    
+        // 현재의 뷰 컨트롤러를 제거. 즉, 뷰에서 이미지 피커 화면을 제거하여 초기 뷰를 보여줌
+        self.dismiss(animated: true, completion: {NotificationCenter.default.post(name: NSNotification.Name("cameraComplete"), object: nil) } )
+        
+    }
+    
+    // 사진, 비디오 촬영이나 선택을 취소했을 때 호출되는 델리게이트 메서드
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // 현재의 뷰(이미지 피커) 제거
+        viewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    // 경고 창 출력 함수
+    func myAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default , handler: nil)
+        alert.addAction(action)
+        viewController?.present(alert, animated: true, completion: nil)
+    }
+//
+//    private func addImageObserver() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(getImage(_ :)), name: NSNotification.Name("sendImage"), object: nil)
+//    }
+//
     @objc func getImage(_ notification: Notification){
         guard let image = notification.userInfo?["image"] as? UIImage? else { return }
         pictureImage = image
-        print("사진 들어왓냐??")
+        print("사진 들어왓냐??", pictureImage)
         if(pictureImage != nil){
             checkImage = true
         }
         
+    }
+    
+    @objc func cameraComplete(notification : NSNotification)
+    {
+        let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
+        
+        
+        isMessageLoadList[newMessageList.count - 1] = false
+        
+        newMessageList.remove(at: newMessageList.count - 1)
+        messageListForTableView.remove(at: newMessageList.count - 1)
+        
+        let lastChatDetailIDx =
+            newMessageList[newMessageList.count - 1].chatDetailsIdx
+        
+        newMessageList.append(ChatMessageNewDataModel(messageContent: "",
+                                                      isMine: true,
+                                                      isLastMessage: true,
+                                                      nextMessageType: .none,
+                                                      type: .photo,
+                                                      dataList: [],
+                                                      chatDetailsIdx: lastChatDetailIDx))
+        
+        messageListForTableView.append(ChatMessageNewDataModel(messageContent: "",
+                                                               isMine: true,
+                                                               isLastMessage: true,
+                                                               nextMessageType: .none,
+                                                               type: .photo,
+                                                               dataList: [],
+                                                               chatDetailsIdx: lastChatDetailIDx))
+
+
+        chatTableView.reloadRows(at: [lastIndex], with: .none)
+        disableTextField(isEnable: false)
+
     }
     
     
@@ -900,8 +1213,8 @@ extension Day1ViewController : UITableViewDataSource
                         as? Day2selectAnswerCell
                 else {return UITableViewCell() }
                 
+                selectCell.backgroundColor = .clear
                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
-                selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
                 selectCell.selectionStyle = .none
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -923,7 +1236,6 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 myMessageWithCompleteCell.setMessage(message: newMessageList[indexPath.row].messageContent)
-                myMessageWithCompleteCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
                 myMessageWithCompleteCell.selectionStyle = .none
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -962,15 +1274,37 @@ extension Day1ViewController : UITableViewDataSource
                 
                 return ChatButtonCell
                 
+            case .cameraButton:
+                guard let ChatButtonCell =
+                        tableView.dequeueReusableCell(withIdentifier: "ChatButtonCell", for: indexPath)
+                        as? ChatButtonCell
+                else {return UITableViewCell() }
+                
+                
+                ChatButtonCell.selectionStyle = .none
+                ChatButtonCell.setChatButton(buttonCase: newMessageList[indexPath.row].type)
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    ChatButtonCell.loadingAnimate(idx: indexPath.row)
+                }
+                else
+                {
+                    ChatButtonCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return ChatButtonCell
+                
             case .selectAdjective:
                 guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
                         as? Day2selectAnswerCell
                 else {return UITableViewCell() }
                 
                 
-
+                selectCell.backgroundColor = .clear
                 selectCell.setAdjectiveList(selectList: newMessageList[indexPath.row].dataList)
-                selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
                 selectCell.selectionStyle = .none
                                 
                 if isMessageLoadList[indexPath.row] == false
@@ -985,6 +1319,54 @@ extension Day1ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
                 
                 return selectCell
+                
+            case .photo : // 나의 사진 메세지
+                guard let myPhotoCell =
+                        tableView.dequeueReusableCell(withIdentifier: "Day1ImageViewCell", for: indexPath)
+                        as? Day1ImageViewCell
+                else {return UITableViewCell() }
+                
+                
+                
+                myPhotoCell.setImageView()
+                myPhotoCell.setPictureImage(ImgName: pictureImage)
+                myPhotoCell.selectionStyle = .none
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    myPhotoCell.loadingAnimate(idx: indexPath.row)
+                }
+                else
+                {
+                    myPhotoCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return myPhotoCell
+                
+            case .selectList:
+                guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
+                        as? Day2selectAnswerCell
+                else {return UITableViewCell() }
+                
+                selectCell.backgroundColor = .clear
+                selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
+                selectCell.selectionStyle = .none
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    selectCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    selectCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return selectCell
+                
                 
             case .enter3words:
                 return UITableViewCell()
@@ -1130,7 +1512,6 @@ extension Day1ViewController : UITextViewDelegate
         
         if textView.text == "텍스트를 입력하세요"
         {
-            
             messageTextInputView.text = ""
             textView.textColor = .white
         }

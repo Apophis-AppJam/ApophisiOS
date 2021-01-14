@@ -11,11 +11,13 @@
 		0644944F25A1A5F500ABA62E /* Day1ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */; };
 		0659A38C25ACC353004E21CE /* Day1ApoImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0659A38B25ACC352004E21CE /* Day1ApoImageViewCell.swift */; };
 		0659A38F25ACF3C9004E21CE /* KingfisherImageBlaBla.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0659A38E25ACF3C9004E21CE /* KingfisherImageBlaBla.swift */; };
+		069569F725B0410D00E175FE /* Day7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069569F625B0410D00E175FE /* Day7ViewController.swift */; };
 		069E95D3259DB6E2006C36D6 /* Day1CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */; };
 		069E95D6259DB6F6006C36D6 /* Day1CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */; };
 		069E95DB25A065BB006C36D6 /* Day1ChatMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */; };
+		06DD61B925B0835800AADBA6 /* Day7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069569F025B03F8000E175FE /* Day7.storyboard */; };
+		06DD61BB25B085B700AADBA6 /* Day6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC258B9F25AF3CB500B56498 /* Day6.storyboard */; };
 		AE2E82F5D36D7460962246C6 /* Pods_Apophis_AppJam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */; };
-		FC258BA025AF3CB500B56498 /* Day6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC258B9F25AF3CB500B56498 /* Day6.storyboard */; };
 		FC258BA325AF3CC100B56498 /* Day6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC258BA225AF3CC100B56498 /* Day6ViewController.swift */; };
 		FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC394F3E259D110500E70307 /* ColorViewController.swift */; };
 		FC43DF9525AE21A20017E178 /* Day3ColorListcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43DF9425AE21A20017E178 /* Day3ColorListcell.swift */; };
@@ -54,7 +56,6 @@
 		FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207AC2599AF5F00AAD1BA /* Day3.storyboard */; };
 		FD5207B02599AF6800AAD1BA /* Day4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207AF2599AF6800AAD1BA /* Day4.storyboard */; };
 		FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B22599AF7100AAD1BA /* Day5.storyboard */; };
-		FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5207B92599AF8500AAD1BA /* Day7.storyboard */; };
 		FD5D51A725AA2F0600705E60 /* NextActionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51A625AA2F0600705E60 /* NextActionList.swift */; };
 		FD5D51AA25AA329700705E60 /* replyTypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51A925AA329700705E60 /* replyTypeList.swift */; };
 		FD5D51BC25AB5E3200705E60 /* Day2SnowBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D51BB25AB5E3200705E60 /* Day2SnowBackgroundCell.swift */; };
@@ -111,6 +112,8 @@
 		0644944E25A1A5F500ABA62E /* Day1ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ImageViewCell.swift; sourceTree = "<group>"; };
 		0659A38B25ACC352004E21CE /* Day1ApoImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ApoImageViewCell.swift; sourceTree = "<group>"; };
 		0659A38E25ACF3C9004E21CE /* KingfisherImageBlaBla.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageBlaBla.swift; sourceTree = "<group>"; };
+		069569F025B03F8000E175FE /* Day7.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Day7.storyboard; sourceTree = "<group>"; };
+		069569F625B0410D00E175FE /* Day7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7ViewController.swift; sourceTree = "<group>"; };
 		069E95D2259DB6E1006C36D6 /* Day1CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CameraViewController.swift; sourceTree = "<group>"; };
 		069E95D5259DB6F6006C36D6 /* Day1CompassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1CompassViewController.swift; sourceTree = "<group>"; };
 		069E95DA25A065BA006C36D6 /* Day1ChatMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1ChatMessageDataModel.swift; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 		FD5207AC2599AF5F00AAD1BA /* Day3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day3.storyboard; sourceTree = "<group>"; };
 		FD5207AF2599AF6800AAD1BA /* Day4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day4.storyboard; sourceTree = "<group>"; };
 		FD5207B22599AF7100AAD1BA /* Day5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day5.storyboard; sourceTree = "<group>"; };
+		FD5207B52599AF7A00AAD1BA /* Day6.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day6.storyboard; sourceTree = "<group>"; };
 		FD5207B92599AF8500AAD1BA /* Day7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day7.storyboard; sourceTree = "<group>"; };
 		FD5D51A625AA2F0600705E60 /* NextActionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextActionList.swift; sourceTree = "<group>"; };
 		FD5D51A925AA329700705E60 /* replyTypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = replyTypeList.swift; sourceTree = "<group>"; };
@@ -223,6 +227,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		069569F425B0408A00E175FE /* Day7 */ = {
+			isa = PBXGroup;
+			children = (
+				069569F525B040A300E175FE /* ChatCells */,
+				069569F625B0410D00E175FE /* Day7ViewController.swift */,
+			);
+			path = Day7;
+			sourceTree = "<group>";
+		};
+		069569F525B040A300E175FE /* ChatCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatCells;
+			sourceTree = "<group>";
+		};
 		069E95DD25A07489006C36D6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +251,15 @@
 				0659A38B25ACC352004E21CE /* Day1ApoImageViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		06DD61B625B0823700AADBA6 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				FD5207B52599AF7A00AAD1BA /* Day6.storyboard */,
+				FD5207B92599AF8500AAD1BA /* Day7.storyboard */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		B086E4AF5CA333E8748461F7 /* Frameworks */ = {
@@ -290,6 +319,7 @@
 				FD07156A2596E99700940094 /* Products */,
 				C707A94FC1E4F998292BF533 /* Pods */,
 				B086E4AF5CA333E8748461F7 /* Frameworks */,
+				06DD61B625B0823700AADBA6 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -483,7 +513,7 @@
 		FD5207A82599AF4B00AAD1BA /* Day7 */ = {
 			isa = PBXGroup;
 			children = (
-				FD5207B92599AF8500AAD1BA /* Day7.storyboard */,
+				069569F025B03F8000E175FE /* Day7.storyboard */,
 			);
 			path = Day7;
 			sourceTree = "<group>";
@@ -609,6 +639,7 @@
 		FDA98B652596EDAE00F4DFDF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				069569F425B0408A00E175FE /* Day7 */,
 				FDE05A8025A8C95700E92E1B /* Home */,
 				FCDE84AD25A57B1B003D288E /* Login */,
 				FD6D0EBC259C4B8B00993BBC /* Lab */,
@@ -833,6 +864,7 @@
 			files = (
 				FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */,
 				FD52078D2599A60200AAD1BA /* GmarketSansTTFBold.ttf in Resources */,
+				06DD61BB25B085B700AADBA6 /* Day6.storyboard in Resources */,
 				FD52078E2599A60200AAD1BA /* GmarketSansTTFLight.ttf in Resources */,
 				FDE05A6425A866F300E92E1B /* Home.storyboard in Resources */,
 				FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */,
@@ -843,14 +875,13 @@
 				FD41368D25AEBC400041B5B1 /* ChosunNm.ttf in Resources */,
 				FCDE84AA25A57ADB003D288E /* Login.storyboard in Resources */,
 				FD0715792596E99700940094 /* LaunchScreen.storyboard in Resources */,
-				FD5207BA2599AF8500AAD1BA /* Day7.storyboard in Resources */,
+				06DD61B925B0835800AADBA6 /* Day7.storyboard in Resources */,
 				FDD0922A259AF58100B92529 /* sampleVideo.mp4 in Resources */,
 				FD5F3C1725AD8020007BD93C /* message_loading.json in Resources */,
 				FD5F3C1A25AD92AD007BD93C /* main_bgm.mp3 in Resources */,
 				FC70A78125AF69F800DA7992 /* shutter.mp3 in Resources */,
 				FD52078F2599A60200AAD1BA /* GmarketSansTTFMedium.ttf in Resources */,
 				FD5207B32599AF7100AAD1BA /* Day5.storyboard in Resources */,
-				FC258BA025AF3CB500B56498 /* Day6.storyboard in Resources */,
 				FDA98B832597104700F4DFDF /* ColorList.xcassets in Resources */,
 				FD0715762596E99700940094 /* Assets.xcassets in Resources */,
 				FC70A77E25AF60D100DA7992 /* day6_shutter.json in Resources */,
@@ -972,6 +1003,7 @@
 				FD5D51BC25AB5E3200705E60 /* Day2SnowBackgroundCell.swift in Sources */,
 				FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */,
 				FD5F3C1325ACF8D8007BD93C /* Day2SetValueNavigationController.swift in Sources */,
+				069569F725B0410D00E175FE /* Day7ViewController.swift in Sources */,
 				FC956AAD25A8CE530007717C /* Day3EnterNameCell.swift in Sources */,
 				FDD09233259B0B1900B92529 /* NewsCommentDataModel.swift in Sources */,
 				FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */,

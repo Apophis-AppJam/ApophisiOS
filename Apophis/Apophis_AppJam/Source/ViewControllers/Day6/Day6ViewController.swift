@@ -50,6 +50,10 @@ class Day6ViewController: UIViewController {
     var shutterView = AnimationView()
     
     var lightCheck = false
+    
+    var shutterSoundCheck = false
+    
+    var shutterAnimateCheck = false
 
     //MARK:- Constraint Part
 
@@ -385,7 +389,7 @@ class Day6ViewController: UIViewController {
         
   
         
-        self.loadApoMessage(idx: 108) { (result) in
+        self.loadApoMessage(idx: 119) { (result) in
             
             if result
             {
@@ -701,14 +705,12 @@ class Day6ViewController: UIViewController {
             {
         
 
-                
                 loadMyMessage(idx: newMessageList[index].chatDetailsIdx,
                               type: newMessageList[index].nextMessageType) { (result) in
                     
                     if result
                     {
                         
-                        DispatchQueue.global().sync {
                             self.messageListForTableView.append(self.newMessageList[index+1])
                             
                             let indexPath = IndexPath(row: index + 1, section: 0)
@@ -716,8 +718,7 @@ class Day6ViewController: UIViewController {
                             self.chatTableView.beginUpdates()
                             self.chatTableView.insertRows(at: [indexPath], with: .none)
                             self.chatTableView.endUpdates()
-                        }
-                        
+                      
 //                        self.chatTableView.scrollToBottom()
         
                     }
@@ -1613,12 +1614,15 @@ extension Day6ViewController : UITableViewDataSource
                         as? ChatYourMessageCell
                 else {return UITableViewCell() }
                 
-                
-                shutterSoundCell.setMessage(message: newMessageList[indexPath.row].messageContent)
-                shutterSoundCell.selectionStyle = .none
-                shutterSoundCell.backgroundColor = .clear
-                shutterSoundCell.shutterSound()
-                print("셔터사운드")
+                if shutterSoundCheck == false {
+                    shutterSoundCheck = true
+                    shutterSoundCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+                    shutterSoundCell.selectionStyle = .none
+                    shutterSoundCell.backgroundColor = .clear
+                    shutterSoundCell.shutterSound()
+                    print("셔터사운드")
+                    
+                }
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1641,11 +1645,14 @@ extension Day6ViewController : UITableViewDataSource
                         as? ChatYourMessageCell
                 else {return UITableViewCell() }
                 
+                if shutterSoundCheck == true && shutterAnimateCheck == false {
+                shutterAnimateCheck = true
                 shutterAnimationCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 shutterAnimationCell.selectionStyle = .none
                 shutterAnimationCell.backgroundColor = .clear
                 shutterAnimationCell.shutterSound()
                 shutterAnimationCell.shutterAnimation()
+                }
                 
                 
                 
