@@ -127,6 +127,16 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func goToDay6Sample(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Day6", bundle: nil)
+
+        guard let vc = storyboard.instantiateViewController(identifier: "Day6ViewController") as? Day6ViewController else  {return}
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     @IBAction func homeButtonClicked(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Home", bundle: nil)

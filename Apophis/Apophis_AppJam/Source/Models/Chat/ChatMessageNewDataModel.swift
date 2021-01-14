@@ -69,6 +69,9 @@ enum messageTypeList
     case normalWithStartHandDrawing
     case voiceRecordButton
     case colorPicker
+    case shutterSound
+    case shutterAnimation
+    case lightBackground
 
     
     //MARK:- 영재 PART

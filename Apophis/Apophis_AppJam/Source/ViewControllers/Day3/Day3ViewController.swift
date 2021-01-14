@@ -685,8 +685,10 @@ class Day3ViewController: UIViewController {
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
+        chatTableView.separatorStyle = .none
         chatTableView.allowsSelection = true
         chatTableView.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+        
     }
     
     
