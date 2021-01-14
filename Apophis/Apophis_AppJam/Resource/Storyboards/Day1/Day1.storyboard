@@ -226,7 +226,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="NCz-It-Wbl"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LgK-fV-aNo">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LgK-fV-aNo">
                                                         <size key="itemSize" width="137" height="36"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -234,7 +234,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Day2SelectListCollectionCell" id="nJP-X2-la7" customClass="Day2SelectListCollectionCell" customModule="Apophis" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="137" height="36"/>
+                                                            <rect key="frame" x="0.0" y="13.5" width="137" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fIb-j0-I4X">
                                                                 <rect key="frame" x="0.0" y="0.0" width="137" height="36"/>
@@ -512,14 +512,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvm-Kb-z2L">
-                                <rect key="frame" x="174" y="101" width="27" height="520"/>
+                                <rect key="frame" x="174" y="98" width="27" height="520"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rvm-Kb-z2L" secondAttribute="height" multiplier="27:520" id="61g-Vc-dcn"/>
                                     <constraint firstAttribute="width" constant="27" id="A1v-8M-f6f"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqs-8d-QJO">
-                                <rect key="frame" x="172" y="50" width="31.5" height="21"/>
+                                <rect key="frame" x="170" y="50" width="35" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="동쪽">
                                         <attributes>
@@ -532,7 +532,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygg-TX-p3G">
-                                <rect key="frame" x="73.5" y="247" width="228" height="228"/>
+                                <rect key="frame" x="73.5" y="244" width="228" height="228"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ygg-TX-p3G" secondAttribute="height" multiplier="1:1" id="HOd-zk-RPP"/>
                                     <constraint firstAttribute="width" constant="228" id="P6p-zs-kAR"/>

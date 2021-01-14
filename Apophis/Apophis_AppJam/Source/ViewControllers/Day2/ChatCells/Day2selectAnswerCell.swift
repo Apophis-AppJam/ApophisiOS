@@ -54,7 +54,7 @@ class Day2selectAnswerCell: UITableViewCell {
     func setSelectList(selectList : [String])
     {
         adjectiveCheck = false
-        adjectiveCollectionViewHeight.constant = 34
+        adjectiveCollectionViewHeight.constant = 40
         
         selectedBoolList.removeAll()
         
