@@ -744,7 +744,7 @@ class Day1ViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @objc func keyboardWillShow(notification : Notification){
         if let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
             
-            self.messageInputAreaBottomConstraint.constant = keyboardSize.height
+            self.messageInputAreaBottomConstraint.constant = keyboardSize.height - 30
             UIView.animate(withDuration: 0 , animations: {
                 
                 self.view.layoutIfNeeded()
@@ -777,7 +777,6 @@ class Day1ViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @objc func compassComplete(notification : NSNotification)
     {
-        let messageDescription = notification.object as? String ?? ""
         
         let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
         

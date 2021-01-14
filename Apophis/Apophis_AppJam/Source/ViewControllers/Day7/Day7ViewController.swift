@@ -605,7 +605,7 @@ class Day7ViewController: UIViewController {
     @objc func keyboardWillShow(notification : Notification){
         if let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
             
-            self.messageInputAreaBottomConstraint.constant = keyboardSize.height
+            self.messageInputAreaBottomConstraint.constant = keyboardSize.height - 30
             UIView.animate(withDuration: 0 , animations: {
                 
                 self.view.layoutIfNeeded()
