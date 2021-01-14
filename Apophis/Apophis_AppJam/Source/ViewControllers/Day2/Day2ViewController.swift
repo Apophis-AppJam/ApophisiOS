@@ -91,7 +91,20 @@ class Day2ViewController: UIViewController {
     
     @IBAction func messageButtonClicked(_ sender: Any) {
         
+        /*
         
+         
+         메세지 전송 버튼을 누르는 순간
+         가장 마지막 메세지 타입을 보고 분기 처리를 하게 된다!!
+         
+         (마지막 메세지의 type)을 얘기하는거임
+         
+         마지막이 노말인 경우 ->                 완료하기가 있는 userWithComplete 를 달아줘야 함 (insert)
+         마지막이 userWithComplete인 경우 ->    마지막의 전 메세지를 노말로 전환 + userWithComplete 하나 insert
+         
+        
+        
+        */
         
         switch(newMessageList[newMessageList.count - 1].type)
         {
@@ -136,6 +149,7 @@ class Day2ViewController: UIViewController {
                 
             }
             
+        
         case .userAnswerWithComplete :
             
             newMessageList.append(ChatMessageNewDataModel(messageContent: newMessageList[newMessageList.count - 1].messageContent,
@@ -254,7 +268,6 @@ class Day2ViewController: UIViewController {
                     print("여기서 리스트",self.newMessageList)
                     self.messageListForTableView.append(self.newMessageList[0])
                     
-                    
                     let index = IndexPath(row: 0, section: 0)
                     self.chatTableView.insertRows(at: [index], with: .none)
                 }
@@ -263,13 +276,8 @@ class Day2ViewController: UIViewController {
 
             }
 
-            
         }
 
-
-
-
- 
 
     }
     
@@ -1722,7 +1730,7 @@ extension Day2ViewController : UITextViewDelegate
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "댓글을 입력해주세요"
+            textView.text = "텍스트를 입력해주세요"
             self.messageSendButton.isEnabled = false
             self.messageSendButton.setBackgroundImage(UIImage(named: "ChatSendButtonDisabled"), for: .normal)
             

@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         playAudio()
 
+
+ 
         
         
         day1Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
@@ -62,6 +64,7 @@ class ViewController: UIViewController {
         
     }
     
+
     
     func playAudio()
     {
@@ -123,6 +126,25 @@ class ViewController: UIViewController {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func goToDay6Sample(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Day6", bundle: nil)
 
+        guard let vc = storyboard.instantiateViewController(identifier: "Day6ViewController") as? Day6ViewController else  {return}
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @IBAction func homeButtonClicked(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        guard let homeVC = storyboard.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else {return}
+        
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
 }
 

@@ -45,6 +45,7 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .normalWithSea
     }
+
     
     
     

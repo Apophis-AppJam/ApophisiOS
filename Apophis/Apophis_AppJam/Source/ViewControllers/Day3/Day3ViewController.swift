@@ -685,8 +685,10 @@ class Day3ViewController: UIViewController {
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
+        chatTableView.separatorStyle = .none
         chatTableView.allowsSelection = true
         chatTableView.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+        
     }
     
     
@@ -1358,7 +1360,7 @@ extension Day3ViewController : UITextViewDelegate
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "댓글을 입력해주세요"
+            textView.text = "텍스트를 입력해주세요"
             self.messageSendButton.isEnabled = false
             self.messageSendButton.setBackgroundImage(UIImage(named: "ChatSendButtonDisabled"), for: .normal)
             

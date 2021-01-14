@@ -129,12 +129,18 @@
                                 <state key="normal" title="6일차">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="goToDay6Sample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pn1-Zj-f5f"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TC2-bl-nLW">
                                 <rect key="frame" x="192" y="434" width="30" height="30"/>
                                 <state key="normal" title="홈">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="homeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9HF-pZ-bJj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -564,12 +570,12 @@
     <resources>
         <image name="WhiteMessageBackgroundImage" width="197" height="43"/>
         <image name="btn_findme" width="42" height="42"/>
-        <image name="jihun" width="130" height="130"/>
+        <image name="jihun" width="86.666664123535156" height="86.666664123535156"/>
         <image name="labBackground" width="260" height="562.5"/>
         <image name="playbtn" width="42" height="42"/>
         <image name="stopbtn" width="42" height="42"/>
-        <image name="youngjae" width="145" height="128"/>
-        <image name="yukyung" width="147.5" height="126"/>
+        <image name="youngjae" width="96.666664123535156" height="85.333335876464844"/>
+        <image name="yukyung" width="98.333335876464844" height="84"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
