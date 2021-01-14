@@ -52,7 +52,8 @@ class Day1ApoImageViewCell: UITableViewCell {
             
             
         } completion: { (_) in
-            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
+            NotificationCenter.default.post(name: NSNotification.Name("AponimousMessageEnd"), object: idx)
+
         }
 
 

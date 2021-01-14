@@ -226,7 +226,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="NCz-It-Wbl"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LgK-fV-aNo">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LgK-fV-aNo">
                                                         <size key="itemSize" width="137" height="36"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -234,7 +234,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Day2SelectListCollectionCell" id="nJP-X2-la7" customClass="Day2SelectListCollectionCell" customModule="Apophis" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="13.5" width="137" height="36"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="137" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fIb-j0-I4X">
                                                                 <rect key="frame" x="0.0" y="0.0" width="137" height="36"/>
