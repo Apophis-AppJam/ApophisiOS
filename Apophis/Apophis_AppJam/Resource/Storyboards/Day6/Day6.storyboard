@@ -218,8 +218,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="adjectiveCollectionViewHeight" destination="0aa-QF-sAG" id="xBh-8i-wRJ"/>
-                                            <outlet property="selectButtonCollectionView" destination="0aa-QF-sAG" id="ruE-eS-8VA"/>
+                                            <outlet property="adjectiveCollectionViewHeight" destination="yEN-vf-ul3" id="6DL-W8-Mug"/>
+                                            <outlet property="selectButtonCollectionView" destination="0aa-QF-sAG" id="dx4-f2-x56"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day2CircleButtonCell" rowHeight="43" id="Giw-7J-9Oi" customClass="Day2CircleButtonCell" customModule="Apophis" customModuleProvider="target">

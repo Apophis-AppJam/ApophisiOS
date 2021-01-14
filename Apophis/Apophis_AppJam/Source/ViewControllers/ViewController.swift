@@ -33,9 +33,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playAudio()
-
-
- 
+        
+        
+        
         
         
         day1Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
@@ -64,43 +64,43 @@ class ViewController: UIViewController {
         
     }
     
-
+    
     
     func playAudio()
     {
-
+        
         let url = Bundle.main.url(forResource: "main_bgm", withExtension: "mp3")
-
+        
         if let url = url{
-
-
+            
+            
             do {
-
+                
                 soundEffect = try AVAudioPlayer(contentsOf: url)
-
+                
                 guard let sound = soundEffect else { return }
                 sound.numberOfLoops = 100
-
-
+                
+                
                 sound.play()
-
+                
             } catch let error {
-
+                
                 print(error.localizedDescription)
-
+                
             }
-
+            
         }
-
+        
     }
-
-
-
-
+    
+    
+    
+    
     @IBAction func goToSample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day1", bundle: nil)
-
+        
         guard let vc = storyboard.instantiateViewController(identifier: "Day1ViewController") as? Day1ViewController else  {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
     @IBAction func goToDay2Sample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day2", bundle: nil)
-
+        
         guard let vc = storyboard.instantiateViewController(identifier: "Day2ViewController") as? Day2ViewController else  {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
     @IBAction func goToDay3Sample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day3", bundle: nil)
-
+        
         guard let vc = storyboard.instantiateViewController(identifier: "Day3ViewController") as? Day3ViewController else  {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -130,12 +130,17 @@ class ViewController: UIViewController {
     @IBAction func goToDay7Sample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day7", bundle: nil)
-
+        
         guard let vc = storyboard.instantiateViewController(identifier: "Day7ViewController") as? Day7ViewController else  {return}
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+
+        
+    }
     @IBAction func goToDay6Sample(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Day6", bundle: nil)
-
+        
         guard let vc = storyboard.instantiateViewController(identifier: "Day6ViewController") as? Day6ViewController else  {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -152,5 +157,6 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
     
+    
+    
 }
-
