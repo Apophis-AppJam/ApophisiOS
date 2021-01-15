@@ -80,6 +80,11 @@ enum messageTypeList
     case select1
     case select1In3
     case selectAdjective
+    case tarotText
+    // 타로 텍스트 입력하는거
+    case tarot
+    // 타로 뷰건으로 넘기자
+    case selectWithError
     
     // MARK:- 지훈 PART
  

@@ -40,7 +40,7 @@ extension NSBezierPath {
     {
         self.init()
         
-        let maxCorner = min(rect.width, rect.height) / 2
+        let maxCorner = min(rect.width, rect.messageInputAreaHeightConstraint) / 2
         
         let radiusTopLeft = min(maxCorner, max(0, topLeftRadius))
         let radiusTopRight = min(maxCorner, max(0, topRightRadius))

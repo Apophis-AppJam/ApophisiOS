@@ -37,14 +37,19 @@ class Day7ViewController: UIViewController {
     let appData = UIApplication.shared.delegate as? AppDelegate
     
     var tempIndex : Int = 0
+    
+    var tarotCheck : Bool = false
 
     
     //MARK:- Constraint Part
-    
-    @IBOutlet weak var messageInputAreaHeightConstraint: NSLayoutConstraint!
     // 메세지 input 창에서 줄바꿈할떄 영역 자체의 height 가 늘어나야 함
-    @IBOutlet weak var messageInputAreaBottomConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var messageInputAreaHeightConstraint: NSLayoutConstraint!
+    
     //키보드 올라올떄 조절해야 하는 아래쪽 constraint
+
+    @IBOutlet weak var messageInputAreaBottomConstraint: NSLayoutConstraint!
+    
     
     
     
@@ -248,6 +253,41 @@ class Day7ViewController: UIViewController {
             textViewDidChange(messageTextInputView)
             
             
+        case .selectWithError :
+            isMessageLoadList[newMessageList.count - 1] = false
+            
+            newMessageList.remove(at: newMessageList.count - 1)
+            messageListForTableView.remove(at: newMessageList.count - 1)
+            
+            
+            tempIndex = newMessageList[newMessageList.count - 1].chatDetailsIdx
+            
+            newMessageList.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
+                                                          isMine: true,
+                                                          isLastMessage: true,
+                                                          nextMessageType: .none,
+                                                          type: .selectWithError,
+                                                          dataList: [],
+                                                          chatDetailsIdx: tempIndex))
+            
+            messageListForTableView.append(ChatMessageNewDataModel(messageContent:  messageTextInputView.text,
+                                                                   isMine: true,
+                                                                   isLastMessage: true,
+                                                                   nextMessageType: .none,
+                                                                   type: .selectWithError,
+                                                                   dataList: [],
+                                                                   chatDetailsIdx: tempIndex))
+            
+            
+            
+            
+            isUserEnterAnswer = true
+            
+            chatTableView.reloadRows(at: [lastIndex], with: .none)
+            
+            messageTextInputView.text = ""
+            textViewDidChange(messageTextInputView)
+            
             
         default :
             print("case default")
@@ -288,9 +328,22 @@ class Day7ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(myMessageEnd), name: NSNotification.Name("myMessageEnd"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(scrollToBottom), name: NSNotification.Name("scrollToBottom"), object: nil)
+    
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedUserSelect), name: NSNotification.Name("receivedUserSelect"), object: nil)
         
-        //유저 장문 메세지 전송
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedSelectWithError), name: NSNotification.Name("receivedSelectWithError"), object: nil)
+        
+        
+        // 유저 장문 메세지 전송
         NotificationCenter.default.addObserver(self, selector: #selector(userMessageEntered), name: NSNotification.Name("userMessageEntered"), object: nil)
+        
+        // 타로 뷰컨 이동
+        NotificationCenter.default.addObserver(self, selector: #selector(tarotPresent), name: NSNotification.Name("tarotPresent"), object: nil)
+        
+        
+        // 타로 끝
+        NotificationCenter.default.addObserver(self, selector: #selector(tarotComplete), name: NSNotification.Name("tarotComplete"), object: nil)
+        
         
     }
     
@@ -369,7 +422,11 @@ class Day7ViewController: UIViewController {
         
         if newMessageList.count - 1 == index // 지금 마지막 메세지를 재생하고 온 것. 새로 데이터를 받아와야 한다.
         {
-            if (self.newMessageList[self.newMessageList.count - 1].nextMessageType == .userAnswerWithComplete) {
+            
+            if(self.newMessageList[self.newMessageList.count - 1].nextMessageType == .tarot) {
+                NotificationCenter.default.post(name: NSNotification.Name("tarotPresent"), object: nil)
+            }
+            else if (self.newMessageList[self.newMessageList.count - 1].nextMessageType == .userAnswerWithComplete) {
                 self.messageSendButton.isEnabled = true
                 self.disableTextField(isEnable: true)
                 self.messageTextInputView.becomeFirstResponder()
@@ -595,6 +652,43 @@ class Day7ViewController: UIViewController {
         }
     }
     
+    @objc func tarotPresent(notification : NSNotification)
+    {
+        let storyboard = UIStoryboard(name: "Day7", bundle: nil)
+
+        let vc = storyboard.instantiateViewController(identifier: "setTarotVC")
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        
+
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    @objc func tarotComplete(notification : NSNotification)
+    {
+        
+        loadApoMessage(idx: 140) { (result) in
+            
+            if result
+            {
+                self.messageListForTableView.append(self.newMessageList[self.messageListForTableView.count])
+                
+                let index = IndexPath(row: self.messageListForTableView.count - 1, section: 0)
+                
+                
+                self.chatTableView.beginUpdates()
+                self.chatTableView.insertRows(at: [index], with: .none)
+                self.chatTableView.endUpdates()
+            }
+            else
+            {
+                makeAlert(title: "알림", message: "메세지 정보를 불러오는데 실패하였습니다", vc: self)
+            }
+        }
+    }
+    
+    
     
     
     
@@ -605,7 +699,7 @@ class Day7ViewController: UIViewController {
     @objc func keyboardWillShow(notification : Notification){
         if let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
             
-            self.messageInputAreaBottomConstraint.constant = keyboardSize.height
+            self.messageInputAreaBottomConstraint.constant = keyboardSize.height - 30
             UIView.animate(withDuration: 0 , animations: {
                 
                 self.view.layoutIfNeeded()
@@ -626,6 +720,23 @@ class Day7ViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @objc func receivedUserSelect(notification : NSNotification)
+    {
+        let userSelect = notification.object as? String ?? ""
+        
+        self.messageTextInputView.text = userSelect
+        self.messageTextInputView.textColor = .white
+        textViewDidChange(messageTextInputView)
+    }
+    
+    @objc func receivedSelectWithError(notification : NSNotification)
+    {
+        let userSelect = notification.object as? String ?? ""
+        
+        self.messageTextInputView.text = userSelect
+        self.messageTextInputView.textColor = .white
+        textViewDidChange(messageTextInputView)
+    }
     
     
     func disableTextField(isEnable: Bool)
@@ -755,76 +866,7 @@ class Day7ViewController: UIViewController {
                     
                     return myMessageWithCompleteCell
                     
-                case .compassButton:
-                    guard let ChatButtonCell =
-                            tableView.dequeueReusableCell(withIdentifier: "ChatButtonCell", for: indexPath)
-                            as? ChatButtonCell
-                    else {return UITableViewCell() }
-                    
-                    
-                    ChatButtonCell.selectionStyle = .none
-                    ChatButtonCell.setChatButton(buttonCase: newMessageList[indexPath.row].type)
-                    
-                    if isMessageLoadList[indexPath.row] == false
-                    {
-                        ChatButtonCell.loadingAnimate(idx: indexPath.row)
-                    }
-                    else
-                    {
-                        ChatButtonCell.showMessageWithNoAnimation()
-                    }
-                    
-                    isMessageLoadList[indexPath.row] = true
-                    
-                    return ChatButtonCell
-                    
-                case .cameraButton:
-                    guard let ChatButtonCell =
-                            tableView.dequeueReusableCell(withIdentifier: "ChatButtonCell", for: indexPath)
-                            as? ChatButtonCell
-                    else {return UITableViewCell() }
-                    
-                    
-                    ChatButtonCell.selectionStyle = .none
-                    ChatButtonCell.setChatButton(buttonCase: newMessageList[indexPath.row].type)
-                    
-                    if isMessageLoadList[indexPath.row] == false
-                    {
-                        ChatButtonCell.loadingAnimate(idx: indexPath.row)
-                    }
-                    else
-                    {
-                        ChatButtonCell.showMessageWithNoAnimation()
-                    }
-                    
-                    isMessageLoadList[indexPath.row] = true
-                    
-                    return ChatButtonCell
-                    
-                case .selectAdjective:
-                    guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
-                            as? Day2selectAnswerCell
-                    else {return UITableViewCell() }
-                    
-                    
-                    selectCell.backgroundColor = .clear
-                    selectCell.setAdjectiveList(selectList: newMessageList[indexPath.row].dataList)
-                    selectCell.selectionStyle = .none
-                    
-                    if isMessageLoadList[indexPath.row] == false
-                    {
-                        selectCell.loadingAnimate(index: indexPath.row)
-                    }
-                    else
-                    {
-                        selectCell.showMessageWithNoAnimation()
-                    }
-                    
-                    isMessageLoadList[indexPath.row] = true
-                    
-                    return selectCell
-                    
-                    
+               
                 case .selectList:
                     guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
                             as? Day2selectAnswerCell
@@ -847,11 +889,33 @@ class Day7ViewController: UIViewController {
                     
                     return selectCell
                     
+                case .selectWithError:
+                    guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
+                            as? Day2selectAnswerCell
+                    else {return UITableViewCell() }
+                    
+                    selectCell.backgroundColor = .clear
+                    selectCell.setSelectWithError(selectList: newMessageList[indexPath.row].dataList)
+                    selectCell.selectionStyle = .none
+                    
+                    if isMessageLoadList[indexPath.row] == false
+                    {
+                        selectCell.loadingAnimate(index: indexPath.row)
+                    }
+                    else
+                    {
+                        selectCell.showMessageWithNoAnimation()
+                    }
+                    
+                    isMessageLoadList[indexPath.row] = true
+                    
+                    return selectCell
+                    
+                    
                     
                 case .enter3words:
                     return UITableViewCell()
-                case .brightAndDark:
-                    return UITableViewCell()
+                    
                 default :
                     return UITableViewCell()
                 }
@@ -916,47 +980,22 @@ class Day7ViewController: UIViewController {
                     
                     return vibrateCell
                     
-                case .photo:
-                    guard let apoImageViewCell =
-                            tableView.dequeueReusableCell(withIdentifier: "Day1ApoImageViewCell", for: indexPath)
-                            as? Day1ApoImageViewCell
-                    else {return UITableViewCell() }
-                    
-                    
-                    //                apoImageViewCell.selectionStyle = .none
-                    apoImageViewCell.isSelected = false
-                    apoImageViewCell.setImageView(imgUrl: newMessageList[indexPath.row].messageContent)
-                    
-                    if isMessageLoadList[indexPath.row] == false
-                    {
-                        apoImageViewCell.loadingAnimate(idx: indexPath.row)
-                    }
-                    else
-                    {
-                        apoImageViewCell.showMessageWithNoAnimation()
-                    }
-                    
-                    isMessageLoadList[indexPath.row] = true
-                    
-                    return apoImageViewCell
-                    
-                case .normalWithSea:
-                    print("셀 생성 normalwithsea 분기처리")
+                case .tarot :
+                    print("tarot 넘어옴")
                     guard let yourMessageCell =
                             tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
                             as? ChatYourMessageCell
                     else {return UITableViewCell() }
                     
                     
+                    yourMessageCell.selectionStyle = .none
                     yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                     
-                    
-                    
-                    
+                    // 애니메이션 안했으면 애니메이션 실행해주고 아니면 그냥 띄운다.
                     if isMessageLoadList[indexPath.row] == false
                     {
-                        yourMessageCell.setSeaBackground()
-                        yourMessageCell.loadingAnimate(index: indexPath.row, vibrate: false)
+                        yourMessageCell.goToTarot(index: indexPath.row)
+                        
                     }
                     else
                     {
@@ -965,8 +1004,29 @@ class Day7ViewController: UIViewController {
                     
                     isMessageLoadList[indexPath.row] = true
                     
-                    yourMessageCell.backgroundColor = .clear
                     return yourMessageCell
+                    
+                case .selectWithError:
+                    guard let Day7ErrorCell = tableView.dequeueReusableCell(withIdentifier: "Day7ErrorCell", for: indexPath)
+                            as? Day7ErrorCell
+                    else {return UITableViewCell() }
+                    
+                    Day7ErrorCell.backgroundColor = .clear
+                    Day7ErrorCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+                    Day7ErrorCell.selectionStyle = .none
+                    
+                    if isMessageLoadList[indexPath.row] == false
+                    {
+                        Day7ErrorCell.loadingAnimate(idx: indexPath.row)
+                    }
+                    else
+                    {
+                        Day7ErrorCell.showMessageWithNoAnimation()
+                    }
+                    
+                    isMessageLoadList[indexPath.row] = true
+                    
+                    return Day7ErrorCell
                     
                 default :
                     return UITableViewCell()
