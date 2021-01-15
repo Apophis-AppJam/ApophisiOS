@@ -78,6 +78,13 @@
                                     <action selector="goToDay6Sample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pn1-Zj-f5f"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sq-rk-fmy">
+                                <rect key="frame" x="40" y="64" width="53" height="53"/>
+                                <state key="normal" backgroundImage="ChatHomeButton"/>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ctd-Y6-i1c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -92,8 +99,10 @@
                             <constraint firstItem="up2-rV-U59" firstAttribute="top" secondItem="L8m-0O-0Eb" secondAttribute="bottom" constant="40" id="JM5-rr-xIj"/>
                             <constraint firstItem="Ecl-ay-wJg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="KNE-tv-hZ3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="up2-rV-U59" secondAttribute="trailing" constant="70" id="MIV-2P-SL3"/>
+                            <constraint firstItem="9sq-rk-fmy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Moa-Vf-hbZ"/>
                             <constraint firstItem="Td9-Sn-64D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NcO-Qp-ZSt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L8m-0O-0Eb" secondAttribute="trailing" constant="70" id="Tnp-au-gFD"/>
+                            <constraint firstItem="9sq-rk-fmy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="YNq-OD-pe2"/>
                             <constraint firstItem="Td9-Sn-64D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="a9b-AY-hyA"/>
                             <constraint firstAttribute="bottom" secondItem="dVL-Eh-aOn" secondAttribute="bottom" id="fcu-fG-7qn"/>
                             <constraint firstItem="dVL-Eh-aOn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gCh-Jz-4yN"/>
@@ -524,6 +533,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ChatHomeButton" width="53" height="53"/>
         <image name="WhiteMessageBackgroundImage" width="197" height="43"/>
         <image name="btn_findme" width="42" height="42"/>
         <image name="ios_login" width="937.5" height="1667.5"/>

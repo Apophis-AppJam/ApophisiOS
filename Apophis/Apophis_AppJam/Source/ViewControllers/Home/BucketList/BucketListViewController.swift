@@ -50,6 +50,7 @@ class BucketListViewController: UIViewController {
     
     
     @IBAction func backButtonClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 

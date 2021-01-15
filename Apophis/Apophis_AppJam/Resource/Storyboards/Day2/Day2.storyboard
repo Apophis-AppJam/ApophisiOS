@@ -529,6 +529,35 @@
                                             <outlet property="titleLabel" destination="v3e-py-HES" id="QNM-Ju-Blv"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Day2MusicPlayCell" rowHeight="75" id="CZD-eQ-dvW" customClass="Day2MusicPlayCell" customModule="Apophis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1034" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CZD-eQ-dvW" id="Wee-jQ-TZw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBh-ce-vnI">
+                                                    <rect key="frame" x="16" y="12" width="49" height="55"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="49" id="Y9n-fB-dVi"/>
+                                                        <constraint firstAttribute="height" constant="41" id="aXh-Re-diu"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="playMusic"/>
+                                                    <connections>
+                                                        <action selector="musicPlayButtonClicked:" destination="CZD-eQ-dvW" eventType="touchUpInside" id="6nn-1u-dj2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="BBh-ce-vnI" secondAttribute="bottom" constant="8" id="Nfr-Ad-PXF"/>
+                                                <constraint firstItem="BBh-ce-vnI" firstAttribute="leading" secondItem="Wee-jQ-TZw" secondAttribute="leading" constant="16" id="l0m-ow-UtI"/>
+                                                <constraint firstItem="BBh-ce-vnI" firstAttribute="top" secondItem="Wee-jQ-TZw" secondAttribute="top" constant="12" id="v5X-Xd-n3v"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="musicButton" destination="BBh-ce-vnI" id="s8b-Wd-l4J"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfs-63-EuU" userLabel="messageInputAreaView">
@@ -1757,6 +1786,7 @@
         <image name="nextBtn" width="47" height="34"/>
         <image name="nextBtnUnactivated" width="47" height="34"/>
         <image name="okButton" width="175" height="36"/>
+        <image name="playMusic" width="49" height="42"/>
         <image name="selected_answer_background" width="32.5" height="34"/>
         <image name="slice2" width="32" height="32"/>
         <image name="snowBG" width="375" height="667"/>
