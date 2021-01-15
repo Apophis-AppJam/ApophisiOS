@@ -18,6 +18,7 @@ class Day3ColorViewController: UIViewController {
     @IBOutlet weak var selectedColorImage: UIImageView!
     @IBOutlet weak var ColorLabel: UILabel!
     @IBOutlet weak var completeLabel: UILabel!
+    @IBOutlet weak var completeButton: UIButton!
     
     
 
@@ -30,15 +31,15 @@ class Day3ColorViewController: UIViewController {
         .init(red: 238/255, green: 208/255, blue: 68/255, alpha: 1),
         .init(red: 163/255, green: 194/255, blue: 70/255, alpha: 1),
         .init(red: 57/255, green: 119/255, blue: 7/255, alpha: 1),
-        .init(red: 38/255, green: 63/255, blue: 34/255, alpha: 1),
-        .init(red: 25/255, green: 59/255, blue: 117/255, alpha: 1),
-        .init(red: 35/255, green: 94/255, blue: 206/255, alpha: 1),
+        .init(red: 24/255, green: 115/255, blue: 10/255, alpha: 1),
+        .init(red: 23/255, green: 80/255, blue: 175/255, alpha: 1),
+        .init(red: 77/255, green: 134/255, blue: 244/255, alpha: 1),
         .init(red: 129/255, green: 177/255, blue: 236/255, alpha: 1),
-        .init(red: 154/255, green: 72/255, blue: 145/255, alpha: 1),
+        .init(red: 171/255, green: 81/255, blue: 161/255, alpha: 1),
         .init(red: 244/255, green: 141/255, blue: 179/255, alpha: 1),
-        .init(red: 88/255, green: 43/255, blue: 86/255, alpha: 1),
-        .init(red: 24/255, green: 24/255, blue: 24/255, alpha: 1),
-        .init(red: 153/255, green: 153/255, blue: 153/255, alpha: 1),
+        .init(red: 123/255, green: 41/255, blue: 120/255, alpha: 1),
+        .init(red: 71/255, green: 71/255, blue: 71/255, alpha: 1),
+        .init(red: 186/255, green: 186/255, blue: 186/255, alpha: 1),
         .init(red: 253/255, green: 253/255, blue: 253/255, alpha: 1)]
 
     
@@ -72,12 +73,19 @@ class Day3ColorViewController: UIViewController {
         ColorLabel.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         completeLabel.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         ColorLabel.alpha = 0
+        completeButton.isEnabled = false
         
     }
     
     //MARK:- IBAction Part
     /// 버튼과 같은 동작을 선언하는 @IBAction 을 선언합니다 , IBAction 함수 명은 동사 형태로!!  // 함수명 lowerCamelCase 사용
     /// ex) @IBAction func answerSelectedButtonClicked(_ sender: Any) {  code .... }
+    @IBAction func completeButtonClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            NotificationCenter.default.post(name: NSNotification.Name("colorPickerComplete"), object: nil)
+        }
+    }
     
     //MARK:- default Setting Function Part
     /// 기본적인 세팅을 위한 함수 부분입니다 // 함수명 lowerCamelCase 사용
@@ -109,6 +117,9 @@ class Day3ColorViewController: UIViewController {
 @objc func colorChecked(notification : NSNotification)
 {
     ColorLabel.alpha = 1
+    
+    completeButton.isEnabled = true
+    completeButton.setBackgroundImage(UIImage(named: "btn_complete_act"), for: .normal)
     
     let attributedString = NSMutableAttributedString(string: ColorLabel.text!)
     

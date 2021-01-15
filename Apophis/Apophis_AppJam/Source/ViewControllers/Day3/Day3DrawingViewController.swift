@@ -167,7 +167,7 @@ class Day3DrawingViewController: UIViewController {
                 print("둘다 True",isLinked)
                 
                 //이어진 사진으로 변경되는 코드
-                UIView.animate(withDuration: 5 , animations: {
+                UIView.animate(withDuration: 8 , animations: {
                   
                     self.view.layoutIfNeeded()
                     self.handBackgroundImage.image = UIImage(named: "handDrawingComplete")

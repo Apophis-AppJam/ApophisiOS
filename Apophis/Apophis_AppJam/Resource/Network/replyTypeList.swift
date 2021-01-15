@@ -37,6 +37,10 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .selectList
     }
+    else if replyType == "다중 보기 선택 "
+    {
+        return .selectList
+    }
     else if replyType == "기능 액션 버튼 - 가치 선택"
     {
         return .selectValue
@@ -45,13 +49,27 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .normalWithSea
     }
-
-    
-    
-    
+    else if replyType == "타로 장문형 텍스트 입력"
+    {
+        return .tarotText
+    }
+    else if replyType == "타로 음성 녹음"
+    {
+        // 우선 타로 텍스트 입려으로 뺀다
+        return .tarotText
+    }
+    else if replyType == "reply 없음"
+    {
+        return .tarot
+    }
     else if replyType == "기능 액션 버튼 - 시간대 설정"
     {
         return .setTimeButton
+    }
+    
+    else if replyType == "다중 보기 선택 - 통신장애"
+    {
+        return .selectWithError
     }
     
     else if replyType == "단답형 텍스트 입력"
@@ -74,7 +92,10 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .colorPicker
     }
-    
+    else if replyType == "기능 액션 버튼 - 그림판"
+    {
+        return .setHandDrawing
+    }
     
     else
     {

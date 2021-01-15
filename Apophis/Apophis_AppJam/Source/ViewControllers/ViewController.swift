@@ -23,10 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var day6Button: UIButton!
     @IBOutlet weak var day7Button: UIButton!
 
-    @IBOutlet weak var yukyungButton: UIButton!
-    @IBOutlet weak var youngjaeButton: UIButton!
-    @IBOutlet weak var jihunButton: UIButton!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +31,7 @@ class ViewController: UIViewController {
 
         
         
-        
+
         day1Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
         day2Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
         day3Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
@@ -42,14 +39,7 @@ class ViewController: UIViewController {
         day5Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
         day6Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
         day7Button.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 18)
-        yukyungButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 14)
-        youngjaeButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 14)
-        jihunButton.titleLabel!.font = UIFont.gmarketFont(weight: .Medium, size: 14)
-        
-        
-        
-        
-        
+
         
         
         
@@ -113,16 +103,7 @@ class ViewController: UIViewController {
         
     }
     
-    
-    @IBAction func homeButtonClicked(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        
-        guard let homeVC = storyboard.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else {return}
-        
-        self.navigationController?.pushViewController(homeVC, animated: true)
-    }
-    
+
     
     
 }

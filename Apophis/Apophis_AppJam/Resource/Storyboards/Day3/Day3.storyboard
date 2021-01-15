@@ -39,18 +39,26 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아포니머스의 이야기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezn-rH-dlO">
-                                        <rect key="frame" x="134.66666666666666" y="58.333333333333336" width="144.99999999999997" height="21.666666666666664"/>
+                                        <rect key="frame" x="134.66666666666666" y="62.333333333333336" width="144.99999999999997" height="21.666666666666664"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="눈길 속을 거니는" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fie-Jm-01H">
+                                        <rect key="frame" x="151.33333333333334" y="37" width="111.66666666666666" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.17255705599999999" green="0.17250087859999999" blue="0.17646950480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="fie-Jm-01H" firstAttribute="centerX" secondItem="ezn-rH-dlO" secondAttribute="centerX" id="Fsa-Cp-NGU"/>
                                     <constraint firstItem="ezn-rH-dlO" firstAttribute="centerX" secondItem="qtr-AH-lim" secondAttribute="centerX" id="Km9-I7-cxJ"/>
                                     <constraint firstAttribute="bottom" secondItem="TJF-w0-Ldn" secondAttribute="bottom" constant="6" id="M8H-0J-UeX"/>
-                                    <constraint firstAttribute="bottom" secondItem="ezn-rH-dlO" secondAttribute="bottom" constant="20" id="VO0-DV-Y8F"/>
+                                    <constraint firstAttribute="bottom" secondItem="ezn-rH-dlO" secondAttribute="bottom" constant="16" id="VO0-DV-Y8F"/>
                                     <constraint firstAttribute="height" constant="100" id="c7U-J1-AXc"/>
+                                    <constraint firstItem="ezn-rH-dlO" firstAttribute="top" secondItem="fie-Jm-01H" secondAttribute="bottom" constant="5" id="okn-tE-vHX"/>
                                     <constraint firstItem="TJF-w0-Ldn" firstAttribute="leading" secondItem="qtr-AH-lim" secondAttribute="leading" constant="16" id="spX-OU-NdP"/>
                                 </constraints>
                             </view>
@@ -465,6 +473,7 @@
                         <outlet property="messageSendButton" destination="mPG-2b-aY0" id="Hfp-a0-8vZ"/>
                         <outlet property="messageTextInputView" destination="2vv-0a-Rs3" id="MtP-iV-Dwe"/>
                         <outlet property="roadBackgroundImage" destination="01M-Yk-mdS" id="5UI-uz-l4S"/>
+                        <outlet property="subTitle" destination="fie-Jm-01H" id="RUb-bF-W8l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvK-09-yf3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -691,7 +700,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="3MN-yX-t8b">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCheck" translatesAutoresizingMaskIntoConstraints="NO" id="3MN-yX-t8b">
                                                     <rect key="frame" x="9" y="9" width="24" height="24"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvs-re-DFG">
@@ -720,9 +729,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWE-fz-IS4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWE-fz-IS4">
                                 <rect key="frame" x="177" y="770" width="60" height="60"/>
-                                <state key="normal" image="btn_complete_act"/>
+                                <state key="normal" backgroundImage="btn_complete_unact"/>
+                                <connections>
+                                    <action selector="completeButton:" destination="9ND-rA-5qe" eventType="touchUpInside" id="VZO-2N-ZHm"/>
+                                    <action selector="completeButtonClicked:" destination="LE0-8q-ZDp" eventType="touchUpInside" id="u4m-f7-nTC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4y-ZA-bs9">
                                 <rect key="frame" x="192" y="840" width="30" height="21"/>
@@ -762,12 +775,14 @@
                     <connections>
                         <outlet property="ColorLabel" destination="6hs-Nz-lAZ" id="Tx4-k7-jhp"/>
                         <outlet property="colorListCollectionView" destination="YCI-Zt-ora" id="jhv-lC-sGF"/>
+                        <outlet property="completeButton" destination="iWE-fz-IS4" id="4Ik-Fa-eDW"/>
                         <outlet property="completeLabel" destination="A4y-ZA-bs9" id="0Sn-aW-wzG"/>
                         <outlet property="headerTitle" destination="qxO-xL-HfK" id="F5b-r7-RgD"/>
                         <outlet property="selectedColorImage" destination="l8P-gS-6wj" id="cDW-aZ-65g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VS8-5M-J4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="9ND-rA-5qe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2188.4057971014495" y="-307.36607142857139"/>
         </scene>
@@ -782,12 +797,12 @@
         <image name="bg3Voice" width="375" height="667"/>
         <image name="bg_3_colorpicker" width="375" height="667"/>
         <image name="btn_back" width="32" height="32"/>
-        <image name="btn_complete_act" width="60" height="60"/>
+        <image name="btn_complete_unact" width="60" height="60"/>
         <image name="btn_palette" width="42" height="42"/>
         <image name="chatMessageBackground" width="33" height="34"/>
         <image name="colorListBackground" width="375" height="228"/>
         <image name="color_unselect" width="105" height="105"/>
-        <image name="ic_check" width="24" height="24"/>
+        <image name="icCheck" width="27.333333969116211" height="25.666666030883789"/>
         <image name="imgDay3Road" width="375" height="667"/>
         <image name="img_color_sun" width="265" height="265"/>
         <image name="recordTextBackground" width="295" height="161"/>

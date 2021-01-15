@@ -11,7 +11,6 @@ import Lottie
 
 import AVFoundation
 
-var soundEffect: AVAudioPlayer?
 
 
 class IntroPhoneRingViewController: UIViewController {
