@@ -51,8 +51,7 @@ class Day7ErrorCell: UITableViewCell {
         
         
         messageTextView.font = UIFont.gmarketFont(weight: .Medium, size: 14)
-        messageTextView.textColor = .white
-        messageTextView.alpha = 0.5
+        messageTextView.textColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         messageTextView.text = message
 
         messageTextView.sizeToFit()
@@ -82,12 +81,10 @@ class Day7ErrorCell: UITableViewCell {
                 
 
             
-
-            
             
         } completion: { (_) in
-            sleep(1)
-            NotificationCenter.default.post(name: NSNotification.Name("aponimousMessageEnd"), object: idx)
+            
+            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
         }
 
 

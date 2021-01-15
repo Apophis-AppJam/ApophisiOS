@@ -50,7 +50,7 @@ class IntroNewsViewController: UIViewController {
         
         
         
-        let time = DispatchTime.now() + .seconds(20)
+        let time = DispatchTime.now() + .seconds(40)
         DispatchQueue.main.asyncAfter(deadline: time) {
             
             
@@ -67,16 +67,13 @@ class IntroNewsViewController: UIViewController {
     
     func playVideo(){
         
-        let filepath: String? = Bundle.main.path(forResource: "sampleVideo", ofType: "mp4")
+        let filepath: String? = Bundle.main.path(forResource: "onBoardingNews", ofType: "mp4")
         let fileURL = URL.init(fileURLWithPath: filepath!)
         
         self.avPlayer = AVPlayer(url: fileURL)
         self.avPlayerViewController.player = self.avPlayer
         self.avPlayerViewController.view.frame =
-                    CGRect(x: sampleView.frame.origin.x,
-                           y: sampleView.frame.origin.y,
-                           width: sampleView.bounds.width,
-                           height: sampleView.bounds.height)
+            sampleView.bounds
                            
         avPlayerViewController.showsPlaybackControls = false
         sampleView.addSubview(avPlayerViewController.view)
@@ -109,6 +106,7 @@ class IntroNewsViewController: UIViewController {
         chatTableView.dataSource = self
         chatTableView.backgroundColor = .clear
         chatTableView.separatorStyle = .none
+        chatTableView.allowsSelection = false
     }
     
     

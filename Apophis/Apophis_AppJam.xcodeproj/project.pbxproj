@@ -21,6 +21,9 @@
 		06DD61D725B0F49600AADBA6 /* Day7TarotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DD61D625B0F49600AADBA6 /* Day7TarotDetailViewController.swift */; };
 		06DD61DA25B0F92600AADBA6 /* Day7TarotCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DD61D925B0F92600AADBA6 /* Day7TarotCardCell.swift */; };
 		06FC437925B1D37500F0E983 /* Day7ErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC437825B1D37500F0E983 /* Day7ErrorCell.swift */; };
+		06FC437E25B2144A00F0E983 /* Day7CountDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC437D25B2144A00F0E983 /* Day7CountDownViewController.swift */; };
+		06FC438125B2155300F0E983 /* KakaoTalk_Audio_2021-01-15-23-32-19.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 06FC438025B2155300F0E983 /* KakaoTalk_Audio_2021-01-15-23-32-19.m4a */; };
+		06FC438825B21D3500F0E983 /* countdown_realfin.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 06FC438725B21D3500F0E983 /* countdown_realfin.mp4 */; };
 		AE2E82F5D36D7460962246C6 /* Pods_Apophis_AppJam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */; };
 		FC258BA325AF3CC100B56498 /* Day6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC258BA225AF3CC100B56498 /* Day6ViewController.swift */; };
 		FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC394F3E259D110500E70307 /* ColorViewController.swift */; };
@@ -83,6 +86,8 @@
 		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
 		FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */; };
 		FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */; };
+		FD7EE4AD25B218AB00CB331D /* day2Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FD7EE4AC25B218AB00CB331D /* day2Sound.mp3 */; };
+		FD7EE4B025B21BE200CB331D /* Day2MusicPlayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EE4AF25B21BE200CB331D /* Day2MusicPlayCell.swift */; };
 		FD8A8CA325A76E5500DE3D27 /* placeHolderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */; };
 		FD8A8CAF25A810EE00DE3D27 /* Day2SetBrightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */; };
 		FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */; };
@@ -117,6 +122,7 @@
 		FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */; };
 		FDF1ECD325B16D7800F29B29 /* ChatDayEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF1ECD225B16D7800F29B29 /* ChatDayEndViewController.swift */; };
 		FDF1ECD625B1919300F29B29 /* ChatDayEndMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF1ECD525B1919300F29B29 /* ChatDayEndMessageCell.swift */; };
+		FDF1ECD925B1DBB400F29B29 /* onBoardingNews.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FDF1ECD825B1DBB400F29B29 /* onBoardingNews.mp4 */; };
 		FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */; };
 		FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701F25A0D33C006EEC04 /* ColorList.swift */; };
 		FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */; };
@@ -140,6 +146,9 @@
 		06DD61D625B0F49600AADBA6 /* Day7TarotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7TarotDetailViewController.swift; sourceTree = "<group>"; };
 		06DD61D925B0F92600AADBA6 /* Day7TarotCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7TarotCardCell.swift; sourceTree = "<group>"; };
 		06FC437825B1D37500F0E983 /* Day7ErrorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7ErrorCell.swift; sourceTree = "<group>"; };
+		06FC437D25B2144A00F0E983 /* Day7CountDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7CountDownViewController.swift; sourceTree = "<group>"; };
+		06FC438025B2155300F0E983 /* KakaoTalk_Audio_2021-01-15-23-32-19.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KakaoTalk_Audio_2021-01-15-23-32-19.m4a"; sourceTree = "<group>"; };
+		06FC438725B21D3500F0E983 /* countdown_realfin.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = countdown_realfin.mp4; sourceTree = "<group>"; };
 		2727856C1D01EC217465EB2F /* Pods-Apophis_AppJam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.release.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.release.xcconfig"; sourceTree = "<group>"; };
 		4EBA087ECB6A0930A2946DB1 /* Pods_Apophis_AppJam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apophis_AppJam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23F09E174B44478E4702746 /* Pods-Apophis_AppJam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apophis_AppJam.debug.xcconfig"; path = "Target Support Files/Pods-Apophis_AppJam/Pods-Apophis_AppJam.debug.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +218,8 @@
 		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yukyungLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jihunLabViewController.swift; sourceTree = "<group>"; };
+		FD7EE4AC25B218AB00CB331D /* day2Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = day2Sound.mp3; sourceTree = "<group>"; };
+		FD7EE4AF25B21BE200CB331D /* Day2MusicPlayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2MusicPlayCell.swift; sourceTree = "<group>"; };
 		FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeHolderColor.swift; sourceTree = "<group>"; };
 		FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetBrightViewController.swift; sourceTree = "<group>"; };
 		FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetDarkViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +253,7 @@
 		FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsViewController.swift; sourceTree = "<group>"; };
 		FDF1ECD225B16D7800F29B29 /* ChatDayEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDayEndViewController.swift; sourceTree = "<group>"; };
 		FDF1ECD525B1919300F29B29 /* ChatDayEndMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDayEndMessageCell.swift; sourceTree = "<group>"; };
+		FDF1ECD825B1DBB400F29B29 /* onBoardingNews.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = onBoardingNews.mp4; sourceTree = "<group>"; };
 		FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "circleProgressView + UIView.swift"; sourceTree = "<group>"; };
 		FDFB701C25A0ACAB006EEC04 /* Apophis_AppJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apophis_AppJam.entitlements; sourceTree = "<group>"; };
 		FDFB701F25A0D33C006EEC04 /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
@@ -271,6 +283,7 @@
 				06DD61CC25B0E1AC00AADBA6 /* Day7TarotViewController.swift */,
 				06DD61CF25B0ED5000AADBA6 /* Day7SetTarotNavigationController.swift */,
 				06DD61D625B0F49600AADBA6 /* Day7TarotDetailViewController.swift */,
+				06FC437D25B2144A00F0E983 /* Day7CountDownViewController.swift */,
 			);
 			path = Day7;
 			sourceTree = "<group>";
@@ -658,11 +671,15 @@
 		FDA98B632596EDA200F4DFDF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FD7EE4AC25B218AB00CB331D /* day2Sound.mp3 */,
+				FDF1ECD825B1DBB400F29B29 /* onBoardingNews.mp4 */,
+				06FC438725B21D3500F0E983 /* countdown_realfin.mp4 */,
 				FD4136AD25B026130041B5B1 /* apophis_splash.json */,
 				FD4136AE25B026130041B5B1 /* fallingstar.json */,
 				FC70A78025AF69F800DA7992 /* shutter.mp3 */,
 				FC70A77D25AF60D100DA7992 /* day6_shutter.json */,
 				FD5F3C1925AD92AD007BD93C /* main_bgm.mp3 */,
+				06FC438025B2155300F0E983 /* KakaoTalk_Audio_2021-01-15-23-32-19.m4a */,
 				FD4136C225B0358A0041B5B1 /* bg_splash.png */,
 				FD4136C425B0358B0041B5B1 /* bg_splash@2x.png */,
 				FD4136C325B0358A0041B5B1 /* bg_splash@3x.png */,
@@ -844,6 +861,7 @@
 				FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */,
 				FD5D51BB25AB5E3200705E60 /* Day2SnowBackgroundCell.swift */,
 				FD5D51BE25ABB5FB00705E60 /* Day2UserAnswerCompleteCell.swift */,
+				FD7EE4AF25B21BE200CB331D /* Day2MusicPlayCell.swift */,
 			);
 			path = ChatCells;
 			sourceTree = "<group>";
@@ -917,7 +935,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */,
+				FDF1ECD925B1DBB400F29B29 /* onBoardingNews.mp4 in Resources */,
 				FD4136AF25B026130041B5B1 /* apophis_splash.json in Resources */,
+				06FC438125B2155300F0E983 /* KakaoTalk_Audio_2021-01-15-23-32-19.m4a in Resources */,
 				FD52078D2599A60200AAD1BA /* GmarketSansTTFBold.ttf in Resources */,
 				06DD61BB25B085B700AADBA6 /* Day6.storyboard in Resources */,
 				FD52078E2599A60200AAD1BA /* GmarketSansTTFLight.ttf in Resources */,
@@ -927,6 +947,7 @@
 				FD4136B025B026130041B5B1 /* fallingstar.json in Resources */,
 				FD5207B02599AF6800AAD1BA /* Day4.storyboard in Resources */,
 				FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */,
+				FD7EE4AD25B218AB00CB331D /* day2Sound.mp3 in Resources */,
 				FD52077225998F7F00AAD1BA /* Day1.storyboard in Resources */,
 				FD41368D25AEBC400041B5B1 /* ChosunNm.ttf in Resources */,
 				FDA4644A25B0AF6F00027DA2 /* Day7.storyboard in Resources */,
@@ -935,6 +956,7 @@
 				FD4136C525B0358B0041B5B1 /* bg_splash.png in Resources */,
 				FDD0922A259AF58100B92529 /* sampleVideo.mp4 in Resources */,
 				FD5F3C1725AD8020007BD93C /* message_loading.json in Resources */,
+				06FC438825B21D3500F0E983 /* countdown_realfin.mp4 in Resources */,
 				FD5F3C1A25AD92AD007BD93C /* main_bgm.mp3 in Resources */,
 				FC70A78125AF69F800DA7992 /* shutter.mp3 in Resources */,
 				FD52078F2599A60200AAD1BA /* GmarketSansTTFMedium.ttf in Resources */,
@@ -1033,6 +1055,7 @@
 				FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */,
 				FDD0922E259B01AF00B92529 /* IntroNewsCommentCell.swift in Sources */,
 				06DD61D025B0ED5000AADBA6 /* Day7SetTarotNavigationController.swift in Sources */,
+				06FC437E25B2144A00F0E983 /* Day7CountDownViewController.swift in Sources */,
 				FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */,
 				FD5F356625A5896F00330E9B /* Day2word3InputCell.swift in Sources */,
 				FD5F356125A48CBE00330E9B /* Day2CircleButtonCell.swift in Sources */,
@@ -1095,6 +1118,7 @@
 				FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */,
 				FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */,
 				FCDE84AF25A57B2E003D288E /* LoginViewController.swift in Sources */,
+				FD7EE4B025B21BE200CB331D /* Day2MusicPlayCell.swift in Sources */,
 				FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */,
 				FC43DF9525AE21A20017E178 /* Day3ColorListcell.swift in Sources */,
 				FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */,

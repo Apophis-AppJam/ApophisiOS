@@ -134,7 +134,7 @@
                             <constraint firstItem="fl8-kS-U0i" firstAttribute="leading" secondItem="zt9-7l-4mx" secondAttribute="leading" id="GLD-YZ-xdp"/>
                             <constraint firstItem="q5f-Fm-StE" firstAttribute="leading" secondItem="zt9-7l-4mx" secondAttribute="leading" id="Hie-Po-Ph1"/>
                             <constraint firstItem="q5f-Fm-StE" firstAttribute="top" secondItem="vg5-iH-CjA" secondAttribute="bottom" id="KQd-sV-HMh"/>
-                            <constraint firstItem="vg5-iH-CjA" firstAttribute="top" secondItem="b4n-Fw-CGd" secondAttribute="top" constant="44" id="NHH-qa-Ect"/>
+                            <constraint firstItem="vg5-iH-CjA" firstAttribute="top" secondItem="zt9-7l-4mx" secondAttribute="top" id="NHH-qa-Ect"/>
                             <constraint firstItem="vg5-iH-CjA" firstAttribute="leading" secondItem="zt9-7l-4mx" secondAttribute="leading" id="PMf-W3-QRu"/>
                             <constraint firstItem="vg5-iH-CjA" firstAttribute="trailing" secondItem="zt9-7l-4mx" secondAttribute="trailing" id="kib-bP-ClM"/>
                             <constraint firstItem="fl8-kS-U0i" firstAttribute="trailing" secondItem="zt9-7l-4mx" secondAttribute="trailing" id="nXD-ui-M9e"/>
@@ -144,6 +144,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cYu-Fd-bbn"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="chatTableView" destination="fl8-kS-U0i" id="PcA-lh-bvd"/>
                         <outlet property="sampleView" destination="vg5-iH-CjA" id="t2f-3P-sBd"/>
@@ -386,8 +387,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="믿으신다면, 당신만의 7일이 시작됩니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVo-l2-sQD">
-                                        <rect key="frame" x="0.0" y="287.5" width="326" height="33.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="믿으신다면," textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVo-l2-sQD">
+                                        <rect key="frame" x="0.0" y="287.5" width="326" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -405,6 +406,12 @@
                                             <constraint firstAttribute="height" constant="51" id="cHD-sE-Ewm"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신만의 7일이 시작됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMm-Pu-SZa">
+                                        <rect key="frame" x="86.5" y="309.5" width="153" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -419,6 +426,8 @@
                                     <constraint firstItem="vIR-dm-hxY" firstAttribute="centerY" secondItem="jjS-MH-lSM" secondAttribute="centerY" id="dSI-hl-tOA"/>
                                     <constraint firstItem="C0e-eP-unh" firstAttribute="leading" secondItem="jjS-MH-lSM" secondAttribute="leading" id="eld-nU-uiY"/>
                                     <constraint firstAttribute="trailing" secondItem="XVo-l2-sQD" secondAttribute="trailing" id="khb-th-260"/>
+                                    <constraint firstItem="oMm-Pu-SZa" firstAttribute="top" secondItem="XVo-l2-sQD" secondAttribute="bottom" constant="5" id="l0z-E8-kX6"/>
+                                    <constraint firstItem="oMm-Pu-SZa" firstAttribute="centerX" secondItem="jjS-MH-lSM" secondAttribute="centerX" id="lOq-7w-lrN"/>
                                     <constraint firstAttribute="trailing" secondItem="C0e-eP-unh" secondAttribute="trailing" id="rc5-Dl-5ML"/>
                                     <constraint firstAttribute="bottom" secondItem="C0e-eP-unh" secondAttribute="bottom" id="sY1-fm-393"/>
                                     <constraint firstItem="pHF-f7-bAD" firstAttribute="top" secondItem="pfN-JF-b3I" secondAttribute="bottom" constant="19" id="wRE-Ss-c6l"/>
@@ -447,6 +456,8 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="7kn-Cn-ekI" id="XfN-L5-gq1"/>
                         <outlet property="descriptionLabel2" destination="XVo-l2-sQD" id="Onx-hk-2Id"/>
+                        <outlet property="descriptionLabel3" destination="oMm-Pu-SZa" id="T1w-Jq-9gB"/>
+                        <outlet property="startButton" destination="Rvv-1C-Xh3" id="7FR-Ku-EqU"/>
                         <outlet property="titleLabel" destination="pHF-f7-bAD" id="zoF-if-kdP"/>
                     </connections>
                 </viewController>

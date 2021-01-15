@@ -15,6 +15,10 @@ func nextActionFromKorean(nextAction : String) -> messageTypeList
     {
         return .normal
     }
+    else if nextAction == "음성송출1"
+    {
+        return .day2Music
+    }
     else if nextAction == "진동"
     {
         return .vibrate
@@ -23,9 +27,9 @@ func nextActionFromKorean(nextAction : String) -> messageTypeList
     {
         return .photo
     }
-    else if nextAction == "엔딩뷰"
+    else if nextAction == "엔딩 뷰"
     {
-        return .normal
+        return .ending
     }
     else if nextAction == "백그라운드 이미지 - 바다 뷰"
     {

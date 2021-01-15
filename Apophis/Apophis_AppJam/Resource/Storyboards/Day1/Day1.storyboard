@@ -377,6 +377,81 @@
                                             <outlet property="hyeYuImage" destination="cXR-yv-prQ" id="8Jd-mr-PvU"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatDayEndMessageCell" rowHeight="291" id="Yr1-rF-sOv" customClass="ChatDayEndMessageCell" customModule="Apophis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1025.5" width="375" height="291"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yr1-rF-sOv" id="k36-76-3Bt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="291"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCJ-An-5Po">
+                                                    <rect key="frame" x="43" y="36" width="289" height="219"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="endViewBackground" translatesAutoresizingMaskIntoConstraints="NO" id="uZe-Wf-Ns3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="289" height="219"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy4-fp-58B">
+                                                            <rect key="frame" x="57" y="159" width="175" height="36"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Yy4-fp-58B" secondAttribute="height" multiplier="175:36" id="Su2-lh-Dal"/>
+                                                            </constraints>
+                                                            <state key="normal" backgroundImage="okButton"/>
+                                                            <connections>
+                                                                <action selector="completeButtonClicked:" destination="Yr1-rF-sOv" eventType="touchUpInside" id="cga-p8-Ioa"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내일 저녁 8시에 다시 만나요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGr-Wf-eJK">
+                                                            <rect key="frame" x="77" y="120.5" width="135.5" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대화를 마무리 할까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTX-Rp-Jh6">
+                                                            <rect key="frame" x="82.5" y="83.5" width="124" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_moon" translatesAutoresizingMaskIntoConstraints="NO" id="4Ot-e2-LtR">
+                                                            <rect key="frame" x="127.5" y="25" width="34" height="34"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="34" id="NYW-4Q-tvE"/>
+                                                                <constraint firstAttribute="height" constant="34" id="ZEC-77-Y09"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="RGr-Wf-eJK" firstAttribute="top" secondItem="uTX-Rp-Jh6" secondAttribute="bottom" constant="20" id="3ad-6w-ITW"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Yy4-fp-58B" secondAttribute="bottom" constant="24" id="B9d-dW-eNi"/>
+                                                        <constraint firstAttribute="bottom" secondItem="uZe-Wf-Ns3" secondAttribute="bottom" id="Ctp-Uf-7tt"/>
+                                                        <constraint firstItem="uZe-Wf-Ns3" firstAttribute="top" secondItem="NCJ-An-5Po" secondAttribute="top" id="GSC-by-CBT"/>
+                                                        <constraint firstAttribute="width" secondItem="NCJ-An-5Po" secondAttribute="height" multiplier="289:222" id="QEA-58-Rvq"/>
+                                                        <constraint firstItem="4Ot-e2-LtR" firstAttribute="centerX" secondItem="NCJ-An-5Po" secondAttribute="centerX" id="aA7-3c-BWv"/>
+                                                        <constraint firstAttribute="width" constant="289" id="b09-wZ-V6V"/>
+                                                        <constraint firstItem="Yy4-fp-58B" firstAttribute="centerX" secondItem="NCJ-An-5Po" secondAttribute="centerX" id="hmC-AS-yaP"/>
+                                                        <constraint firstItem="uZe-Wf-Ns3" firstAttribute="leading" secondItem="NCJ-An-5Po" secondAttribute="leading" id="ix8-EM-uJY"/>
+                                                        <constraint firstItem="uTX-Rp-Jh6" firstAttribute="centerX" secondItem="NCJ-An-5Po" secondAttribute="centerX" id="qna-r4-QiZ"/>
+                                                        <constraint firstItem="RGr-Wf-eJK" firstAttribute="centerX" secondItem="NCJ-An-5Po" secondAttribute="centerX" id="ssl-7p-9wP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="uZe-Wf-Ns3" secondAttribute="trailing" id="teP-qs-CDi"/>
+                                                        <constraint firstItem="Yy4-fp-58B" firstAttribute="top" secondItem="RGr-Wf-eJK" secondAttribute="bottom" constant="24" id="ufJ-JC-v8p"/>
+                                                        <constraint firstItem="4Ot-e2-LtR" firstAttribute="top" secondItem="NCJ-An-5Po" secondAttribute="top" constant="25" id="zLV-hJ-N7o"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NCJ-An-5Po" firstAttribute="top" secondItem="k36-76-3Bt" secondAttribute="topMargin" constant="25" id="7MO-Cb-kB8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NCJ-An-5Po" secondAttribute="bottom" constant="25" id="IiZ-kL-Sds"/>
+                                                <constraint firstItem="NCJ-An-5Po" firstAttribute="centerX" secondItem="k36-76-3Bt" secondAttribute="centerX" id="rmB-Z6-vrD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backgroundImageView" destination="uZe-Wf-Ns3" id="tvJ-sg-MWi"/>
+                                            <outlet property="completeButton" destination="Yy4-fp-58B" id="how-FB-tnL"/>
+                                            <outlet property="label1" destination="RGr-Wf-eJK" id="hZG-5n-LZc"/>
+                                            <outlet property="moonImageView" destination="4Ot-e2-LtR" id="qsm-AF-zlO"/>
+                                            <outlet property="titleLabel" destination="uTX-Rp-Jh6" id="Kun-vc-9kL"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <sections/>
                             </tableView>
@@ -540,6 +615,9 @@
         <image name="ChatSendButtonDisabled" width="28" height="28"/>
         <image name="apoMessageBG" width="37" height="43"/>
         <image name="chatMessageBackground" width="32.5" height="34"/>
+        <image name="endViewBackground" width="289" height="222"/>
+        <image name="img_moon" width="69.5" height="67"/>
+        <image name="okButton" width="175" height="36"/>
         <image name="selected_answer_background" width="32.5" height="34"/>
         <image name="snowBG" width="375" height="667"/>
         <image name="youngjae" width="145" height="128"/>
