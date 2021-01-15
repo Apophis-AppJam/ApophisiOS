@@ -89,6 +89,44 @@ class ChatYourMessageCell: UITableViewCell {
         NotificationCenter.default.post(name: NSNotification.Name("setHandDrawing"), object: nil)
     }
     
+    func goToTarot(index : Int)
+    {
+        print("goToTarot 넘어옴")
+        loadingView.frame = waitMessageImageView.bounds
+        loadingView.animation = Animation.named("message_loading")
+        loadingView.contentMode = .scaleAspectFit
+        loadingView.loopMode = .loop
+        loadingView.play()
+        
+        waitMessageImageView.addSubview(loadingView)
+        
+        
+        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: .allowUserInteraction) {
+            
+
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
+                    self.waitMessageImageView.alpha = 1
+                    
+                })
+                
+                UIView.addKeyframe(withRelativeStartTime: 10/12, relativeDuration: 1/12, animations: {
+                    self.waitMessageImageView.alpha = 0
+                    
+                })
+            
+                UIView.addKeyframe(withRelativeStartTime: 11/12, relativeDuration: 1/12, animations: {
+                    self.messageTextView.alpha = 1
+                    self.messageBackgroundImageView.alpha = 1
+                    self.check = true
+                })
+            
+        } completion: { (_) in
+            self.loadingView.stop()
+            NotificationCenter.default.post(name: NSNotification.Name("aponimousMessageEnd"), object: nil)
+        }
+        
+    }
+    
     func startHandDrawing()
     {
         
@@ -156,7 +194,7 @@ class ChatYourMessageCell: UITableViewCell {
         
         
 
-        UIView.animateKeyframes(withDuration: 4, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: .allowUserInteraction) {
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
