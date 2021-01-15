@@ -87,7 +87,7 @@ class Day7ErrorCell: UITableViewCell {
             
         } completion: { (_) in
             sleep(1)
-            NotificationCenter.default.post(name: NSNotification.Name("aponimousMessageEnd"), object: idx)
+            NotificationCenter.default.post(name: NSNotification.Name("myMessageEnd"), object: idx)
         }
 
 

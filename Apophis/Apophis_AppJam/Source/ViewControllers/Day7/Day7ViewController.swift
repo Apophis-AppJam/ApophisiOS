@@ -890,26 +890,26 @@ class Day7ViewController: UIViewController {
                     return selectCell
                     
                 case .selectWithError:
-                    guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
-                            as? Day2selectAnswerCell
+                    guard let Day7ErrorCell = tableView.dequeueReusableCell(withIdentifier: "Day7ErrorCell", for: indexPath)
+                            as? Day7ErrorCell
                     else {return UITableViewCell() }
                     
-                    selectCell.backgroundColor = .clear
-                    selectCell.setSelectWithError(selectList: newMessageList[indexPath.row].dataList)
-                    selectCell.selectionStyle = .none
+                    Day7ErrorCell.backgroundColor = .clear
+                    Day7ErrorCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+                    Day7ErrorCell.selectionStyle = .none
                     
                     if isMessageLoadList[indexPath.row] == false
                     {
-                        selectCell.loadingAnimate(index: indexPath.row)
+                        Day7ErrorCell.loadingAnimate(idx: indexPath.row)
                     }
                     else
                     {
-                        selectCell.showMessageWithNoAnimation()
+                        Day7ErrorCell.showMessageWithNoAnimation()
                     }
                     
                     isMessageLoadList[indexPath.row] = true
                     
-                    return selectCell
+                    return Day7ErrorCell
                     
                     
                     
@@ -1007,17 +1007,17 @@ class Day7ViewController: UIViewController {
                     return yourMessageCell
                     
                 case .selectWithError:
-                    guard let Day7ErrorCell = tableView.dequeueReusableCell(withIdentifier: "Day7ErrorCell", for: indexPath)
-                            as? Day7ErrorCell
+                    guard let Day7ErrorCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
+                            as? Day2selectAnswerCell
                     else {return UITableViewCell() }
                     
                     Day7ErrorCell.backgroundColor = .clear
-                    Day7ErrorCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+                    Day7ErrorCell.setSelectWithError(selectList: newMessageList[indexPath.row].dataList)
                     Day7ErrorCell.selectionStyle = .none
                     
                     if isMessageLoadList[indexPath.row] == false
                     {
-                        Day7ErrorCell.loadingAnimate(idx: indexPath.row)
+                        Day7ErrorCell.loadingAnimate(index: indexPath.row)
                     }
                     else
                     {
