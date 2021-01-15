@@ -70,6 +70,10 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .setEraseButton
     }
+    else if replyType == "기능 액션 버튼 - 컬러피커"
+    {
+        return .colorPicker
+    }
     
     
     else
