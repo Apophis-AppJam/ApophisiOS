@@ -84,6 +84,7 @@
 		FDA4644225B05DC000027DA2 /* IntroNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA4644125B05DC000027DA2 /* IntroNavigationController.swift */; };
 		FDA4644525B05F0600027DA2 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA4644425B05F0600027DA2 /* HomeNavigationController.swift */; };
 		FDA4644A25B0AF6F00027DA2 /* Day7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069569F025B03F8000E175FE /* Day7.storyboard */; };
+		FDA4645425B0F4CF00027DA2 /* HomeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA4645325B0F4CF00027DA2 /* HomeAlertViewController.swift */; };
 		FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA98B692596EE1C00F4DFDF /* view.xib */; };
 		FDA98B6F2596FA4200F4DFDF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */; };
 		FDA98B752597038900F4DFDF /* makeAlert + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */; };
@@ -108,6 +109,8 @@
 		FDE2C7FC259A14FC006659DA /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */; };
 		FDE2C806259A2D32006659DA /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE2C805259A2D32006659DA /* Intro.storyboard */; };
 		FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */; };
+		FDF1ECD325B16D7800F29B29 /* ChatDayEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF1ECD225B16D7800F29B29 /* ChatDayEndViewController.swift */; };
+		FDF1ECD625B1919300F29B29 /* ChatDayEndMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF1ECD525B1919300F29B29 /* ChatDayEndMessageCell.swift */; };
 		FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */; };
 		FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701F25A0D33C006EEC04 /* ColorList.swift */; };
 		FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */; };
@@ -200,6 +203,7 @@
 		FD8A8CB725A822F000DE3D27 /* Day2BrightDarkNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2BrightDarkNaviController.swift; sourceTree = "<group>"; };
 		FDA4644125B05DC000027DA2 /* IntroNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNavigationController.swift; sourceTree = "<group>"; };
 		FDA4644425B05F0600027DA2 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		FDA4645325B0F4CF00027DA2 /* HomeAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAlertViewController.swift; sourceTree = "<group>"; };
 		FDA98B692596EE1C00F4DFDF /* view.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = view.xib; sourceTree = "<group>"; };
 		FDA98B6E2596FA4200F4DFDF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FDA98B742597038900F4DFDF /* makeAlert + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "makeAlert + UIView.swift"; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 		FDE2C7FB259A14FC006659DA /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
 		FDE2C805259A2D32006659DA /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsViewController.swift; sourceTree = "<group>"; };
+		FDF1ECD225B16D7800F29B29 /* ChatDayEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDayEndViewController.swift; sourceTree = "<group>"; };
+		FDF1ECD525B1919300F29B29 /* ChatDayEndMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDayEndMessageCell.swift; sourceTree = "<group>"; };
 		FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "circleProgressView + UIView.swift"; sourceTree = "<group>"; };
 		FDFB701C25A0ACAB006EEC04 /* Apophis_AppJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apophis_AppJam.entitlements; sourceTree = "<group>"; };
 		FDFB701F25A0D33C006EEC04 /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
@@ -464,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				FD5207932599AC9F00AAD1BA /* Cells */,
+				FDF1ECD225B16D7800F29B29 /* ChatDayEndViewController.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -475,6 +482,7 @@
 				FD5207982599ACCF00AAD1BA /* ChatMyMessageCell.swift */,
 				FDE05A5B25A85E5700E92E1B /* ChatMyMessageWithCompleteCell.swift */,
 				FDE05A5F25A85E6C00E92E1B /* ChatSelectListCell.swift */,
+				FDF1ECD525B1919300F29B29 /* ChatDayEndMessageCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -784,6 +792,7 @@
 				FD5F3C1E25ADD120007BD93C /* Timer */,
 				FDE05A8125A8C98D00E92E1B /* HomeViewController.swift */,
 				FDA4644425B05F0600027DA2 /* HomeNavigationController.swift */,
+				FDA4645325B0F4CF00027DA2 /* HomeAlertViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1016,6 +1025,7 @@
 				FDBFFE2125A35B3900C46615 /* getChatService.swift in Sources */,
 				FD5F3C0C25AC90E6007BD93C /* Day2SelectValueViewController.swift in Sources */,
 				FD4136CB25B038310041B5B1 /* LabNavigationController.swift in Sources */,
+				FDF1ECD325B16D7800F29B29 /* ChatDayEndViewController.swift in Sources */,
 				FD8A8CAF25A810EE00DE3D27 /* Day2SetBrightViewController.swift in Sources */,
 				FDA98B7A25970BA700F4DFDF /* TimeCalculate.swift in Sources */,
 				FD4136A525AF00A20041B5B1 /* BucketListViewController.swift in Sources */,
@@ -1024,8 +1034,10 @@
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
 				0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */,
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
+				FDA4645425B0F4CF00027DA2 /* HomeAlertViewController.swift in Sources */,
 				0659A38C25ACC353004E21CE /* Day1ApoImageViewCell.swift in Sources */,
 				0659A38F25ACF3C9004E21CE /* KingfisherImageBlaBla.swift in Sources */,
+				FDF1ECD625B1919300F29B29 /* ChatDayEndMessageCell.swift in Sources */,
 				FD07156D2596E99700940094 /* AppDelegate.swift in Sources */,
 				FD5F3C1025AC90FB007BD93C /* Day2ConfirmValueViewController.swift in Sources */,
 				FDA4644525B05F0600027DA2 /* HomeNavigationController.swift in Sources */,
@@ -1214,15 +1226,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Apophis_AppJam/Apophis_AppJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2021011501;
+				CURRENT_PROJECT_VERSION = 2021011506;
 				DEVELOPMENT_TEAM = L9D5M5DM3Y;
 				INFOPLIST_FILE = Apophis_AppJam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sopt-apophis-release";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sopt.apophis;
 				PRODUCT_NAME = Apophis;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1237,15 +1249,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Apophis_AppJam/Apophis_AppJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2021011501;
+				CURRENT_PROJECT_VERSION = 2021011506;
 				DEVELOPMENT_TEAM = L9D5M5DM3Y;
 				INFOPLIST_FILE = Apophis_AppJam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sopt-apophis-release";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sopt.apophis;
 				PRODUCT_NAME = Apophis;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

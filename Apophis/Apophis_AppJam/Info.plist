@@ -51,9 +51,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>사진 메세지를 보내기 위해 사용자의 카메라에 접근합니다</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>나침반을 작동하기 위해 사용자의 위치정보를 활용합니다</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>$(PRODUCT_NAME) use Microphone .</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

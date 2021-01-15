@@ -7,6 +7,10 @@
 
 import UIKit
 import Lottie
+import AVFoundation
+
+
+var soundEffect: AVAudioPlayer?
 
 class SplashViewController: UIViewController {
 
@@ -36,8 +40,11 @@ class SplashViewController: UIViewController {
             
             if UserDefaults.standard.bool(forKey: "isOnboardingComplete") == false
             {
+     
+
                 self.goToNews()
                 UserDefaults.standard.setValue(true, forKey: "isOnboardingComplete")
+                UserDefaults.standard.setValue(true, forKey: "isFirstHome")
             }
             else
             {
@@ -77,6 +84,7 @@ class SplashViewController: UIViewController {
     
     func goToNews()
     {
+        
         let storyboard = UIStoryboard(name: "Intro", bundle: nil)
         guard let newsVC = storyboard.instantiateViewController(identifier: "IntroNavigationController") as? IntroNavigationController else {return}
         

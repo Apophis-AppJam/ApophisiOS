@@ -25,11 +25,12 @@ import Foundation
 
 struct APIConstants {
      
+     
 
     static let baseURL = "http://52.78.210.107:3000"
     
     static let getChatURL = APIConstants.baseURL + "/chat"
-    
+
     
 
     //MARK:- 유경 PART
