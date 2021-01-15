@@ -1006,6 +1006,28 @@ class Day7ViewController: UIViewController {
                     
                     return yourMessageCell
                     
+                case .selectWithError:
+                    guard let Day7ErrorCell = tableView.dequeueReusableCell(withIdentifier: "Day7ErrorCell", for: indexPath)
+                            as? Day7ErrorCell
+                    else {return UITableViewCell() }
+                    
+                    Day7ErrorCell.backgroundColor = .clear
+                    Day7ErrorCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+                    Day7ErrorCell.selectionStyle = .none
+                    
+                    if isMessageLoadList[indexPath.row] == false
+                    {
+                        Day7ErrorCell.loadingAnimate(idx: indexPath.row)
+                    }
+                    else
+                    {
+                        Day7ErrorCell.showMessageWithNoAnimation()
+                    }
+                    
+                    isMessageLoadList[indexPath.row] = true
+                    
+                    return Day7ErrorCell
+                    
                 default :
                     return UITableViewCell()
                 }

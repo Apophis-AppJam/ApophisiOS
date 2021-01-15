@@ -34,10 +34,17 @@
                                             <action selector="homeButtonClicked:" destination="NVz-Wc-Cni" eventType="touchUpInside" id="akP-9T-dhP"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아포니머스의 이야기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYd-aU-FlF">
-                                        <rect key="frame" x="115" y="53" width="145" height="22"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYd-aU-FlF">
+                                        <rect key="frame" x="139" y="54" width="97.5" height="21"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="???와의 대화">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="18" name="GmarketSansTTFMedium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -447,58 +454,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucj-0X-dKp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-215.19999999999999" y="-363.41829085457272"/>
-        </scene>
-        <!--Day1 Camera View Controller-->
-        <scene sceneID="X0m-Cw-LEE">
-            <objects>
-                <viewController storyboardIdentifier="Day1CameraViewController" id="cnZ-gM-H6K" customClass="Day1CameraViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qGQ-Km-5dC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yxv-8Q-vlK">
-                                <rect key="frame" x="15" y="75" width="345" height="450"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="450" id="htA-Rd-279"/>
-                                    <constraint firstAttribute="width" constant="345" id="jLe-Sj-JGh"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="106" translatesAutoresizingMaskIntoConstraints="NO" id="14q-XS-q1i">
-                                <rect key="frame" x="65.5" y="580" width="244" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpS-gv-yB4">
-                                        <rect key="frame" x="0.0" y="0.0" width="56" height="30"/>
-                                        <state key="normal" title="사진 촬영"/>
-                                        <connections>
-                                            <action selector="btnCaptureImageFromCamera:" destination="cnZ-gM-H6K" eventType="touchUpInside" id="BK2-QC-adV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrx-t1-ANE">
-                                        <rect key="frame" x="162" y="0.0" width="82" height="30"/>
-                                        <state key="normal" title="사진 불러오기"/>
-                                        <connections>
-                                            <action selector="btnLoadImageFromLibrary:" destination="cnZ-gM-H6K" eventType="touchUpInside" id="ZDp-gy-afI"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="7sP-kF-Ujp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Yxv-8Q-vlK" firstAttribute="centerX" secondItem="qGQ-Km-5dC" secondAttribute="centerX" id="4xd-i9-ADc"/>
-                            <constraint firstItem="14q-XS-q1i" firstAttribute="top" secondItem="Yxv-8Q-vlK" secondAttribute="bottom" constant="55" id="83a-LT-gQo"/>
-                            <constraint firstItem="Yxv-8Q-vlK" firstAttribute="top" secondItem="7sP-kF-Ujp" secondAttribute="top" constant="75" id="cY5-k9-Ft4"/>
-                            <constraint firstItem="14q-XS-q1i" firstAttribute="centerX" secondItem="qGQ-Km-5dC" secondAttribute="centerX" id="fhb-zl-f4M"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imgView" destination="Yxv-8Q-vlK" id="09w-gh-4Eu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tfR-fv-Yy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="783" y="703"/>
         </scene>
         <!--Day1 Compass View Controller-->
         <scene sceneID="vbb-aG-NNu">

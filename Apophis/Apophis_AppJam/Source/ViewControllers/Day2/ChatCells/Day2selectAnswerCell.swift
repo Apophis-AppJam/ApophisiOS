@@ -26,6 +26,7 @@ class Day2selectAnswerCell: UITableViewCell {
     //MARK:- Constraint Part
     
     @IBOutlet weak var adjectiveCollectionViewHeight: NSLayoutConstraint!
+        
     
     //MARK:- Life Cycle Part
     
@@ -83,12 +84,10 @@ class Day2selectAnswerCell: UITableViewCell {
     {
         adjectiveCheck = false
         selectWithErrorCheck = true
-        adjectiveCollectionViewHeight.constant = 90
+        adjectiveCollectionViewHeight.constant = 40
         
         selectButtonCollectionView.isScrollEnabled = false
-        if let layout = selectButtonCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-        }
+        
         selectedBoolList.removeAll()
         
         self.selectList = selectList

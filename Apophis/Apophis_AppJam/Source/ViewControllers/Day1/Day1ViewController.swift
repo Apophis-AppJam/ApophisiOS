@@ -1121,8 +1121,7 @@ extension Day1ViewController : UITableViewDataSource
         //            ChatButtonCell.funcNum = messageList[indexPath.row].Day1Func
         //
         //            ChatButtonCell.setChatButton(ImgName: "btnCompass")
-        //
-        //            return ChatButtonCell
+        //nCell
         //        }
         //        // 사진 기능을 부르는 경우
         //        else if(messageList[indexPath.row].Day1Func == 2){
