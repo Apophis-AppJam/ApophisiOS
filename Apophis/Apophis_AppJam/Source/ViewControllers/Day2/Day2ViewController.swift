@@ -352,11 +352,30 @@ class Day2ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(valueSelectComplete), name: NSNotification.Name("valueSelectComplete"), object: nil)
         
-     
+        
+        
+        // 메세지가 끝났을 때
+        NotificationCenter.default.addObserver(self, selector: #selector(dayChatEnd), name: NSNotification.Name("dayChatEnd"), object: nil)
 
     }
     
     //MARK:- @objc func 부분
+    
+    
+    @objc func dayChatEnd()
+    {
+        let storyboard = UIStoryboard(name: "Day2", bundle: nil)
+        
+        guard let endVC = storyboard.instantiateViewController(identifier: "ChatDayEndViewController") as? ChatDayEndViewController else {return}
+        
+        endVC.day = 2
+        
+        endVC.modalTransitionStyle = .crossDissolve
+        endVC.modalPresentationStyle = .fullScreen
+        
+        self.present(endVC, animated: true, completion: nil)
+        
+    }
     
     @objc func hideInputView()
     {

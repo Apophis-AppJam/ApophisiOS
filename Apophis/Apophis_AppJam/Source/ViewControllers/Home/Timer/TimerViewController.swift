@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 
 
@@ -16,6 +17,7 @@ class TimerViewController: UIViewController {
     
     //MARK:- IBOutlet Part
 
+    @IBOutlet weak var starFallView: UIView!
     @IBOutlet weak var apoStoneImageView: UIImageView!
     
     
@@ -84,6 +86,24 @@ class TimerViewController: UIViewController {
        
         rotateAnimation(imageView: apoStoneImageView)
         startCount()
+        
+        let loadingView = AnimationView()
+            
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { timer in
+               
+     
+               loadingView.frame = self.starFallView.bounds
+               loadingView.animation = Animation.named("fallingstar")
+               loadingView.contentMode = .scaleAspectFit
+               loadingView.loopMode = .loop
+               
+               
+               self.starFallView.addSubview(loadingView)
+                
+                loadingView.play()
+               
+               
+           })
         
 
         

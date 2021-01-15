@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SettingViewController: UIViewController {
 
@@ -68,6 +69,38 @@ class SettingViewController: UIViewController {
     
     
     @IBAction func soundSettingClicked(_ sender: Any) {
+        
+        
+        if UserDefaults.standard.bool(forKey: "isMusicTurnOn") == true
+        {
+            UserDefaults.standard.setValue(false, forKey: "isMusicTurnOn")
+            soundSwitch.isOn = false
+            
+            guard let sound = soundEffect else { return }
+            sound.stop()
+
+            
+        }
+        else
+        {
+            UserDefaults.standard.setValue(true, forKey: "isMusicTurnOn")
+            soundSwitch.isOn = true
+            
+            let url = Bundle.main.url(forResource: "main_bgm", withExtension: "mp3")
+            do {
+                soundEffect = try AVAudioPlayer(contentsOf: url!)
+
+                guard let sound = soundEffect else { return }
+                sound.numberOfLoops = 100
+                sound.play()
+
+            } catch let error {
+
+                print(error.localizedDescription)
+
+            }
+
+        }
         
     }
     
