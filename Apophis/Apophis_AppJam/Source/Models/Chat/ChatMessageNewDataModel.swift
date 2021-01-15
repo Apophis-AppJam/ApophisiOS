@@ -72,6 +72,7 @@ enum messageTypeList
     case shutterSound
     case shutterAnimation
     case lightBackground
+    case setEraseButton
 
     
     //MARK:- 영재 PART

@@ -27,6 +27,7 @@
 		FC43DF9525AE21A20017E178 /* Day3ColorListcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43DF9425AE21A20017E178 /* Day3ColorListcell.swift */; };
 		FC70A77E25AF60D100DA7992 /* day6_shutter.json in Resources */ = {isa = PBXBuildFile; fileRef = FC70A77D25AF60D100DA7992 /* day6_shutter.json */; };
 		FC70A78125AF69F800DA7992 /* shutter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC70A78025AF69F800DA7992 /* shutter.mp3 */; };
+		FC8E2B4525B0BD2A00793D1C /* Day6EraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E2B4425B0BD2A00793D1C /* Day6EraseViewController.swift */; };
 		FC92374C259E6BEE0039AB32 /* audioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */; };
 		FC956AAD25A8CE530007717C /* Day3EnterNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC956AAC25A8CE530007717C /* Day3EnterNameCell.swift */; };
 		FCB278DF25ADCF6300A1979D /* Day3ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB278DE25ADCF6300A1979D /* Day3ColorViewController.swift */; };
@@ -148,6 +149,7 @@
 		FC43DF9425AE21A20017E178 /* Day3ColorListcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ColorListcell.swift; sourceTree = "<group>"; };
 		FC70A77D25AF60D100DA7992 /* day6_shutter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = day6_shutter.json; sourceTree = "<group>"; };
 		FC70A78025AF69F800DA7992 /* shutter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shutter.mp3; sourceTree = "<group>"; };
+		FC8E2B4425B0BD2A00793D1C /* Day6EraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day6EraseViewController.swift; sourceTree = "<group>"; };
 		FC92374B259E6BEE0039AB32 /* audioRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioRecordViewController.swift; sourceTree = "<group>"; };
 		FC956AAC25A8CE530007717C /* Day3EnterNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3EnterNameCell.swift; sourceTree = "<group>"; };
 		FCB278DE25ADCF6300A1979D /* Day3ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ColorViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				FC258BA225AF3CC100B56498 /* Day6ViewController.swift */,
+				FC8E2B4425B0BD2A00793D1C /* Day6EraseViewController.swift */,
 			);
 			path = Day6;
 			sourceTree = "<group>";
@@ -1051,6 +1054,7 @@
 				FD4136A525AF00A20041B5B1 /* BucketListViewController.swift in Sources */,
 				FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */,
 				FD5207A12599AEBC00AAD1BA /* SampleViewController.swift in Sources */,
+				FC8E2B4525B0BD2A00793D1C /* Day6EraseViewController.swift in Sources */,
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
 				0644944925A0C99600ABA62E /* ChatButtonCell.swift in Sources */,
 				FCC78909259B79CD00422CD4 /* Day3DrawingViewController.swift in Sources */,
