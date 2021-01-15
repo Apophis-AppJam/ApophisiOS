@@ -51,7 +51,7 @@ class ChatDayEndMessageCell: UITableViewCell {
     
     @IBAction func completeButtonClicked(_ sender: Any) {
         
-        NotificationCenter.default.post(name: NSNotification.Name("DayChatEnd"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("dayChatEnd"), object: nil)
 
     }
     
@@ -59,6 +59,13 @@ class ChatDayEndMessageCell: UITableViewCell {
 
     
     //MARK:- default Setting Function Part
+    
+    func setFont()
+    {
+        titleLabel.font = .gmarketFont(weight: .Medium, size: 14)
+        label1.font = .gmarketFont(weight: .Medium, size: 12)
+        
+    }
 
     
     //MARK:- Function Part
@@ -75,12 +82,12 @@ class ChatDayEndMessageCell: UITableViewCell {
         self.completeButton.isEnabled = false
     }
     
-    func loadingAnimate(idx : Int)
+    func loadingAnimate()
     {
   
-        NotificationCenter.default.post(name: NSNotification.Name("scrollToBottom"), object: nil)
 
-        UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
+
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: .allowUserInteraction) {
             
 
                 

@@ -29,6 +29,7 @@ class Day2ViewController: UIViewController {
     
     @IBOutlet weak var messageInputView: UIView!
     
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     //MARK:- Variable Part
     
@@ -259,7 +260,7 @@ class Day2ViewController: UIViewController {
 
         
   
-        
+        //23 이 원래 시작
         self.loadApoMessage(idx: 23) { (result) in
             
             if result
@@ -288,6 +289,16 @@ class Day2ViewController: UIViewController {
     
     func addObserver()
     {
+        
+        
+        
+        
+        
+        
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(backToHome), name: NSNotification.Name("backToHome"), object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name:UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name:UIResponder.keyboardWillHideNotification, object: nil)
@@ -361,7 +372,10 @@ class Day2ViewController: UIViewController {
     
     //MARK:- @objc func 부분
     
-    
+    @objc func backToHome()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     @objc func dayChatEnd()
     {
         let storyboard = UIStoryboard(name: "Day2", bundle: nil)
@@ -938,6 +952,8 @@ class Day2ViewController: UIViewController {
         // 헤더 타이틀 폰트 설정
         headerTitle.font = UIFont.gmarketFont(weight: .Medium, size: 18)
         
+        subtitleLabel.font = UIFont.gmarketFont(weight: .Medium, size: 12)
+        
         
         messageTextInputView.font = UIFont.gmarketFont(weight: .Medium, size: 14)
         messageTextInputView.textColor = .init(red: 116/255, green: 116/255, blue: 116/255, alpha: 1)
@@ -1298,7 +1314,7 @@ class Day2ViewController: UIViewController {
 
             }, completion: nil)
             
-//            chatTableView.scrollToBottom()
+            chatTableView.scrollToBottom()
 
         }
     }
@@ -1392,6 +1408,9 @@ extension Day2ViewController : UITableViewDataSource
                 
                 myMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
+                let empty = UIView()
+                myMessageCell.selectedBackgroundView = empty
+                
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1420,6 +1439,9 @@ extension Day2ViewController : UITableViewDataSource
                 
                 myMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
+                let empty = UIView()
+                myMessageCell.selectedBackgroundView = empty
+                
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1434,8 +1456,8 @@ extension Day2ViewController : UITableViewDataSource
                 
                 return myMessageCell
 
-            case .ending:
-                return UITableViewCell()
+  
+                
         
             case .select1In2:
                 
@@ -1446,6 +1468,9 @@ extension Day2ViewController : UITableViewDataSource
                                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
                 selectCell.selectionStyle = .none
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1469,6 +1494,10 @@ extension Day2ViewController : UITableViewDataSource
                 
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
                 
                 selectCell.setData(type: .setTimeButton)
                 
@@ -1497,6 +1526,9 @@ extension Day2ViewController : UITableViewDataSource
                 
                 enterWordCell.setTextField()
                 
+                let empty = UIView()
+                enterWordCell.selectedBackgroundView = empty
+                
                 if isMessageLoadList[indexPath.row] == false
                 {
                     enterWordCell.loadingAnimate(index: indexPath.row)
@@ -1521,6 +1553,10 @@ extension Day2ViewController : UITableViewDataSource
                 
                 selectCell.setData(type: .selectValue)
                 
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
+                
                 if isMessageLoadList[indexPath.row] == false
                 {
                     selectCell.loadingAnimate(index: indexPath.row)
@@ -1544,6 +1580,13 @@ extension Day2ViewController : UITableViewDataSource
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
                 
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
+                
+                
+                
                 if isMessageLoadList[indexPath.row] == false
                 {
                     selectCell.loadingAnimate(index: indexPath.row)
@@ -1566,6 +1609,13 @@ extension Day2ViewController : UITableViewDataSource
                                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
+                
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
+                
+                
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1591,6 +1641,12 @@ extension Day2ViewController : UITableViewDataSource
                 selectCell.selectionStyle = .none
                 
                 selectCell.setData(type: .brightAndDark)
+                
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
+                
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1643,8 +1699,43 @@ extension Day2ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
 
                 yourMessageCell.backgroundColor = .clear
+                
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
+                
+                
+                
+                
                 return yourMessageCell
                 
+            case .ending:
+               
+                guard let endingCell = tableView.dequeueReusableCell(withIdentifier: "ChatDayEndMessageCell", for: indexPath)
+                                        as? ChatDayEndMessageCell
+                                        else {return UITableViewCell() }
+                endingCell.defaultSetting()
+
+                endingCell.backgroundColor = .clear
+                endingCell.selectionStyle = .none
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    endingCell.loadingAnimate()
+                }
+                else
+                {
+                    endingCell.showMessageWithNoAnimation()
+                }
+                
+                let empty = UIView()
+                endingCell.selectedBackgroundView = empty
+                
+                
+                
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return endingCell
                 
             case .vibrate :
                 guard let vibrateCell =
@@ -1669,6 +1760,12 @@ extension Day2ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
                 
                 
+                let empty = UIView()
+                vibrateCell.selectedBackgroundView = empty
+                
+                
+                
+                
                 return vibrateCell
 
 
@@ -1684,6 +1781,12 @@ extension Day2ViewController : UITableViewDataSource
    
 
                 
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
+                
+                
+                
+                
 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1698,6 +1801,10 @@ extension Day2ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
 
                 yourMessageCell.backgroundColor = .clear
+                
+                yourMessageCell.selectedBackgroundView = empty
+                
+                
                 return yourMessageCell
                 
             default :
@@ -1708,6 +1815,8 @@ extension Day2ViewController : UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+//        chatTableView.scrollToBottom()
         
 
     }

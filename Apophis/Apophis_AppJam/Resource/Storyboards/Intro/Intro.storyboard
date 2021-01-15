@@ -134,7 +134,7 @@
                             <constraint firstItem="fl8-kS-U0i" firstAttribute="leading" secondItem="zt9-7l-4mx" secondAttribute="leading" id="GLD-YZ-xdp"/>
                             <constraint firstItem="q5f-Fm-StE" firstAttribute="leading" secondItem="zt9-7l-4mx" secondAttribute="leading" id="Hie-Po-Ph1"/>
                             <constraint firstItem="q5f-Fm-StE" firstAttribute="top" secondItem="vg5-iH-CjA" secondAttribute="bottom" id="KQd-sV-HMh"/>
-                            <constraint firstItem="vg5-iH-CjA" firstAttribute="top" secondItem="b4n-Fw-CGd" secondAttribute="top" constant="44" id="NHH-qa-Ect"/>
+                            <constraint firstItem="vg5-iH-CjA" firstAttribute="top" secondItem="zt9-7l-4mx" secondAttribute="top" id="NHH-qa-Ect"/>
                             <constraint firstItem="vg5-iH-CjA" firstAttribute="leading" secondItem="zt9-7l-4mx" secondAttribute="leading" id="PMf-W3-QRu"/>
                             <constraint firstItem="vg5-iH-CjA" firstAttribute="trailing" secondItem="zt9-7l-4mx" secondAttribute="trailing" id="kib-bP-ClM"/>
                             <constraint firstItem="fl8-kS-U0i" firstAttribute="trailing" secondItem="zt9-7l-4mx" secondAttribute="trailing" id="nXD-ui-M9e"/>
@@ -144,6 +144,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cYu-Fd-bbn"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="chatTableView" destination="fl8-kS-U0i" id="PcA-lh-bvd"/>
                         <outlet property="sampleView" destination="vg5-iH-CjA" id="t2f-3P-sBd"/>

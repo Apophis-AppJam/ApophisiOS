@@ -23,9 +23,9 @@ func nextActionFromKorean(nextAction : String) -> messageTypeList
     {
         return .photo
     }
-    else if nextAction == "엔딩뷰"
+    else if nextAction == "엔딩 뷰"
     {
-        return .normal
+        return .ending
     }
     else if nextAction == "백그라운드 이미지 - 바다 뷰"
     {
