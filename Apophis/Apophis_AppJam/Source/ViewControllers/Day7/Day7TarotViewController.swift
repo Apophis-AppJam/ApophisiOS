@@ -63,10 +63,12 @@ class Day7TarotViewController: UIViewController {
     {
         NotificationCenter.default.addObserver(self, selector: #selector(tarotCardSellected), name: NSNotification.Name("tarotCardSellected"), object: nil)
         
-        
         NotificationCenter.default.addObserver(self, selector: #selector(goToTarotDetail), name: NSNotification.Name("goToTarotDetail"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(backToTarot), name: NSNotification.Name("backToTarot"), object: nil)
+        
+        
+        
         
     }
     
@@ -112,7 +114,9 @@ class Day7TarotViewController: UIViewController {
         tarotCardCollectionView.reloadData()
     }
     
-   
+
+    
+    
     
     //MARK:- Function Part
     

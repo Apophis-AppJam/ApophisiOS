@@ -100,7 +100,7 @@ class Day7ViewController: UIViewController {
                                                           isMine: true,
                                                           isLastMessage: true,
                                                           nextMessageType: .none,
-                                                          type: .normal,
+                                                                                            type: .normal,
                                                           dataList: [],
                                                           chatDetailsIdx: tempIndex))
             
@@ -254,6 +254,7 @@ class Day7ViewController: UIViewController {
             
             
         case .selectWithError :
+            print("selectwitherror가 눌린거 처리가 잘 되었나??")
             isMessageLoadList[newMessageList.count - 1] = false
             
             newMessageList.remove(at: newMessageList.count - 1)
@@ -266,7 +267,7 @@ class Day7ViewController: UIViewController {
                                                           isMine: true,
                                                           isLastMessage: true,
                                                           nextMessageType: .none,
-                                                          type: .selectWithError,
+                                                          type: .afterError,
                                                           dataList: [],
                                                           chatDetailsIdx: tempIndex))
             
@@ -274,7 +275,7 @@ class Day7ViewController: UIViewController {
                                                                    isMine: true,
                                                                    isLastMessage: true,
                                                                    nextMessageType: .none,
-                                                                   type: .selectWithError,
+                                                                   type: .afterError,
                                                                    dataList: [],
                                                                    chatDetailsIdx: tempIndex))
             
@@ -283,8 +284,10 @@ class Day7ViewController: UIViewController {
             
             isUserEnterAnswer = true
             
-            chatTableView.reloadRows(at: [lastIndex], with: .none)
+            let last = IndexPath(row: newMessageList.count - 1, section: 0)
+            chatTableView.reloadRows(at: [last], with: .none)
             
+            print("전송 눌렀을 때 리스트를 봐볼까?", newMessageList)
             messageTextInputView.text = ""
             textViewDidChange(messageTextInputView)
             
@@ -343,6 +346,8 @@ class Day7ViewController: UIViewController {
         
         // 타로 끝
         NotificationCenter.default.addObserver(self, selector: #selector(tarotComplete), name: NSNotification.Name("tarotComplete"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(countDownPresent), name: NSNotification.Name("countDownPresent"), object: nil)
         
         
     }
@@ -424,13 +429,23 @@ class Day7ViewController: UIViewController {
         {
             
             if(self.newMessageList[self.newMessageList.count - 1].nextMessageType == .tarot) {
+                
+
+                let time = DispatchTime.now() + .seconds(2)
+                DispatchQueue.main.asyncAfter(deadline: time) {
+
                 NotificationCenter.default.post(name: NSNotification.Name("tarotPresent"), object: nil)
+                }
+                
             }
+            
+            
             else if (self.newMessageList[self.newMessageList.count - 1].nextMessageType == .userAnswerWithComplete) {
                 self.messageSendButton.isEnabled = true
                 self.disableTextField(isEnable: true)
                 self.messageTextInputView.becomeFirstResponder()
             }
+            
             else {
                 self.disableTextField(isEnable: false)
                 
@@ -458,6 +473,21 @@ class Day7ViewController: UIViewController {
         
         else if newMessageList.count - 1 > index // 마지막 메세지가 아니라면
         {
+            
+            if (index == 41){
+//
+//                guard let sound = soundEffect else { return }
+//                sound.stop()
+//
+                let time = DispatchTime.now() + .seconds(3)
+                DispatchQueue.main.asyncAfter(deadline: time) {
+                    NotificationCenter.default.post(name: NSNotification.Name("countDownPresent"), object: nil)
+
+                }
+                
+            }
+            
+            else {
             messageListForTableView.append(newMessageList[index+1])
             let indexPath = IndexPath(row: index + 1, section: 0)
             
@@ -466,6 +496,9 @@ class Day7ViewController: UIViewController {
                 chatTableView.insertRows(at: [indexPath], with: .none)
                 chatTableView.endUpdates()
             }
+            }
+            
+            
             
         }
         
@@ -689,6 +722,23 @@ class Day7ViewController: UIViewController {
     }
     
     
+    @objc func countDownPresent(notification : NSNotification)
+    {
+        let storyboard = UIStoryboard(name: "Day7", bundle: nil)
+
+        let vc = storyboard.instantiateViewController(identifier: "Day7CountDownViewController")
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        
+
+        
+        
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     
     
     
@@ -889,7 +939,8 @@ class Day7ViewController: UIViewController {
                     
                     return selectCell
                     
-                case .selectWithError:
+                case .afterError:
+                    print("afterError 들어왔나?")
                     guard let Day7ErrorCell = tableView.dequeueReusableCell(withIdentifier: "Day7ErrorCell", for: indexPath)
                             as? Day7ErrorCell
                     else {return UITableViewCell() }
@@ -910,6 +961,30 @@ class Day7ViewController: UIViewController {
                     isMessageLoadList[indexPath.row] = true
                     
                     return Day7ErrorCell
+                    
+                case .selectWithError:
+                    print("selectWithError")
+                    guard let Day7ErrorCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
+                            as? Day2selectAnswerCell
+                    else {return UITableViewCell() }
+                    
+                    Day7ErrorCell.backgroundColor = .clear
+                    Day7ErrorCell.setSelectWithError(selectList: newMessageList[indexPath.row].dataList)
+                    Day7ErrorCell.selectionStyle = .none
+                    
+                    if isMessageLoadList[indexPath.row] == false
+                    {
+                        Day7ErrorCell.loadingAnimate(index: indexPath.row)
+                    }
+                    else
+                    {
+                        Day7ErrorCell.showMessageWithNoAnimation()
+                    }
+                    
+                    isMessageLoadList[indexPath.row] = true
+                    
+                    return Day7ErrorCell
+                    
                     
                     
                     
@@ -981,7 +1056,6 @@ class Day7ViewController: UIViewController {
                     return vibrateCell
                     
                 case .tarot :
-                    print("tarot 넘어옴")
                     guard let yourMessageCell =
                             tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
                             as? ChatYourMessageCell
@@ -1006,29 +1080,10 @@ class Day7ViewController: UIViewController {
                     
                     return yourMessageCell
                     
-                case .selectWithError:
-                    guard let Day7ErrorCell = tableView.dequeueReusableCell(withIdentifier: "Day2selectAnswerCell", for: indexPath)
-                            as? Day2selectAnswerCell
-                    else {return UITableViewCell() }
-                    
-                    Day7ErrorCell.backgroundColor = .clear
-                    Day7ErrorCell.setSelectWithError(selectList: newMessageList[indexPath.row].dataList)
-                    Day7ErrorCell.selectionStyle = .none
-                    
-                    if isMessageLoadList[indexPath.row] == false
-                    {
-                        Day7ErrorCell.loadingAnimate(index: indexPath.row)
-                    }
-                    else
-                    {
-                        Day7ErrorCell.showMessageWithNoAnimation()
-                    }
-                    
-                    isMessageLoadList[indexPath.row] = true
-                    
-                    return Day7ErrorCell
+
                     
                 default :
+                    print("default로 빠짐")
                     return UITableViewCell()
                 }
             }

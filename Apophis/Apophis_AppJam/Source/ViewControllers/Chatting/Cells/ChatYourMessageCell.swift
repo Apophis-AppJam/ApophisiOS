@@ -194,7 +194,7 @@ class ChatYourMessageCell: UITableViewCell {
         
         
 
-        UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 0.1, delay: 0, options: .allowUserInteraction) {
 
             
 
