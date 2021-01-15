@@ -23,9 +23,9 @@ func nextActionFromKorean(nextAction : String) -> messageTypeList
     {
         return .photo
     }
-    else if nextAction == "엔딩뷰"
+    else if nextAction == "엔딩 뷰"
     {
-        return .normal
+        return .ending
     }
     else if nextAction == "백그라운드 이미지 - 바다 뷰"
     {
@@ -50,6 +50,10 @@ func nextActionFromKorean(nextAction : String) -> messageTypeList
     else if nextAction == "진동, 찰칵 음성, 애니메이션-카메라 조리개"
     {
         return .shutterAnimation
+    }
+    else if nextAction == "기능 액션 버튼 - 컬러피커"
+    {
+        return .colorPicker
     }
     
     else

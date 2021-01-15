@@ -19,19 +19,21 @@ class Day2selectAnswerCell: UITableViewCell {
     var selectList : [String] = []
     var selectedBoolList : [Bool] = []
     var adjectiveCheck : Bool = false
+    var selectWithErrorCheck : Bool = false
     var adjectiveBoolList : [Bool] = []
     
     
     //MARK:- Constraint Part
     
     @IBOutlet weak var adjectiveCollectionViewHeight: NSLayoutConstraint!
+        
     
     //MARK:- Life Cycle Part
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+    
         selectButtonCollectionView.delegate = self
         selectButtonCollectionView.dataSource = self
         
@@ -54,7 +56,37 @@ class Day2selectAnswerCell: UITableViewCell {
     func setSelectList(selectList : [String])
     {
         adjectiveCheck = false
+        selectWithErrorCheck = false
+
         adjectiveCollectionViewHeight.constant = 40
+        
+        selectedBoolList.removeAll()
+        
+        self.selectList = selectList
+        
+        if selectList.count > 0
+        {
+            for _ in 0 ... selectList.count - 1
+            {
+                selectedBoolList.append(false)
+            }
+            selectButtonCollectionView.backgroundColor = .clear
+            
+        }
+        selectButtonCollectionView.alpha = 0
+        
+        
+        
+        selectButtonCollectionView.reloadData()
+    }
+    
+    func setSelectWithError(selectList : [String])
+    {
+        adjectiveCheck = false
+        selectWithErrorCheck = true
+        adjectiveCollectionViewHeight.constant = 40
+        
+        selectButtonCollectionView.isScrollEnabled = false
         
         selectedBoolList.removeAll()
         
@@ -139,7 +171,7 @@ extension Day2selectAnswerCell : UICollectionViewDelegate
 {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
+        print("선택 되었나?")
         /// 1,2,3 선택지 있다고 가정
         
         if !adjectiveCheck{
@@ -163,9 +195,14 @@ extension Day2selectAnswerCell : UICollectionViewDelegate
             }
             
             // 여기서 상위 뷰컨으로 유저가 선택한 메세지가 들어가야 합니다.
+            if !selectWithErrorCheck {
             NotificationCenter.default.post(name: NSNotification.Name("receivedUserSelect"), object:
                                                 selectList[indexPath.row])}
-        
+        else {
+            NotificationCenter.default.post(name: NSNotification.Name("receivedSelectWithError"), object:
+                                                selectList[indexPath.row])
+        }
+    }
         // 형용사 선택 부분
         else {
             // 형용사 선택할 때
