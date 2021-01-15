@@ -106,6 +106,7 @@ class IntroNewsViewController: UIViewController {
         chatTableView.dataSource = self
         chatTableView.backgroundColor = .clear
         chatTableView.separatorStyle = .none
+        chatTableView.allowsSelection = false
     }
     
     

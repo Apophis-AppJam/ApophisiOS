@@ -83,6 +83,8 @@
 		FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */; };
 		FD6D0EC2259C520C00993BBC /* yukyungLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */; };
 		FD6D0EC5259C521500993BBC /* jihunLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */; };
+		FD7EE4AD25B218AB00CB331D /* day2Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FD7EE4AC25B218AB00CB331D /* day2Sound.mp3 */; };
+		FD7EE4B025B21BE200CB331D /* Day2MusicPlayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EE4AF25B21BE200CB331D /* Day2MusicPlayCell.swift */; };
 		FD8A8CA325A76E5500DE3D27 /* placeHolderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */; };
 		FD8A8CAF25A810EE00DE3D27 /* Day2SetBrightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */; };
 		FD8A8CB425A8110300DE3D27 /* Day2SetDarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */; };
@@ -210,6 +212,8 @@
 		FD6D0EBE259C520300993BBC /* youngjaeLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youngjaeLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC1259C520C00993BBC /* yukyungLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yukyungLabViewController.swift; sourceTree = "<group>"; };
 		FD6D0EC4259C521500993BBC /* jihunLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jihunLabViewController.swift; sourceTree = "<group>"; };
+		FD7EE4AC25B218AB00CB331D /* day2Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = day2Sound.mp3; sourceTree = "<group>"; };
+		FD7EE4AF25B21BE200CB331D /* Day2MusicPlayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2MusicPlayCell.swift; sourceTree = "<group>"; };
 		FD8A8CA225A76E5500DE3D27 /* placeHolderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeHolderColor.swift; sourceTree = "<group>"; };
 		FD8A8CAE25A810EE00DE3D27 /* Day2SetBrightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetBrightViewController.swift; sourceTree = "<group>"; };
 		FD8A8CB325A8110300DE3D27 /* Day2SetDarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2SetDarkViewController.swift; sourceTree = "<group>"; };
@@ -660,6 +664,7 @@
 		FDA98B632596EDA200F4DFDF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FD7EE4AC25B218AB00CB331D /* day2Sound.mp3 */,
 				FDF1ECD825B1DBB400F29B29 /* onBoardingNews.mp4 */,
 				FD4136AD25B026130041B5B1 /* apophis_splash.json */,
 				FD4136AE25B026130041B5B1 /* fallingstar.json */,
@@ -847,6 +852,7 @@
 				FD5F356525A5896F00330E9B /* Day2word3InputCell.swift */,
 				FD5D51BB25AB5E3200705E60 /* Day2SnowBackgroundCell.swift */,
 				FD5D51BE25ABB5FB00705E60 /* Day2UserAnswerCompleteCell.swift */,
+				FD7EE4AF25B21BE200CB331D /* Day2MusicPlayCell.swift */,
 			);
 			path = ChatCells;
 			sourceTree = "<group>";
@@ -931,6 +937,7 @@
 				FD4136B025B026130041B5B1 /* fallingstar.json in Resources */,
 				FD5207B02599AF6800AAD1BA /* Day4.storyboard in Resources */,
 				FDA98B6A2596EE1C00F4DFDF /* view.xib in Resources */,
+				FD7EE4AD25B218AB00CB331D /* day2Sound.mp3 in Resources */,
 				FD52077225998F7F00AAD1BA /* Day1.storyboard in Resources */,
 				FD41368D25AEBC400041B5B1 /* ChosunNm.ttf in Resources */,
 				FDA4644A25B0AF6F00027DA2 /* Day7.storyboard in Resources */,
@@ -1099,6 +1106,7 @@
 				FDFC0A62259F532B00DFD5CF /* makeCircleView + Designable.swift in Sources */,
 				FD6D0EBF259C520300993BBC /* youngjaeLabViewController.swift in Sources */,
 				FCDE84AF25A57B2E003D288E /* LoginViewController.swift in Sources */,
+				FD7EE4B025B21BE200CB331D /* Day2MusicPlayCell.swift in Sources */,
 				FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */,
 				FC43DF9525AE21A20017E178 /* Day3ColorListcell.swift in Sources */,
 				FC394F3F259D110500E70307 /* ColorViewController.swift in Sources */,
