@@ -389,7 +389,7 @@ class Day6ViewController: UIViewController {
         
   
         
-        self.loadApoMessage(idx: 120) { (result) in
+        self.loadApoMessage(idx: 101) { (result) in
             
             if result
             {
@@ -417,6 +417,15 @@ class Day6ViewController: UIViewController {
     
     func addObserver()
     {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(addEndingComplete), name: NSNotification.Name("addEndingComplete"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(backToHome), name: NSNotification.Name("backToHome"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(dayChatEnd), name: NSNotification.Name("dayChatEnd"), object: nil)
+        
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name:UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name:UIResponder.keyboardWillHideNotification, object: nil)
@@ -495,6 +504,50 @@ class Day6ViewController: UIViewController {
     }
     
     //MARK:- @objc func 부분
+    
+    @objc func addEndingComplete()
+     {
+         newMessageList.append(ChatMessageNewDataModel(messageContent: "",
+                                                       isMine: false,
+                                                       isLastMessage: false, nextMessageType: .ending
+                                                         ,
+                                                       type: .endingComplete, dataList: [], chatDetailsIdx: 40))
+         
+         
+         messageListForTableView.append(ChatMessageNewDataModel(messageContent: "",
+                                                                isMine: false,
+                                                                isLastMessage: false, nextMessageType: .ending
+                                                                  ,
+                                                                type: .endingComplete, dataList: [], chatDetailsIdx: 40))
+         isMessageLoadList.append(false)
+         
+         let last = IndexPath(row: messageListForTableView.count - 1, section: 0)
+         chatTableView.insertRows(at: [last], with: .none)
+
+         
+     }
+     
+     @objc func backToHome()
+     {
+         self.navigationController?.popViewController(animated: true)
+     }
+     @objc func dayChatEnd()
+     {
+         let storyboard = UIStoryboard(name: "Day2", bundle: nil)
+         
+         guard let endVC = storyboard.instantiateViewController(identifier: "ChatDayEndViewController") as? ChatDayEndViewController else {return}
+         
+         endVC.day = 6
+         
+         endVC.modalTransitionStyle = .crossDissolve
+         endVC.modalPresentationStyle = .fullScreen
+         
+         self.present(endVC, animated: true, completion: nil)
+         
+     }
+
+
+    
     
     @objc func hideInputView()
     {
@@ -1560,6 +1613,70 @@ extension Day6ViewController : UITableViewDataSource
             switch(newMessageList[indexPath.row].type)
 
             {
+            
+            case .endingComplete:
+                      
+                      guard let endingCell = tableView.dequeueReusableCell(withIdentifier: "ChatDayEndMessageCell", for: indexPath)
+                                              as? ChatDayEndMessageCell
+                                              else {return UITableViewCell() }
+                      endingCell.defaultSetting()
+
+                      endingCell.backgroundColor = .clear
+                      endingCell.selectionStyle = .none
+                      
+                      if isMessageLoadList[indexPath.row] == false
+                      {
+                          endingCell.loadingAnimate()
+                      }
+                      else
+                      {
+                          endingCell.showMessageWithNoAnimation()
+                      }
+                      
+                      let empty = UIView()
+                      endingCell.selectedBackgroundView = empty
+                      
+                      
+                      
+                      
+                      isMessageLoadList[indexPath.row] = true
+                      
+                      return endingCell
+                      
+                      
+                  case .ending:
+                      
+                      
+                      guard let yourMessageCell =
+                              tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
+                              as? ChatYourMessageCell
+                              else {return UITableViewCell() }
+
+
+                      yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+
+                      if isMessageLoadList[indexPath.row] == false
+                      {
+                          yourMessageCell.showEndingMessage()
+                      }
+                      else
+                      {
+                          yourMessageCell.showMessageWithNoAnimation()
+                      }
+
+                      isMessageLoadList[indexPath.row] = true
+
+                      yourMessageCell.backgroundColor = .clear
+                      
+                      let empty = UIView()
+                      yourMessageCell.selectedBackgroundView = empty
+                      
+                      
+
+                      
+                      return yourMessageCell
+
+
             
 
             case .normal:
