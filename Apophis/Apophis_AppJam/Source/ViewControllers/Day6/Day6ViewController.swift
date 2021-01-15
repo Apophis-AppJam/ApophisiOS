@@ -389,7 +389,7 @@ class Day6ViewController: UIViewController {
         
   
         
-        self.loadApoMessage(idx: 119) { (result) in
+        self.loadApoMessage(idx: 120) { (result) in
             
             if result
             {
@@ -437,12 +437,12 @@ class Day6ViewController: UIViewController {
         
         
         
-        // 시간 설정 버튼 눌렸을 때,
-        NotificationCenter.default.addObserver(self, selector: #selector(setTimeButtonClicked), name: NSNotification.Name("setTimeButtonClicked"), object: nil)
+        // 얼룩 버튼 눌렸을 때,
+        NotificationCenter.default.addObserver(self, selector: #selector(setEraseButtonClicked), name: NSNotification.Name("setEraseButtonClicked"), object: nil)
         
         
-        // 시간 설정이 완료되었을 때
-        NotificationCenter.default.addObserver(self, selector: #selector(setTimeComplete), name: NSNotification.Name("setTimeComplete"), object: nil)
+        // 얼룩 지우기가 완료되었을 때
+        NotificationCenter.default.addObserver(self, selector: #selector(eraseComplete), name: NSNotification.Name("eraseComplete"), object: nil)
         
         // 3개의 단어 입력이 완료되었을 때
         NotificationCenter.default.addObserver(self, selector: #selector(user3WordsEntered), name: NSNotification.Name("user3WordsEntered"), object: nil)
@@ -866,8 +866,6 @@ class Day6ViewController: UIViewController {
     {
         let reason = notification.object as? String ?? ""
         
-        print("REASON",reason)
-        
 
         let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
         let lastDetailIdex = newMessageList[newMessageList.count - 1].chatDetailsIdx
@@ -905,7 +903,6 @@ class Day6ViewController: UIViewController {
     {
         let reason = notification.object as? String ?? ""
         
-        print("왜 못받아옴?", reason)
         
 
         let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
@@ -938,27 +935,34 @@ class Day6ViewController: UIViewController {
         chatTableView.reloadRows(at: [lastIndex], with: .none)
     }
     
-    @objc func setTimeButtonClicked()
+    @objc func setEraseButtonClicked()
     {
-        let storyboard = UIStoryboard(name: "Day2", bundle: nil)
+        
+        print("노티 함수 실행되니?")
+        let storyboard = UIStoryboard(name: "Day6", bundle: nil)
 
-        guard let vc = storyboard.instantiateViewController(identifier: "Day2SelectTimeViewController") as? Day2SelectTimeViewController else  {return}
+        guard let vc = storyboard.instantiateViewController(identifier: "Day6EraseViewController") as? Day6EraseViewController else  {return}
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
-        
-        
         
         self.present(vc, animated: true, completion: nil)
     }
     
-    @objc func setTimeComplete(notification : NSNotification)
+    
+    @objc func eraseComplete(notification : NSNotification)
     {
-        let messageDescription = notification.object as? String ?? ""
+        
+        print("얼룩 끝났다")
+//        let messageDescription = notification.object as? String ?? ""
         
         let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
         
         
         isMessageLoadList[newMessageList.count - 1] = false
+            
+            
+        print("마지막 인덱스", newMessageList[lastIndex.row])
+        print("메세지 리스트", newMessageList)
         
         newMessageList.remove(at: newMessageList.count - 1)
         messageListForTableView.remove(at: newMessageList.count - 1)
@@ -966,18 +970,18 @@ class Day6ViewController: UIViewController {
         let lastChatDetailIDx =
             newMessageList[newMessageList.count - 1].chatDetailsIdx
         
-        newMessageList.append(ChatMessageNewDataModel(messageContent: messageDescription,
+        newMessageList.append(ChatMessageNewDataModel(messageContent: "다 안지워지는 것 같은데.",
                                                       isMine: true,
                                                       isLastMessage: true,
-                                                      nextMessageType: .none,
+                                                      nextMessageType: .userAnswerWithComplete,
                                                       type: .normal,
                                                       dataList: [],
                                                       chatDetailsIdx: lastChatDetailIDx))
         
-        messageListForTableView.append(ChatMessageNewDataModel(messageContent: messageDescription,
+        messageListForTableView.append(ChatMessageNewDataModel(messageContent: "다 안지워지는 것 같은데.",
                                                                isMine: true,
                                                                isLastMessage: true,
-                                                               nextMessageType: .none,
+                                                               nextMessageType: .userAnswerWithComplete,
                                                                type: .normal,
                                                                dataList: [],
                                                                chatDetailsIdx: lastChatDetailIDx))
@@ -1308,7 +1312,7 @@ extension Day6ViewController : UITableViewDataSource
         
 
 
-
+        
         
         // MARK:- 메세지 종류별 테이블 셀 만드는 부분
         
@@ -1371,7 +1375,7 @@ extension Day6ViewController : UITableViewDataSource
                 return myMessageCell
 
             case .ending:
-                return UITableViewCell()
+            return UITableViewCell()
         
             case .select1In2:
                 
@@ -1396,17 +1400,18 @@ extension Day6ViewController : UITableViewDataSource
                 
                 return selectCell
                 
-            case .setTimeButton:
+            case .setEraseButton:
                 
-   
+                print("지우개버튼 셀 실행되니?")
                 guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2CircleButtonCell", for: indexPath)
                         as? Day2CircleButtonCell
                         else {return UITableViewCell() }
                 
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
+                selectCell.ButtonClicked((Any).self)
                 
-                selectCell.setData(type: .setTimeButton)
+                selectCell.setData(type: .setEraseButton)
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1739,6 +1744,30 @@ extension Day6ViewController : UITableViewDataSource
 
                 yourMessageCell.backgroundColor = .clear
                 return yourMessageCell
+                
+            case .setEraseButton:
+                
+                guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2CircleButtonCell", for: indexPath)
+                        as? Day2CircleButtonCell
+                        else {return UITableViewCell() }
+                
+                selectCell.backgroundColor = .clear
+                selectCell.selectionStyle = .none
+                
+                selectCell.setData(type: .setEraseButton)
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    selectCell.loadingAnimate(index: indexPath.row)
+                }
+                else
+                {
+                    selectCell.showMessageWithNoAnimation()
+                }
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return selectCell
                 
             default :
                 return UITableViewCell()

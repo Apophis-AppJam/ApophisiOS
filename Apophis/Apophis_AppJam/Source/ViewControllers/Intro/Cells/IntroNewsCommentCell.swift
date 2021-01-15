@@ -44,7 +44,8 @@ class IntroNewsCommentCell: UITableViewCell {
     
     func setMessage(time : String,
                     name :String,
-                    message : String)
+                    message : String,
+                    imageIndex : Int)
     {
         timeLabel.font = UIFont.gmarketFont(weight: .Medium, size: 11)
         nicknameLabel.font = UIFont.gmarketFont(weight: .Medium, size: 11)
@@ -53,13 +54,15 @@ class IntroNewsCommentCell: UITableViewCell {
         timeLabel.text = time
         nicknameLabel.text = name
         commentLabel.text = message
+         
+        var imageName = "imgNickname"
+        imageName = imageName + String(imageIndex + 1)
         
+   
+        self.profileImageView.image = UIImage(named: imageName)
         
-    }
-
-    
-
-
+     }
+        
 }
 
 //MARK:- extension 부분

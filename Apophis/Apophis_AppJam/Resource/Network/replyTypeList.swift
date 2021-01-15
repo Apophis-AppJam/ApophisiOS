@@ -66,6 +66,11 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .ending
     }
+    else if replyType == "기능 액션 버튼 - 얼룩 지우기"
+    {
+        return .setEraseButton
+    }
+    
     
     else
     {

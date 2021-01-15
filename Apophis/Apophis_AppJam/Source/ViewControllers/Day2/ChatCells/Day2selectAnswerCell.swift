@@ -233,7 +233,7 @@ extension Day2selectAnswerCell : UICollectionViewDelegateFlowLayout
         return 8
     }
     
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
