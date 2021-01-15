@@ -111,6 +111,7 @@
 		FDE2C80A259A2D7C006659DA /* IntroNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */; };
 		FDF1ECD325B16D7800F29B29 /* ChatDayEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF1ECD225B16D7800F29B29 /* ChatDayEndViewController.swift */; };
 		FDF1ECD625B1919300F29B29 /* ChatDayEndMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF1ECD525B1919300F29B29 /* ChatDayEndMessageCell.swift */; };
+		FDF1ECD925B1DBB400F29B29 /* onBoardingNews.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FDF1ECD825B1DBB400F29B29 /* onBoardingNews.mp4 */; };
 		FDFB701A25A06974006EEC04 /* circleProgressView + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */; };
 		FDFB702025A0D33C006EEC04 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB701F25A0D33C006EEC04 /* ColorList.swift */; };
 		FDFB702525A20482006EEC04 /* Day2selectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFB702425A20482006EEC04 /* Day2selectAnswerCell.swift */; };
@@ -230,6 +231,7 @@
 		FDE2C809259A2D7C006659DA /* IntroNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNewsViewController.swift; sourceTree = "<group>"; };
 		FDF1ECD225B16D7800F29B29 /* ChatDayEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDayEndViewController.swift; sourceTree = "<group>"; };
 		FDF1ECD525B1919300F29B29 /* ChatDayEndMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDayEndMessageCell.swift; sourceTree = "<group>"; };
+		FDF1ECD825B1DBB400F29B29 /* onBoardingNews.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = onBoardingNews.mp4; sourceTree = "<group>"; };
 		FDFB701925A06974006EEC04 /* circleProgressView + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "circleProgressView + UIView.swift"; sourceTree = "<group>"; };
 		FDFB701C25A0ACAB006EEC04 /* Apophis_AppJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apophis_AppJam.entitlements; sourceTree = "<group>"; };
 		FDFB701F25A0D33C006EEC04 /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
@@ -640,6 +642,7 @@
 		FDA98B632596EDA200F4DFDF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FDF1ECD825B1DBB400F29B29 /* onBoardingNews.mp4 */,
 				FD4136AD25B026130041B5B1 /* apophis_splash.json */,
 				FD4136AE25B026130041B5B1 /* fallingstar.json */,
 				FC70A78025AF69F800DA7992 /* shutter.mp3 */,
@@ -899,6 +902,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD5207AD2599AF5F00AAD1BA /* Day3.storyboard in Resources */,
+				FDF1ECD925B1DBB400F29B29 /* onBoardingNews.mp4 in Resources */,
 				FD4136AF25B026130041B5B1 /* apophis_splash.json in Resources */,
 				FD52078D2599A60200AAD1BA /* GmarketSansTTFBold.ttf in Resources */,
 				06DD61BB25B085B700AADBA6 /* Day6.storyboard in Resources */,
