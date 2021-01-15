@@ -58,6 +58,7 @@ enum messageTypeList
     case selectList
     case voice
     case ending
+    case endingComplete
     
     /* ============ 유저의 특별한 메세지  ============ */
     
@@ -102,6 +103,8 @@ enum messageTypeList
     case normalWithSea
     
     case selectValue
+    
+    case day2Music
     
     
     
