@@ -298,9 +298,9 @@ Extension 폴더에는 각종 클래스에서 필요한 기능들을 확장한 �
 
 ## Kanban Board
 
-Notion의 보드를 활용해 
+
 <img width="159" alt="스크린샷 2021-01-15 오후 8 30 24" src="https://user-images.githubusercontent.com/60260284/104720934-7f61c680-5770-11eb-9ad2-2bc3f3fe7e95.png">
-Status를 구분시켜 칸반보드를 분리해 업무 진행도를 파악하고 있습니다.<br>
+Notion의 보드를 활용해 Status를 구분시켜 칸반보드를 분리해 업무 진행도를 파악하고 있습니다.<br>
 
 <img width="1079" alt="스크린샷 2021-01-15 오후 8 31 13" src="https://user-images.githubusercontent.com/60260284/104721023-9c969500-5770-11eb-8ada-d7d9f9079bc3.png">
 
