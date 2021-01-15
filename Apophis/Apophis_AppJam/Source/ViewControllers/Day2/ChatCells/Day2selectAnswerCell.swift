@@ -87,7 +87,7 @@ class Day2selectAnswerCell: UITableViewCell {
         
         selectButtonCollectionView.isScrollEnabled = false
         if let layout = selectButtonCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .vertical
+            layout.scrollDirection = .horizontal
         }
         selectedBoolList.removeAll()
         

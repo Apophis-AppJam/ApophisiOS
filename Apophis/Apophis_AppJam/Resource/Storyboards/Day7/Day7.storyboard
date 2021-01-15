@@ -653,7 +653,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="As1-6F-qOe">
-                                        <rect key="frame" x="22" y="44.5" width="32" height="32"/>
+                                        <rect key="frame" x="22" y="54.5" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="F3C-tw-8kV"/>
                                             <constraint firstAttribute="width" secondItem="As1-6F-qOe" secondAttribute="height" multiplier="1:1" id="PgE-b7-8Bu"/>
@@ -664,7 +664,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGb-X2-Koj">
-                                        <rect key="frame" x="166.5" y="95" width="42.5" height="14.5"/>
+                                        <rect key="frame" x="166.5" y="105" width="42.5" height="14.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
                                                 <attributes>
@@ -678,13 +678,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle268" translatesAutoresizingMaskIntoConstraints="NO" id="VCB-1m-fd8">
-                                        <rect key="frame" x="22" y="135.5" width="331" height="206"/>
+                                        <rect key="frame" x="22" y="145.5" width="331" height="206"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="VCB-1m-fd8" secondAttribute="height" multiplier="331:206" id="Z20-uI-jJb"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m34-6X-huP">
-                                        <rect key="frame" x="286" y="293.5" width="47" height="34"/>
+                                        <rect key="frame" x="286" y="303.5" width="47" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="m34-6X-huP" secondAttribute="height" multiplier="47:34" id="3tE-6O-yNs"/>
                                         </constraints>
@@ -700,20 +700,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgMoon" translatesAutoresizingMaskIntoConstraints="NO" id="5Ld-2d-RPF">
-                                        <rect key="frame" x="177" y="50" width="21" height="21"/>
+                                        <rect key="frame" x="177" y="60" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="21" id="5Od-wH-u6x"/>
                                             <constraint firstAttribute="width" secondItem="5Ld-2d-RPF" secondAttribute="height" multiplier="1:1" id="A9l-ee-tMg"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineDetail" translatesAutoresizingMaskIntoConstraints="NO" id="sDM-ig-BEf">
-                                        <rect key="frame" x="29" y="179.5" width="317" height="102"/>
+                                        <rect key="frame" x="29" y="189.5" width="317" height="102"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sDM-ig-BEf" secondAttribute="height" multiplier="317:102" id="hCa-VS-IED"/>
                                         </constraints>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQY-Bg-VJf">
-                                        <rect key="frame" x="42" y="150.5" width="291" height="131"/>
+                                        <rect key="frame" x="42" y="160.5" width="291" height="131"/>
                                         <attributedString key="attributedText">
                                             <fragment content="가나다라마방ㅁㅇ의만ㅇ류ㅏㅁ종리자ㅓㅁ유ㅜ림쟈유림조ㅠㅇ리ㅏㅁ쥬이머ㅠ이럼뉴이ㅑㅁ주ㅠ이ㅏ럼죙라ㅓㅜㅁ지어ㅏㄹ추ㅠㅣㅁㅈ어ㅜㄹ침자울치ㅏㅁㅈ어루">
                                                 <attributes>
@@ -731,6 +731,7 @@
                                 <constraints>
                                     <constraint firstItem="sDM-ig-BEf" firstAttribute="bottom" secondItem="fQY-Bg-VJf" secondAttribute="bottom" id="6OZ-jt-7lc"/>
                                     <constraint firstItem="fQY-Bg-VJf" firstAttribute="top" secondItem="VCB-1m-fd8" secondAttribute="top" constant="15" id="D0f-Du-4vh"/>
+                                    <constraint firstItem="5Ld-2d-RPF" firstAttribute="top" secondItem="Crj-AC-DLu" secondAttribute="top" constant="60" id="EUr-xV-x5R"/>
                                     <constraint firstItem="VCB-1m-fd8" firstAttribute="width" secondItem="Crj-AC-DLu" secondAttribute="width" multiplier="331/375" id="Ecj-Wu-5YG"/>
                                     <constraint firstItem="sDM-ig-BEf" firstAttribute="centerX" secondItem="Crj-AC-DLu" secondAttribute="centerX" id="Kg2-c7-UzO"/>
                                     <constraint firstItem="sDM-ig-BEf" firstAttribute="width" secondItem="Crj-AC-DLu" secondAttribute="width" multiplier="317/375" id="Q3e-Vg-MQU"/>
@@ -745,7 +746,6 @@
                                     <constraint firstItem="VCB-1m-fd8" firstAttribute="trailing" secondItem="fQY-Bg-VJf" secondAttribute="trailing" constant="20" id="cet-cP-EJh"/>
                                     <constraint firstItem="fQY-Bg-VJf" firstAttribute="centerX" secondItem="Crj-AC-DLu" secondAttribute="centerX" id="eXx-qC-ob4"/>
                                     <constraint firstItem="VCB-1m-fd8" firstAttribute="centerX" secondItem="Crj-AC-DLu" secondAttribute="centerX" id="gEw-tx-CJk"/>
-                                    <constraint firstItem="5Ld-2d-RPF" firstAttribute="top" secondItem="Crj-AC-DLu" secondAttribute="top" constant="50" id="gLX-2V-OT5"/>
                                     <constraint firstItem="EGb-X2-Koj" firstAttribute="centerX" secondItem="Crj-AC-DLu" secondAttribute="centerX" id="jzG-Yw-DLg"/>
                                     <constraint firstItem="EGb-X2-Koj" firstAttribute="top" secondItem="5Ld-2d-RPF" secondAttribute="bottom" constant="24" id="kfv-wP-2ke"/>
                                     <constraint firstItem="VCB-1m-fd8" firstAttribute="bottom" secondItem="lxH-dn-Yd2" secondAttribute="bottom" constant="21" id="rNQ-AO-4Fa"/>
