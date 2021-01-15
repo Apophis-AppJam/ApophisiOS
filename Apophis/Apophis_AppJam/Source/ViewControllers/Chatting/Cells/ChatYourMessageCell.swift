@@ -107,6 +107,7 @@ class ChatYourMessageCell: UITableViewCell {
         waitMessageImageView.addSubview(loadingView)
         
         
+
         UIView.animateKeyframes(withDuration: 1.5
                                 , delay: 0, options: .allowUserInteraction) {
             
@@ -150,7 +151,9 @@ class ChatYourMessageCell: UITableViewCell {
         
         
 
+
         UIView.animateKeyframes(withDuration: 1.5, delay: 0, options: .allowUserInteraction) {
+
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
