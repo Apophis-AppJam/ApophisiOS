@@ -51,6 +51,10 @@ func nextActionFromKorean(nextAction : String) -> messageTypeList
     {
         return .shutterAnimation
     }
+    else if nextAction == "기능 액션 버튼 - 컬러피커"
+    {
+        return .colorPicker
+    }
     
     else
     {

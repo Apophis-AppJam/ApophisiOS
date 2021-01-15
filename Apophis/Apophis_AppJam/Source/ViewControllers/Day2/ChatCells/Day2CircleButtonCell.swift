@@ -42,6 +42,16 @@ class Day2CircleButtonCell: UITableViewCell {
         {
             NotificationCenter.default.post(name: NSNotification.Name("setValueButtonClicked"), object: nil)
         }
+        else if messageType == .setEraseButton
+        {
+            NotificationCenter.default.post(name: NSNotification.Name("setEraseButtonClicked"), object: nil)
+        }
+        else if messageType == .colorPicker
+        {
+            NotificationCenter.default.post(name: NSNotification.Name("setcolorPickerButtonClicked"), object: nil)
+        }
+        
+        
         
 
     }
@@ -66,6 +76,15 @@ class Day2CircleButtonCell: UITableViewCell {
         {
             messageType = .selectValue
             circleButton.setBackgroundImage(UIImage(named: "selectValue"), for: .normal)
+            
+        } else if type == .setEraseButton
+        {
+            messageType = .setEraseButton
+            circleButton.setBackgroundImage(UIImage(named: "btn_dirt"), for: .normal)
+        }else if type == .colorPicker
+        {
+            messageType = .setEraseButton
+            circleButton.setBackgroundImage(UIImage(named: "btn_palette"), for: .normal)
         }
         
         
@@ -96,3 +115,5 @@ class Day2CircleButtonCell: UITableViewCell {
     
 
 }
+
+
