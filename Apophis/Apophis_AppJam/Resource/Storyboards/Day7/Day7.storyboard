@@ -31,10 +31,18 @@
                                             <action selector="homeButtonClicked:" destination="NVz-Wc-Cni" eventType="touchUpInside" id="Ahn-hY-pc3"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아포니머스의 이야기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYd-aU-FlF">
-                                        <rect key="frame" x="115" y="53" width="145" height="22"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYd-aU-FlF">
+                                        <rect key="frame" x="147" y="59" width="81.5" height="16"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="마지막 대화">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name="GmarketSansTTFMedium"/>
+                                                    <font key="NSOriginalFont" size="16" name="GmarketSansTTFMedium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -384,7 +392,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ErrorButton" translatesAutoresizingMaskIntoConstraints="NO" id="oTU-3d-cLc">
-                                                    <rect key="frame" x="33.5" y="95" width="68" height="35"/>
+                                                    <rect key="frame" x="33.5" y="53.5" width="68" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="oTU-3d-cLc" secondAttribute="height" multiplier="68:35" id="8qz-6x-zqC"/>
                                                     </constraints>
@@ -394,8 +402,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="m27-qU-xu9" secondAttribute="bottom" constant="13" id="645-1L-XHg"/>
                                                 <constraint firstItem="6F2-VU-3Jx" firstAttribute="trailing" secondItem="m27-qU-xu9" secondAttribute="trailing" priority="999" constant="16" id="AFw-J0-enJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="oTU-3d-cLc" secondAttribute="bottom" constant="4" id="T2I-RX-ocn"/>
                                                 <constraint firstItem="m27-qU-xu9" firstAttribute="width" relation="lessThanOrEqual" secondItem="cwh-cC-5kp" secondAttribute="width" multiplier="230/375" priority="999" id="UQu-lC-vwW"/>
+                                                <constraint firstItem="oTU-3d-cLc" firstAttribute="centerY" secondItem="6F2-VU-3Jx" secondAttribute="centerY" id="Z7f-DU-14F"/>
                                                 <constraint firstItem="6F2-VU-3Jx" firstAttribute="bottom" secondItem="m27-qU-xu9" secondAttribute="bottom" constant="13" id="b7N-cD-wam"/>
                                                 <constraint firstAttribute="trailing" secondItem="m27-qU-xu9" secondAttribute="trailing" constant="24" id="fh9-qw-Fe9"/>
                                                 <constraint firstItem="6F2-VU-3Jx" firstAttribute="top" secondItem="m27-qU-xu9" secondAttribute="top" constant="-12" id="g3Y-Ym-Nv1"/>
@@ -496,12 +504,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaO-Uy-YhV">
-                                <rect key="frame" x="157.5" y="58" width="60" height="19"/>
+                                <rect key="frame" x="154.5" y="58" width="66.5" height="16"/>
                                 <attributedString key="attributedText">
                                     <fragment content="당신의">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="GmarketSansTTFMedium"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <font key="NSOriginalFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -509,14 +517,14 @@
                                     <fragment content=" ">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="GmarketSansTTFMedium"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="말">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="GmarketSansTTFMedium"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <font key="NSOriginalFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -525,7 +533,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIL-Rh-aZm">
-                                <rect key="frame" x="23" y="32" width="71" height="71"/>
+                                <rect key="frame" x="23" y="32" width="68" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IIL-Rh-aZm" secondAttribute="height" multiplier="1:1" id="YPX-9j-OBZ"/>
                                 </constraints>
@@ -535,7 +543,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AK8-6s-gfv">
-                                <rect key="frame" x="0.0" y="172" width="372.5" height="431"/>
+                                <rect key="frame" x="0.0" y="169" width="375" height="434"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AK8-6s-gfv" secondAttribute="height" multiplier="375:434" id="n61-tL-Eoe"/>
@@ -548,7 +556,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Day7TarotCardCell" id="OAF-37-Lai" customClass="Day7TarotCardCell" customModule="Apophis" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-3" width="270" height="437"/>
+                                        <rect key="frame" x="0.0" y="-1.5" width="270" height="437"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p0k-D8-cUv">
                                             <rect key="frame" x="0.0" y="0.0" width="270" height="437"/>
@@ -565,12 +573,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbc-yF-zQb">
-                                                    <rect key="frame" x="118" y="77" width="34.5" height="16.5"/>
+
+                                                    <rect key="frame" x="114" y="77" width="42.5" height="14.5"/>
+
                                                     <attributedString key="attributedText">
                                                         <fragment content="Label">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.69803921568627447" green="0.45490196078431372" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="14" name="GmarketSansTTFMedium"/>
+                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -578,13 +588,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL7-ry-nAt">
-                                                    <rect key="frame" x="20" y="149.5" width="97" height="14"/>
+
+                                                    <rect key="frame" x="20" y="149.5" width="107.5" height="12"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="텍스트를 입력하세요">
                                                             <attributes>
                                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="12" name="GmarketSansTTFMedium"/>
-                                                                <font key="NSOriginalFont" size="12" name="GmarketSansTTFMedium"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <font key="NSOriginalFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -592,7 +603,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-kU-Tba">
-                                                    <rect key="frame" x="12" y="167.5" width="246" height="132.5"/>
+
+                                                    <rect key="frame" x="12" y="165.5" width="246" height="132.5"/>
+
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Xeh-kU-Tba" secondAttribute="height" multiplier="247:133" id="OU8-GT-xpE"/>
                                                     </constraints>
@@ -642,7 +655,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDX-Ql-BHS">
-                                <rect key="frame" x="306" y="50.5" width="47" height="34"/>
+                                <rect key="frame" x="306" y="49" width="47" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rDX-Ql-BHS" secondAttribute="height" multiplier="47:34" id="Pgl-5P-iGv"/>
                                 </constraints>
@@ -708,13 +721,14 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGb-X2-Koj">
-                                        <rect key="frame" x="170.5" y="105" width="34.5" height="16.5"/>
+
+                                        <rect key="frame" x="166.5" y="105" width="42.5" height="14.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
                                                 <attributes>
                                                     <color key="NSColor" red="0.69803921568627447" green="0.45490196078431372" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="14" name="GmarketSansTTFMedium"/>
-                                                    <font key="NSOriginalFont" size="14" name="GmarketSansTTFMedium"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="14"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -722,13 +736,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle268" translatesAutoresizingMaskIntoConstraints="NO" id="VCB-1m-fd8">
-                                        <rect key="frame" x="22" y="147.5" width="331" height="206"/>
+
+                                        <rect key="frame" x="22" y="145.5" width="331" height="206"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="VCB-1m-fd8" secondAttribute="height" multiplier="331:206" id="Z20-uI-jJb"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m34-6X-huP">
-                                        <rect key="frame" x="286" y="305.5" width="47" height="34"/>
+
+                                        <rect key="frame" x="286" y="303.5" width="47" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="m34-6X-huP" secondAttribute="height" multiplier="47:34" id="3tE-6O-yNs"/>
                                         </constraints>
@@ -751,18 +767,20 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineDetail" translatesAutoresizingMaskIntoConstraints="NO" id="sDM-ig-BEf">
-                                        <rect key="frame" x="29" y="191.5" width="317" height="102"/>
+
+                                        <rect key="frame" x="29" y="189.5" width="317" height="102"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sDM-ig-BEf" secondAttribute="height" multiplier="317:102" id="hCa-VS-IED"/>
                                         </constraints>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQY-Bg-VJf">
-                                        <rect key="frame" x="42" y="162.5" width="291" height="131"/>
+                                <rect key="frame" x="42" y="160.5" width="291" height="131"/>
+
                                         <attributedString key="attributedText">
                                             <fragment content="가나다라마방ㅁㅇ의만ㅇ류ㅏㅁ종리자ㅓㅁ유ㅜ림쟈유림조ㅠㅇ리ㅏㅁ쥬이머ㅠ이럼뉴이ㅑㅁ주ㅠ이ㅏ럼죙라ㅓㅜㅁ지어ㅏㄹ추ㅠㅣㅁㅈ어ㅜㄹ침자울치ㅏㅁㅈ어루">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="0.99997437000274658" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="12" name="GmarketSansTTFMedium"/>
+                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                     <font key="NSOriginalFont" metaFont="cellTitle"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -817,6 +835,38 @@
             </objects>
             <point key="canvasLocation" x="2964" y="-427.73613193403304"/>
         </scene>
+        <!--Day7 Count Down View Controller-->
+        <scene sceneID="DFb-mw-FPS">
+            <objects>
+                <viewController id="7gM-op-EX7" customClass="Day7CountDownViewController" customModule="Apophis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K5m-qZ-vgF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYX-KR-3pk">
+                                <rect key="frame" x="0.0" y="-10" width="375" height="687"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hah-Kt-EOb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uYX-KR-3pk" firstAttribute="top" secondItem="K5m-qZ-vgF" secondAttribute="top" constant="-10" id="GPg-Px-Yg4"/>
+                            <constraint firstItem="uYX-KR-3pk" firstAttribute="leading" secondItem="Hah-Kt-EOb" secondAttribute="leading" id="HiP-xX-PuC"/>
+                            <constraint firstItem="Hah-Kt-EOb" firstAttribute="trailing" secondItem="uYX-KR-3pk" secondAttribute="trailing" id="O40-Xd-l1h"/>
+                            <constraint firstAttribute="bottom" secondItem="uYX-KR-3pk" secondAttribute="bottom" constant="-10" id="VUn-Y4-Jmg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="slf-Q9-MzQ"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="CountDownView" destination="uYX-KR-3pk" id="An4-ou-iPI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RiR-QK-Vrn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5098.3999999999996" y="-470.01499250374815"/>
+        </scene>
         <!--Day7 Set Tarot Navigation Controller-->
         <scene sceneID="tME-Wk-zlt">
             <objects>
@@ -834,6 +884,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3XI-ly-qSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1021.6" y="-426.83658170914543"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Uv4-Il-G6c">
+            <objects>
+                <navigationController storyboardIdentifier="Day7CountDownViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="vxE-ZL-ZVe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFW-2S-VRk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7gM-op-EX7" kind="relationship" relationship="rootViewController" id="hcv-HM-NOF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7V-ee-ooc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4157.6000000000004" y="-470.01499250374815"/>
         </scene>
     </scenes>
     <resources>
@@ -855,7 +923,7 @@
         <image name="selected_answer_background" width="32.5" height="34"/>
         <image name="slice2" width="32" height="32"/>
         <image name="tarot2" width="205" height="347"/>
-        <image name="youngjae" width="145" height="128"/>
+        <image name="youngjae" width="96.666664123535156" height="85.333335876464844"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

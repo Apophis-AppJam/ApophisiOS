@@ -37,6 +37,10 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .selectList
     }
+    else if replyType == "다중 보기 선택 "
+    {
+        return .selectList
+    }
     else if replyType == "기능 액션 버튼 - 가치 선택"
     {
         return .selectValue
@@ -88,7 +92,10 @@ func replyTypeFromKorean(replyType : String) -> messageTypeList
     {
         return .colorPicker
     }
-    
+    else if replyType == "기능 액션 버튼 - 그림판"
+    {
+        return .setHandDrawing
+    }
     
     else
     {

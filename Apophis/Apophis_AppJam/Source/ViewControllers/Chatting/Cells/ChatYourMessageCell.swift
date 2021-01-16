@@ -84,6 +84,11 @@ class ChatYourMessageCell: UITableViewCell {
         NotificationCenter.default.post(name: NSNotification.Name("setSeaBackground"), object: nil)
     }
     
+    func addEndingComplete()
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("addEndingComplete"), object: nil)
+    }
+    
     func setHandDrawing()
     {
         NotificationCenter.default.post(name: NSNotification.Name("setHandDrawing"), object: nil)
@@ -91,7 +96,8 @@ class ChatYourMessageCell: UITableViewCell {
     
     func goToTarot(index : Int)
     {
-        print("goToTarot 넘어옴")
+
+        
         loadingView.frame = waitMessageImageView.bounds
         loadingView.animation = Animation.named("message_loading")
         loadingView.contentMode = .scaleAspectFit
@@ -101,7 +107,9 @@ class ChatYourMessageCell: UITableViewCell {
         waitMessageImageView.addSubview(loadingView)
         
         
-        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: .allowUserInteraction) {
+
+        UIView.animateKeyframes(withDuration: 2
+                                , delay: 0, options: .allowUserInteraction) {
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
@@ -143,7 +151,9 @@ class ChatYourMessageCell: UITableViewCell {
         
         
 
-        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: .allowUserInteraction) {
+
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: .allowUserInteraction) {
+
             
 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
@@ -194,7 +204,8 @@ class ChatYourMessageCell: UITableViewCell {
         
         
 
-        UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
+
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: .allowUserInteraction) {
 
             
 
@@ -224,6 +235,55 @@ class ChatYourMessageCell: UITableViewCell {
             if self.check && vibrate {
                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             }
+        }
+    }
+    
+    
+    func showEndingMessage()
+    {
+        
+        
+        loadingView.frame = waitMessageImageView.bounds
+        loadingView.animation = Animation.named("message_loading")
+        loadingView.contentMode = .scaleAspectFit
+        loadingView.loopMode = .loop
+        loadingView.play()
+        
+        waitMessageImageView.addSubview(loadingView)
+        
+        
+
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: .allowUserInteraction) {
+            
+
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/12,animations: {
+                    
+                    self.waitMessageImageView.alpha = 1
+                    
+                })
+                
+                UIView.addKeyframe(withRelativeStartTime: 10/12, relativeDuration: 1/12, animations: {
+                    
+                    self.waitMessageImageView.alpha = 0
+                    
+                })
+            
+                UIView.addKeyframe(withRelativeStartTime: 11/12, relativeDuration: 1/12, animations: {
+                    
+                    self.messageTextView.alpha = 1
+                    self.messageBackgroundImageView.alpha = 1
+                    self.check = true
+                })
+            
+        } completion: { (_) in
+            
+            self.loadingView.stop()
+            // 애니메이션이 끝날 때 post를 해주는데, 그 때 object에 index값을 넣어서 쏜다.
+            // 여기서 index는 loadingAnimate를 호출할 때 받아온다.
+            
+            NotificationCenter.default.post(name: NSNotification.Name("addEndingComplete"), object: nil)
+            
+            
         }
     }
     

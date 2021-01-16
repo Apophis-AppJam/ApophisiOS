@@ -50,6 +50,5 @@ class Day3ColorListcell: UICollectionViewCell {
         print("버튼이 눌리니?")
         
         NotificationCenter.default.post(name: NSNotification.Name("colorChecked"), object: getIndexPath())
-        
 }
 }

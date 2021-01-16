@@ -346,11 +346,20 @@ class Day1ViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func addObserver()
     {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(addEndingComplete), name: NSNotification.Name("addEndingComplete"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(backToHome), name: NSNotification.Name("backToHome"), object: nil)
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name:UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name:UIResponder.keyboardWillHideNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(receivedUserSelect), name: NSNotification.Name("receivedUserSelect"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(dayChatEnd), name: NSNotification.Name("dayChatEnd"), object: nil)
+
         
         // 메세지 신호 처리
         NotificationCenter.default.addObserver(self, selector: #selector(aponimousMessageEnd), name: NSNotification.Name("AponimousMessageEnd"), object: nil)
@@ -388,6 +397,48 @@ class Day1ViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
     //MARK:- @objc func 부분
+    
+    @objc func dayChatEnd()
+    {
+        let storyboard = UIStoryboard(name: "Day2", bundle: nil)
+        
+        guard let endVC = storyboard.instantiateViewController(identifier: "ChatDayEndViewController") as? ChatDayEndViewController else {return}
+        
+        endVC.day = 1
+        
+        endVC.modalTransitionStyle = .crossDissolve
+        endVC.modalPresentationStyle = .fullScreen
+        
+        self.present(endVC, animated: true, completion: nil)
+        
+    }
+    @objc func backToHome()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @objc func addEndingComplete()
+      {
+          newMessageList.append(ChatMessageNewDataModel(messageContent: "",
+                                                        isMine: false,
+                                                        isLastMessage: false, nextMessageType: .ending
+                                                          ,
+                                                        type: .endingComplete, dataList: [], chatDetailsIdx: 40))
+          
+          
+          messageListForTableView.append(ChatMessageNewDataModel(messageContent: "",
+                                                                 isMine: false,
+                                                                 isLastMessage: false, nextMessageType: .ending
+                                                                   ,
+                                                                 type: .endingComplete, dataList: [], chatDetailsIdx: 40))
+          isMessageLoadList.append(false)
+          
+          let last = IndexPath(row: messageListForTableView.count - 1, section: 0)
+          chatTableView.insertRows(at: [last], with: .none)
+
+          
+      }
+    
+    
     
     @objc func scrollToBottom()
     {
@@ -606,6 +657,8 @@ class Day1ViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func etcDefaultSetting()
     {
+        
+        chatSeaImageView.alpha = 0
         // 네비게이션 바 숨기기
         self.navigationController?.navigationBar.isHidden = true
         
@@ -1095,81 +1148,7 @@ extension Day1ViewController : UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //
-        //        if messageList[indexPath.row].isMine == true // 나의 메세지인 경우
-        //        {
-        //            guard let myMessageCell =
-        //                    tableView.dequeueReusableCell(withIdentifier: "ChatMyMessageCell", for: indexPath)
-        //                    as? ChatMyMessageCell
-        //            else {return UITableViewCell() }
-        //
-        //            myMessageCell.setMessage(message: messageList[indexPath.row].message)
-        //            myMessageCell.backgroundColor = .clear
-        //
-        //            return myMessageCell
-        //        }
-        //        // 나침반을 부르는 경우
-        //        else if(messageList[indexPath.row].Day1Func == 1){
-        //            guard let ChatButtonCell =
-        //                    tableView.dequeueReusableCell(withIdentifier: "ChatButtonCell", for: indexPath)
-        //                    as? ChatButtonCell
-        //            else {return UITableViewCell() }
-        //
-        //            ChatButtonCell.viewController = self
-        //
-        //            ChatButtonCell.index = indexPath.row
-        //            ChatButtonCell.funcNum = messageList[indexPath.row].Day1Func
-        //
-        //            ChatButtonCell.setChatButton(ImgName: "btnCompass")
-        //nCell
-        //        }
-        //        // 사진 기능을 부르는 경우
-        //        else if(messageList[indexPath.row].Day1Func == 2){
-        //            guard let ChatButtonCell =
-        //                    tableView.dequeueReusableCell(withIdentifier: "ChatButtonCell", for: indexPath)
-        //                    as? ChatButtonCell
-        //            else {return UITableViewCell() }
-        //
-        //            ChatButtonCell.viewController = self
-        //
-        //            ChatButtonCell.index = indexPath.row
-        //            ChatButtonCell.funcNum = messageList[indexPath.row].Day1Func
-        //
-        //            ChatButtonCell.setChatButton(ImgName: "btnPhoto")
-        //
-        //
-        //
-        //
-        //            return ChatButtonCell
-        //        }
-        //
-        //        // 사진을 찍고난 뒤 사진뷰를 불러오는 경우
-        //        else if(messageList[indexPath.row].Day1Func == 5){
-        //            guard let Day1ImageViewCell =
-        //                    tableView.dequeueReusableCell(withIdentifier: "Day1ImageViewCell", for: indexPath)
-        //                    as? Day1ImageViewCell
-        //            else {return UITableViewCell() }
-        //
-        //            Day1ImageViewCell.setPictureImage(ImgName: pictureImage)
-        //            Day1ImageViewCell.setImageView()
-        //
-        //            return Day1ImageViewCell
-        //        }
-        //
-        //        else // 아포니머스 메세지인 경우
-        //        {
-        //            guard let yourMessageCell =
-        //                    tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
-        //                    as? ChatYourMessageCell
-        //            else {return UITableViewCell() }
-        //
-        //            yourMessageCell.setMessage(message: messageList[indexPath.row].message)
-        //
-        //            return yourMessageCell
-        //        }
-        //    }
-        //
-        
+
         
         
         // MARK:- 메세지 종류별 테이블 셀 만드는 부분
@@ -1201,6 +1180,10 @@ extension Day1ViewController : UITableViewDataSource
                     myMessageCell.showMessageWithNoAnimation()
                 }
                 
+                
+                let empty = UIView()
+                myMessageCell.selectedBackgroundView = empty
+                
                 isMessageLoadList[indexPath.row] = true
                 
                 return myMessageCell
@@ -1223,6 +1206,8 @@ extension Day1ViewController : UITableViewDataSource
                 {
                     selectCell.showMessageWithNoAnimation()
                 }
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 isMessageLoadList[indexPath.row] = true
                 
@@ -1245,6 +1230,9 @@ extension Day1ViewController : UITableViewDataSource
                     myMessageWithCompleteCell.showMessageWithNoAnimation()
                 }
                 
+                let empty = UIView()
+                myMessageWithCompleteCell.selectedBackgroundView = empty
+                
                 isMessageLoadList[indexPath.row] = true
                 
                 return myMessageWithCompleteCell
@@ -1255,6 +1243,9 @@ extension Day1ViewController : UITableViewDataSource
                         as? ChatButtonCell
                 else {return UITableViewCell() }
                 
+                
+                let empty = UIView()
+                ChatButtonCell.selectedBackgroundView = empty
                 
                 ChatButtonCell.selectionStyle = .none
                 ChatButtonCell.setChatButton(buttonCase: newMessageList[indexPath.row].type)
@@ -1279,6 +1270,10 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
+                let empty = UIView()
+                ChatButtonCell.selectedBackgroundView = empty
+                
+                
                 ChatButtonCell.selectionStyle = .none
                 ChatButtonCell.setChatButton(buttonCase: newMessageList[indexPath.row].type)
                 
@@ -1301,6 +1296,9 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 selectCell.backgroundColor = .clear
                 selectCell.setAdjectiveList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.selectionStyle = .none
@@ -1325,6 +1323,8 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
+                let empty = UIView()
+                myPhotoCell.selectedBackgroundView = empty
                 
                 myPhotoCell.setImageView()
                 myPhotoCell.setPictureImage(ImgName: pictureImage)
@@ -1351,6 +1351,10 @@ extension Day1ViewController : UITableViewDataSource
                 selectCell.backgroundColor = .clear
                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.selectionStyle = .none
+                
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1390,6 +1394,12 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
+                
+                
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
+                
+                
                 yourMessageCell.selectionStyle = .none
                 yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
@@ -1418,6 +1428,11 @@ extension Day1ViewController : UITableViewDataSource
                 
                 vibrateCell.selectionStyle = .none
                 
+                
+                let empty = UIView()
+                vibrateCell.selectedBackgroundView = empty
+                
+                
                 vibrateCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -1441,6 +1456,9 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
+                let empty = UIView()
+                apoImageViewCell.selectedBackgroundView = empty
+                
 //                apoImageViewCell.selectionStyle = .none
                 apoImageViewCell.isSelected = false
                 apoImageViewCell.setImageView(imgUrl: newMessageList[indexPath.row].messageContent)
@@ -1458,6 +1476,73 @@ extension Day1ViewController : UITableViewDataSource
                 
                 return apoImageViewCell
                 
+                
+            case .endingComplete:
+                
+                guard let endingCell = tableView.dequeueReusableCell(withIdentifier: "ChatDayEndMessageCell", for: indexPath)
+                                        as? ChatDayEndMessageCell
+                                        else {return UITableViewCell() }
+                endingCell.defaultSetting()
+
+                endingCell.backgroundColor = .clear
+                endingCell.selectionStyle = .none
+                
+                
+                let empty = UIView()
+                endingCell.selectedBackgroundView = empty
+                
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    endingCell.loadingAnimate()
+                }
+                else
+                {
+                    endingCell.showMessageWithNoAnimation()
+                }
+                
+         
+                
+                
+                
+                isMessageLoadList[indexPath.row] = true
+                
+                return endingCell
+                
+                
+            case .ending:
+                
+                
+                guard let yourMessageCell =
+                        tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
+                        as? ChatYourMessageCell
+                        else {return UITableViewCell() }
+
+
+                
+                
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
+                
+                
+                yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+
+                if isMessageLoadList[indexPath.row] == false
+                {
+                    yourMessageCell.showEndingMessage()
+                }
+                else
+                {
+                    yourMessageCell.showMessageWithNoAnimation()
+                }
+
+                isMessageLoadList[indexPath.row] = true
+
+                yourMessageCell.backgroundColor = .clear
+                
+    
+                
+                return yourMessageCell
+                
             case .normalWithSea:
                 print("셀 생성 normalwithsea 분기처리")
                 guard let yourMessageCell =
@@ -1468,6 +1553,13 @@ extension Day1ViewController : UITableViewDataSource
 
                 yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
    
+                
+                
+                
+                
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
+                
 
                 
 

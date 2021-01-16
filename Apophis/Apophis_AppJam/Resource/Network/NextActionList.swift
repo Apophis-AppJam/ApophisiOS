@@ -15,6 +15,10 @@ func nextActionFromKorean(nextAction : String) -> messageTypeList
     {
         return .normal
     }
+    else if nextAction == "음성송출1"
+    {
+        return .day2Music
+    }
     else if nextAction == "진동"
     {
         return .vibrate

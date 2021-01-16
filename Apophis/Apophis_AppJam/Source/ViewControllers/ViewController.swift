@@ -50,7 +50,11 @@ class ViewController: UIViewController {
         
     }
 
-
+    @IBAction func backButtonClicked(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 
     @IBAction func goToSample(_ sender: Any) {
         

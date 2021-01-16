@@ -50,6 +50,10 @@ class Day2CircleButtonCell: UITableViewCell {
         {
             NotificationCenter.default.post(name: NSNotification.Name("setcolorPickerButtonClicked"), object: nil)
         }
+        else if messageType == .setHandDrawing
+        {
+            NotificationCenter.default.post(name: NSNotification.Name("setDrawingButtonClicked"), object: nil)
+        }
         
         
         
@@ -83,8 +87,13 @@ class Day2CircleButtonCell: UITableViewCell {
             circleButton.setBackgroundImage(UIImage(named: "btn_dirt"), for: .normal)
         }else if type == .colorPicker
         {
-            messageType = .setEraseButton
+            messageType = .colorPicker
             circleButton.setBackgroundImage(UIImage(named: "btn_palette"), for: .normal)
+        }
+        else if type == .setHandDrawing
+        {
+            messageType = .setHandDrawing
+            circleButton.setBackgroundImage(UIImage(named: "handicon"), for: .normal)
         }
         
         

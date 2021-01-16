@@ -58,6 +58,7 @@ enum messageTypeList
     case selectList
     case voice
     case ending
+    case endingComplete
     
     /* ============ 유저의 특별한 메세지  ============ */
     
@@ -86,6 +87,7 @@ enum messageTypeList
     case tarot
     // 타로 뷰건으로 넘기자
     case selectWithError
+    case afterError
     
     // MARK:- 지훈 PART
  
@@ -101,6 +103,8 @@ enum messageTypeList
     case normalWithSea
     
     case selectValue
+    
+    case day2Music
     
     
     

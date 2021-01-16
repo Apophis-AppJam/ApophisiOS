@@ -123,7 +123,7 @@ class Day6ViewController: UIViewController {
                 messageTextInputView.text = ""
                 
                 isMessageLoadList.append(false)
-                let finalIndex = IndexPath(row: newMessageList.count - 1, section: 0)
+                let finalIndex = IndexPath(row: messageListForTableView.count - 1, section: 0)
                 
                 DispatchQueue.global().sync {
                     chatTableView.insertRows(at: [finalIndex], with: .none)
@@ -165,9 +165,8 @@ class Day6ViewController: UIViewController {
                 isMessageLoadList.append(false)
                 let finalIndex = IndexPath(row: newMessageList.count - 1, section: 0)
                 
-                DispatchQueue.global().sync {
-                    chatTableView.insertRows(at: [finalIndex], with: .none)
-                }
+
+                chatTableView.insertRows(at: [finalIndex], with: .none)
 //                chatTableView.scrollToBottom()
                 
                 
@@ -190,7 +189,7 @@ class Day6ViewController: UIViewController {
                                                                        isMine: true,
                                                                        isLastMessage: false,
                                                                        nextMessageType: .userAnswerWithComplete,
-                                                                       type: .shutterSound,
+                                                                       type: .userAnswerWithComplete,
                                                                        dataList: [],
                                                                        chatDetailsIdx: newMessageList[newMessageList.count - 1].chatDetailsIdx))
                 
@@ -198,14 +197,17 @@ class Day6ViewController: UIViewController {
                 
                 isMessageLoadList.append(false)
                 let finalIndex = IndexPath(row: newMessageList.count - 1, section: 0)
-                
-                DispatchQueue.global().sync {
-                    chatTableView.insertRows(at: [finalIndex], with: .none)
-                }
+
+                chatTableView.insertRows(at: [finalIndex], with: .none)
+
 //                chatTableView.scrollToBottom()
                 
                 
                 
+            }
+            else
+            {
+            
             }
             
         case .shutterAnimation :
@@ -233,11 +235,8 @@ class Day6ViewController: UIViewController {
                 isMessageLoadList.append(false)
                 let finalIndex = IndexPath(row: newMessageList.count - 1, section: 0)
                 
-                DispatchQueue.global().sync {
                     chatTableView.insertRows(at: [finalIndex], with: .none)
-                    
-                    
-                }
+
 //                chatTableView.scrollToBottom()
                 
                 
@@ -263,7 +262,7 @@ class Day6ViewController: UIViewController {
                                                                    nextMessageType: .userAnswerWithComplete,
                                                                    type: .normal,
                                                                    dataList: [],
-                                                                   chatDetailsIdx: messageListForTableView[messageListForTableView.count - 1].chatDetailsIdx))
+                                                                   chatDetailsIdx: newMessageList[newMessageList.count - 1].chatDetailsIdx))
             
             newMessageList.remove(at: newMessageList.count - 2)
             messageListForTableView.remove(at: newMessageList.count - 2)
@@ -294,12 +293,13 @@ class Day6ViewController: UIViewController {
             let finalIndex = IndexPath(row: newMessageList.count - 1, section: 0)
             
             
-            DispatchQueue.global().sync {
+
                 chatTableView.insertRows(at: [finalIndex], with: .none)
-            }
+
             messageTextInputView.text = ""
 //            chatTableView.scrollToBottom()
             
+
             
         case .lightBackground :
             if newMessageList[newMessageList.count - 1].isMine == false // 마지막 메세지가 아포꺼면
@@ -336,6 +336,8 @@ class Day6ViewController: UIViewController {
             }
             
         default :
+            print("디폴트로 빠짐", newMessageList[newMessageList.count - 1].chatDetailsIdx )
+            print("너의 타입은????",newMessageList[newMessageList.count - 1].type)
             let lastIndex =  IndexPath(row: newMessageList.count - 1, section: 0)
             
             let lastChatDetailsIndex = newMessageList[newMessageList.count - 1].chatDetailsIdx
@@ -389,7 +391,8 @@ class Day6ViewController: UIViewController {
         
   
         
-        self.loadApoMessage(idx: 120) { (result) in
+
+        self.loadApoMessage(idx: 101) { (result) in
             
             if result
             {
@@ -417,6 +420,15 @@ class Day6ViewController: UIViewController {
     
     func addObserver()
     {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(addEndingComplete), name: NSNotification.Name("addEndingComplete"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(backToHome), name: NSNotification.Name("backToHome"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(dayChatEnd), name: NSNotification.Name("dayChatEnd"), object: nil)
+        
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name:UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name:UIResponder.keyboardWillHideNotification, object: nil)
@@ -495,6 +507,50 @@ class Day6ViewController: UIViewController {
     }
     
     //MARK:- @objc func 부분
+    
+    @objc func addEndingComplete()
+     {
+         newMessageList.append(ChatMessageNewDataModel(messageContent: "",
+                                                       isMine: false,
+                                                       isLastMessage: false, nextMessageType: .ending
+                                                         ,
+                                                       type: .endingComplete, dataList: [], chatDetailsIdx: 40))
+         
+         
+         messageListForTableView.append(ChatMessageNewDataModel(messageContent: "",
+                                                                isMine: false,
+                                                                isLastMessage: false, nextMessageType: .ending
+                                                                  ,
+                                                                type: .endingComplete, dataList: [], chatDetailsIdx: 40))
+         isMessageLoadList.append(false)
+         
+         let last = IndexPath(row: messageListForTableView.count - 1, section: 0)
+         chatTableView.insertRows(at: [last], with: .none)
+
+         
+     }
+     
+     @objc func backToHome()
+     {
+         self.navigationController?.popViewController(animated: true)
+     }
+     @objc func dayChatEnd()
+     {
+         let storyboard = UIStoryboard(name: "Day2", bundle: nil)
+         
+         guard let endVC = storyboard.instantiateViewController(identifier: "ChatDayEndViewController") as? ChatDayEndViewController else {return}
+         
+         endVC.day = 6
+         
+         endVC.modalTransitionStyle = .crossDissolve
+         endVC.modalPresentationStyle = .fullScreen
+         
+         self.present(endVC, animated: true, completion: nil)
+         
+     }
+
+
+    
     
     @objc func hideInputView()
     {
@@ -587,10 +643,10 @@ class Day6ViewController: UIViewController {
         
         disableTextField(isEnable: false)
         
-        DispatchQueue.global().sync {
+
             chatTableView.reloadRows(at: [lastIndex], with: .none)
 
-        }
+       
 
 
     }
@@ -599,7 +655,10 @@ class Day6ViewController: UIViewController {
     
     @objc func myMessageEnd(notification : NSNotification)
     {
+        
+       
         let index = notification.object as? Int ?? -1
+        print("내 메세지가 끝났어여",index)
 
         appData?.chatIndex = index
         
@@ -618,6 +677,7 @@ class Day6ViewController: UIViewController {
                 
                 else
                 {
+        
                     loadApoMessage(idx: newMessageList[index].chatDetailsIdx + 1) { (result) in
                         
                         if result
@@ -651,7 +711,7 @@ class Day6ViewController: UIViewController {
             }
             else if newMessageList.count - 1 > index  // 마지막 메세지가 아니라면
             {
-                
+                print("마지막 메세지가 아니에요",index)
                 
                 DispatchQueue.global().sync {
                     messageListForTableView.append(newMessageList[index+1])
@@ -684,7 +744,7 @@ class Day6ViewController: UIViewController {
         // 메세지 끝을 받으면 처리해야 하는 경우는 2가지
         // 1. 아까 받아온 메세지가 리스트에 남아있을 경우 해당 메세지의 행을 reload
         // 2. 마지막이라면 새로 데이터를 더 받아와야 한다
-        
+        print("아포메세지 인덱스",index)
         let index = notification.object as? Int ?? 0
         // 여기서의 index는 방금 재생이 끝난 테이블 셀의 index를 의미함.
         
@@ -1188,7 +1248,8 @@ class Day6ViewController: UIViewController {
 
             }, completion: nil)
             
-//            chatTableView.scrollToBottom()
+            
+            chatTableView.scrollToBottom()
 
         }
     }
@@ -1330,6 +1391,13 @@ extension Day6ViewController : UITableViewDataSource
                 myMessageCell.backgroundColor = .clear
                 myMessageCell.selectionStyle = .none
                 
+                
+                
+                
+                let empty = UIView()
+                myMessageCell.selectedBackgroundView = empty
+                
+                
                 myMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
                 
@@ -1354,6 +1422,11 @@ extension Day6ViewController : UITableViewDataSource
                         tableView.dequeueReusableCell(withIdentifier: "Day2UserAnswerCompleteCell", for: indexPath)
                         as? Day2UserAnswerCompleteCell
                         else {return UITableViewCell() }
+                
+                
+                let empty = UIView()
+                myMessageCell.selectedBackgroundView = empty
+                
                 
                 myMessageCell.backgroundColor = .clear
                 myMessageCell.selectionStyle = .none
@@ -1384,7 +1457,7 @@ extension Day6ViewController : UITableViewDataSource
                                         else {return UITableViewCell() }
                                 
                                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
-                selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+                selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -1395,6 +1468,10 @@ extension Day6ViewController : UITableViewDataSource
                 {
                     selectCell.showMessageWithNoAnimation()
                 }
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
                 
                 isMessageLoadList[indexPath.row] = true
                 
@@ -1424,6 +1501,9 @@ extension Day6ViewController : UITableViewDataSource
                 
                 isMessageLoadList[indexPath.row] = true
                 
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
                 return selectCell
                 
                 
@@ -1446,6 +1526,11 @@ extension Day6ViewController : UITableViewDataSource
                 {
                     enterWordCell.showMessageWithNoAnimation()
                 }
+                
+                
+                let empty = UIView()
+                enterWordCell.selectedBackgroundView = empty
+                
                 
                 isMessageLoadList[indexPath.row] = true
                 
@@ -1470,6 +1555,12 @@ extension Day6ViewController : UITableViewDataSource
                 {
                     selectCell.showMessageWithNoAnimation()
                 }
+                
+                
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
                 
                 isMessageLoadList[indexPath.row] = true
                 
@@ -1496,6 +1587,9 @@ extension Day6ViewController : UITableViewDataSource
                 
                 isMessageLoadList[indexPath.row] = true
                 
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
                 return selectCell
                 
             case .selectList:
@@ -1507,6 +1601,9 @@ extension Day6ViewController : UITableViewDataSource
                                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1527,6 +1624,9 @@ extension Day6ViewController : UITableViewDataSource
                 guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2CircleButtonCell", for: indexPath)
                         as? Day2CircleButtonCell
                         else {return UITableViewCell() }
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
@@ -1561,6 +1661,74 @@ extension Day6ViewController : UITableViewDataSource
 
             {
             
+            case .endingComplete:
+                      
+                      guard let endingCell = tableView.dequeueReusableCell(withIdentifier: "ChatDayEndMessageCell", for: indexPath)
+                                              as? ChatDayEndMessageCell
+                                              else {return UITableViewCell() }
+                      endingCell.defaultSetting()
+
+                      endingCell.backgroundColor = .clear
+                      endingCell.selectionStyle = .none
+                      
+                      if isMessageLoadList[indexPath.row] == false
+                      {
+                          endingCell.loadingAnimate()
+                      }
+                      else
+                      {
+                          endingCell.showMessageWithNoAnimation()
+                      }
+                      
+                      let empty = UIView()
+                      endingCell.selectedBackgroundView = empty
+                      
+                      
+     
+                      isMessageLoadList[indexPath.row] = true
+                      
+                      return endingCell
+                      
+                      
+                  case .ending:
+                      
+                      
+                      guard let yourMessageCell =
+                              tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
+                              as? ChatYourMessageCell
+                              else {return UITableViewCell() }
+
+
+                      yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+
+                      if isMessageLoadList[indexPath.row] == false
+                      {
+                          yourMessageCell.showEndingMessage()
+                      }
+                      else
+                      {
+                          yourMessageCell.showMessageWithNoAnimation()
+                      }
+
+                      isMessageLoadList[indexPath.row] = true
+
+                      yourMessageCell.backgroundColor = .clear
+                    
+                    
+                    
+                    
+           
+                      
+                      let empty = UIView()
+                      yourMessageCell.selectedBackgroundView = empty
+                      
+                      
+
+                      
+                      return yourMessageCell
+
+
+            
 
             case .normal:
                 
@@ -1568,7 +1736,6 @@ extension Day6ViewController : UITableViewDataSource
                         tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
                         as? ChatYourMessageCell
                         else {return UITableViewCell() }
-
 
                 yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
 
@@ -1584,6 +1751,11 @@ extension Day6ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
 
                 yourMessageCell.backgroundColor = .clear
+                
+                let empty = UIView()
+                      yourMessageCell.selectedBackgroundView = empty
+                
+                
                 return yourMessageCell
                 
                 
@@ -1609,6 +1781,9 @@ extension Day6ViewController : UITableViewDataSource
                 
                 isMessageLoadList[indexPath.row] = true
                 
+                let empty = UIView()
+                vibrateCell.selectedBackgroundView = empty
+                
                 
                 return vibrateCell
                 
@@ -1619,9 +1794,16 @@ extension Day6ViewController : UITableViewDataSource
                         as? ChatYourMessageCell
                 else {return UITableViewCell() }
                 
+                
+                print("셔터 사운드 호출호출",indexPath.row,messageListForTableView[indexPath.row].messageContent)
+                print("리스트개수",messageListForTableView.count)
+                
+                
+                
+                shutterSoundCell.setMessage(message: messageListForTableView[indexPath.row].messageContent)
+
                 if shutterSoundCheck == false {
                     shutterSoundCheck = true
-                    shutterSoundCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                     shutterSoundCell.selectionStyle = .none
                     shutterSoundCell.backgroundColor = .clear
                     shutterSoundCell.shutterSound()
@@ -1640,6 +1822,11 @@ extension Day6ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
                 
                 
+                
+                let empty = UIView()
+                shutterSoundCell.selectedBackgroundView = empty
+                
+                
                 return shutterSoundCell
                 
             case .shutterAnimation :
@@ -1649,10 +1836,11 @@ extension Day6ViewController : UITableViewDataSource
                         tableView.dequeueReusableCell(withIdentifier: "ChatYourMessageCell", for: indexPath)
                         as? ChatYourMessageCell
                 else {return UITableViewCell() }
+                shutterAnimationCell.setMessage(message: newMessageList[indexPath.row].messageContent)
+
                 
                 if shutterSoundCheck == true && shutterAnimateCheck == false {
                 shutterAnimateCheck = true
-                shutterAnimationCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 shutterAnimationCell.selectionStyle = .none
                 shutterAnimationCell.backgroundColor = .clear
                 shutterAnimationCell.shutterSound()
@@ -1680,6 +1868,11 @@ extension Day6ViewController : UITableViewDataSource
                 
                 isMessageLoadList[indexPath.row] = true
                 
+                
+                
+                
+                let empty = UIView()
+                shutterAnimationCell.selectedBackgroundView = empty
                 
                 return shutterAnimationCell
                 
@@ -1715,6 +1908,10 @@ extension Day6ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
                 
                 
+                
+                let empty = UIView()
+                lightCell.selectedBackgroundView = empty
+                
                 return lightCell
  
             case .normalWithSnow:
@@ -1741,6 +1938,10 @@ extension Day6ViewController : UITableViewDataSource
                 }
 
                 isMessageLoadList[indexPath.row] = true
+                
+                
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
 
                 yourMessageCell.backgroundColor = .clear
                 return yourMessageCell
@@ -1766,6 +1967,9 @@ extension Day6ViewController : UITableViewDataSource
                 }
                 
                 isMessageLoadList[indexPath.row] = true
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 return selectCell
                 
