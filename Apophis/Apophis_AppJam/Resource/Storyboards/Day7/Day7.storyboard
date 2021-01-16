@@ -509,7 +509,7 @@
                                     <fragment content="당신의">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="GmarketSansTTFMedium"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <font key="NSOriginalFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -517,14 +517,14 @@
                                     <fragment content=" ">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="GmarketSansTTFMedium"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="말">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="GmarketSansTTFMedium"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <font key="NSOriginalFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -573,12 +573,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbc-yF-zQb">
+
                                                     <rect key="frame" x="114" y="77" width="42.5" height="14.5"/>
+
                                                     <attributedString key="attributedText">
                                                         <fragment content="Label">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.69803921568627447" green="0.45490196078431372" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="14" name="GmarketSansTTFMedium"/>
+                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -586,13 +588,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL7-ry-nAt">
+
                                                     <rect key="frame" x="20" y="149.5" width="107.5" height="12"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="텍스트를 입력하세요">
                                                             <attributes>
                                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="12" name="GmarketSansTTFMedium"/>
-                                                                <font key="NSOriginalFont" size="12" name="GmarketSansTTFMedium"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <font key="NSOriginalFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -600,7 +603,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-kU-Tba">
+
                                                     <rect key="frame" x="12" y="165.5" width="246" height="132.5"/>
+
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Xeh-kU-Tba" secondAttribute="height" multiplier="247:133" id="OU8-GT-xpE"/>
                                                     </constraints>
@@ -716,13 +721,14 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGb-X2-Koj">
+
                                         <rect key="frame" x="166.5" y="105" width="42.5" height="14.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
                                                 <attributes>
                                                     <color key="NSColor" red="0.69803921568627447" green="0.45490196078431372" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="14" name="GmarketSansTTFMedium"/>
-                                                    <font key="NSOriginalFont" size="14" name="GmarketSansTTFMedium"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="14"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -730,12 +736,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle268" translatesAutoresizingMaskIntoConstraints="NO" id="VCB-1m-fd8">
+
                                         <rect key="frame" x="22" y="145.5" width="331" height="206"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="VCB-1m-fd8" secondAttribute="height" multiplier="331:206" id="Z20-uI-jJb"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m34-6X-huP">
+
                                         <rect key="frame" x="286" y="303.5" width="47" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="m34-6X-huP" secondAttribute="height" multiplier="47:34" id="3tE-6O-yNs"/>
@@ -759,18 +767,20 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineDetail" translatesAutoresizingMaskIntoConstraints="NO" id="sDM-ig-BEf">
+
                                         <rect key="frame" x="29" y="189.5" width="317" height="102"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sDM-ig-BEf" secondAttribute="height" multiplier="317:102" id="hCa-VS-IED"/>
                                         </constraints>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQY-Bg-VJf">
-                                        <rect key="frame" x="42" y="160.5" width="291" height="131"/>
+                                <rect key="frame" x="42" y="160.5" width="291" height="131"/>
+
                                         <attributedString key="attributedText">
                                             <fragment content="가나다라마방ㅁㅇ의만ㅇ류ㅏㅁ종리자ㅓㅁ유ㅜ림쟈유림조ㅠㅇ리ㅏㅁ쥬이머ㅠ이럼뉴이ㅑㅁ주ㅠ이ㅏ럼죙라ㅓㅜㅁ지어ㅏㄹ추ㅠㅣㅁㅈ어ㅜㄹ침자울치ㅏㅁㅈ어루">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="0.99997437000274658" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="12" name="GmarketSansTTFMedium"/>
+                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                     <font key="NSOriginalFont" metaFont="cellTitle"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -913,7 +923,7 @@
         <image name="selected_answer_background" width="32.5" height="34"/>
         <image name="slice2" width="32" height="32"/>
         <image name="tarot2" width="205" height="347"/>
-        <image name="youngjae" width="145" height="128"/>
+        <image name="youngjae" width="96.666664123535156" height="85.333335876464844"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
