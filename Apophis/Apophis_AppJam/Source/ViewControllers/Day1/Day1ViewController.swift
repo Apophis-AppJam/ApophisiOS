@@ -657,6 +657,8 @@ class Day1ViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func etcDefaultSetting()
     {
+        
+        chatSeaImageView.alpha = 0
         // 네비게이션 바 숨기기
         self.navigationController?.navigationBar.isHidden = true
         
@@ -1178,6 +1180,10 @@ extension Day1ViewController : UITableViewDataSource
                     myMessageCell.showMessageWithNoAnimation()
                 }
                 
+                
+                let empty = UIView()
+                myMessageCell.selectedBackgroundView = empty
+                
                 isMessageLoadList[indexPath.row] = true
                 
                 return myMessageCell
@@ -1200,6 +1206,8 @@ extension Day1ViewController : UITableViewDataSource
                 {
                     selectCell.showMessageWithNoAnimation()
                 }
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 isMessageLoadList[indexPath.row] = true
                 
@@ -1222,6 +1230,9 @@ extension Day1ViewController : UITableViewDataSource
                     myMessageWithCompleteCell.showMessageWithNoAnimation()
                 }
                 
+                let empty = UIView()
+                myMessageWithCompleteCell.selectedBackgroundView = empty
+                
                 isMessageLoadList[indexPath.row] = true
                 
                 return myMessageWithCompleteCell
@@ -1232,6 +1243,9 @@ extension Day1ViewController : UITableViewDataSource
                         as? ChatButtonCell
                 else {return UITableViewCell() }
                 
+                
+                let empty = UIView()
+                ChatButtonCell.selectedBackgroundView = empty
                 
                 ChatButtonCell.selectionStyle = .none
                 ChatButtonCell.setChatButton(buttonCase: newMessageList[indexPath.row].type)
@@ -1256,6 +1270,10 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
+                let empty = UIView()
+                ChatButtonCell.selectedBackgroundView = empty
+                
+                
                 ChatButtonCell.selectionStyle = .none
                 ChatButtonCell.setChatButton(buttonCase: newMessageList[indexPath.row].type)
                 
@@ -1278,6 +1296,9 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 selectCell.backgroundColor = .clear
                 selectCell.setAdjectiveList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.selectionStyle = .none
@@ -1302,6 +1323,8 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
+                let empty = UIView()
+                myPhotoCell.selectedBackgroundView = empty
                 
                 myPhotoCell.setImageView()
                 myPhotoCell.setPictureImage(ImgName: pictureImage)
@@ -1328,6 +1351,10 @@ extension Day1ViewController : UITableViewDataSource
                 selectCell.backgroundColor = .clear
                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.selectionStyle = .none
+                
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1367,6 +1394,12 @@ extension Day1ViewController : UITableViewDataSource
                 else {return UITableViewCell() }
                 
                 
+                
+                
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
+                
+                
                 yourMessageCell.selectionStyle = .none
                 yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
@@ -1395,6 +1428,11 @@ extension Day1ViewController : UITableViewDataSource
                 
                 vibrateCell.selectionStyle = .none
                 
+                
+                let empty = UIView()
+                vibrateCell.selectedBackgroundView = empty
+                
+                
                 vibrateCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -1417,6 +1455,9 @@ extension Day1ViewController : UITableViewDataSource
                         as? Day1ApoImageViewCell
                 else {return UITableViewCell() }
                 
+                
+                let empty = UIView()
+                apoImageViewCell.selectedBackgroundView = empty
                 
 //                apoImageViewCell.selectionStyle = .none
                 apoImageViewCell.isSelected = false
@@ -1446,6 +1487,10 @@ extension Day1ViewController : UITableViewDataSource
                 endingCell.backgroundColor = .clear
                 endingCell.selectionStyle = .none
                 
+                
+                let empty = UIView()
+                endingCell.selectedBackgroundView = empty
+                
                 if isMessageLoadList[indexPath.row] == false
                 {
                     endingCell.loadingAnimate()
@@ -1455,9 +1500,7 @@ extension Day1ViewController : UITableViewDataSource
                     endingCell.showMessageWithNoAnimation()
                 }
                 
-                let empty = UIView()
-                endingCell.selectedBackgroundView = empty
-                
+         
                 
                 
                 
@@ -1475,6 +1518,12 @@ extension Day1ViewController : UITableViewDataSource
                         else {return UITableViewCell() }
 
 
+                
+                
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
+                
+                
                 yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
 
                 if isMessageLoadList[indexPath.row] == false
@@ -1490,11 +1539,7 @@ extension Day1ViewController : UITableViewDataSource
 
                 yourMessageCell.backgroundColor = .clear
                 
-                let empty = UIView()
-                yourMessageCell.selectedBackgroundView = empty
-                
-                
-
+    
                 
                 return yourMessageCell
                 
@@ -1508,6 +1553,13 @@ extension Day1ViewController : UITableViewDataSource
 
                 yourMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
    
+                
+                
+                
+                
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
+                
 
                 
 

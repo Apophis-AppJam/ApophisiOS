@@ -84,7 +84,7 @@ class ChatMyMessageWithCompleteCell: UITableViewCell {
     {
   
         
-        UIView.animateKeyframes(withDuration: 1, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 2.5, delay: 0, options: .allowUserInteraction) {
             
 
                 

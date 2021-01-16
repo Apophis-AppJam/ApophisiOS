@@ -1391,6 +1391,13 @@ extension Day6ViewController : UITableViewDataSource
                 myMessageCell.backgroundColor = .clear
                 myMessageCell.selectionStyle = .none
                 
+                
+                
+                
+                let empty = UIView()
+                myMessageCell.selectedBackgroundView = empty
+                
+                
                 myMessageCell.setMessage(message: newMessageList[indexPath.row].messageContent)
                 
                 
@@ -1415,6 +1422,11 @@ extension Day6ViewController : UITableViewDataSource
                         tableView.dequeueReusableCell(withIdentifier: "Day2UserAnswerCompleteCell", for: indexPath)
                         as? Day2UserAnswerCompleteCell
                         else {return UITableViewCell() }
+                
+                
+                let empty = UIView()
+                myMessageCell.selectedBackgroundView = empty
+                
                 
                 myMessageCell.backgroundColor = .clear
                 myMessageCell.selectionStyle = .none
@@ -1445,7 +1457,7 @@ extension Day6ViewController : UITableViewDataSource
                                         else {return UITableViewCell() }
                                 
                                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
-                selectCell.backgroundColor = .init(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+                selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
                 
                 if isMessageLoadList[indexPath.row] == false
@@ -1456,6 +1468,10 @@ extension Day6ViewController : UITableViewDataSource
                 {
                     selectCell.showMessageWithNoAnimation()
                 }
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
                 
                 isMessageLoadList[indexPath.row] = true
                 
@@ -1485,6 +1501,9 @@ extension Day6ViewController : UITableViewDataSource
                 
                 isMessageLoadList[indexPath.row] = true
                 
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
                 return selectCell
                 
                 
@@ -1507,6 +1526,11 @@ extension Day6ViewController : UITableViewDataSource
                 {
                     enterWordCell.showMessageWithNoAnimation()
                 }
+                
+                
+                let empty = UIView()
+                enterWordCell.selectedBackgroundView = empty
+                
                 
                 isMessageLoadList[indexPath.row] = true
                 
@@ -1531,6 +1555,12 @@ extension Day6ViewController : UITableViewDataSource
                 {
                     selectCell.showMessageWithNoAnimation()
                 }
+                
+                
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
                 
                 isMessageLoadList[indexPath.row] = true
                 
@@ -1557,6 +1587,9 @@ extension Day6ViewController : UITableViewDataSource
                 
                 isMessageLoadList[indexPath.row] = true
                 
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
+                
                 return selectCell
                 
             case .selectList:
@@ -1568,6 +1601,9 @@ extension Day6ViewController : UITableViewDataSource
                                 selectCell.setSelectList(selectList: newMessageList[indexPath.row].dataList)
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 if isMessageLoadList[indexPath.row] == false
                 {
@@ -1588,6 +1624,9 @@ extension Day6ViewController : UITableViewDataSource
                 guard let selectCell = tableView.dequeueReusableCell(withIdentifier: "Day2CircleButtonCell", for: indexPath)
                         as? Day2CircleButtonCell
                         else {return UITableViewCell() }
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 selectCell.backgroundColor = .clear
                 selectCell.selectionStyle = .none
@@ -1645,8 +1684,7 @@ extension Day6ViewController : UITableViewDataSource
                       endingCell.selectedBackgroundView = empty
                       
                       
-                      
-                      
+     
                       isMessageLoadList[indexPath.row] = true
                       
                       return endingCell
@@ -1675,6 +1713,11 @@ extension Day6ViewController : UITableViewDataSource
                       isMessageLoadList[indexPath.row] = true
 
                       yourMessageCell.backgroundColor = .clear
+                    
+                    
+                    
+                    
+           
                       
                       let empty = UIView()
                       yourMessageCell.selectedBackgroundView = empty
@@ -1708,6 +1751,11 @@ extension Day6ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
 
                 yourMessageCell.backgroundColor = .clear
+                
+                let empty = UIView()
+                      yourMessageCell.selectedBackgroundView = empty
+                
+                
                 return yourMessageCell
                 
                 
@@ -1732,6 +1780,9 @@ extension Day6ViewController : UITableViewDataSource
                 }
                 
                 isMessageLoadList[indexPath.row] = true
+                
+                let empty = UIView()
+                vibrateCell.selectedBackgroundView = empty
                 
                 
                 return vibrateCell
@@ -1769,6 +1820,11 @@ extension Day6ViewController : UITableViewDataSource
                     shutterSoundCell.showMessageWithNoAnimation()
                 }
                 isMessageLoadList[indexPath.row] = true
+                
+                
+                
+                let empty = UIView()
+                shutterSoundCell.selectedBackgroundView = empty
                 
                 
                 return shutterSoundCell
@@ -1813,6 +1869,11 @@ extension Day6ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
                 
                 
+                
+                
+                let empty = UIView()
+                shutterAnimationCell.selectedBackgroundView = empty
+                
                 return shutterAnimationCell
                 
                 
@@ -1847,6 +1908,10 @@ extension Day6ViewController : UITableViewDataSource
                 isMessageLoadList[indexPath.row] = true
                 
                 
+                
+                let empty = UIView()
+                lightCell.selectedBackgroundView = empty
+                
                 return lightCell
  
             case .normalWithSnow:
@@ -1873,6 +1938,10 @@ extension Day6ViewController : UITableViewDataSource
                 }
 
                 isMessageLoadList[indexPath.row] = true
+                
+                
+                let empty = UIView()
+                yourMessageCell.selectedBackgroundView = empty
 
                 yourMessageCell.backgroundColor = .clear
                 return yourMessageCell
@@ -1898,6 +1967,9 @@ extension Day6ViewController : UITableViewDataSource
                 }
                 
                 isMessageLoadList[indexPath.row] = true
+                
+                let empty = UIView()
+                selectCell.selectedBackgroundView = empty
                 
                 return selectCell
                 
