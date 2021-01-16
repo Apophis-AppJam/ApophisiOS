@@ -68,7 +68,7 @@ class ChatMyMessageCell: UITableViewCell {
   
         NotificationCenter.default.post(name: NSNotification.Name("scrollToBottom"), object: nil)
 
-        UIView.animateKeyframes(withDuration: 1.5, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 2.5, delay: 0, options: .allowUserInteraction) {
             
 
                 

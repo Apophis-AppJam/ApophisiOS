@@ -657,6 +657,8 @@ class Day1ViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func etcDefaultSetting()
     {
+        
+        chatSeaImageView.alpha = 0
         // 네비게이션 바 숨기기
         self.navigationController?.navigationBar.isHidden = true
         

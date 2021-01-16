@@ -23,7 +23,7 @@ struct getChatService {
         
         print("여기는 이제 getAponimousMessage 시작", chatDetailIdx)
         let header: HTTPHeaders = ["content-Type": "application/json",
-                                   "jwt" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWR4Ijo2LCJpYXQiOjE2MTAxNjM5NjIsImV4cCI6MTYxMDc2ODc2MiwiaXNzIjoiYXBvcGhpcyJ9.gM5avYDIhGybMsXqlvaWwqJCsTfkAjo1lYD2tvxZAdw"]
+                                   "jwt" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWR4IjoxNywiaWF0IjoxNjEwNjU0NTEwLCJleHAiOjE2MTEyNTkzMTAsImlzcyI6ImFwb3BoaXMifQ.0i5NzM5zLDRmN_gW_7yuEY5wDsssoHDT0pDe_CNc4h8"]
         // 임시로 두는 중
 
         let chatURL : String = APIConstants.getChatURL + "/" + String(chatDetailIdx)

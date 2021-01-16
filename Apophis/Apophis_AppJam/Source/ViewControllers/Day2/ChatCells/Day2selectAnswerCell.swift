@@ -140,7 +140,7 @@ class Day2selectAnswerCell: UITableViewCell {
     func loadingAnimate(index : Int)
     {
         
-        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: .allowUserInteraction) {
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: .allowUserInteraction) {
             
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1,animations: {
                 
